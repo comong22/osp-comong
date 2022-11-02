@@ -41,11 +41,11 @@
   border-radius: 25px;
 }
 
-nav {
+.BottomNav {
   overflow: hidden;
 }
 
-nav > div {
+.BottomNav > div {
   text-align: center;
   float: left;
   width: 50%;
@@ -55,8 +55,11 @@ nav > div {
   font-style: normal;
   font-weight: 700;
   font-size: 28px;
-  text-decoration: none;
   margin-top: 38px;
+}
+
+a {
+  text-decoration-line: none;
 }
 
 .bestmenuImg > img {
