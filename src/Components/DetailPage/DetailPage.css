@@ -48,34 +48,32 @@ nav {
 nav > div {
   text-align: center;
   float: left;
-  width: 20%;
-
-  height: 45px;
-  line-height: 45px; 
+  width: 50%;
+  left: 494px;
+  top: 1300px;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  text-decoration: none;
+  margin-top: 38px;
 }
 
-.navline {
-  width: 797px;
-  height: 0px;
-  left: 151px;
-  top: 1190px;
-  border: 2px
+.bestmenuImg > img {
+  display: block;
+  margin: auto;
+  width: 370px;
+  height: 450px;
+  margin-top: 15px;
 }
 
-.bestmenuImg{
-  width: 456px;
-  height: 554px;
-  left: 745px;
-  top: 1293px;
-}
-
-.navbestfont{
-  top: 1235px;
+.navbestfont {
   font-family: 'Spoqa Han Sans Neo';
   font-style: normal;
   font-weight: 700;
   font-size: 36px;
   text-align: center;
+  margin-top: 40px;
   color: #424242;
 }
 
@@ -87,5 +85,6 @@ nav > div {
   font-size: 28px;
   text-align: center;
   color: #424242;
+  margin-top: 15px;
 }
 

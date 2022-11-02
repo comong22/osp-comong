@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import { GlobalFonts } from "../../fonts/font";
 import { main_data } from "../MainPage/data";
-import DetailBottom from "./DetailBottom";
+import DetailBottomBestMenu from "./DetailBottomBestMenu";
 import DetailTop from "./DetailTop";
 
 const PageContainer = styled.div`
@@ -27,7 +27,7 @@ function DetailPage(){
         <PageContainer>
             <GlobalFonts/>
             <DetailTop MainData={MainData}/>
-            <DetailBottom/>
+            <DetailBottomBestMenu/>
         </PageContainer>
     )
 }

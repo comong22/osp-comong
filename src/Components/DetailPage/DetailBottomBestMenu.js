@@ -2,7 +2,10 @@ import { GlobalFonts } from "../../fonts/font";
 import styled from "styled-components";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+
 import "./DetailPage.css";
+import bestmenuimg from '../../images/main/main1.jpg';
+
 
 const BottomContainer = styled.div`
   display: flex;
@@ -36,10 +39,10 @@ function DetailBottomBestMenu() {
               BEST
             </div>
             <div className="bestmenuImg"> 
-              <img src="../../images/main/main1.jpg"/>
+              <img src={bestmenuimg}/>
             </div>
             <div className="navbestmenufont">
-              치즈돈까스<br/>
+              치즈 돈가스<br/>
               11,500원
             </div>
             </div>
