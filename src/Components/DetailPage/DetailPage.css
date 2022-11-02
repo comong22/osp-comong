@@ -62,6 +62,14 @@ a {
   text-decoration-line: none;
 }
 
+.nav-item {
+  color: #424242;
+}
+
+.active {
+  color: #FFBA94;
+}
+
 .bestmenuImg > img {
   display: block;
   margin: auto;
