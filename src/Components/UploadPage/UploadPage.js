@@ -1,20 +1,29 @@
 import './UploadPage.css';
+import Add from '../../images/add.svg';
 
-function Box(props){
+
+function Box(){
     
-        <div style="background: white;height: 50px; width: 200px;border-radius: 15px;width:{props.width};height:{props.width}">
-            <span class="material-symbols-outlined">add_box</span>
-        </div>
-	
+    return(
+    <div><div className='box'><img src={Add}></img></div><div className='title'>대표사진</div></div>
+    )
 }
 
 function UploadPage(){
     return(
+
         <div className='uploadBG'>
             <div>
-                <div>
-                    <Box width="500px"></Box>
-                </div>
+                <br></br>
+                <br></br>
+                <br></br><br></br>
+                <br></br>
+                <br></br><br></br>
+                <br></br>
+                
+                
+               <Box></Box>
+               
             </div>
             
         </div>
