@@ -47,7 +47,7 @@ function DetailTop(props) {
           <DetailInfo>가게정보</DetailInfo>
           <DetailName>{main_data[id].name}</DetailName>
           <DetailCate>| {main_data[id].category}</DetailCate>
-          <div>{main_data[id].star}</div>
+          <div className="starfont">{main_data[id].star}</div>
           <div className="addressfont">{main_data[id].address}</div>
           <div className="detailaddrfont">{main_data[id].detail_address}</div>
           <div className="hoursfont">{main_data[id].business_hours}</div>

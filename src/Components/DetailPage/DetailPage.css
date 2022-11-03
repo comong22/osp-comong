@@ -134,6 +134,16 @@ a {
   color: #424242;
 }
 
+.starfont {
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  text-align: center;
+  color: #424242;
+}
+
 .addressfont {
   font-family: 'Spoqa Han Sans Neo';
   font-style: normal;
@@ -148,7 +158,7 @@ a {
   font-family: 'Spoqa Han Sans Neo';
   font-style: normal;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 26px;
   text-align: center;
   color: #424242;
@@ -204,7 +214,7 @@ a {
   color: #424242;
 }
 
-.pirce2font{
+.price2font{
   font-family: 'Spoqa Han Sans Neo';
   font-style: normal;
   font-weight: 400;
