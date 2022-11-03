@@ -2,8 +2,31 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { main_data } from "../MainPage/data";
 import mappin from "../../images/main/mappin.svg";
+import star from "../../images/detail/star.svg";
+import phone from "../../images/detail/phone.svg";
+import menu from "../../images/detail/menu.svg";
+import {
+  Row1,
+  Row2,
+  Row3,
+  Row4,
+  Row5,
+  InfoCol,
+  Star,
+  MapPinIMG,
+  Category,
+  DetailName,
+  StarIMG,
+  MenuIMG,
+  Address,
+  Tel,
+  Detailaddress,
+  PhoneIMG,
+  Menu1,
+  Menu2,
+  Menu3,
 
-import "./DetailPage.css";
+}from "./DetailStyle.js";
 
 const TopContainer = styled.div`
   display: flex;
@@ -41,16 +64,25 @@ function DetailTop(props) {
         </div>
         <div className="topBox">
           <div className="detailinfo">가게정보</div>
-          <div className="namefont">
-            {main_data[id].name} | {main_data[id].category}
-          </div>
-          <div className="starfont">{main_data[id].star}</div>
-          <div className="addressfont"><img src={mappin} /> {main_data[id].address}</div>
-          <div className="detailaddrfont">{main_data[id].detail_address}</div>
-          <div className="telfont">{main_data[id].tel}</div>
-          <div className="menu1font">{main_data[id].menu_1} - {main_data[id].menu_1_price}</div>
-          <div className="menu2font">{main_data[id].menu_2} - {main_data[id].menu_2_price}</div>
-          <div className="menu3font">{main_data[id].menu_3} - {main_data[id].menu_3_price}</div>
+          <InfoCol>
+              <Row1>
+                <DetailName>{main_data[id].name}</DetailName>
+                <Category>| {main_data[id].category}</Category>
+                <StarIMG src={star} alt="star" />
+                <Star>{main_data[id].star}</Star>
+                <MapPinIMG src={mappin} alt="mappin" />
+                <Address>{main_data[id].address}</Address>
+                <Detailaddress>{main_data[id].detail_address}</Detailaddress>
+              </Row1>
+              <Row2>
+                <PhoneIMG src={phone} alt="phone" />
+                <Tel>{main_data[id].tel}</Tel>
+                <MenuIMG src={menu} alt="menu" />
+                <Menu1>{main_data[id].menu_1} - {main_data[id].menu_1_price}</Menu1>
+                <Menu2>{main_data[id].menu_2} - {main_data[id].menu_2_price}</Menu2>
+                <Menu3>{main_data[id].menu_3} - {main_data[id].menu_3_price}</Menu3>
+              </Row2>
+          </InfoCol>
         </div>
       </div>
       </TopContainer>

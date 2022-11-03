@@ -53,5 +53,188 @@ export const TabRow2 = styled.div`
   text-align: center;
 `;
 
+export const InfoCol = styled.div`
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas: "row1" "row2" "row3" "row4" "row5";
+`;
+export const Row1 = styled.div`
+  align-self: center;
+  grid-area: row1;
+`;
+
+export const Row2 = styled.div`
+  grid-area: row2;
+  align-self: center;
+`;
+
+export const Row3 = styled.div`
+  grid-area: row3;
+  align-self: center;
+`;
+
+export const Row4 = styled.div`
+  grid-area: row4;
+  align-self: center;
+`;
+
+export const Row5 = styled.div`
+  grid-area: row5;
+  align-self: center;
+`;
 
 
+export const DetailName = styled.div`
+  float: left;
+  margin-right: 10px;
+  font-family: "Spoqa Han Sans Neo Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 32px;
+  /* or 114% */
+
+  font-feature-settings: "pnum" on, "lnum" on;
+
+  color: #424242;
+  padding-left : 80px;
+  padding-bottom : 20px;
+
+`;
+
+export const Category = styled.div`
+  margin-top: 5px;
+  font-family: "Spoqa Han Sans Neo Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  padding-bottom : 20px;
+  /* or 24px */
+  color: #000000;
+`;
+export const MapPinIMG = styled.img`
+  float: left;
+  max-width: 22px;
+  margin-right: 10px;
+  padding-left:82px;
+`;
+
+export const StarIMG = styled.img`
+  float: left;
+  max-width: 22px;
+  margin-right: 10px;
+`;
+
+export const ClockIMG = styled.img`
+  float: left;
+  max-width: 22px;
+  margin-right: 10px;
+`;
+
+export const PhoneIMG = styled.img`
+  float: left;
+  ax-width: 13px;
+  margin-right: 10px;
+  padding-left : 80px;
+`;
+
+export const MenuIMG = styled.img`
+  float: left;
+  ax-width: 17px;
+  margin-right: 10px;
+  padding-left : 80px;
+`;
+
+export const Star = styled.div`
+  max-width: 1000px;
+  font-family: "Spoqa Han Sans Neo Regular";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  padding-left : auto;
+  padding-bottom : 20px;
+  /* or 27px */
+
+  color: #424242;
+`;
+
+
+export const Address = styled.div`
+  max-width: 1000px;
+  font-family: "Spoqa Han Sans Neo Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  padding-left : 113px;
+  /* or 27px */
+
+  color: #424242;
+`;
+
+export const Detailaddress = styled.div`
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: left;
+  padding-left : 113px;
+  padding-bottom : 13px;
+  color: #424242;
+`;
+
+export const Tel = styled.div`
+  max-width: 1000px;
+  font-family: "Spoqa Han Sans Neo Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  padding-left : 113px;
+  padding-bottom : 20px;
+  /* or 27px */
+
+  color: #424242;
+`;
+
+export const Menu1 = styled.div`
+  max-width: 1000px;
+  font-family: "Spoqa Han Sans Neo Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  padding-left : 113px;
+  padding-top : 5px;
+  /* or 27px */
+
+  color: #424242;
+`;
+
+export const Menu2 = styled.div`
+  max-width: 1000px;
+  font-family: "Spoqa Han Sans Neo Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  padding-left : 117px;
+  /* or 27px */
+
+  color: #424242;
+`;
+
+export const Menu3 = styled.div`
+  max-width: 1000px;
+  font-family: "Spoqa Han Sans Neo Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  padding-left : 117px;
+  /* or 27px */
+
+  color: #424242;
+`;
