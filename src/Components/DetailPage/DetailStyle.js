@@ -52,3 +52,40 @@ export const TabRow2 = styled.div`
   grid-area: row2;
   text-align: center;
 `;
+
+export const DetailInfo = styled.div`
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 38px;
+  text-align: left;
+  padding-top: 95px;
+  padding-left: 80px;
+  padding-bottom: 12px;
+  color: #000;
+`;
+
+export const DetailName = styled.div`
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 23px;
+  text-align: left;
+  padding : 0 80px;
+  color: #424242;
+`;
+
+export const DetailCate = styled.div`
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  color: #424242;
+`;
+
+export const Row1 = styled.div`
+  align-self: center;
+
+  grid-area: row1;
+`;

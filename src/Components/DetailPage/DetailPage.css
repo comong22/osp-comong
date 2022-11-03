@@ -81,6 +81,16 @@ a {
   margin-top: 15px;
 }
 
+.reviewBox {
+  max-width: 50px;
+  height: 10px;
+  margin: 180px auto auto 678px;
+  background: #FAD4B2;
+  box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+}
+
+
 .navbestfont {
   font-family: 'Spoqa Han Sans Neo';
   font-style: normal;
@@ -106,9 +116,121 @@ a {
   font-family: 'Spoqa Han Sans Neo';
   font-style: normal;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 38px;
   text-align: left;
-  padding : 100px 80px;
+  padding-top: 95px;
+  padding-left: 80px;
+  padding-bottom: 12px;
+  color: #000;
+}
+
+.namefont {
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 23px;
+  text-align: left;
+  padding : 0 80px;
+  color: #424242;
+}
+
+.addressfont {
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  color: #424242;
+}
+
+.detailaddrfont{
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 26px;
+  text-align: center;
+  color: #424242;
+}
+
+.hoursfont {
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  color: #424242;
+}
+
+.parkingfont {
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  color: #424242;
+}
+
+.menu1font{
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  color: #424242;
+}
+
+.price1font{
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  color: #424242;
+}
+
+.menu2font{
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  color: #424242;
+}
+
+.pirce2font{
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  color: #424242;
+}
+
+.menu3font{
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  color: #424242;
+}
+
+.price3font{
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
   color: #424242;
 }
 

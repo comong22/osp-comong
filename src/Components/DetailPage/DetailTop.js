@@ -1,5 +1,11 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { main_data } from "../MainPage/data";
+import {
+  DetailInfo,
+  DetailCate,
+  DetailName,
+} from "./DetailStyle";
 
 import "./DetailPage.css";
 
@@ -17,9 +23,6 @@ const TopContainer = styled.div`
 
 function DetailTop(props) {
   const { id } = useParams(); // 유저가 URL 파라미터에 입력한 거 가져올 때 사용하는 훅
-  let item = props.MainData.find(function (x) {
-    return x.id === id;
-  });
 
   const detailimg = [
     { id: 0, src: require("../../images/detail/detail1.jpg") },
@@ -41,22 +44,21 @@ function DetailTop(props) {
           <img src={detailimg[id].src} />
         </div>
         <div className="topBox">
-          <div className="navdetailfont">가게 정보</div>
-          <div>{item?.name}</div>
-          <div>{item?.category}</div>
-          <div>{item?.address}</div>
-          <div>{item?.business_hours}</div>
-          <div>{item?.detail_address}</div>
-          <div>{item?.star}</div>
-          <div>{item?.parking}</div>
-          <div>{item?.menu_1}</div>
-          <div>{item?.menu_1_price}</div>
-          <div>{item?.menu_2}</div>
-          <div>{item?.menu_2_price}</div>
-          <div>{item?.menu_3}</div>
-          <div>{item?.menu_3_pirce}</div>
+          <DetailInfo>가게정보</DetailInfo>
+          <DetailName>{main_data[id].name}</DetailName>
+          <DetailCate>| {main_data[id].category}</DetailCate>
+          <div>{main_data[id].star}</div>
+          <div className="addressfont">{main_data[id].address}</div>
+          <div className="detailaddrfont">{main_data[id].detail_address}</div>
+          <div className="hoursfont">{main_data[id].business_hours}</div>
+          <div className="parkingfont">{main_data[id].parking}</div>
+          <div className="menu1font">{main_data[id].menu_1}</div>
+          <div className="price1font">{main_data[id].menu_1_price}</div>
+          <div className="menu2font">{main_data[id].menu_2}</div>
+          <div className="price2font">{main_data[id].menu_2_price}</div>
+          <div className="menu3font">{main_data[id].menu_3}</div>
+          <div className="price3font">{main_data[id].menu_3_price}</div>
         </div>
-        {/* 리뷰 작성 버튼 필요 -> /review 페이지로 넘어갈 수 있게! */}
       </div>
       </TopContainer>
     </>
