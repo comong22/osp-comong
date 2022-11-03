@@ -15,6 +15,30 @@ const BottomContainer = styled.div`
   scroll-snap-align: start;
 `;
 
+export const ListBestmenu = styled.div`
+  font-family: "Spoqa Han Sans Neo Bold";
+  font-style: normal
+  font-size: 28px;
+  color: ${({ tab }) => (tab === 0 ? "#FFBA94" : "#464646")};
+  }
+`;
+
+export const ListReview = styled.div`
+  font-family: "Spoqa Han Sans Neo Bold";
+  font-style: normal;
+  font-size: 28px;
+  color: ${({ tab }) => (tab === 0 ? "#FFBA94" : "#464646")};
+  }
+`;
+
+export const ListBox = styled.div`
+  scroll-snap-align: start;
+  max-width: 1469px;
+  height: 200px;
+  margin: 0 0 0 50px;
+  background: #FFFFFF;
+`;
+
 function DetailBottom() {
     let [tab, setTab] = useState(0); // 0 대표메뉴, 1 리뷰
 
@@ -23,11 +47,11 @@ function DetailBottom() {
       <GlobalFonts />
       <BottomContainer>
         <ListBestmenu tap={tab} onClick={() => {setTab(0);}}>
-            <br>대표 메뉴</br>
+            대표 메뉴
         </ListBestmenu>
 
         <ListReview tap={tab} onClick={() => {setTab(1);}}>
-           <br>리뷰</br>
+           리뷰
        </ListReview>
        <ListBox>
           <TabContent tab={tab} />
