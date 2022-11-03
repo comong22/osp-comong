@@ -8,16 +8,14 @@ export const ListBG = styled.div`
 
 export const Container = styled.div`
   display: grid;
-  width: 90%;
-  margin: 0 5% 0 5%;
+  width: 100%;
 `;
 
 export const PageRow = styled.div`
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(9, 1fr);
   margin-top: 10%;
-  grid-template-areas: "col1 col2 col2 col2 col2 col2 col2 col2 col2 col2";
-
+  grid-template-areas: "col1 col2 col2 col2 col2 col2 col2 col2 col2";
 `;
 
 export const Column1 = styled.div`
@@ -38,17 +36,17 @@ export const ListContents = styled.div`
 
 export const ListRow = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-areas: "row1 row1 row1" "row2 row2 row2" "row3 row3 row3";
-
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  grid-template-areas: "row1 row1" "row2 row2" "row3 row3";
 `;
 
 export const ListPlace01 = styled.div`
   grid-area: row1;
   max-width: 100px;
-  margin: 10px 0 0px 50px;
+  margin: 10px 0 0px 0;
   text-align: center;
-
+  
   font-family: "Spoqa Han Sans Neo Bold";
   font-style: normal;
 
@@ -59,7 +57,6 @@ export const ListPlace01 = styled.div`
   color: ${({ tab }) => (tab === 0 ? "#FFBA94" : "#464646")};
 
   &:hover {
-
     font-family: "Spoqa Han Sans Neo Bold";
     font-style: normal;
     font-weight: 700;
@@ -67,14 +64,14 @@ export const ListPlace01 = styled.div`
     line-height: 150%;
     /* identical to box height, or 30px */
 
-    color: #FFBA94;
+    color: #ffba94;
   }
 `;
 
 export const ListPlace02 = styled.div`
   grid-area: row2;
   max-width: 100px;
-  margin: 20px 0 0px 50px;
+  margin: 20px 0 0px 0;
   text-align: center;
 
   font-family: "Spoqa Han Sans Neo Bold";
@@ -87,7 +84,6 @@ export const ListPlace02 = styled.div`
   color: ${({ tab }) => (tab === 1 ? "#FFBA94" : "#464646")};
 
   &:hover {
-
     font-family: "Spoqa Han Sans Neo Bold";
     font-style: normal;
     font-weight: 700;
@@ -95,13 +91,14 @@ export const ListPlace02 = styled.div`
     line-height: 150%;
     /* identical to box height, or 30px */
 
-    color: #FFBA94;
+    color: #ffba94;
   }
 `;
+
 export const ListPlace03 = styled.div`
   grid-area: row3;
   max-width: 100px;
-  margin: 20px 0 0px 50px;
+  margin: 20px 0 0px 0;
   text-align: center;
   font-family: "Spoqa Han Sans Neo Bold";
   font-style: normal;
@@ -113,7 +110,6 @@ export const ListPlace03 = styled.div`
   color: ${({ tab }) => (tab === 2 ? "#FFBA94" : "#464646")};
 
   &:hover {
-
     font-family: "Spoqa Han Sans Neo Bold";
     font-style: normal;
     font-weight: 700;
@@ -121,16 +117,15 @@ export const ListPlace03 = styled.div`
     line-height: 150%;
     /* identical to box height, or 30px */
 
-    color: #FFBA94;
+    color: #ffba94;
   }
 `;
 
 export const ListBox = styled.div`
-  max-width: 1469px;
-  height: 800px;
-  margin: 0 0 0 50px;
-  background: #FFFFFF;
+  max-width: 1200px;
+  height: 500px;
+  margin: 0 0 0 30px;
+  background: #ffffff;
   box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
-
 `;
