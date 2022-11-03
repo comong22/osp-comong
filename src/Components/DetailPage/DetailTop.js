@@ -1,11 +1,7 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { main_data } from "../MainPage/data";
-import {
-  DetailInfo,
-  DetailCate,
-  DetailName,
-} from "./DetailStyle";
+import mappin from "../../images/main/mappin.svg";
 
 import "./DetailPage.css";
 
@@ -44,20 +40,17 @@ function DetailTop(props) {
           <img src={detailimg[id].src} />
         </div>
         <div className="topBox">
-          <DetailInfo>가게정보</DetailInfo>
-          <DetailName>{main_data[id].name}</DetailName>
-          <DetailCate>| {main_data[id].category}</DetailCate>
+          <div className="detailinfo">가게정보</div>
+          <div className="namefont">
+            {main_data[id].name} | {main_data[id].category}
+          </div>
           <div className="starfont">{main_data[id].star}</div>
-          <div className="addressfont">{main_data[id].address}</div>
+          <div className="addressfont"><img src={mappin} /> {main_data[id].address}</div>
           <div className="detailaddrfont">{main_data[id].detail_address}</div>
-          <div className="hoursfont">{main_data[id].business_hours}</div>
-          <div className="parkingfont">{main_data[id].parking}</div>
-          <div className="menu1font">{main_data[id].menu_1}</div>
-          <div className="price1font">{main_data[id].menu_1_price}</div>
-          <div className="menu2font">{main_data[id].menu_2}</div>
-          <div className="price2font">{main_data[id].menu_2_price}</div>
-          <div className="menu3font">{main_data[id].menu_3}</div>
-          <div className="price3font">{main_data[id].menu_3_price}</div>
+          <div className="telfont">{main_data[id].tel}</div>
+          <div className="menu1font">{main_data[id].menu_1} - {main_data[id].menu_1_price}</div>
+          <div className="menu2font">{main_data[id].menu_2} - {main_data[id].menu_2_price}</div>
+          <div className="menu3font">{main_data[id].menu_3} - {main_data[id].menu_3_price}</div>
         </div>
       </div>
       </TopContainer>
