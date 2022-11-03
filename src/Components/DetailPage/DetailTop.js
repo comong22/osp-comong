@@ -20,10 +20,26 @@ function DetailTop(props) {
   let item = props.MainData.find(function (x) {
     return x.id === id;
   });
+
+  const detailimg = [
+    { id: 0, src: require("../../images/detail/detail1.jpg") },
+    { id: 1, src: require("../../images/detail/detail2.jpg") },
+    { id: 2, src: require("../../images/detail/detail3.jpg") },
+    { id: 3, src: require("../../images/detail/detail4.jpg") },
+    { id: 4, src: require("../../images/detail/detail5.jpg") },
+    { id: 5, src: require("../../images/detail/detail6.jpg") },
+    { id: 6, src: require("../../images/detail/detail7.jpg") },
+    { id: 7, src: require("../../images/detail/detail8.jpg") },
+    { id: 8, src: require("../../images/detail/detail9.jpg") },
+  ];
+
   return (
     <>
     <TopContainer>
       <div className="detailBG">
+        <div className="eachDetailImg">
+          <img src={detailimg[id].src} />
+        </div>
         <div className="topBox">
           <div className="navdetailfont">가게 정보</div>
           <div>{item?.name}</div>
@@ -46,6 +62,8 @@ function DetailTop(props) {
     </>
   );
 }
+
+
 
 
 export default DetailTop;
