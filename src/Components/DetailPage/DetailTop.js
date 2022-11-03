@@ -37,7 +37,7 @@ function DetailTop(props) {
         <div>{item.menu_2_price}</div>
         <div>{item.menu_3}</div>
         <div>{item.menu_3_pirce}</div>
-        
+        {/* 리뷰 작성 버튼 필요 -> /review 페이지로 넘어갈 수 있게! */}
       </div>
       </TopContainer>
     </>
