@@ -13,10 +13,12 @@ function UploadPage(){
         <div className='uploadBG'>
             <div>
                 <div>
-                    <AddBox width="500px"></AddBox>
+                    <Box width="500px"></Box>
                 </div>
             </div>
             
         </div>
     )
 }
+
+export default UploadPage;
