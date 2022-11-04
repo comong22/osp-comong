@@ -11,6 +11,7 @@ import {
   Row1,
   Row2,
   Row3,
+  Row5,
   InfoCol,
   Star,
   MapPinIMG,
@@ -71,6 +72,8 @@ function DetailTop(props) {
               <Row1>
                 <DetailName>{main_data[id].name}</DetailName>
                 <Category>| {main_data[id].category}</Category>
+              </Row1>
+              <Row2>
                 <StarIMG src={star} alt="star" />
                 <Star>{main_data[id].star}</Star>
                 <MapPinIMG src={mappin} alt="mappin" />
@@ -88,8 +91,8 @@ function DetailTop(props) {
                 <Menu3>
                   {main_data[id].menu_3} - {main_data[id].menu_3_price}
                 </Menu3>
-              </Row1>
-              <Row2>
+              </Row2>
+              <Row5>
               <div>
                 <button
                   className="Rbutton"
@@ -100,7 +103,7 @@ function DetailTop(props) {
                   리뷰 작성
                 </button>
               </div>
-              </Row2>
+              </Row5>
               <Row3>
                 <ClockIMG src={clock} alt="clock" />
                 <Clock>{main_data[id].business_hours}</Clock>
