@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import styled from "styled-components";
 import { main_data } from "../MainPage/data";
 import mappin from "../../images/main/mappin.svg";
@@ -25,7 +25,6 @@ import {
   Menu1,
   Menu2,
   Menu3,
-
 }from "./DetailStyle.js";
 
 const TopContainer = styled.div`
@@ -38,7 +37,6 @@ const TopContainer = styled.div`
   z-index: 1;
   scroll-snap-align: start;
 `;
-
 
 function DetailTop(props) {
   const { id } = useParams(); // 유저가 URL 파라미터에 입력한 거 가져올 때 사용하는 훅
@@ -82,6 +80,11 @@ function DetailTop(props) {
                 <Menu2>{main_data[id].menu_2} - {main_data[id].menu_2_price}</Menu2>
                 <Menu3>{main_data[id].menu_3} - {main_data[id].menu_3_price}</Menu3>
               </Row2>
+              <div>
+             <Link to="../PostReviewPage/PostReview">
+             <button className="Rbutton">리뷰 작성</button>
+            </Link>
+            </div>
           </InfoCol>
         </div>
       </div>

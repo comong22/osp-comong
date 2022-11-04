@@ -157,4 +157,19 @@ a {
   border-radius: 25px;
 }
 
-
+.Rbutton{
+  background-color: #FFBA94;
+  box-shadow: 0px 4px 22px #FAD4B2;
+  color: white;
+  font-family: 'Spoqa Han Sans Neo';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 10px;
+  height: 40px;
+  width: 120px;
+  border: transparent;
+  float:inline-start;
+  position: relative;
+  left: 43%;
+}
