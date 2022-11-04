@@ -55,7 +55,7 @@ export const TabRow2 = styled.div`
 
 export const InfoCol = styled.div`
   display: grid;
-  grid-template-rows: 80px 180px 180px;
+  grid-template-rows: 80px 180px 220px;
   grid-template-columns :repeat(2, 1fr);
   grid-template-areas: "row1 row2" "row3 row4" "row5 row6";
 `;
@@ -65,18 +65,18 @@ export const Row1 = styled.div`
 `;
 
 export const Row2 = styled.div`
-  grid-area: row3;
+  grid-area: row2;
   align-self: center;
 `;
 
 export const Row3 = styled.div`
-  margin-top: 24px;
-  grid-area: row4;
+  align-self : center;
+  grid-area: row3;
 `;
 
 export const Row4 = styled.div`
-  grid-area: row2;
-  align-self: center;
+  margin-top : 24px;
+  grid-area: row4;  
 `;
 
 export const Row5 = styled.div`

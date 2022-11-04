@@ -9,8 +9,8 @@ import clock from "../../images/main/clock.svg";
 import finfo from "../../images/detail/fi_info.svg";
 import {
   Row1,
-  Row2,
   Row3,
+  Row4,
   Row5,
   InfoCol,
   Star,
@@ -73,7 +73,7 @@ function DetailTop(props) {
                 <DetailName>{main_data[id].name}</DetailName>
                 <Category>| {main_data[id].category}</Category>
               </Row1>
-              <Row2>
+              <Row3>
                 <StarIMG src={star} alt="star" />
                 <Star>{main_data[id].star}</Star>
                 <MapPinIMG src={mappin} alt="mappin" />
@@ -91,7 +91,14 @@ function DetailTop(props) {
                 <Menu3>
                   {main_data[id].menu_3} - {main_data[id].menu_3_price}
                 </Menu3>
-              </Row2>
+              </Row3>
+              <Row4>
+                <ClockIMG src={clock} alt="clock" />
+                <Clock>{main_data[id].business_hours}</Clock>
+                <Addhours>{main_data[id].add_hours}</Addhours>
+                <ParkingIMG src={finfo} alt="finfo" />
+                <Parking>{main_data[id].parking}</Parking>
+              </Row4>
               <Row5>
               <div>
                 <button
@@ -104,13 +111,6 @@ function DetailTop(props) {
                 </button>
               </div>
               </Row5>
-              <Row3>
-                <ClockIMG src={clock} alt="clock" />
-                <Clock>{main_data[id].business_hours}</Clock>
-                <Addhours>{main_data[id].add_hours}</Addhours>
-                <ParkingIMG src={finfo} alt="finfo" />
-                <Parking>{main_data[id].parking}</Parking>
-              </Row3>
             </InfoCol>
           </div>
         </div>
