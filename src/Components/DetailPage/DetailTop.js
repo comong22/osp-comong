@@ -5,6 +5,8 @@ import mappin from "../../images/main/mappin.svg";
 import star from "../../images/detail/star.svg";
 import phone from "../../images/detail/phone.svg";
 import menu from "../../images/detail/menu.svg";
+import clock from "../../images/main/clock.svg";
+import finfo from "../../images/main/clock.svg";
 import {
   Row1,
   Row2,
@@ -25,6 +27,10 @@ import {
   Menu1,
   Menu2,
   Menu3,
+  ClockIMG,
+  Clock,
+  Parking,
+  ParkingIMG,
 } from "./DetailStyle.js";
 
 const TopContainer = styled.div`
@@ -71,8 +77,6 @@ function DetailTop(props) {
                 <MapPinIMG src={mappin} alt="mappin" />
                 <Address>{main_data[id].address}</Address>
                 <Detailaddress>{main_data[id].detail_address}</Detailaddress>
-              </Row1>
-              <Row2>
                 <PhoneIMG src={phone} alt="phone" />
                 <Tel>{main_data[id].tel}</Tel>
                 <MenuIMG src={menu} alt="menu" />
@@ -85,8 +89,9 @@ function DetailTop(props) {
                 <Menu3>
                   {main_data[id].menu_3} - {main_data[id].menu_3_price}
                 </Menu3>
-              </Row2>
-              <div>
+              </Row1>
+              <Row2>
+                <div>
                 <button
                   className="Rbutton"
                   onClick={() => {
@@ -96,6 +101,13 @@ function DetailTop(props) {
                   리뷰 작성
                 </button>
               </div>
+              </Row2>
+              <Row3>
+                <ClockIMG src={clock} alt="clock" />
+                <Clock>{main_data[id].business_hours}</Clock>
+                <ParkingIMG src={finfo} alt="finfo" />
+                <Parking>{main_data[id].parking}</Parking>
+              </Row3>
             </InfoCol>
           </div>
         </div>
