@@ -55,7 +55,7 @@ export const TabRow2 = styled.div`
 
 export const InfoCol = styled.div`
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 320px 100px 10px;
   grid-template-columns :repeat(2, 1fr);
   grid-template-areas: "row1 row2" "row3 row4" "row5 row6";
 `;

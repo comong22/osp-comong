@@ -131,7 +131,6 @@ a {
   font-size: 38px;
   text-align: left;
   padding-top: 95px;
-  padding-bottom : 15px;
   padding-left: 80px;
   color: #000;
 }
@@ -171,4 +170,5 @@ a {
   float:inline-start;
   margin-left: 280px;
   left: 43%;
+  position : center;
 }
