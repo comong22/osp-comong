@@ -6,6 +6,17 @@ export const ListBG = styled.div`
   height: 100vh;
 `;
 
+export const ListName = styled.div`
+  grid-area: row1;
+  margin: 10px 0 0px 0;
+  font-family: "Spoqa Han Sans Neo Bold";
+  font-style: normal;
+  font-size: 34px;
+  line-height: 170%;
+  color: #ffba94;
+`;
+
+
 export const Container = styled.div`
   display: grid;
   width: 100%;

@@ -123,7 +123,7 @@ export const place02_data = [ //  place02 : 이대 후문
     },
     {
         id: 8,
-        name: "식타",
+        name: "식탁",
         address: "서울 서대문구 성산로 527",
         business_hours: "11 : 00 - 22 : 00",
         signature_menu: "와인 소스 스테이크"
