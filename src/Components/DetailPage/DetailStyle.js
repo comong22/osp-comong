@@ -55,7 +55,7 @@ export const TabRow2 = styled.div`
 
 export const InfoCol = styled.div`
   display: grid;
-  grid-template-rows: 320px 100px 10px;
+  grid-template-rows: 315px 100px 10px;
   grid-template-columns :repeat(2, 1fr);
   grid-template-areas: "row1 row2" "row3 row4" "row5 row6";
 `;
@@ -126,12 +126,6 @@ export const MapPinIMG = styled.img`
   padding-left:82px;
 `;
 
-export const StarIMG = styled.img`
-  float: left;
-  max-width: 22px;
-  margin-right: 10px;
-`;
-
 export const ClockIMG = styled.img`
   float: left;
   max-width: 22px;
@@ -158,6 +152,12 @@ export const MenuIMG = styled.img`
   padding-left : 80px;
 `;
 
+export const StarIMG = styled.img`
+  float: left;
+  max-width: 22px;
+  margin-right: 10px;
+`;
+
 export const Star = styled.div`
   max-width: 1000px;
   font-family: "Spoqa Han Sans Neo Regular";
@@ -165,7 +165,6 @@ export const Star = styled.div`
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
-  padding-left : auto;
   padding-bottom : 20px;
   /* or 27px */
 
@@ -272,7 +271,7 @@ export const Addhours = styled.div`
   line-height: 150%;
 
   padding-left : 30px;
-  padding-bottom : 17px;
+  padding-bottom : 20px;
   /* or 27px */
 
   color: #424242;

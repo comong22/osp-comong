@@ -6,13 +6,11 @@ import star from "../../images/detail/star.svg";
 import phone from "../../images/detail/phone.svg";
 import menu from "../../images/detail/menu.svg";
 import clock from "../../images/main/clock.svg";
-import finfo from "../../images/main/clock.svg";
+import finfo from "../../images/detail/fi_info.svg";
 import {
   Row1,
   Row2,
   Row3,
-  Row4,
-  Row5,
   InfoCol,
   Star,
   MapPinIMG,
