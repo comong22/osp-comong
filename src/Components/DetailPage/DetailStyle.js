@@ -70,8 +70,8 @@ export const Row2 = styled.div`
 `;
 
 export const Row3 = styled.div`
+  margin-top: 24px;
   grid-area: row4;
-  align-self: center;
 `;
 
 export const Row4 = styled.div`
