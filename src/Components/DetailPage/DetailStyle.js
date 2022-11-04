@@ -193,7 +193,7 @@ export const Detailaddress = styled.div`
   font-size: 16px;
   text-align: left;
   padding-left : 113px;
-  padding-bottom : 13px;
+  padding-bottom : 16px;
   color: #424242;
 `;
 
@@ -258,6 +258,21 @@ export const Clock = styled.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
+  /* or 27px */
+
+  color: #424242;
+`;
+
+export const Addhours = styled.div`
+  max-width: 1000px;
+  font-family: "Spoqa Han Sans Neo Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+  padding-left : 30px;
+  padding-bottom : 17px;
   /* or 27px */
 
   color: #424242;

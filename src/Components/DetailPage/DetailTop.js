@@ -31,6 +31,7 @@ import {
   Clock,
   Parking,
   ParkingIMG,
+  Addhours,
 } from "./DetailStyle.js";
 
 const TopContainer = styled.div`
@@ -91,7 +92,7 @@ function DetailTop(props) {
                 </Menu3>
               </Row1>
               <Row2>
-                <div>
+              <div>
                 <button
                   className="Rbutton"
                   onClick={() => {
@@ -105,6 +106,7 @@ function DetailTop(props) {
               <Row3>
                 <ClockIMG src={clock} alt="clock" />
                 <Clock>{main_data[id].business_hours}</Clock>
+                <Addhours>{main_data[id].add_hours}</Addhours>
                 <ParkingIMG src={finfo} alt="finfo" />
                 <Parking>{main_data[id].parking}</Parking>
               </Row3>
