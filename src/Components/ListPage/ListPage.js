@@ -132,9 +132,9 @@ function TabContent(props) {
 }
 
 function Place01() {
-  let [Place01Data, setPlace01Data] = useState(place01_data); // 정문 맛집 데이터
   return (
     <>
+    <Container>
      <ListName>이대 정문 맛집</ListName>
      <InsidePage>
         <Row1>
@@ -204,14 +204,15 @@ function Place01() {
           </InsideInfo>
         </Row3>
      </InsidePage>
+     </Container>
     </>
   );
 }
 
 function Place02() {
-  let [Place02Data, setPlace02Data] = useState(place02_data); // 후문 맛집 데이터
-  return (
+   return (
     <>
+    <Container>
       <ListName>이대 후문 맛집</ListName>
       <InsidePage>
         <Row1>
@@ -281,14 +282,15 @@ function Place02() {
           </InsideInfo>
         </Row3>
      </InsidePage>
+     </Container>
     </>
   );
 }
 
 function Place03() {
-  let [Place03Data, setPlace03Data] = useState(place03_data); // 신촌 맛집 데이터
   return (
     <>
+    <Container>
       <ListName>신촌 맛집</ListName>
       <InsidePage>
         <Row1>
@@ -358,10 +360,8 @@ function Place03() {
           </InsideInfo>
         </Row3>
      </InsidePage>
+     </Container>
     </>
   );
 }
 export default ListPage;
-
-
-// let [MainData, setMainData] = useState(main_data); // data.js에 있는 데이터
