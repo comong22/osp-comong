@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { GlobalFonts } from "../../fonts/font";
 import {
+  ListName,
   Column1,
   Column2,
   Container,
@@ -88,7 +89,7 @@ function Place01() {
   let [Place01Data, setPlace01Data] = useState(place01_data); // 정문 맛집 데이터
   return (
     <>
-      <div>이대 정문 맛집 리스트</div>
+    <ListName>이대 정문 맛집</ListName>
     </>
   );
 }
@@ -97,7 +98,7 @@ function Place02() {
   let [Place02Data, setPlace02Data] = useState(place02_data); // 후문 맛집 데이터
   return (
     <>
-      <div>이대 후문 맛집 리스트</div>
+      <ListName>이대 후문 맛집</ListName>
     </>
   );
 }
@@ -106,9 +107,12 @@ function Place03() {
   let [Place03Data, setPlace03Data] = useState(place03_data); // 신촌 맛집 데이터
   return (
     <>
-      <div>신촌 맛집 리스트</div>
+      <ListName>신촌 맛집</ListName>
       <div>{Place03Data[0].name}</div>
     </>
   );
 }
 export default ListPage;
+
+
+// let [MainData, setMainData] = useState(main_data); // data.js에 있는 데이터

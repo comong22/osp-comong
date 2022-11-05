@@ -1,14 +1,12 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { main_data } from "../MainPage/data";
 import mappin from "../../images/main/mappin.svg";
 import star from "../../images/detail/star.svg";
 import phone from "../../images/detail/phone.svg";
 import menu from "../../images/detail/menu.svg";
-import PostReview from "../PostReviewPage/PostReview";
 import {
   Row1,
-  Row2,
   Row3,
   Row4,
   Row5,
@@ -26,14 +24,19 @@ import {
   Menu1,
   Menu2,
   Menu3,
-}from "./DetailStyle.js";
+  ClockIMG,
+  Clock,
+  Parking,
+  ParkingIMG,
+  Addhours,
+} from "./DetailStyle.js";
 
 const TopContainer = styled.div`
   display: flex;
   background: #fff7ef;
   height: 100vh;
   width: 100%;
-  
+
   position: relative;
   z-index: 1;
   scroll-snap-align: start;
@@ -41,7 +44,7 @@ const TopContainer = styled.div`
 
 function DetailTop(props) {
   const { id } = useParams(); // 유저가 URL 파라미터에 입력한 거 가져올 때 사용하는 훅
-
+  let navigate = useNavigate(); // 페이지 이동
   const detailimg = [
     { id: 0, src: require("../../images/detail/detail1.jpg") },
     { id: 1, src: require("../../images/detail/detail2.jpg") },
@@ -56,45 +59,55 @@ function DetailTop(props) {
 
   return (
     <>
-    <TopContainer>
-      <div className="detailBG">
-        <div className="eachDetailImg">
-          <img src={detailimg[id].src} />
-        </div>
-        <div className="topBox">
-          <div className="detailinfo">가게정보</div>
-          <InfoCol>
+      <TopContainer>
+        <div className="detailBG">
+          <div className="eachDetailImg">
+            <img src={detailimg[id].src} />
+          </div>
+          <div className="topBox">
+            <div className="detailinfo">가게정보</div>
+            <InfoCol>
               <Row1>
                 <DetailName>{main_data[id].name}</DetailName>
                 <Category>| {main_data[id].category}</Category>
+              </Row1>
+              <Row3>
                 <StarIMG src={star} alt="star" />
                 <Star>{main_data[id].star}</Star>
                 <MapPinIMG src={mappin} alt="mappin" />
                 <Address>{main_data[id].address}</Address>
                 <Detailaddress>{main_data[id].detail_address}</Detailaddress>
-              </Row1>
-              <Row2>
                 <PhoneIMG src={phone} alt="phone" />
                 <Tel>{main_data[id].tel}</Tel>
                 <MenuIMG src={menu} alt="menu" />
-                <Menu1>{main_data[id].menu_1} - {main_data[id].menu_1_price}</Menu1>
-                <Menu2>{main_data[id].menu_2} - {main_data[id].menu_2_price}</Menu2>
-                <Menu3>{main_data[id].menu_3} - {main_data[id].menu_3_price}</Menu3>
-              </Row2>
+                <Menu1>
+                  {main_data[id].menu_1} - {main_data[id].menu_1_price}
+                </Menu1>
+                <Menu2>
+                  {main_data[id].menu_2} - {main_data[id].menu_2_price}
+                </Menu2>
+                <Menu3>
+                  {main_data[id].menu_3} - {main_data[id].menu_3_price}
+                </Menu3>
+              </Row3>
+              <Row4>
+                <ClockIMG src={clock} alt="clock" />
+                <Clock>{main_data[id].business_hours}</Clock>
+                <Addhours>{main_data[id].add_hours}</Addhours>
+                <ParkingIMG src={finfo} alt="finfo" />
+                <Parking>{main_data[id].parking}</Parking>
+              </Row4>
+              <Row5>
               <div>
-             <Link to="/review">
+             <Link to="../PostReviewPage/PostReview">
              <button className="Rbutton">리뷰 작성</button>
             </Link>
             </div>
           </InfoCol>
         </div>
-      </div>
       </TopContainer>
     </>
   );
 }
-
-
-
 
 export default DetailTop;

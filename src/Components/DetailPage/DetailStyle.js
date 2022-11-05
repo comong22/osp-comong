@@ -55,8 +55,9 @@ export const TabRow2 = styled.div`
 
 export const InfoCol = styled.div`
   display: grid;
-  grid-template-rows: repeat(5, 1fr);
-  grid-template-areas: "row1" "row2" "row3" "row4" "row5";
+  grid-template-rows: 80px 180px 220px;
+  grid-template-columns :repeat(2, 1fr);
+  grid-template-areas: "row1 row2" "row3 row4" "row5 row6";
 `;
 export const Row1 = styled.div`
   align-self: center;
@@ -69,17 +70,22 @@ export const Row2 = styled.div`
 `;
 
 export const Row3 = styled.div`
+  align-self : center;
   grid-area: row3;
-  align-self: center;
 `;
 
 export const Row4 = styled.div`
-  grid-area: row4;
-  align-self: center;
+  margin-top : 24px;
+  grid-area: row4;  
 `;
 
 export const Row5 = styled.div`
   grid-area: row5;
+  align-self: center;
+`;
+
+export const Row6 = styled.div`
+  grid-area: row6;
   align-self: center;
 `;
 
@@ -120,13 +126,13 @@ export const MapPinIMG = styled.img`
   padding-left:82px;
 `;
 
-export const StarIMG = styled.img`
+export const ClockIMG = styled.img`
   float: left;
   max-width: 22px;
   margin-right: 10px;
 `;
 
-export const ClockIMG = styled.img`
+export const ParkingIMG = styled.img`
   float: left;
   max-width: 22px;
   margin-right: 10px;
@@ -146,6 +152,13 @@ export const MenuIMG = styled.img`
   padding-left : 80px;
 `;
 
+export const StarIMG = styled.img`
+  float: left;
+  max-width: 22px;
+  margin-right: 10px;
+  padding-left : 80px;
+`;
+
 export const Star = styled.div`
   max-width: 1000px;
   font-family: "Spoqa Han Sans Neo Regular";
@@ -153,7 +166,6 @@ export const Star = styled.div`
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
-  padding-left : auto;
   padding-bottom : 20px;
   /* or 27px */
 
@@ -181,7 +193,7 @@ export const Detailaddress = styled.div`
   font-size: 16px;
   text-align: left;
   padding-left : 113px;
-  padding-bottom : 13px;
+  padding-bottom : 16px;
   color: #424242;
 `;
 
@@ -234,6 +246,45 @@ export const Menu3 = styled.div`
   font-size: 16px;
   line-height: 150%;
   padding-left : 117px;
+  /* or 27px */
+
+  color: #424242;
+`;
+
+export const Clock = styled.div`
+  max-width: 1000px;
+  font-family: "Spoqa Han Sans Neo Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  /* or 27px */
+
+  color: #424242;
+`;
+
+export const Addhours = styled.div`
+  max-width: 1000px;
+  font-family: "Spoqa Han Sans Neo Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+  padding-left : 30px;
+  padding-bottom : 20px;
+  /* or 27px */
+
+  color: #424242;
+`;
+
+export const Parking = styled.div`
+  max-width: 1000px;
+  font-family: "Spoqa Han Sans Neo Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
   /* or 27px */
 
   color: #424242;
