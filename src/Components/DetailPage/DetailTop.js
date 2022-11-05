@@ -119,4 +119,3 @@ function DetailTop(props) {
 }
 
 export default DetailTop;
-*/
