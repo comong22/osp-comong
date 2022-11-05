@@ -55,7 +55,7 @@ export const TabRow2 = styled.div`
 
 export const InfoCol = styled.div`
   display: grid;
-  grid-template-rows: 80px 180px 220px;
+  grid-template-rows: 23% 60% 60%;
   grid-template-columns :repeat(2, 1fr);
   grid-template-areas: "row1 row2" "row3 row4" "row5 row6";
 `;
@@ -75,7 +75,7 @@ export const Row3 = styled.div`
 `;
 
 export const Row4 = styled.div`
-  margin-top : 24px;
+  margin-top : 10%;
   grid-area: row4;  
 `;
 
@@ -92,7 +92,7 @@ export const Row6 = styled.div`
 
 export const DetailName = styled.div`
   float: left;
-  margin-right: 10px;
+  margin-right: 3%;
   font-family: "Spoqa Han Sans Neo Bold";
   font-style: normal;
   font-weight: 700;
@@ -103,60 +103,60 @@ export const DetailName = styled.div`
   font-feature-settings: "pnum" on, "lnum" on;
 
   color: #424242;
-  padding-left : 80px;
-  padding-bottom : 20px;
+  padding-left : 18%;
+  padding-bottom : 3%;
 
 `;
 
 export const Category = styled.div`
-  margin-top: 5px;
+  margin-top: 1%;
   font-family: "Spoqa Han Sans Neo Regular";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  padding-bottom : 20px;
+  padding-bottom : 3%;
   /* or 24px */
   color: #000000;
 `;
 export const MapPinIMG = styled.img`
   float: left;
   max-width: 22px;
-  margin-right: 10px;
-  padding-left:82px;
+  margin-right: 1%;
+  padding-left: 18%;
 `;
 
 export const ClockIMG = styled.img`
   float: left;
   max-width: 22px;
-  margin-right: 10px;
+  margin-right: 4%;
 `;
 
 export const ParkingIMG = styled.img`
   float: left;
   max-width: 22px;
-  margin-right: 10px;
+  margin-right: 4%;
 `;
 
 export const PhoneIMG = styled.img`
   float: left;
   ax-width: 13px;
-  margin-right: 10px;
-  padding-left : 80px;
+  margin-right: 2%;
+  padding-left : 17%;
 `;
 
 export const MenuIMG = styled.img`
   float: left;
   ax-width: 17px;
-  margin-right: 10px;
-  padding-left : 80px;
+  margin-right: 2%;
+  padding-left : 17%;
 `;
 
 export const StarIMG = styled.img`
   float: left;
   max-width: 22px;
-  margin-right: 10px;
-  padding-left : 80px;
+  margin-right: 1%;
+  padding-left : 18%;
 `;
 
 export const Star = styled.div`
@@ -166,7 +166,7 @@ export const Star = styled.div`
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
-  padding-bottom : 20px;
+  padding-bottom : 5%;
   /* or 27px */
 
   color: #424242;
@@ -180,7 +180,7 @@ export const Address = styled.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  padding-left : 113px;
+  padding-left : 25%;
   /* or 27px */
 
   color: #424242;
@@ -192,8 +192,8 @@ export const Detailaddress = styled.div`
   font-weight: 400;
   font-size: 16px;
   text-align: left;
-  padding-left : 113px;
-  padding-bottom : 16px;
+  padding-left : 25%;
+  padding-bottom : 5%;
   color: #424242;
 `;
 
@@ -204,8 +204,8 @@ export const Tel = styled.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  padding-left : 113px;
-  padding-bottom : 20px;
+  padding-left : 25%;
+  padding-bottom : 5%;
   /* or 27px */
 
   color: #424242;
@@ -218,8 +218,8 @@ export const Menu1 = styled.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  padding-left : 113px;
-  padding-top : 5px;
+  padding-left : 25%;
+  padding-top : 1%;
   /* or 27px */
 
   color: #424242;
@@ -232,7 +232,7 @@ export const Menu2 = styled.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  padding-left : 117px;
+  padding-left : 25%;
   /* or 27px */
 
   color: #424242;
@@ -245,7 +245,7 @@ export const Menu3 = styled.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  padding-left : 117px;
+  padding-left : 25%;
   /* or 27px */
 
   color: #424242;
@@ -271,8 +271,8 @@ export const Addhours = styled.div`
   font-size: 16px;
   line-height: 150%;
 
-  padding-left : 30px;
-  padding-bottom : 20px;
+  padding-left : 11%;
+  padding-bottom : 8%;
   /* or 27px */
 
   color: #424242;
