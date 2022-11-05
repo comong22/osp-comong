@@ -2,6 +2,7 @@ import { GlobalFonts } from "../../fonts/font";
 import "./PostReview.css";
 import {useState} from "react";
 import styled from "styled-components";
+import Modal from "./Modal";
 
 const PostRContainer = styled.div`
   background: #fff7ef;
@@ -10,6 +11,29 @@ const PostRContainer = styled.div`
   width: 100%;
   z-index: 3;
   scroll-snap-align: start;
+`;
+
+const ButtonR = styled.button`
+background-color: #ffa574;
+color: white;
+font-family: 'Spoqa Han Sans Neo';
+font-style: normal;
+font-weight: 700;  
+font-size: 20px;
+font-size: 14px;
+padding: 10px 25px;
+border: none;
+border-radius: 5px;
+color: white;
+cursor: pointer;
+&:hover{
+    background-color: #FAD4B2;
+}
+`;
+
+const Wrap = styled.div`
+text-align: center;
+marginL 50px auto;
 `;
 
 function PostReview(){
@@ -25,6 +49,12 @@ function PostReview(){
   const [text9,setText9] = useState('');
   const [text10,setText10] = useState('');
   const [text11,setText11] = useState('');
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const onClickButton = () => {
+    setIsOpen(true);
+  };
 
     return(
         <>
@@ -78,6 +108,10 @@ function PostReview(){
             </div>
             </div>
           </div>
+          <Wrap>
+          <ButtonR onClick={onClickButton}>등록하기</ButtonR>
+          {isOpen && (<Modal open={isOpen} onClose = {() => {setIsOpen(false);}}/>)}
+          </Wrap>
          </div>  
         </div>
         </PostRContainer>
