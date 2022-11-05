@@ -5,6 +5,8 @@ import mappin from "../../images/main/mappin.svg";
 import star from "../../images/detail/star.svg";
 import phone from "../../images/detail/phone.svg";
 import menu from "../../images/detail/menu.svg";
+import clock from "../../images/main/clock.svg";
+import finfo from "../../images/detail/fi_info.svg";
 import {
   Row1,
   Row3,
@@ -36,7 +38,6 @@ const TopContainer = styled.div`
   background: #fff7ef;
   height: 100vh;
   width: 100%;
-
   position: relative;
   z-index: 1;
   scroll-snap-align: start;
@@ -99,11 +100,18 @@ function DetailTop(props) {
               </Row4>
               <Row5>
               <div>
-             <Link to="../PostReviewPage/PostReview">
-             <button className="Rbutton">리뷰 작성</button>
-            </Link>
-            </div>
-          </InfoCol>
+                <button
+                  className="Rbutton"
+                  onClick={() => {
+                    navigate("/review");
+                  }}
+                >
+                  리뷰 작성
+                </button>
+              </div>
+              </Row5>
+            </InfoCol>
+          </div>
         </div>
       </TopContainer>
     </>
@@ -111,4 +119,3 @@ function DetailTop(props) {
 }
 
 export default DetailTop;
-*/

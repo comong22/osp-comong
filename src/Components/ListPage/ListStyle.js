@@ -117,7 +117,6 @@ export const Row3 = styled.div`
 export const ListContents = styled.div`
   z-index: 3;
   max-width: 1200px;
-
   flex-direction: column;
 `;
 
@@ -136,13 +135,10 @@ export const ListPlace01 = styled.div`
   
   font-family: "Spoqa Han Sans Neo Bold";
   font-style: normal;
-
   font-weight: ${({ tab }) => (tab === 0 ? 700 : 600)};
   font-size: 24px;
   line-height: 150%;
-
   color: ${({ tab }) => (tab === 0 ? "#FFBA94" : "#464646")};
-
   &:hover {
     font-family: "Spoqa Han Sans Neo Bold";
     font-style: normal;
@@ -150,7 +146,6 @@ export const ListPlace01 = styled.div`
     font-size: 24px;
     line-height: 150%;
     /* identical to box height, or 30px */
-
     color: #ffba94;
   }
 `;
@@ -165,16 +160,12 @@ export const ListPlace02 = styled.div`
   max-width: 100px;
   margin: 20px 0 0px 0;
   text-align: center;
-
   font-family: "Spoqa Han Sans Neo Bold";
   font-style: normal;
-
   font-weight: ${({ tab }) => (tab === 1 ? 700 : 600)};
   font-size: 24px;
   line-height: 150%;
-
   color: ${({ tab }) => (tab === 1 ? "#FFBA94" : "#464646")};
-
   &:hover {
     font-family: "Spoqa Han Sans Neo Bold";
     font-style: normal;
@@ -182,7 +173,6 @@ export const ListPlace02 = styled.div`
     font-size: 24px;
     line-height: 150%;
     /* identical to box height, or 30px */
-
     color: #ffba94;
   }
 `;
@@ -194,13 +184,10 @@ export const ListPlace03 = styled.div`
   text-align: center;
   font-family: "Spoqa Han Sans Neo Bold";
   font-style: normal;
-
   font-weight: ${({ tab }) => (tab === 2 ? 700 : 600)};
   font-size: 24px;
   line-height: 150%;
-
   color: ${({ tab }) => (tab === 2 ? "#FFBA94" : "#464646")};
-
   &:hover {
     font-family: "Spoqa Han Sans Neo Bold";
     font-style: normal;
@@ -208,7 +195,6 @@ export const ListPlace03 = styled.div`
     font-size: 24px;
     line-height: 150%;
     /* identical to box height, or 30px */
-
     color: #ffba94;
   }
 `;
@@ -246,6 +232,5 @@ export const InfoText = styled.div`
   font-size: 16px;
   line-height: 150%;
   /* or 27px */
-
   color: #000000;
 `;
