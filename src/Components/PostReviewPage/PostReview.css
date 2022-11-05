@@ -45,8 +45,6 @@
   .line{
     display: flex;
     flex-direction:row;
-    justify-content: center;
-    align-items: center;
   }
 
   .TextI{
@@ -59,33 +57,22 @@
   .Write1{
     border-radius: 8px;
     border-color: transparent;
+    width: 100px;
     height: 30px;
+    resize: none;
   }
   
   .Write2{
     border-radius: 8px;
     border-color: transparent;
-    width: 100px;
-    height: 30px;
-  }
-  
-  .Write3{
-    border-radius: 8px;
-    border-color: transparent;
-    width: 50px;
-    height: 30px;
-  }
-
-  .Write4{
-    border-radius: 8px;
-    border-color: transparent;
-    width: 400px;
-    height: 30px;
-  }
-
-  .Write5{
-    border-radius: 8px;
-    border-color: transparent;
     width: 300px;
     height: 30px;
+  }
+
+  .textArea{
+    width: 550px;
+    height: 250px;
+    border: none;
+    border-radius: 8px;
+    resize: none;
   }

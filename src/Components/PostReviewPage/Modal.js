@@ -83,9 +83,9 @@ function Modal({onClose}){
                     <i className="fa-solid"></i>
                 </CloseButton>
                 <Contents>
-                    <h1>맛집을 등록하시겠습니까?</h1>
+                    <h1>리뷰를 등록하시겠습니까?</h1>
                     <h4>업로드 후에는 수정이 불가합니다.</h4>
-                    <Button onClick={handleClose}>맛집 등록하기</Button>
+                    <Button onClick={handleClose}>리뷰 등록하기</Button>
                 </Contents>
             </ModalWrap>
         </OverLay>
