@@ -2,6 +2,9 @@ import './UploadPage.css';
 import Add from '../../images/add.svg';
 //import { useState } from 'react';
 //import { useCallback } from 'react';
+//import Modal from 'react-modal';
+
+
 
 function AddBox(props){
     
@@ -17,7 +20,7 @@ function InputBox(props){
     return(
         <span style={{marginRight:props.margin}}>
         <span className='text'>{props.title}</span>
-        <input className="inputText" type='text' size={props.size} defaultValue={props.value} ></input>
+        <input className="inputText" type='text' size={props.size} placeholder={props.value} ></input>
         </span>
     )
 }
@@ -54,20 +57,22 @@ function UploadPage(){
                         <InputBox title="영업시간" value="09:00~21:00" size='18' margin="40px"></InputBox>
                         <InputBox title="사이트" value="인스타그램, 대표사이트" size='53'></InputBox>
                     </div>
-                    <hr width="650" style={{position:'absolute',top:'355px',right:'198px',zIndex:"1",backgroundColor:"#FFBA94"}}></hr>
-                    <div  className='title' style={{position:'relative',marginLeft:'220px', backgroundColor:"#FFF7EF",width:"250px", border:"100px",zIndex:"2"}} > 대표메뉴 등록하기</div>
+                    <hr width="650" style={{position:'absolute',top:'375px',right:'198px',zIndex:"1",backgroundColor:"#FFBA94"}}></hr>
+                    <div  className='title' style={{marginTop:"30px",position:'relative',marginLeft:'220px', backgroundColor:"#FFF7EF",width:"250px", border:"100px",zIndex:"2"}} > 대표메뉴 등록하기</div>
                     <br></br>
                     <div style={{display:"flex", justifyContent:"left",margin:"0px 90px"}}>
                         <AddBox size="150px"></AddBox>
-                        <div style={{float: "right"}} >
+                        <div style={{float: "right",marginTop:"30px",marginLeft:"60px"}} >
                             <InputBox title="메뉴명"></InputBox>
                             <br></br>
                             <br></br>
-                            <InputBox title="가격" ></InputBox>
+                            <InputBox title="가격" size="15" ></InputBox>
                         </div>
                     </div>
-                    <div style={{display:"flex", justifyContent:"center",marginTop:"30px"}}>
-                        <button className='submitButton'>등록하기</button>
+                    <div style={{display:"flex", justifyContent:"left",marginTop:"30px",marginLeft:"310px"}}>
+                        <button className='submitButton' onClick={function(event){
+                            
+                        }} >등록하기</button>
                     </div>
                     
                 </div>
