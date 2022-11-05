@@ -1,4 +1,4 @@
-import { useParams, Link, useNavigate } from "react-router-dom";
+/*import { useParams, Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { main_data } from "../MainPage/data";
 import mappin from "../../images/main/mappin.svg";
@@ -111,3 +111,4 @@ function DetailTop(props) {
 }
 
 export default DetailTop;
+*/

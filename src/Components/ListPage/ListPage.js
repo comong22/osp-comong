@@ -1,13 +1,9 @@
 import { useState } from "react";
 import { GlobalFonts } from "../../fonts/font";
-import "./ListPage.css";
 import {
   ListName,
   Column1,
   Column2,
-  Ccolumn1,
-  Ccolumn2,
-  Column3,
   Row1,
   Row2,
   Row3,
@@ -24,10 +20,16 @@ import {
   MapPinIMG,
   ClockIMG,
   InfoText,
+  MainIMG,
   InsidePage,
+  InsideInfo,
+  Rrow1,
+  Rrow2,
+  Rrow3,
+  RestName,
 } from "./ListStyle";
 import 고삼이 from "../../images/list/고삼이.jpg";
-import 노란집 from "../../images/list/노란집.jpg";
+import yellowhouse from "../../images/list/yellowhouse.jpg";
 import 담산 from "../../images/list/담산.jpg";
 import 대치영지 from "../../images/list/대치영지.jpg";
 import 돈부리모노 from "../../images/list/돈부리모노.jpg";
@@ -35,7 +37,7 @@ import 돈천동 from "../../images/list/돈천동.jpg";
 import 딸기골 from "../../images/list/딸기골.jpg";
 import 란주탕슉 from "../../images/list/란주탕슉.jpg";
 import 로드샌드위치 from "../../images/list/로드샌드위치.jpg";
-import 모미지 from "../../images/list/모미지.jpg";
+import momigi from "../../images/list/momigi.jpg";
 import 미도인 from "../../images/list/미도인.jpg";
 import 소신이쏘 from "../../images/list/소신이쏘.jpg";
 import 스탠바이키친 from "../../images/list/스탠바이키친.jpg";
@@ -44,7 +46,7 @@ import 식탁 from "../../images/list/식탁.jpg";
 import 어바웃샤브 from "../../images/list/어바웃샤브.jpg";
 import 원즈오운 from "../../images/list/원즈오운.jpg";
 import 유소바 from "../../images/list/유소바.jpg";
-import 유야케도쿄 from "../../images/list/유야케도쿄.jpg";
+import yuyake from "../../images/list/yuyake.jpg";
 import 정통집 from "../../images/list/정통집.jpg";
 import 존재의이유 from "../../images/list/존재의이유.jpg";
 import 파이홀 from "../../images/list/파이홀.jpg";
@@ -131,9 +133,36 @@ function Place01() {
   return (
     <>
      <ListName>이대 정문 맛집</ListName>
-     <Ccolumn1>
-  
-     </Ccolumn1>
+     <InsidePage>
+        <Row1>
+        <MainIMG
+          src = {yellowhouse}
+          />
+          <InsideInfo>
+            <Rrow1>
+              <RestName>{place01_data[0].name}</RestName>
+            </Rrow1>
+            <Rrow2>
+              <MapPinIMG src={mappin} alt="mappin" />
+              <InfoText>{place01_data[0].address}</InfoText>
+              
+              <ClockIMG src={clock} alt="clock" />
+              <InfoText>{place01_data[0].business_hours}</InfoText>
+            </Rrow2>
+            <Rrow3></Rrow3>
+          </InsideInfo>
+        </Row1>
+        <Row2>
+        <MainIMG
+          src = {momigi}
+          />
+        </Row2>
+        <Row3>
+        <MainIMG
+          src = {yuyake}
+          />
+        </Row3>
+     </InsidePage>
     </>
   );
 }

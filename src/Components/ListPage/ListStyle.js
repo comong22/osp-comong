@@ -6,6 +6,23 @@ export const ListBG = styled.div`
   height: 100vh;
 `;
 
+
+
+export const RestName = styled.div`
+  float: left;
+  margin-right: 10px;
+  font-family: "Spoqa Han Sans Neo Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+  /* or 114% */
+
+  font-feature-settings: "pnum" on, "lnum" on;
+
+  color: #000000;
+`;
+
 export const ListName = styled.div`
   grid-area: row1;
   margin: 10px 0 0px 0;
@@ -43,47 +60,58 @@ export const Column2 = styled.div`
 
 export const InsidePage = styled.div`
   display: grid;
-  grid-template-columns: 2fr 3fr 3fr;
-  grid-template-rows: repeat(9, 1fr);
   margin-top: 10px;
-  grid-template-areas: 
-  "c1 n1 b"
-  "c1 a1 bh1"
-  "c1 s1 b"
-  "c2 n2 b"
-  "c2 a2 bh2"
-  "c2 s2 b"
-  "c3 n3 b"
-  "c3 a3 bh3"
-  "c3 s3 b"     
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "rrow1" "rrow2" "rrow3"; 
 `;
 
-export const Ccolumn1 = styled.div`
-  grid-area: c1;
+export const InsideInfo = styled.div`
+  display: grid;
+  margin-left: 500px;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "rrrow1" "rrrow2" "rrrow3"; 
 `;
 
-export const Ccolumn2 = styled.div`
-  grid-area: c2;
-`;
-
-export const Column3 = styled.div`
+export const Rrow1 = styled.div`
   padding: 0;
-  grid-area: c3;
+  display: flex;
+  position: relative;
+  grid-area: rrrow1;
+`;
+
+export const Rrow2 = styled.div`
+  padding: 0;
+  display: flex;
+  position: relative;
+  grid-area: rrrow2;
+`;
+
+export const Rrow3 = styled.div`
+  padding: 0;
+  display: flex;
+  position: relative;
+  grid-area: rrrow3;
 `;
 
 export const Row1 = styled.div`
   padding: 0;
-  grid-area: col2;
+  display: flex;
+  position: relative;
+  grid-area: rrow1;
 `;
 
 export const Row2 = styled.div`
   padding: 0;
-  grid-area: col2;
+  display: flex;
+  position: relative;
+  grid-area: rrow2;
 `;
 
 export const Row3 = styled.div`
   padding: 0;
-  grid-area: col2;
+  display: flex;
+  position: relative;
+  grid-area: rrow3;
 `;
 
 export const ListContents = styled.div`
@@ -126,7 +154,12 @@ export const ListPlace01 = styled.div`
     color: #ffba94;
   }
 `;
-
+export const MainIMG = styled.img`
+  width: 100px;
+  height: 100px;
+  margin: 5px 0 40px 75px;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
+`;
 export const ListPlace02 = styled.div`
   grid-area: row2;
   max-width: 100px;
