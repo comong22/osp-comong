@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { GlobalFonts } from "../../fonts/font";
-import "./ListPage.css";
+// import "./ListPage.css";
 import {
   ListName,
   Column1,
