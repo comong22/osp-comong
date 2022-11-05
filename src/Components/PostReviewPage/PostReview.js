@@ -3,7 +3,8 @@ import "./PostReview.css";
 import {useState, useEffect} from "react";
 import styled from "styled-components";
 import Modal from "./Modal";
-import { FaStar } from 'react-icons/fa';
+import { FaStar} from 'react-icons/fa';
+import { BsPlusSquare } from "react-icons/bs";
  
 const PostRContainer = styled.div`
   background: #fff7ef;
@@ -39,19 +40,15 @@ margin 30px auto;
 
 const Wraps = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding-top: 15px;
-`;
-
-const RatingText = styled.div`
-  color: #787878;
-  font-size: 12px;
-  font-weight: 400;
+  padding-bottom: 15px;
 `;
 
 const Stars = styled.div`
   display: flex;
   padding-top: 5px;
+  padding-left: 15px;
 
   & svg {
     color: white;
@@ -70,7 +67,6 @@ const Stars = styled.div`
     color: #ffa574;
   }
 `;
-
 
 const ARRAY = [0, 1, 2, 3, 4];
 
@@ -110,7 +106,9 @@ function PostReview(){
         <div className="postReviewBG">
         
         <div className="column">
-         <div className="Box"></div>  
+         <div className="Box">
+          <div className="File"><BsPlusSquare size={40}/></div>
+          </div>  
         </div>
 
          <div className="info">
@@ -120,9 +118,9 @@ function PostReview(){
             <div className="TextI">메뉴이름</div>
             <input className="Write2" type="text" placeholder="정확한 메뉴명을 입력해주세요!" value={text2} onChange={(e) => {setText2(e.target.value);}}/>
           </div>
-          <div className="line">
-            <div className="TextI">별점</div>
+
             <Wraps>
+            <div className="TextI">별점</div>
               <Stars>
                 {ARRAY.map((el, idx) => {
                   return (
@@ -133,16 +131,15 @@ function PostReview(){
                   className={clicked[el] && 'yellowStar'}/>
                   ); })}
                   </Stars>
-                  </Wraps>   
-          </div>
-          <div className="TextI">리뷰 내용</div>
-          <textarea className="textArea"
-            placeholder="내용을 입력해주세요!"
-            required
-            maxLenth="100"
-            />
+                  </Wraps>  
+                    <div className="TextI">리뷰 내용</div>
+                    <textarea className="textArea"
+                    placeholder="내용을 입력해주세요!"
+                    required
+                    maxLenth="100"/>
+                    
           <Wrap>
-          <ButtonR onClick={onClickButton}>등록하기</ButtonR>
+            <ButtonR onClick={onClickButton}>등록하기</ButtonR>
           {isOpen && (<Modal open={isOpen} onClose = {() => {setIsOpen(false);}}/>)}
           </Wrap>
          </div>  

@@ -1,6 +1,6 @@
 import React from "react";
-import styled from "styled-components";
-
+import styled from "styled-components"; 
+import { FaTimes} from "react-icons/fa";
 
 const OverLay = styled.div`
 position: fixed;
@@ -25,16 +25,12 @@ left: 50%;
 transform: translate(-50%, -50%);
 `;
 
-const CloseButton = styled.button`
+const CloseButton = styled.div`
 float:right;
-width: 20px;
-height:20px;
+width: 30px;
+height:30px;
 margin: 20px;
 cursor: pointer;
-i{
-    color: rgb(125, 125, 125);;
-    font-size:30px;
-}
 `;
 
 const Contents = styled.div`
@@ -80,7 +76,7 @@ function Modal({onClose}){
         <OverLay>
             <ModalWrap>
                 <CloseButton onClick={handleClose}>
-                    <i className="fa-solid"></i>
+                    <FaTimes size={30}/>
                 </CloseButton>
                 <Contents>
                     <h1>리뷰를 등록하시겠습니까?</h1>
