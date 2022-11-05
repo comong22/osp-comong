@@ -25,6 +25,13 @@ export const Container = styled.div`
   margin: 3% 5% 0 5%;
 `;
 
+export const Container1 = styled.div`
+  display: grid;
+  width: 95%;
+  height: 550px;
+  margin: 1% 5% 0 5%;
+`;
+
 export const BottomBox = styled.div`
   max-width: 1500px;
   margin: 0;
@@ -32,6 +39,7 @@ export const BottomBox = styled.div`
   box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
 `;
+
 
 export const ContentArea = styled.div`
   margin: 10px 0 30px 0;
@@ -289,3 +297,65 @@ export const Parking = styled.div`
 
   color: #424242;
 `;
+
+export const ReviewCol = styled.div`
+  display: grid;
+  grid-template-rows: 35% 30% 35%;
+  grid-template-columns : 16% 10% 30%;
+  grid-template-areas: "rvrow1 rvrow2 rvrow3 " "rvrow4 rvrow5 rvrow6" "rvrow7 rvrow8 rvrow9";
+`;
+
+export const RvRow1 = styled.div`
+  grid-area: rvrow1;
+  align-self: center;
+`;
+
+export const RvRow2 = styled.div`
+  grid-area: rvrow2;
+  align-self: center;
+`;
+
+
+export const RvRow3 = styled.div`
+  grid-area: rvrow3;
+  align-self: center;
+`;
+
+export const RvRow4 = styled.div`
+  grid-area: rvrow4;
+  align-self: center;
+`;
+
+export const RvRow5 = styled.div`
+  grid-area: rvrow5;
+  align-self: center;
+`;
+
+export const RvRow6 = styled.div`
+  grid-area: rvrow6;
+  align-self: center;
+`;
+
+export const RvRow7 = styled.div`
+  grid-area: rvrow7;
+  align-self: center;
+`;
+
+export const RvRow8 = styled.div`
+  grid-area: rvrow8;
+  align-self: center;
+`;
+
+export const RvRow9 = styled.div`
+  grid-area: rvrow9;
+  align-self: center;
+`;
+
+export const FeatherIMG = styled.img`
+  width: 50px;
+  height: 50px;
+`;
+
+
+
+
