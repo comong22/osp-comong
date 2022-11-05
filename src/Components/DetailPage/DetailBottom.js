@@ -93,10 +93,10 @@ function Bestmenu(props) {
     { id: 2, src: require("../../images/main/main2.jpg") },
     { id: 3, src: require("../../images/main/main3.jpg") },
     { id: 4, src: require("../../images/main/main4.jpg") },
-    { id: 5, src: require("../../images/main/main5.jpg") },
-    { id: 6, src: require("../../images/main/main6.jpg") },
-    { id: 7, src: require("../../images/main/main7.jpg") },
-    { id: 8, src: require("../../images/main/main8.jpg") },
+    { id: 5, src: require("../../images/main/main5.png") },
+    { id: 6, src: require("../../images/main/main6.png") },
+    { id: 7, src: require("../../images/main/main7.png") },
+    { id: 8, src: require("../../images/main/main8.png") },
   ];
   const { id } = useParams(); //params로 받아 -> id
 

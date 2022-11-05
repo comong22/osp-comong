@@ -171,3 +171,12 @@ a {
   left: 43%;
   position : center;
 }
+
+.reviewimg{
+  display: block;
+  width: 140px;
+  height: 140px;
+  left: 8%;
+  top: 24%;
+  overflow : hidden;
+}
