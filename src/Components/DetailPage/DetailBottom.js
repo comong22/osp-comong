@@ -23,6 +23,8 @@ const BottomContainer = styled.div`
   display: flex;
   height: 90%;
   width: 100%;
+  display: flex;
+  justify-content: center;
   z-index: 3;
   scroll-snap-align: start;
 `;

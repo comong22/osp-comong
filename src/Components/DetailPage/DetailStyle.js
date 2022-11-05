@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const BestmenuTab = styled.div`
   font-family: "Spoqa Han Sans Neo Bold";
   font-style: normal;
-  font-size: 28px;
+  font-size: 25px;
   color: ${({ tab }) => (tab === 0 ? "#FFBA94" : "#464646")};
   padding-bottom: 5px;
   border-bottom: ${({ tab }) => (tab === 0 ? "1px solid #FFBA94" : "0")};
@@ -12,7 +12,7 @@ export const BestmenuTab = styled.div`
 export const ReviewTab = styled.div`
   font-family: "Spoqa Han Sans Neo Bold";
   font-style: normal;
-  font-size: 28px;
+  font-size: 25px;
   color: ${({ tab }) => (tab === 1 ? "#FFBA94" : "#464646")};
   padding-bottom: 5px;
   border-bottom: ${({ tab }) => (tab === 1 ? "1px solid #FFBA94" : "0")};
@@ -21,15 +21,15 @@ export const ReviewTab = styled.div`
 export const Container = styled.div`
   display: grid;
   width: 95%;
-  height: 10%;
-  margin: 3% 5% 0 5%;
+  height: 3%;
+  margin: 8% 5% 0 5%;
 `;
 
 export const Container1 = styled.div`
   display: grid;
   width: 95%;
-  height: 550px;
-  margin: 1% 5% 0 5%;
+  height: 3%;
+  margin: 8% 5% 0 5%;
 `;
 
 export const BottomBox = styled.div`
@@ -356,6 +356,11 @@ export const FeatherIMG = styled.img`
   height: 50px;
 `;
 
+export const topBox = styled.div`
+  max-width: 730px;
+  height: 600px;
+  margin: 10%;
+`;
 
 
 
