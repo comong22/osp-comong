@@ -28,15 +28,16 @@
     width: 590px;
     height: 250px;
     font-family: 'Spoqa Han Sans Neo';
+    margin: 10px;
 }
 .inputText{
     height: 30px;
     border: none;
     border-radius: 4px;
     border-radius: 10px;
+    color:gray;
 }
 .submitButton{
-    display: flex;
     background-color: #FFBA94;
     color: #FFF7EF;
     border: none;
@@ -44,5 +45,15 @@
     padding: 10px 20px;
     font-family: 'Spoqa Han Sans Neo';
     align-content: center;
-    justify-content: center;
+    font-weight: 700;
+}
+hr{
+    width: 650;
+    position: absolute;
+    top:355px;
+    right:198px;
+    z-index: 1;
+    height: 2px;
+    background-color: #FFBA94;
+    border: none;
 }
