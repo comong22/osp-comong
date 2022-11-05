@@ -28,6 +28,7 @@ import {
   Rrow3,
   RestName,
   HeartIMG,
+  Line,
 } from "./ListStyle";
 import 고삼이 from "../../images/list/고삼이.jpg";
 import yellowhouse from "../../images/list/yellowhouse.jpg";
@@ -53,7 +54,7 @@ import 존재의이유 from "../../images/list/존재의이유.jpg";
 import 파이홀 from "../../images/list/파이홀.jpg";
 import 포티드 from "../../images/list/포티드.jpg";
 import 하노이의아침 from "../../images/list/하노이의아침.jpg";
-import heart from "../../images/list/heart.jpg";
+import heartt from "../../images/list/heartt.svg";
 import 한끼마끼 from "../../images/list/한끼마끼.jpg";
 import 헐리우드 from "../../images/list/헐리우드.jpg";
 import clock from "../../images/main/clock.svg";
@@ -151,20 +152,55 @@ function Place01() {
               <InfoText>{place01_data[0].business_hours}</InfoText>
             </Rrow2>
             <Rrow3>
-              <HeartIMG src={heart} alt="heart" />
-              <InfoText>{place01_data[0].signature_menu}</InfoText>
+              <HeartIMG src={heartt} alt="heart" />
+              <InfoText>대표메뉴 - {place01_data[0].signature_menu}</InfoText>
             </Rrow3>
+
           </InsideInfo>
         </Row1>
         <Row2>
         <MainIMG
           src = {momigi}
           />
+          <InsideInfo>
+            <Rrow1>
+              <RestName>{place01_data[1].name}</RestName>
+            </Rrow1>
+            <Rrow2>
+              <MapPinIMG src={mappin} alt="mappin" />
+              <InfoText>{place01_data[1].address}</InfoText>
+              
+              <ClockIMG src={clock} alt="clock" />
+              <InfoText>{place01_data[1].business_hours}</InfoText>
+            </Rrow2>
+            <Rrow3>
+              <HeartIMG src={heartt} alt="heart" />
+              <InfoText>대표메뉴 - {place01_data[1].signature_menu}</InfoText>
+            </Rrow3>
+
+          </InsideInfo>
         </Row2>
         <Row3>
         <MainIMG
           src = {yuyake}
           />
+          <InsideInfo>
+            <Rrow1>
+              <RestName>{place01_data[2].name}</RestName>
+            </Rrow1>
+            <Rrow2>
+              <MapPinIMG src={mappin} alt="mappin" />
+              <InfoText>{place01_data[2].address}</InfoText>
+              
+              <ClockIMG src={clock} alt="clock" />
+              <InfoText>{place01_data[2].business_hours}</InfoText>
+            </Rrow2>
+            <Rrow3>
+              <HeartIMG src={heartt} alt="heart" />
+              <InfoText>대표메뉴 - {place01_data[2].signature_menu}</InfoText>
+            </Rrow3>
+
+          </InsideInfo>
         </Row3>
      </InsidePage>
     </>

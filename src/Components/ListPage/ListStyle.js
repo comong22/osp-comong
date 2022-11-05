@@ -6,15 +6,19 @@ export const ListBG = styled.div`
   height: 100vh;
 `;
 
-
+export const LIne = styled.div`
+  background: #fff7ef;
+  width: 100vw;
+  height: 100vh;
+`;
 
 export const RestName = styled.div`
-  float: left;
-  margin-right: 10px;
+  float: right;
+  margin-right: 50px;
   font-family: "Spoqa Han Sans Neo Bold";
   font-style: normal;
   font-weight: 700;
-  font-size: 28px;
+  font-size: 23px;
   line-height: 32px;
   /* or 114% */
 
@@ -24,8 +28,7 @@ export const RestName = styled.div`
 `;
 
 export const ListName = styled.div`
-  grid-area: row1;
-  margin: 10px 0 0px 0;
+  margin: 10px 0 0px 35px;
   font-family: "Spoqa Han Sans Neo Bold";
   font-style: normal;
   font-size: 34px;
@@ -67,7 +70,7 @@ export const InsidePage = styled.div`
 
 export const InsideInfo = styled.div`
   display: grid;
-  margin-left: 500px;
+  margin-left: 75px;
   grid-template-rows: repeat(3, 1fr);
   grid-template-areas: "rrrow1" "rrrow2" "rrrow3"; 
 `;
@@ -77,6 +80,7 @@ export const Rrow1 = styled.div`
   display: flex;
   position: relative;
   grid-area: rrrow1;
+  margin-top: 10px;
 `;
 
 export const Rrow2 = styled.div`
@@ -91,6 +95,8 @@ export const Rrow3 = styled.div`
   display: flex;
   position: relative;
   grid-area: rrrow3;
+
+  
 `;
 
 export const Row1 = styled.div`
@@ -150,9 +156,9 @@ export const ListPlace01 = styled.div`
   }
 `;
 export const MainIMG = styled.img`
-  width: 100px;
-  height: 100px;
-  margin: 5px 0 40px 75px;
+  width: 120px;
+  height: 120px;
+  margin: 10px 0 10px 75px;
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
 `;
 export const ListPlace02 = styled.div`
@@ -201,7 +207,7 @@ export const ListPlace03 = styled.div`
 
 export const ListBox = styled.div`
   max-width: 1200px;
-  height: 500px;
+  height: 650px;
   margin: 0 0 0 30px;
   background: #ffffff;
   box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.25);
@@ -217,17 +223,18 @@ export const MapPinIMG = styled.img`
   float: left;
   max-width: 22px;
   margin-right: 10px;
+  margin-bottom: 30px;
 `;
 export const ClockIMG = styled.img`
   float: left;
   max-width: 22px;
-  margin-right: 10px;
+  margin: 0 10px 30px 200px;
 `;
 
 export const HeartIMG = styled.img`
   float: left;
   max-width: 22px;
-  margin-right: 10px;
+  margin: 0 10px 30px 0;
 `;
 
 export const InfoText = styled.div`
