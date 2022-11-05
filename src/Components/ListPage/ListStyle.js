@@ -224,6 +224,12 @@ export const ClockIMG = styled.img`
   margin-right: 10px;
 `;
 
+export const HeartIMG = styled.img`
+  float: left;
+  max-width: 22px;
+  margin-right: 10px;
+`;
+
 export const InfoText = styled.div`
   max-width: 1000px;
   font-family: "Spoqa Han Sans Neo Regular";

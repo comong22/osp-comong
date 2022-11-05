@@ -27,6 +27,7 @@ import {
   Rrow2,
   Rrow3,
   RestName,
+  HeartIMG,
 } from "./ListStyle";
 import 고삼이 from "../../images/list/고삼이.jpg";
 import yellowhouse from "../../images/list/yellowhouse.jpg";
@@ -52,7 +53,7 @@ import 존재의이유 from "../../images/list/존재의이유.jpg";
 import 파이홀 from "../../images/list/파이홀.jpg";
 import 포티드 from "../../images/list/포티드.jpg";
 import 하노이의아침 from "../../images/list/하노이의아침.jpg";
-import 하트 from "../../images/list/하트.jpg";
+import heart from "../../images/list/heart.jpg";
 import 한끼마끼 from "../../images/list/한끼마끼.jpg";
 import 헐리우드 from "../../images/list/헐리우드.jpg";
 import clock from "../../images/main/clock.svg";
@@ -149,7 +150,10 @@ function Place01() {
               <ClockIMG src={clock} alt="clock" />
               <InfoText>{place01_data[0].business_hours}</InfoText>
             </Rrow2>
-            <Rrow3></Rrow3>
+            <Rrow3>
+              <HeartIMG src={heart} alt="heart" />
+              <InfoText>{place01_data[0].signature_menu}</InfoText>
+            </Rrow3>
           </InsideInfo>
         </Row1>
         <Row2>
