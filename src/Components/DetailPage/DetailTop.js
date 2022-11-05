@@ -5,6 +5,7 @@ import mappin from "../../images/main/mappin.svg";
 import star from "../../images/detail/star.svg";
 import phone from "../../images/detail/phone.svg";
 import menu from "../../images/detail/menu.svg";
+import PostReview from "../PostReviewPage/PostReview";
 import {
   Row1,
   Row2,
@@ -81,7 +82,7 @@ function DetailTop(props) {
                 <Menu3>{main_data[id].menu_3} - {main_data[id].menu_3_price}</Menu3>
               </Row2>
               <div>
-             <Link to="../PostReviewPage/PostReview">
+             <Link to="/review">
              <button className="Rbutton">리뷰 작성</button>
             </Link>
             </div>
