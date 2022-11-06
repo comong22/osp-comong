@@ -301,7 +301,7 @@ export const Parking = styled.div`
 
 export const ReviewCol = styled.div`
   display: grid;
-  grid-template-rows: 31% 33% 31% 40%;
+  grid-template-rows: 31% 33% 31% 10%;
   grid-template-columns : 16% 16% 30%;
   grid-template-areas: "rvrow1 rvrow2 rvrow3 " "rvrow4 rvrow5 rvrow6" "rvrow7 rvrow8 rvrow9" "rvrow10 rvrow11 rvrow12";
 `;
