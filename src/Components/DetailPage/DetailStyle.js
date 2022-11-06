@@ -29,7 +29,7 @@ export const Container1 = styled.div`
   display: grid;
   width: 95%;
   height: 3%;
-  margin: 8% 5% 0 5%;
+  margin: 5% 5% 4% 5%;
 `;
 
 export const BottomBox = styled.div`
@@ -300,7 +300,7 @@ export const Parking = styled.div`
 
 export const ReviewCol = styled.div`
   display: grid;
-  grid-template-rows: 35% 30% 35%;
+  grid-template-rows: 35% 35% 36%;
   grid-template-columns : 16% 10% 30%;
   grid-template-areas: "rvrow1 rvrow2 rvrow3 " "rvrow4 rvrow5 rvrow6" "rvrow7 rvrow8 rvrow9";
 `;
