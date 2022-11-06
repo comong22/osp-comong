@@ -5,11 +5,7 @@ import styled from "styled-components";
 export const ListBG = styled.div`
   background: #fff7ef;
   width: 100vw;
-<<<<<<< HEAD
   height: 200vh;
-=======
-  height: 100vh;
->>>>>>> f3f46feebb6812625277fa0f761c69b10861ed4a
 `;
 
 export const RestName = styled.div`
@@ -61,25 +57,17 @@ export const Column2 = styled.div`
 
 export const InsidePage = styled.div`
   display: grid;
-<<<<<<< HEAD
   margin-top: 10px;
   grid-template-rows: 0.5fr 0.5fr 0.5fr;
-=======
   margin: 0 3% 0 3%;
-  grid-template-rows: repeat(3, 1fr);
->>>>>>> f3f46feebb6812625277fa0f761c69b10861ed4a
   grid-template-areas: "rrow1" "rrow2" "rrow3"; 
 `;
 
 export const InsideInfo = styled.div`
   display: grid;
-<<<<<<< HEAD
   margin-left: 75px;
   grid-template-rows: 2fr 2fr 3fr;
-=======
   margin: 2% 0 2% 5%;
-  grid-template-rows: repeat(3, 1fr);
->>>>>>> f3f46feebb6812625277fa0f761c69b10861ed4a
   grid-template-areas: "rrrow1" "rrrow2" "rrrow3"; 
 `;
 
@@ -169,15 +157,9 @@ export const ListPlace01 = styled.div`
   }
 `;
 export const MainIMG = styled.img`
-<<<<<<< HEAD
-  width: 130px;
-  height: 130px;
-  margin: 10px 0 10px 75px;
-=======
   width: 150px;
   height: 150px;
   margin: 2% 0 2% 5%;
->>>>>>> f3f46feebb6812625277fa0f761c69b10861ed4a
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
 `;
 export const ListPlace02 = styled.div`
@@ -225,13 +207,8 @@ export const ListPlace03 = styled.div`
 `;
 
 export const ListBox = styled.div`
-<<<<<<< HEAD
   max-width: 1200px;
   height: 1000px;
-=======
-  max-width: 1469px;
-  // height: 500px;
->>>>>>> f3f46feebb6812625277fa0f761c69b10861ed4a
   margin: 0 0 0 30px;
   background: #ffffff;
   box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.25);
@@ -246,26 +223,18 @@ export const IMGform = styled.div`
 export const MapPinIMG = styled.img`
   float: left;
   max-width: 22px;
-<<<<<<< HEAD
   margin: 0 10px 30px 0;
-=======
->>>>>>> f3f46feebb6812625277fa0f761c69b10861ed4a
 `;
 export const ClockIMG = styled.img`
   float: left;
   max-width: 22px;
-  margin-right: 10px;
+  margin: 0 10px 30px 15px;
 `;
 
 export const HeartIMG = styled.img`
   float: left;
-<<<<<<< HEAD
   max-width: 22px;
   margin: 0 10px 60px 0;
-=======
-  max-width: 23px;
-  margin-right: 10px;
->>>>>>> f3f46feebb6812625277fa0f761c69b10861ed4a
 `;
 
 export const InfoText = styled.div`
@@ -279,18 +248,5 @@ export const InfoText = styled.div`
   /* or 27px */
   color: #000000;
 `;
-<<<<<<< HEAD
 
-export const LineText = styled.div`
-  max-width: 1000px;
-  font-family: "Spoqa Han Sans Neo Regular";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 10px;
-  line-height: 10%;
-  /* or 27px */
-  color: #000000;
-  margin: 0 5px 50px 5px;
-`;
-=======
->>>>>>> f3f46feebb6812625277fa0f761c69b10861ed4a
+

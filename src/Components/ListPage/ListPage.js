@@ -29,7 +29,6 @@ import {
   Rrow3,
   RestName,
   HeartIMG,
-  LineText,
 } from "./ListStyle";
 import p3_9 from "../../images/list/p3_9.jpg";
 import yellowhouse from "../../images/list/yellowhouse.jpg";
@@ -134,11 +133,8 @@ function TabContent(props) {
 }
 
 function Place01() {
-<<<<<<< HEAD
   let [Place01Data, setPlace01Data] = useState(place01_data); // 정문 맛집 데이터
-  const str= " ____________________________________________________________________________________________________________________________________________________";
-=======
->>>>>>> f3f46feebb6812625277fa0f761c69b10861ed4a
+  
   return (
     <>
     <Container>
@@ -163,7 +159,6 @@ function Place01() {
               <HeartIMG src={heartt} alt="heart" />
               <InfoText>대표메뉴 - {place01_data[0].signature_menu}</InfoText>
             </Rrow3>
-            <LineText> {str} </LineText>
           </InsideInfo>
         </Row1>
         
@@ -186,7 +181,6 @@ function Place01() {
               <HeartIMG src={heartt} alt="heart" />
               <InfoText>대표메뉴 - {place01_data[1].signature_menu}</InfoText>
             </Rrow3>
-            <LineText> {str} </LineText>
           </InsideInfo>
         </Row2>
         
@@ -280,7 +274,6 @@ function Place02() {
             <Rrow2>
               <MapPinIMG src={mappin} alt="mappin" />
               <InfoText>{place02_data[2].address}</InfoText>
-              
               <ClockIMG src={clock} alt="clock" />
               <InfoText>{place02_data[2].business_hours}</InfoText>
             </Rrow2>
@@ -374,8 +367,5 @@ function Place03() {
     </>
   );
 }
-<<<<<<< HEAD
+
 export default ListPage;
-=======
-export default ListPage;
->>>>>>> f3f46feebb6812625277fa0f761c69b10861ed4a
