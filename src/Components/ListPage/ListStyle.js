@@ -249,7 +249,6 @@ export const MapPinIMG = styled.img`
 <<<<<<< HEAD
   margin: 0 10px 30px 0;
 =======
-  margin-right: 10px;
 >>>>>>> f3f46feebb6812625277fa0f761c69b10861ed4a
 `;
 export const ClockIMG = styled.img`
