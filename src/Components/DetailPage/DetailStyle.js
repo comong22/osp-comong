@@ -22,7 +22,7 @@ export const Container = styled.div`
   display: grid;
   width: 95%;
   height: 3%;
-  margin: 8% 5% 0 5%;
+  margin: 4% 5% 0 5%;
 `;
 
 export const Container1 = styled.div`
