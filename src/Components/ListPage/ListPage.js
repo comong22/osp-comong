@@ -1,66 +1,39 @@
 import { useState } from "react";
 import { GlobalFonts } from "../../fonts/font";
+import Pagination from "react-js-pagination";
 import './ListPage.css';
 import {
   ListName,
+  RealListBox,
   Column1,
   Column2,
-  Row1,
-  Row2,
-  Row3,
   Container,
   ListBG,
   ListBox,
+  ContentsWrap,
   ListContents,
   ListPlace01,
   ListPlace02,
   ListPlace03,
   ListRow,
   PageRow,
-  IMGform,
   MapPinIMG,
   ClockIMG,
   InfoText,
   MainIMG,
-  InsidePage,
-  InsideInfo,
-  Rrow1,
-  Rrow2,
-  Rrow3,
   RestName,
   HeartIMG,
+  DataContainer,
+  ReallistRow,
+  Rcolumn1,
+  Rcolumn2,
+  Border,
+  IinfoText,
+  RrestName,
 } from "./ListStyle";
-import p3_9 from "../../images/list/p3_9.jpg";
-import yellowhouse from "../../images/list/yellowhouse.jpg";
-import p3_1 from "../../images/list/p3_1.jpg";
-import p2_7 from "../../images/list/p2_7.jpg";
-import p3_4 from "../../images/list/p3_4.jpg";
-import p1_7 from "../../images/list/p1_7.jpg";
-import p2_4 from "../../images/list/p2_4.jpg";
-import p1_8 from "../../images/list/p1_8.jpg";
-import p2_3 from "../../images/list/p2_3.jpg";
-import momigi from "../../images/list/momigi.jpg";
-import p3_7 from "../../images/list/p3_7.jpg";
-import p3_8 from "../../images/list/p3_8.jpg";
-import p2_1 from "../../images/list/p2_1.jpg";
-import p2_5 from "../../images/list/p2_5.jpg";
-import p2_9 from "../../images/list/p2_9.jpg";
-import p1_6 from "../../images/list/p1_6.jpg";
-import p1_4 from "../../images/list/p1_4.jpg";
-import p1_9 from "../../images/list/p1_9.jpg";
-import yuyake from "../../images/list/yuyake.jpg";
-import p3_3 from "../../images/list/p3_3.jpg";
-import p2_2 from "../../images/list/p2_2.jpg";
-import p3_5 from "../../images/list/p3_5.jpg";
-import p3_6 from "../../images/list/p3_6.jpg";
-import p2_6 from "../../images/list/p2_6.jpg";
 import heartt from "../../images/list/heartt.svg";
-import p1_5 from "../../images/list/p1_5.jpg";
-import p2_8 from "../../images/list/p2_8.jpg";
-import p3_2 from "../../images/list/p3_2.jpg";
 import clock from "../../images/main/clock.svg";
 import mappin from "../../images/main/mappin.svg";
-import line from "../../images/list/line.svg";
 import { place01_data, place02_data, place03_data } from "./data";
 function ListPage() {
   let [tab, setTab] = useState(0); // 0 정문, 1 후문, 2 신촌
@@ -133,236 +106,192 @@ function TabContent(props) {
 }
 
 function Place01() {
-  let [Place01Data, setPlace01Data] = useState(place01_data); // 정문 맛집 데이터
-  
+  let [place01Data, setPlace01Data] = useState(place01_data); // 정문 맛집 데이터
+  const [items, setItems] = useState(3);
+  const [page, setPage] = useState(1);
+  const handlePageChange = (page) => {
+    setPage(page);
+  };
+  const Place01img = [
+    { id: 0, src: require("../../images/list/yellowhouse.jpg") },
+    { id: 1, src: require("../../images/list/momigi.jpg") },
+    { id: 2, src: require("../../images/list/yuyake.jpg") },
+    { id: 3, src: require("../../images/list/p1_4.jpg") },
+    { id: 4, src: require("../../images/list/p1_5.jpg") },
+    { id: 5, src: require("../../images/list/p1_6.jpg") },
+    { id: 6, src: require("../../images/list/p1_7.jpg") },
+    { id: 7, src: require("../../images/list/p1_8.jpg") },
+    { id: 8, src: require("../../images/list/p1_9.jpg") },
+  ];
   return (
     <>
     <Container>
      <ListName>이대 정문 맛집</ListName>
-     <InsidePage>
-        <Row1>
-        <MainIMG
-          src = {yellowhouse}
-          />
-          <InsideInfo>
-            <Rrow1>
-              <RestName>{place01_data[0].name}</RestName>
-            </Rrow1>
-            <Rrow2>
-              <MapPinIMG src={mappin} alt="mappin" />
-              <InfoText>{place01_data[0].address}</InfoText>
-              
-              <ClockIMG src={clock} alt="clock" />
-              <InfoText>{place01_data[0].business_hours}</InfoText>
-            </Rrow2>
-            <Rrow3>
-              <HeartIMG src={heartt} alt="heart" />
-              <InfoText>대표메뉴 - {place01_data[0].signature_menu}</InfoText>
-            </Rrow3>
-          </InsideInfo>
-        </Row1>
-        
-        <Row2>
-        <MainIMG
-          src = {momigi}
-          />
-          <InsideInfo>
-            <Rrow1>
-              <RestName>{place01_data[1].name}</RestName>
-            </Rrow1>
-            <Rrow2>
-              <MapPinIMG src={mappin} alt="mappin" />
-              <InfoText>{place01_data[1].address}</InfoText>
-              
-              <ClockIMG src={clock} alt="clock" />
-              <InfoText>{place01_data[1].business_hours}</InfoText>
-            </Rrow2>
-            <Rrow3>
-              <HeartIMG src={heartt} alt="heart" />
-              <InfoText>대표메뉴 - {place01_data[1].signature_menu}</InfoText>
-            </Rrow3>
-          </InsideInfo>
-        </Row2>
-        
-        <Row3>
-        <MainIMG
-          src = {yuyake}
-          />
-          <InsideInfo>
-            <Rrow1>
-              <RestName>{place01_data[2].name}</RestName>
-            </Rrow1>
-            <Rrow2>
-              <MapPinIMG src={mappin} alt="mappin" />
-              <InfoText>{place01_data[2].address}</InfoText>
-              
-              <ClockIMG src={clock} alt="clock" />
-              <InfoText>{place01_data[2].business_hours}</InfoText>
-            </Rrow2>
-            <Rrow3>
-              <HeartIMG src={heartt} alt="heart" />
-              <InfoText>대표메뉴 - {place01_data[2].signature_menu}</InfoText>
-            </Rrow3>
-
-          </InsideInfo>
-        </Row3>
-
-     </InsidePage>
+     <RealListBox>
+      <ContentsWrap>
+        {place01Data
+          .slice(items * (page-1), items * (page-1) + items)
+          .map((v,i) => {
+            return (
+              <div key = {i}>
+                <DataContainer>
+                  <ReallistRow>
+                    <Rcolumn1>
+                      <MainIMG src={Place01img[v.id].src}/>
+                    </Rcolumn1>
+                    <Rcolumn2>
+                      <RrestName>{v.name}</RrestName>
+                      <MapPinIMG src={mappin}/>
+                      <IinfoText>{v.address}</IinfoText>
+                      <ClockIMG src={clock}/>
+                      <IinfoText>{v.business_hours}</IinfoText>
+                      <HeartIMG src={heartt}/>
+                      <IinfoText>대표 메뉴 - {v.signature_menu}</IinfoText>
+                    </Rcolumn2>
+                  </ReallistRow>
+                </DataContainer>
+                <Border/>
+              </div>
+            );
+          })
+        }
+      </ContentsWrap>
+      <Pagination
+        activePage={page}
+        itemsCountPerPage={items}
+        totalItemsCount={place01Data.length - 1}
+        pageRangeDisplayed={3}
+        onChange={handlePageChange}
+      ></Pagination>
+     </RealListBox>
      </Container>
     </>
   );
 }
 
 function Place02() {
-   return (
+  let [place02Data, setPlace02Data] = useState(place02_data); // 정문 맛집 데이터
+  const [items, setItems] = useState(3);
+  const [page, setPage] = useState(1);
+  const handlePageChange = (page) => {
+    setPage(page);
+  };
+  const Place02img = [
+    { id: 0, src: require("../../images/list/p2_1.jpg") },
+    { id: 1, src: require("../../images/list/p2_2.jpg") },
+    { id: 2, src: require("../../images/list/p2_3.jpg") },
+    { id: 3, src: require("../../images/list/p2_4.jpg") },
+    { id: 4, src: require("../../images/list/p2_5.jpg") },
+    { id: 5, src: require("../../images/list/p2_6.jpg") },
+    { id: 6, src: require("../../images/list/p2_7.jpg") },
+    { id: 7, src: require("../../images/list/p2_8.jpg") },
+    { id: 8, src: require("../../images/list/p2_9.jpg") },
+  ];
+  return (
     <>
     <Container>
-      <ListName>이대 후문 맛집</ListName>
-      <InsidePage>
-        <Row1>
-        <MainIMG
-          src = {p2_1}
-          />
-          <InsideInfo>
-            <Rrow1>
-              <RestName>{place02_data[0].name}</RestName>
-            </Rrow1>
-            <Rrow2>
-              <MapPinIMG src={mappin} alt="mappin" />
-              <InfoText>{place02_data[0].address}</InfoText>
-              
-              <ClockIMG src={clock} alt="clock" />
-              <InfoText>{place02_data[0].business_hours}</InfoText>
-            </Rrow2>
-            <Rrow3>
-              <HeartIMG src={heartt} alt="heart" />
-              <InfoText>대표메뉴 - {place02_data[0].signature_menu}</InfoText>
-            </Rrow3>
-
-          </InsideInfo>
-        </Row1>
-        <Row2>
-        <MainIMG
-          src = {p2_2}
-          />
-          <InsideInfo>
-            <Rrow1>
-              <RestName>{place02_data[1].name}</RestName>
-            </Rrow1>
-            <Rrow2>
-              <MapPinIMG src={mappin} alt="mappin" />
-              <InfoText>{place02_data[1].address}</InfoText>
-              
-              <ClockIMG src={clock} alt="clock" />
-              <InfoText>{place02_data[1].business_hours}</InfoText>
-            </Rrow2>
-            <Rrow3>
-              <HeartIMG src={heartt} alt="heart" />
-              <InfoText>대표메뉴 - {place02_data[1].signature_menu}</InfoText>
-            </Rrow3>
-
-          </InsideInfo>
-        </Row2>
-        <Row3>
-        <MainIMG
-          src = {p2_3}
-          />
-          <InsideInfo>
-            <Rrow1>
-              <RestName>{place02_data[2].name}</RestName>
-            </Rrow1>
-            <Rrow2>
-              <MapPinIMG src={mappin} alt="mappin" />
-              <InfoText>{place02_data[2].address}</InfoText>
-              <ClockIMG src={clock} alt="clock" />
-              <InfoText>{place02_data[2].business_hours}</InfoText>
-            </Rrow2>
-            <Rrow3>
-              <HeartIMG src={heartt} alt="heart" />
-              <InfoText>대표메뉴 - {place02_data[2].signature_menu}</InfoText>
-            </Rrow3>
-
-          </InsideInfo>
-        </Row3>
-     </InsidePage>
+     <ListName>이대 후문 맛집</ListName>
+     <RealListBox>
+      <ContentsWrap>
+        {place02Data
+          .slice(items * (page-1), items * (page-1) + items)
+          .map((v,i) => {
+            return (
+              <div key = {i}>
+                <DataContainer>
+                  <ReallistRow>
+                    <Rcolumn1>
+                      <MainIMG src={Place02img[v.id].src}/>
+                    </Rcolumn1>
+                    <Rcolumn2>
+                      <RrestName>{v.name}</RrestName>
+                      <MapPinIMG src={mappin}/>
+                      <IinfoText>{v.address}</IinfoText>
+                      <ClockIMG src={clock}/>
+                      <IinfoText>{v.business_hours}</IinfoText>
+                      <HeartIMG src={heartt}/>
+                      <IinfoText>대표 메뉴 - {v.signature_menu}</IinfoText>
+                    </Rcolumn2>
+                  </ReallistRow>
+                </DataContainer>
+                <Border/>
+              </div>
+            );
+          })
+        }
+      </ContentsWrap>
+      <Pagination
+        activePage={page}
+        itemsCountPerPage={items}
+        totalItemsCount={place02Data.length - 1}
+        pageRangeDisplayed={3}
+        onChange={handlePageChange}
+      ></Pagination>
+     </RealListBox>
      </Container>
     </>
   );
 }
 
 function Place03() {
+  let [place03Data, setPlace03Data] = useState(place03_data); // 정문 맛집 데이터
+  const [items, setItems] = useState(3);
+  const [page, setPage] = useState(1);
+  const handlePageChange = (page) => {
+    setPage(page);
+  };
+  const Place03img = [
+    { id: 0, src: require("../../images/list/p3_1.jpg") },
+    { id: 1, src: require("../../images/list/p3_2.jpg") },
+    { id: 2, src: require("../../images/list/p3_3.jpg") },
+    { id: 3, src: require("../../images/list/p3_4.jpg") },
+    { id: 4, src: require("../../images/list/p3_5.jpg") },
+    { id: 5, src: require("../../images/list/p3_6.jpg") },
+    { id: 6, src: require("../../images/list/p3_7.jpg") },
+    { id: 7, src: require("../../images/list/p3_8.jpg") },
+    { id: 8, src: require("../../images/list/p3_9.jpg") },
+  ];
   return (
     <>
     <Container>
-      <ListName>신촌 맛집</ListName>
-      <InsidePage>
-        <Row1>
-        <MainIMG
-          src = {p3_1}
-          />
-          <InsideInfo>
-            <Rrow1>
-              <RestName>{place03_data[0].name}</RestName>
-            </Rrow1>
-            <Rrow2>
-              <MapPinIMG src={mappin} alt="mappin" />
-              <InfoText>{place03_data[0].address}</InfoText>
-              
-              <ClockIMG src={clock} alt="clock" />
-              <InfoText>{place03_data[0].business_hours}</InfoText>
-            </Rrow2>
-            <Rrow3>
-              <HeartIMG src={heartt} alt="heart" />
-              <InfoText>대표메뉴 - {place03_data[0].signature_menu}</InfoText>
-            </Rrow3>
-
-          </InsideInfo>
-        </Row1>
-        <Row2>
-        <MainIMG
-          src = {p3_2}
-          />
-          <InsideInfo>
-            <Rrow1>
-              <RestName>{place03_data[1].name}</RestName>
-            </Rrow1>
-            <Rrow2>
-              <MapPinIMG src={mappin} alt="mappin" />
-              <InfoText>{place03_data[1].address}</InfoText>
-              
-              <ClockIMG src={clock} alt="clock" />
-              <InfoText>{place03_data[1].business_hours}</InfoText>
-            </Rrow2>
-            <Rrow3>
-              <HeartIMG src={heartt} alt="heart" />
-              <InfoText>대표메뉴 - {place03_data[1].signature_menu}</InfoText>
-            </Rrow3>
-
-          </InsideInfo>
-        </Row2>
-        <Row3>
-        <MainIMG
-          src = {p3_3}
-          />
-          <InsideInfo>
-            <Rrow1>
-              <RestName>{place03_data[2].name}</RestName>
-            </Rrow1>
-            <Rrow2>
-              <MapPinIMG src={mappin} alt="mappin" />
-              <InfoText>{place03_data[2].address}</InfoText>
-              
-              <ClockIMG src={clock} alt="clock" />
-              <InfoText>{place03_data[2].business_hours}</InfoText>
-            </Rrow2>
-            <Rrow3>
-              <HeartIMG src={heartt} alt="heart" />
-              <InfoText>대표메뉴 - {place03_data[2].signature_menu}</InfoText>
-            </Rrow3>
-
-          </InsideInfo>
-        </Row3>
-     </InsidePage>
+     <ListName>신촌 맛집</ListName>
+     <RealListBox>
+      <ContentsWrap>
+        {place03Data
+          .slice(items * (page-1), items * (page-1) + items)
+          .map((v,i) => {
+            return (
+              <div key = {i}>
+                <DataContainer>
+                  <ReallistRow>
+                    <Rcolumn1>
+                      <MainIMG src={Place03img[v.id].src}/>
+                    </Rcolumn1>
+                    <Rcolumn2>
+                      <RrestName>{v.name}</RrestName>
+                      <MapPinIMG src={mappin}/>
+                      <IinfoText>{v.address}</IinfoText>
+                      <ClockIMG src={clock}/>
+                      <IinfoText>{v.business_hours}</IinfoText>
+                      <HeartIMG src={heartt}/>
+                      <IinfoText>대표 메뉴 - {v.signature_menu}</IinfoText>
+                    </Rcolumn2>
+                  </ReallistRow>
+                </DataContainer>
+                <Border/>
+              </div>
+            );
+          })
+        }
+      </ContentsWrap>
+      <Pagination
+        activePage={page}
+        itemsCountPerPage={items}
+        totalItemsCount={place03Data.length - 1}
+        pageRangeDisplayed={3}
+        onChange={handlePageChange}
+      ></Pagination>
+     </RealListBox>
      </Container>
     </>
   );

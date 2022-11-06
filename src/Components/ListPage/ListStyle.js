@@ -23,6 +23,33 @@ export const RestName = styled.div`
   color: #000000;
 `;
 
+export const RrestName = styled.div`
+  margin: 2% 10px 3% 0;
+  font-family: "Spoqa Han Sans Neo Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+  /* or 114% */
+
+  font-feature-settings: "pnum" on, "lnum" on;
+
+  color: #424242;
+`;
+
+export const IinfoText = styled.div`
+  max-width: 1000px;
+  float: left;
+  font-family: "Spoqa Han Sans Neo Regular";
+  margin-right: 20px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  /* or 27px */
+  color: #000000;
+`;
+
 export const ListName = styled.div`
   margin: 2% 0 0 5%;
   font-family: "Spoqa Han Sans Neo Bold";
@@ -37,6 +64,35 @@ export const ListName = styled.div`
 export const Container = styled.div`
   display: grid;
   width: 100%;
+`;
+export const RealListBox = styled.div`
+  margin-top: 5% 5% 0 5%;
+`;
+export const ContentsWrap = styled.div`
+  display: grid;
+  margin: 2% 2% 0 2%;
+`;
+export const DataContainer = styled.div`
+  display: grid;
+  margin: 0 0 2% 3%;
+  align-self: center;
+`;
+export const ReallistRow = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "rcol1 rcol2 rcol2 rcol2";
+`;
+export const Rcolumn1 = styled.div`
+  grid-area: rcol1;
+`;
+
+export const Rcolumn2 = styled.div`
+  grid-area: rcol2;
+`;
+export const Border = styled.div`
+  max-width: 1000;
+  margin: 0 0 2% 0;
+  border-bottom: 1px solid #d9d9d9;
 `;
 
 export const PageRow = styled.div`
@@ -55,71 +111,6 @@ export const Column2 = styled.div`
   grid-area: col2;
 `;
 
-export const InsidePage = styled.div`
-  display: grid;
-  margin-top: 10px;
-  grid-template-rows: 0.5fr 0.5fr 0.5fr;
-  margin: 0 3% 0 3%;
-  grid-template-areas: "rrow1" "rrow2" "rrow3"; 
-`;
-
-export const InsideInfo = styled.div`
-  display: grid;
-  margin-left: 75px;
-  grid-template-rows: 2fr 2fr 3fr;
-  margin: 2% 0 2% 5%;
-  grid-template-areas: "rrrow1" "rrrow2" "rrrow3"; 
-`;
-
-export const Rrow1 = styled.div`
-  padding: 0;
-  display: flex;
-  position: relative;
-  align-self: center;
-  grid-area: rrrow1;
-`;
-
-export const Rrow2 = styled.div`
-  padding: 0;
-  display: flex;
-  position: relative;
-  align-self: center;
-  grid-area: rrrow2;
-`;
-
-export const Rrow3 = styled.div`
-  padding: 0;
-  display: flex;
-  position: relative;
-  align-self: center;
-
-  grid-area: rrrow3;
-`;
-
-export const Row1 = styled.div`
-  padding: 0;
-  display: flex;
-  position: relative;
-  grid-area: rrow1;
-  border-bottom: 1px solid #D9D9D9;
-
-`;
-
-export const Row2 = styled.div`
-  padding: 0;
-  display: flex;
-  position: relative;
-  grid-area: rrow2;
-  border-bottom: 1px solid #D9D9D9;
-
-`;
-
-export const Row3 = styled.div`
-  padding: 0;
-  display: flex;
-  position: relative;
-  grid-area: rrow3;
-`;
 
 export const ListContents = styled.div`
   z-index: 3;
@@ -215,11 +206,6 @@ export const ListBox = styled.div`
   border-radius: 25px;
 `;
 
-export const IMGform = styled.div`
-  width: 100%;
-  aspect-ratio: 1;
-`;
-
 export const MapPinIMG = styled.img`
   float: left;
   max-width: 22px;
@@ -232,8 +218,9 @@ export const ClockIMG = styled.img`
 `;
 
 export const HeartIMG = styled.img`
+  clear: both;
   float: left;
-  max-width: 22px;
+  max-width: 23px;
   margin: 0 10px 60px 0;
 `;
 
