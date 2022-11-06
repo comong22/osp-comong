@@ -208,7 +208,7 @@ export const ListPlace03 = styled.div`
 
 export const ListBox = styled.div`
   max-width: 1200px;
-  height: 1000px;
+  height: 860px;
   margin: 0 0 0 30px;
   background: #ffffff;
   box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.25);
