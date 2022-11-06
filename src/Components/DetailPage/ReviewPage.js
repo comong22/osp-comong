@@ -14,8 +14,8 @@ import './ReviewPage.css';
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import feather from "../../images/review/Feather.svg";
-import Pagination from './Pagination';
 import { useState} from "react";
+import Pagination from 'react-js-pagination';
 
 
 const BottomContainer = styled.div`
@@ -42,11 +42,10 @@ function Review(){
       ];
       const { id } = useParams(); //params로 받아 -> id
 
-      const [posts, setPosts] = useState([]);
-      const [limit, setLimit] = useState(10);
-      const [page, setPage] = useState(1);
-      const offset = (page - 1) * limit;
-
+        const [page, setPage] = useState(1);
+        const handlePageChange = (page) => {
+          setPage(page);
+        };
     return(
         <>
 
@@ -78,10 +77,13 @@ function Review(){
                     </RvRow8>
                     <RvRow12>
                         <Pagination 
-                            total={10}
-                            limit={2}
-                            page={page}
-                            setPage={setPage}
+                            activePage={page}
+                            itemsCountPerPage={3}
+                            totalItemsCount={20}
+                            pageRangeDisplayed={5}
+                            prevPageText="‹"
+                            nextPageText="›"
+                            onChange={handlePageChange}
                         />
                     </RvRow12>
                 </ReviewCol>
