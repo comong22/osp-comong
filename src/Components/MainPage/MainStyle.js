@@ -67,6 +67,7 @@ export const IMGWrap = styled.div`
   justify-content: center;
   position: relative;
 `;
+
 export const MainIMG = styled.img`
   width: 90%;
 
@@ -164,7 +165,7 @@ export const InfoText = styled.div`
 export const MainContainer = styled.div`
   display: grid;
 
-  margin: 0 5% 0 5%;
+  margin: 0 5% 5% 5%;
 `;
 
 export const MainRow = styled.div`
@@ -172,7 +173,7 @@ export const MainRow = styled.div`
   grid-template-columns: repeat(3, 1fr);
   grid-template-areas: "col1 col2 col3";
 
-  margin-bottom: 3%;
+  margin-bottom: 4%;
 `;
 
 export const Column1 = styled.div`

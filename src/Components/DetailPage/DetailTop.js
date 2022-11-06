@@ -62,10 +62,13 @@ function DetailTop(props) {
     <>
       <TopContainer>
         <div className="detailBG">
+          
           <div className="eachDetailImg">
             <img src={detailimg[id].src} />
           </div>
+
           <div className="topBox">
+           <div className="all">
             <div className="detailinfo">가게정보</div>
             <InfoCol>
               <Row1>
@@ -111,6 +114,7 @@ function DetailTop(props) {
               </div>
               </Row5>
             </InfoCol>
+            </div>
           </div>
         </div>
       </TopContainer>

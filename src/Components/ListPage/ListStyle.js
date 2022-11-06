@@ -5,16 +5,20 @@ import styled from "styled-components";
 export const ListBG = styled.div`
   background: #fff7ef;
   width: 100vw;
+<<<<<<< HEAD
   height: 200vh;
+=======
+  height: 100vh;
+>>>>>>> f3f46feebb6812625277fa0f761c69b10861ed4a
 `;
 
 export const RestName = styled.div`
-  float: right;
-  margin-right: 50px;
+  float: left;
+  margin-right: 10px;
   font-family: "Spoqa Han Sans Neo Bold";
   font-style: normal;
   font-weight: 700;
-  font-size: 23px;
+  font-size: 28px;
   line-height: 32px;
   /* or 114% */
 
@@ -24,15 +28,13 @@ export const RestName = styled.div`
 `;
 
 export const ListName = styled.div`
-  margin: 10px 0 0px 35px;
+  margin: 2% 0 0 5%;
   font-family: "Spoqa Han Sans Neo Bold";
   font-style: normal;
-  font-size: 34px;
+  font-size: 40px;
   line-height: 170%;
   color: #ffba94;
-  text-align: left;
   font-weight: 700;
-  grid-row-gap: 20px;
 `;
 
 
@@ -44,7 +46,7 @@ export const Container = styled.div`
 export const PageRow = styled.div`
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  margin-top: 10%;
+  margin: 10% 2% 0 2%;
   grid-template-areas: "col1 col2 col2 col2 col2 col2 col2 col2 col2";
 `;
 
@@ -59,15 +61,25 @@ export const Column2 = styled.div`
 
 export const InsidePage = styled.div`
   display: grid;
+<<<<<<< HEAD
   margin-top: 10px;
   grid-template-rows: 0.5fr 0.5fr 0.5fr;
+=======
+  margin: 0 3% 0 3%;
+  grid-template-rows: repeat(3, 1fr);
+>>>>>>> f3f46feebb6812625277fa0f761c69b10861ed4a
   grid-template-areas: "rrow1" "rrow2" "rrow3"; 
 `;
 
 export const InsideInfo = styled.div`
   display: grid;
+<<<<<<< HEAD
   margin-left: 75px;
   grid-template-rows: 2fr 2fr 3fr;
+=======
+  margin: 2% 0 2% 5%;
+  grid-template-rows: repeat(3, 1fr);
+>>>>>>> f3f46feebb6812625277fa0f761c69b10861ed4a
   grid-template-areas: "rrrow1" "rrrow2" "rrrow3"; 
 `;
 
@@ -75,14 +87,15 @@ export const Rrow1 = styled.div`
   padding: 0;
   display: flex;
   position: relative;
+  align-self: center;
   grid-area: rrrow1;
-  margin-top: 10px;
 `;
 
 export const Rrow2 = styled.div`
   padding: 0;
   display: flex;
   position: relative;
+  align-self: center;
   grid-area: rrrow2;
 `;
 
@@ -90,9 +103,9 @@ export const Rrow3 = styled.div`
   padding: 0;
   display: flex;
   position: relative;
-  grid-area: rrrow3;
+  align-self: center;
 
-  
+  grid-area: rrrow3;
 `;
 
 export const Row1 = styled.div`
@@ -100,6 +113,8 @@ export const Row1 = styled.div`
   display: flex;
   position: relative;
   grid-area: rrow1;
+  border-bottom: 1px solid #D9D9D9;
+
 `;
 
 export const Row2 = styled.div`
@@ -107,6 +122,8 @@ export const Row2 = styled.div`
   display: flex;
   position: relative;
   grid-area: rrow2;
+  border-bottom: 1px solid #D9D9D9;
+
 `;
 
 export const Row3 = styled.div`
@@ -152,9 +169,15 @@ export const ListPlace01 = styled.div`
   }
 `;
 export const MainIMG = styled.img`
+<<<<<<< HEAD
   width: 130px;
   height: 130px;
   margin: 10px 0 10px 75px;
+=======
+  width: 150px;
+  height: 150px;
+  margin: 2% 0 2% 5%;
+>>>>>>> f3f46feebb6812625277fa0f761c69b10861ed4a
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
 `;
 export const ListPlace02 = styled.div`
@@ -202,8 +225,13 @@ export const ListPlace03 = styled.div`
 `;
 
 export const ListBox = styled.div`
+<<<<<<< HEAD
   max-width: 1200px;
   height: 1000px;
+=======
+  max-width: 1469px;
+  // height: 500px;
+>>>>>>> f3f46feebb6812625277fa0f761c69b10861ed4a
   margin: 0 0 0 30px;
   background: #ffffff;
   box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.25);
@@ -218,23 +246,33 @@ export const IMGform = styled.div`
 export const MapPinIMG = styled.img`
   float: left;
   max-width: 22px;
+<<<<<<< HEAD
   margin: 0 10px 30px 0;
+=======
+  margin-right: 10px;
+>>>>>>> f3f46feebb6812625277fa0f761c69b10861ed4a
 `;
 export const ClockIMG = styled.img`
   float: left;
   max-width: 22px;
-  margin: 0 10px 30px 200px;
+  margin-right: 10px;
 `;
 
 export const HeartIMG = styled.img`
   float: left;
+<<<<<<< HEAD
   max-width: 22px;
   margin: 0 10px 60px 0;
+=======
+  max-width: 23px;
+  margin-right: 10px;
+>>>>>>> f3f46feebb6812625277fa0f761c69b10861ed4a
 `;
 
 export const InfoText = styled.div`
   max-width: 1000px;
   font-family: "Spoqa Han Sans Neo Regular";
+  margin-right: 20px;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -242,6 +280,7 @@ export const InfoText = styled.div`
   /* or 27px */
   color: #000000;
 `;
+<<<<<<< HEAD
 
 export const LineText = styled.div`
   max-width: 1000px;
@@ -254,3 +293,5 @@ export const LineText = styled.div`
   color: #000000;
   margin: 0 5px 50px 5px;
 `;
+=======
+>>>>>>> f3f46feebb6812625277fa0f761c69b10861ed4a

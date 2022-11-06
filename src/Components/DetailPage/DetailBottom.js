@@ -23,6 +23,8 @@ const BottomContainer = styled.div`
   display: flex;
   height: 90%;
   width: 100%;
+  display: flex;
+  justify-content: center;
   z-index: 3;
   scroll-snap-align: start;
 `;
@@ -88,15 +90,15 @@ function TabContent(props) {
 
 function Bestmenu(props) {
   const bestmenuimg = [
-    { id: 0, src: require("../../images/main/main0.jpg") },
-    { id: 1, src: require("../../images/main/main1.jpg") },
-    { id: 2, src: require("../../images/main/main2.jpg") },
-    { id: 3, src: require("../../images/main/main3.jpg") },
-    { id: 4, src: require("../../images/main/main4.jpg") },
-    { id: 5, src: require("../../images/main/main5.png") },
-    { id: 6, src: require("../../images/main/main6.png") },
-    { id: 7, src: require("../../images/main/main7.png") },
-    { id: 8, src: require("../../images/main/main8.png") },
+    { id: 0, src: require("../../images/detail_bestmenu/detail0_bestmenu.jpg") },
+    { id: 1, src: require("../../images/detail_bestmenu/detail1_bestmenu.jpg") },
+    { id: 2, src: require("../../images/detail_bestmenu/detail2_bestmenu.jpg") },
+    { id: 3, src: require("../../images/detail_bestmenu/detail3_bestmenu.jpg") },
+    { id: 4, src: require("../../images/detail_bestmenu/detail4_bestmenu.jpg") },
+    { id: 5, src: require("../../images/detail_bestmenu/detail5_bestmenu.jpg") },
+    { id: 6, src: require("../../images/detail_bestmenu/detail6_bestmenu.jpg") },
+    { id: 7, src: require("../../images/detail_bestmenu/detail7_bestmenu.jpg") },
+    { id: 8, src: require("../../images/detail_bestmenu/detail8_bestmenu.jpg") },
   ];
   const { id } = useParams(); //params로 받아 -> id
 

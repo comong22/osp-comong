@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const BestmenuTab = styled.div`
   font-family: "Spoqa Han Sans Neo Bold";
   font-style: normal;
-  font-size: 28px;
+  font-size: 25px;
   color: ${({ tab }) => (tab === 0 ? "#FFBA94" : "#464646")};
   padding-bottom: 5px;
   border-bottom: ${({ tab }) => (tab === 0 ? "1px solid #FFBA94" : "0")};
@@ -12,7 +12,7 @@ export const BestmenuTab = styled.div`
 export const ReviewTab = styled.div`
   font-family: "Spoqa Han Sans Neo Bold";
   font-style: normal;
-  font-size: 28px;
+  font-size: 25px;
   color: ${({ tab }) => (tab === 1 ? "#FFBA94" : "#464646")};
   padding-bottom: 5px;
   border-bottom: ${({ tab }) => (tab === 1 ? "1px solid #FFBA94" : "0")};
@@ -21,20 +21,21 @@ export const ReviewTab = styled.div`
 export const Container = styled.div`
   display: grid;
   width: 95%;
-  height: 10%;
-  margin: 3% 5% 0 5%;
+  height: 3%;
+  margin: 1% 5% 0 5%;
 `;
 
 export const Container1 = styled.div`
   display: grid;
   width: 95%;
-  height: 550px;
-  margin: 1% 5% 0 5%;
+  height: 3%;
+  margin: 5% 5% 4% 5%;
 `;
 
 export const BottomBox = styled.div`
   max-width: 1500px;
-  margin: 0;
+  margin-left: 5%;
+  margin-right: 5%;
   background: #ffffff;
   box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
@@ -300,7 +301,7 @@ export const Parking = styled.div`
 
 export const ReviewCol = styled.div`
   display: grid;
-  grid-template-rows: 35% 30% 35%;
+  grid-template-rows: 35% 35% 36%;
   grid-template-columns : 16% 10% 30%;
   grid-template-areas: "rvrow1 rvrow2 rvrow3 " "rvrow4 rvrow5 rvrow6" "rvrow7 rvrow8 rvrow9";
 `;
@@ -356,6 +357,11 @@ export const FeatherIMG = styled.img`
   height: 50px;
 `;
 
+export const topBox = styled.div`
+  max-width: 730px;
+  height: 600px;
+  margin: 10%;
+`;
 
 
 

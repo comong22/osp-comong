@@ -33,8 +33,7 @@
 .inputText{
     height: 30px;
     border: none;
-    border-radius: 4px;
-    border-radius: 10px;
+    border-radius: 9px;
     color:gray;
 }
 .submitButton{

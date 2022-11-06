@@ -134,10 +134,14 @@ function TabContent(props) {
 }
 
 function Place01() {
+<<<<<<< HEAD
   let [Place01Data, setPlace01Data] = useState(place01_data); // 정문 맛집 데이터
   const str= " ____________________________________________________________________________________________________________________________________________________";
+=======
+>>>>>>> f3f46feebb6812625277fa0f761c69b10861ed4a
   return (
     <>
+    <Container>
      <ListName>이대 정문 맛집</ListName>
      <InsidePage>
         <Row1>
@@ -210,14 +214,15 @@ function Place01() {
         </Row3>
 
      </InsidePage>
+     </Container>
     </>
   );
 }
 
 function Place02() {
-  let [Place02Data, setPlace02Data] = useState(place02_data); // 후문 맛집 데이터
-  return (
+   return (
     <>
+    <Container>
       <ListName>이대 후문 맛집</ListName>
       <InsidePage>
         <Row1>
@@ -287,14 +292,15 @@ function Place02() {
           </InsideInfo>
         </Row3>
      </InsidePage>
+     </Container>
     </>
   );
 }
 
 function Place03() {
-  let [Place03Data, setPlace03Data] = useState(place03_data); // 신촌 맛집 데이터
   return (
     <>
+    <Container>
       <ListName>신촌 맛집</ListName>
       <InsidePage>
         <Row1>
@@ -364,7 +370,12 @@ function Place03() {
           </InsideInfo>
         </Row3>
      </InsidePage>
+     </Container>
     </>
   );
 }
+<<<<<<< HEAD
 export default ListPage;
+=======
+export default ListPage;
+>>>>>>> f3f46feebb6812625277fa0f761c69b10861ed4a
