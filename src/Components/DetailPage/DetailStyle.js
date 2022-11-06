@@ -301,9 +301,9 @@ export const Parking = styled.div`
 
 export const ReviewCol = styled.div`
   display: grid;
-  grid-template-rows: 35% 35% 36%;
-  grid-template-columns : 16% 10% 30%;
-  grid-template-areas: "rvrow1 rvrow2 rvrow3 " "rvrow4 rvrow5 rvrow6" "rvrow7 rvrow8 rvrow9";
+  grid-template-rows: 31% 33% 31% 40%;
+  grid-template-columns : 16% 16% 30%;
+  grid-template-areas: "rvrow1 rvrow2 rvrow3 " "rvrow4 rvrow5 rvrow6" "rvrow7 rvrow8 rvrow9" "rvrow10 rvrow11 rvrow12";
 `;
 
 export const RvRow1 = styled.div`
@@ -350,6 +350,12 @@ export const RvRow8 = styled.div`
 export const RvRow9 = styled.div`
   grid-area: rvrow9;
   align-self: center;
+`;
+
+export const RvRow12 = styled.div`
+  grid-area: rvrow12;
+  align-self: top;
+  margin-top: 4px;
 `;
 
 export const FeatherIMG = styled.img`

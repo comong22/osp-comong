@@ -8,11 +8,15 @@ import {
     FeatherIMG,
     RvRow5,
     RvRow8,
+    RvRow12,
  } from './DetailStyle';
 import './ReviewPage.css';
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import feather from "../../images/review/Feather.svg";
+import Pagination from './Pagination';
+import { useState} from "react";
+
 
 const BottomContainer = styled.div`
   background: #fff7ef;
@@ -22,6 +26,7 @@ const BottomContainer = styled.div`
   z-index: 3;
   scroll-snap-align: start;
 `;
+
 
 function Review(){
     const bestmenuimg = [
@@ -37,10 +42,14 @@ function Review(){
       ];
       const { id } = useParams(); //params로 받아 -> id
 
+      const [posts, setPosts] = useState([]);
+      const [limit, setLimit] = useState(10);
+      const [page, setPage] = useState(1);
+
     return(
         <>
 
-            <Container1>
+            <Container1> 
                 <ReviewCol>
                     <RvRow1>
                         <div className="reviewimg">
@@ -66,6 +75,14 @@ function Review(){
                     <RvRow8>
                         <FeatherIMG src={feather} alt="feather" />
                     </RvRow8>
+                    <RvRow12>
+                        <Pagination 
+                            total={10}
+                            limit={2}
+                            page={page}
+                            setPage={setPage}
+                        />
+                    </RvRow12>
                 </ReviewCol>
             </Container1>
 
