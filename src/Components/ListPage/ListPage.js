@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { GlobalFonts } from "../../fonts/font";
+import './ListPage.css';
 import {
   ListName,
   Column1,
@@ -28,38 +29,39 @@ import {
   Rrow3,
   RestName,
   HeartIMG,
-  Line,
+  LineText,
 } from "./ListStyle";
-import 고삼이 from "../../images/list/고삼이.jpg";
+import p3_9 from "../../images/list/p3_9.jpg";
 import yellowhouse from "../../images/list/yellowhouse.jpg";
 import p3_1 from "../../images/list/p3_1.jpg";
-import 대치영지 from "../../images/list/대치영지.jpg";
-import 돈부리모노 from "../../images/list/돈부리모노.jpg";
-import 돈천동 from "../../images/list/돈천동.jpg";
-import 딸기골 from "../../images/list/딸기골.jpg";
-import 란주탕슉 from "../../images/list/란주탕슉.jpg";
+import p2_7 from "../../images/list/p2_7.jpg";
+import p3_4 from "../../images/list/p3_4.jpg";
+import p1_7 from "../../images/list/p1_7.jpg";
+import p2_4 from "../../images/list/p2_4.jpg";
+import p1_8 from "../../images/list/p1_8.jpg";
 import p2_3 from "../../images/list/p2_3.jpg";
 import momigi from "../../images/list/momigi.jpg";
-import 미도인 from "../../images/list/미도인.jpg";
-import 소신이쏘 from "../../images/list/소신이쏘.jpg";
+import p3_7 from "../../images/list/p3_7.jpg";
+import p3_8 from "../../images/list/p3_8.jpg";
 import p2_1 from "../../images/list/p2_1.jpg";
-import 스튜디오웝 from "../../images/list/스튜디오웝.jpg";
-import 식탁 from "../../images/list/식탁.jpg";
-import 어바웃샤브 from "../../images/list/어바웃샤브.jpg";
-import 원즈오운 from "../../images/list/원즈오운.jpg";
-import 유소바 from "../../images/list/유소바.jpg";
+import p2_5 from "../../images/list/p2_5.jpg";
+import p2_9 from "../../images/list/p2_9.jpg";
+import p1_6 from "../../images/list/p1_6.jpg";
+import p1_4 from "../../images/list/p1_4.jpg";
+import p1_9 from "../../images/list/p1_9.jpg";
 import yuyake from "../../images/list/yuyake.jpg";
 import p3_3 from "../../images/list/p3_3.jpg";
 import p2_2 from "../../images/list/p2_2.jpg";
-import 파이홀 from "../../images/list/파이홀.jpg";
-import 포티드 from "../../images/list/포티드.jpg";
-import 하노이의아침 from "../../images/list/하노이의아침.jpg";
+import p3_5 from "../../images/list/p3_5.jpg";
+import p3_6 from "../../images/list/p3_6.jpg";
+import p2_6 from "../../images/list/p2_6.jpg";
 import heartt from "../../images/list/heartt.svg";
-import 한끼마끼 from "../../images/list/한끼마끼.jpg";
-import 헐리우드 from "../../images/list/헐리우드.jpg";
+import p1_5 from "../../images/list/p1_5.jpg";
+import p2_8 from "../../images/list/p2_8.jpg";
 import p3_2 from "../../images/list/p3_2.jpg";
 import clock from "../../images/main/clock.svg";
 import mappin from "../../images/main/mappin.svg";
+import line from "../../images/list/line.svg";
 import { place01_data, place02_data, place03_data } from "./data";
 function ListPage() {
   let [tab, setTab] = useState(0); // 0 정문, 1 후문, 2 신촌
@@ -133,6 +135,7 @@ function TabContent(props) {
 
 function Place01() {
   let [Place01Data, setPlace01Data] = useState(place01_data); // 정문 맛집 데이터
+  const str= " ____________________________________________________________________________________________________________________________________________________";
   return (
     <>
      <ListName>이대 정문 맛집</ListName>
@@ -156,9 +159,10 @@ function Place01() {
               <HeartIMG src={heartt} alt="heart" />
               <InfoText>대표메뉴 - {place01_data[0].signature_menu}</InfoText>
             </Rrow3>
-
+            <LineText> {str} </LineText>
           </InsideInfo>
         </Row1>
+        
         <Row2>
         <MainIMG
           src = {momigi}
@@ -178,9 +182,10 @@ function Place01() {
               <HeartIMG src={heartt} alt="heart" />
               <InfoText>대표메뉴 - {place01_data[1].signature_menu}</InfoText>
             </Rrow3>
-
+            <LineText> {str} </LineText>
           </InsideInfo>
         </Row2>
+        
         <Row3>
         <MainIMG
           src = {yuyake}
@@ -203,6 +208,7 @@ function Place01() {
 
           </InsideInfo>
         </Row3>
+
      </InsidePage>
     </>
   );
@@ -362,6 +368,3 @@ function Place03() {
   );
 }
 export default ListPage;
-
-
-// let [MainData, setMainData] = useState(main_data); // data.js에 있는 데이터

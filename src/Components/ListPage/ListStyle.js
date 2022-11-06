@@ -1,15 +1,11 @@
 import styled from "styled-components";
 
+
+
 export const ListBG = styled.div`
   background: #fff7ef;
   width: 100vw;
-  height: 100vh;
-`;
-
-export const LIne = styled.div`
-  background: #fff7ef;
-  width: 100vw;
-  height: 100vh;
+  height: 200vh;
 `;
 
 export const RestName = styled.div`
@@ -64,14 +60,14 @@ export const Column2 = styled.div`
 export const InsidePage = styled.div`
   display: grid;
   margin-top: 10px;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 0.5fr 0.5fr 0.5fr;
   grid-template-areas: "rrow1" "rrow2" "rrow3"; 
 `;
 
 export const InsideInfo = styled.div`
   display: grid;
   margin-left: 75px;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 2fr 2fr 3fr;
   grid-template-areas: "rrrow1" "rrrow2" "rrrow3"; 
 `;
 
@@ -136,7 +132,7 @@ export const ListRow = styled.div`
 export const ListPlace01 = styled.div`
   grid-area: row1;
   max-width: 100px;
-  margin: 10px 0 0px 0;
+  margin: 0px 0 0px 0;
   text-align: center;
   
   font-family: "Spoqa Han Sans Neo Bold";
@@ -156,8 +152,8 @@ export const ListPlace01 = styled.div`
   }
 `;
 export const MainIMG = styled.img`
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   margin: 10px 0 10px 75px;
   box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.25);
 `;
@@ -207,7 +203,7 @@ export const ListPlace03 = styled.div`
 
 export const ListBox = styled.div`
   max-width: 1200px;
-  height: 650px;
+  height: 1000px;
   margin: 0 0 0 30px;
   background: #ffffff;
   box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.25);
@@ -222,8 +218,7 @@ export const IMGform = styled.div`
 export const MapPinIMG = styled.img`
   float: left;
   max-width: 22px;
-  margin-right: 10px;
-  margin-bottom: 30px;
+  margin: 0 10px 30px 0;
 `;
 export const ClockIMG = styled.img`
   float: left;
@@ -234,7 +229,7 @@ export const ClockIMG = styled.img`
 export const HeartIMG = styled.img`
   float: left;
   max-width: 22px;
-  margin: 0 10px 30px 0;
+  margin: 0 10px 60px 0;
 `;
 
 export const InfoText = styled.div`
@@ -246,4 +241,16 @@ export const InfoText = styled.div`
   line-height: 150%;
   /* or 27px */
   color: #000000;
+`;
+
+export const LineText = styled.div`
+  max-width: 1000px;
+  font-family: "Spoqa Han Sans Neo Regular";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 10%;
+  /* or 27px */
+  color: #000000;
+  margin: 0 5px 50px 5px;
 `;
