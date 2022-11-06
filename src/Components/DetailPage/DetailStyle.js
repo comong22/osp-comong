@@ -22,7 +22,7 @@ export const Container = styled.div`
   display: grid;
   width: 95%;
   height: 3%;
-  margin: 4% 5% 0 5%;
+  margin: 1% 5% 0 5%;
 `;
 
 export const Container1 = styled.div`
@@ -34,7 +34,8 @@ export const Container1 = styled.div`
 
 export const BottomBox = styled.div`
   max-width: 1500px;
-  margin: 0;
+  margin-left: 5%;
+  margin-right: 5%;
   background: #ffffff;
   box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
