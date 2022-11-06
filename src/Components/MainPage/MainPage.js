@@ -95,6 +95,9 @@ function MainPage() {
                 onMouseOut={() => {
                   outMouseOver(0);
                 }}
+                onClick={()=>{
+                  navigate(`/detail/${MainData[0].id}`);
+                }}
               >
                 <InfoContainer>
                   <InfoCol>
@@ -131,6 +134,9 @@ function MainPage() {
                 onMouseOut={() => {
                   outMouseOver(1);
                 }}
+                onClick={()=>{
+                  navigate(`/detail/${MainData[1].id}`);
+                }}
               >
                 <InfoContainer>
                   <InfoCol>
@@ -166,6 +172,9 @@ function MainPage() {
                 info={info[2]}
                 onMouseOut={() => {
                   outMouseOver(2);
+                }}
+                onClick={()=>{
+                  navigate(`/detail/${MainData[2].id}`);
                 }}
               >
                 <InfoContainer>
@@ -205,6 +214,9 @@ function MainPage() {
                 onMouseOut={() => {
                   outMouseOver(3);
                 }}
+                onClick={()=>{
+                  navigate(`/detail/${MainData[3].id}`);
+                }}
               >
                 <InfoContainer>
                   <InfoCol>
@@ -241,6 +253,9 @@ function MainPage() {
                 onMouseOut={() => {
                   outMouseOver(4);
                 }}
+                onClick={()=>{
+                  navigate(`/detail/${MainData[4].id}`);
+                }}
               >
                 <InfoContainer>
                   <InfoCol>
@@ -276,6 +291,9 @@ function MainPage() {
                 info={info[5]}
                 onMouseOut={() => {
                   outMouseOver(5);
+                }}
+                onClick={()=>{
+                  navigate(`/detail/${MainData[5].id}`);
                 }}
               >
                 <InfoContainer>
@@ -315,6 +333,9 @@ function MainPage() {
                 onMouseOut={() => {
                   outMouseOver(6);
                 }}
+                onClick={()=>{
+                  navigate(`/detail/${MainData[6].id}`);
+                }}
               >
                 <InfoContainer>
                   <InfoCol>
@@ -350,6 +371,9 @@ function MainPage() {
                 info={info[7]}
                 onMouseOut={() => {
                   outMouseOver(7);
+                }}
+                onClick={()=>{
+                  navigate(`/detail/${MainData[7].id}`);
                 }}
               >
                 <InfoContainer>
@@ -387,6 +411,9 @@ function MainPage() {
                 onMouseOut={() => {
                   outMouseOver(8);
                 }}
+                onClick={()=>{
+                  navigate(`/detail/${MainData[8].id}`);
+                }}
               >
                 <InfoContainer>
                   <InfoCol>
@@ -408,11 +435,11 @@ function MainPage() {
             </Column3>
           </MainRow>
         </MainContainer>
-        {/* <Footer>
+        <Footer>
           <FooterText>
             Copyright © 2022 EWHA comong. All rights reserved.
           </FooterText>
-        </Footer> */}
+        </Footer>
       </MainBG>
     </>
   );
