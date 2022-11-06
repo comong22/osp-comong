@@ -1,8 +1,10 @@
 import './UploadPage.css';
 import Add from '../../images/add.svg';
-//import { useState } from 'react';
-//import { useCallback } from 'react';
-//import Modal from 'react-modal';
+import { useState } from 'react';
+import ModalBasic from './Modal.js';
+
+
+
 
 
 
@@ -13,13 +15,9 @@ function AddBox(props){
     )
 }
 function InputBox(props){
-    //const [value,setValue]=useState('welcome');
-    //const onChange=useCallback(e=>{
-    //    setValue(e.target.value);
-    //},[]);
     return(
         <span style={{marginRight:props.margin}}>
-        <span className='text'>{props.title}</span>
+        <span className='text'>{props.title}</span> 
         <input className="inputText" type='text' size={props.size} placeholder={props.value} ></input>
         </span>
     )
@@ -27,6 +25,10 @@ function InputBox(props){
 
 
 function UploadPage(){
+        const [modal, setModal] = useState(false);
+        const showModal = () => {
+            setModal(true);
+        };
     return(
 
         <div className='uploadBG'>
@@ -70,9 +72,9 @@ function UploadPage(){
                         </div>
                     </div>
                     <div style={{display:"flex", justifyContent:"left",marginTop:"30px",marginLeft:"310px"}}>
-                        <button className='submitButton' onClick={function(event){
-                            
-                        }} >등록하기</button>
+                    <button onClick={showModal} className='submitButton' >등록하기</button>
+                    {modal && <ModalBasic setModal={setModal} />}
+                    
                     </div>
                     
                 </div>
@@ -83,3 +85,4 @@ function UploadPage(){
 }
 
 export default UploadPage;
+
