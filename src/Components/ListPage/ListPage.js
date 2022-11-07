@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { GlobalFonts } from "../../fonts/font";
 import Pagination from "react-js-pagination";
-import './ListPage.css';
+import "./ListPage.css";
 import {
   ListName,
-  RealListBox,
   Column1,
   Column2,
   Container,
@@ -19,17 +18,16 @@ import {
   PageRow,
   MapPinIMG,
   ClockIMG,
-  InfoText,
   MainIMG,
-  RestName,
   HeartIMG,
   DataContainer,
-  ReallistRow,
-  Rcolumn1,
-  Rcolumn2,
+  ListPageRow,
+  Col1,
+  Col2,
   Border,
-  IinfoText,
-  RrestName,
+  InfoText,
+  RestName,
+  PageContainer,
 } from "./ListStyle";
 import heartt from "../../images/list/heartt.svg";
 import clock from "../../images/main/clock.svg";
@@ -41,7 +39,7 @@ function ListPage() {
     <>
       <GlobalFonts />
       <ListBG>
-        <Container>
+        <PageContainer>
           <PageRow>
             <Column1>
               <ListContents>
@@ -79,7 +77,7 @@ function ListPage() {
               </ListBox>
             </Column2>
           </PageRow>
-        </Container>
+        </PageContainer>
       </ListBG>
     </>
   );
@@ -125,46 +123,43 @@ function Place01() {
   ];
   return (
     <>
-    <Container>
-     <ListName>이대 정문 맛집</ListName>
-     <RealListBox>
-      <ContentsWrap>
-        {place01Data
-          .slice(items * (page-1), items * (page-1) + items)
-          .map((v,i) => {
-            return (
-              <div key = {i}>
-                <DataContainer>
-                  <ReallistRow>
-                    <Rcolumn1>
-                      <MainIMG src={Place01img[v.id].src}/>
-                    </Rcolumn1>
-                    <Rcolumn2>
-                      <RrestName>{v.name}</RrestName>
-                      <MapPinIMG src={mappin}/>
-                      <IinfoText>{v.address}</IinfoText>
-                      <ClockIMG src={clock}/>
-                      <IinfoText>{v.business_hours}</IinfoText>
-                      <HeartIMG src={heartt}/>
-                      <IinfoText>대표 메뉴 - {v.signature_menu}</IinfoText>
-                    </Rcolumn2>
-                  </ReallistRow>
-                </DataContainer>
-                <Border/>
-              </div>
-            );
-          })
-        }
-      </ContentsWrap>
-      <Pagination
-        activePage={page}
-        itemsCountPerPage={items}
-        totalItemsCount={place01Data.length - 1}
-        pageRangeDisplayed={3}
-        onChange={handlePageChange}
-      ></Pagination>
-     </RealListBox>
-     </Container>
+      <Container>
+        <ListName>이대 정문 맛집</ListName>
+        <ContentsWrap>
+          {place01Data
+            .slice(items * (page - 1), items * (page - 1) + items)
+            .map((v, i) => {
+              return (
+                <div key={i}>
+                  <DataContainer>
+                    <ListPageRow>
+                      <Col1>
+                        <MainIMG src={Place01img[v.id].src} />
+                      </Col1>
+                      <Col2>
+                        <RestName>{v.name}</RestName>
+                        <MapPinIMG src={mappin} />
+                        <InfoText>{v.address}</InfoText>
+                        <ClockIMG src={clock} />
+                        <InfoText>{v.business_hours}</InfoText>
+                        <HeartIMG src={heartt} />
+                        <InfoText>대표 메뉴 - {v.signature_menu}</InfoText>
+                      </Col2>
+                    </ListPageRow>
+                  </DataContainer>
+                  <Border />
+                </div>
+              );
+            })}
+        </ContentsWrap>
+        <Pagination
+          activePage={page}
+          itemsCountPerPage={items}
+          totalItemsCount={place01Data.length - 1}
+          pageRangeDisplayed={3}
+          onChange={handlePageChange}
+        ></Pagination>
+      </Container>
     </>
   );
 }
@@ -189,46 +184,43 @@ function Place02() {
   ];
   return (
     <>
-    <Container>
-     <ListName>이대 후문 맛집</ListName>
-     <RealListBox>
-      <ContentsWrap>
-        {place02Data
-          .slice(items * (page-1), items * (page-1) + items)
-          .map((v,i) => {
-            return (
-              <div key = {i}>
-                <DataContainer>
-                  <ReallistRow>
-                    <Rcolumn1>
-                      <MainIMG src={Place02img[v.id].src}/>
-                    </Rcolumn1>
-                    <Rcolumn2>
-                      <RrestName>{v.name}</RrestName>
-                      <MapPinIMG src={mappin}/>
-                      <IinfoText>{v.address}</IinfoText>
-                      <ClockIMG src={clock}/>
-                      <IinfoText>{v.business_hours}</IinfoText>
-                      <HeartIMG src={heartt}/>
-                      <IinfoText>대표 메뉴 - {v.signature_menu}</IinfoText>
-                    </Rcolumn2>
-                  </ReallistRow>
-                </DataContainer>
-                <Border/>
-              </div>
-            );
-          })
-        }
-      </ContentsWrap>
-      <Pagination
-        activePage={page}
-        itemsCountPerPage={items}
-        totalItemsCount={place02Data.length - 1}
-        pageRangeDisplayed={3}
-        onChange={handlePageChange}
-      ></Pagination>
-     </RealListBox>
-     </Container>
+      <Container>
+        <ListName>이대 후문 맛집</ListName>
+        <ContentsWrap>
+          {place02Data
+            .slice(items * (page - 1), items * (page - 1) + items)
+            .map((v, i) => {
+              return (
+                <div key={i}>
+                  <DataContainer>
+                    <ListPageRow>
+                      <Col1>
+                        <MainIMG src={Place02img[v.id].src} />
+                      </Col1>
+                      <Col2>
+                        <RestName>{v.name}</RestName>
+                        <MapPinIMG src={mappin} />
+                        <InfoText>{v.address}</InfoText>
+                        <ClockIMG src={clock} />
+                        <InfoText>{v.business_hours}</InfoText>
+                        <HeartIMG src={heartt} />
+                        <InfoText>대표 메뉴 - {v.signature_menu}</InfoText>
+                      </Col2>
+                    </ListPageRow>
+                  </DataContainer>
+                  <Border />
+                </div>
+              );
+            })}
+        </ContentsWrap>
+        <Pagination
+          activePage={page}
+          itemsCountPerPage={items}
+          totalItemsCount={place02Data.length - 1}
+          pageRangeDisplayed={3}
+          onChange={handlePageChange}
+        ></Pagination>
+      </Container>
     </>
   );
 }
@@ -253,46 +245,43 @@ function Place03() {
   ];
   return (
     <>
-    <Container>
-     <ListName>신촌 맛집</ListName>
-     <RealListBox>
-      <ContentsWrap>
-        {place03Data
-          .slice(items * (page-1), items * (page-1) + items)
-          .map((v,i) => {
-            return (
-              <div key = {i}>
-                <DataContainer>
-                  <ReallistRow>
-                    <Rcolumn1>
-                      <MainIMG src={Place03img[v.id].src}/>
-                    </Rcolumn1>
-                    <Rcolumn2>
-                      <RrestName>{v.name}</RrestName>
-                      <MapPinIMG src={mappin}/>
-                      <IinfoText>{v.address}</IinfoText>
-                      <ClockIMG src={clock}/>
-                      <IinfoText>{v.business_hours}</IinfoText>
-                      <HeartIMG src={heartt}/>
-                      <IinfoText>대표 메뉴 - {v.signature_menu}</IinfoText>
-                    </Rcolumn2>
-                  </ReallistRow>
-                </DataContainer>
-                <Border/>
-              </div>
-            );
-          })
-        }
-      </ContentsWrap>
-      <Pagination
-        activePage={page}
-        itemsCountPerPage={items}
-        totalItemsCount={place03Data.length - 1}
-        pageRangeDisplayed={3}
-        onChange={handlePageChange}
-      ></Pagination>
-     </RealListBox>
-     </Container>
+      <Container>
+        <ListName>신촌 맛집</ListName>
+        <ContentsWrap>
+          {place03Data
+            .slice(items * (page - 1), items * (page - 1) + items)
+            .map((v, i) => {
+              return (
+                <div key={i}>
+                  <DataContainer>
+                    <ListPageRow>
+                      <Col1>
+                        <MainIMG src={Place03img[v.id].src} />
+                      </Col1>
+                      <Col2>
+                        <RestName>{v.name}</RestName>
+                        <MapPinIMG src={mappin} />
+                        <InfoText>{v.address}</InfoText>
+                        <ClockIMG src={clock} />
+                        <InfoText>{v.business_hours}</InfoText>
+                        <HeartIMG src={heartt} />
+                        <InfoText>대표 메뉴 - {v.signature_menu}</InfoText>
+                      </Col2>
+                    </ListPageRow>
+                  </DataContainer>
+                  <Border />
+                </div>
+              );
+            })}
+        </ContentsWrap>
+        <Pagination
+          activePage={page}
+          itemsCountPerPage={items}
+          totalItemsCount={place03Data.length - 1}
+          pageRangeDisplayed={3}
+          onChange={handlePageChange}
+        ></Pagination>
+      </Container>
     </>
   );
 }
