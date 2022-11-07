@@ -37,7 +37,7 @@
     color:gray;
 }
 .submitButton{
-    background-color: #FFBA94;
+    background-color: #ffa574;
     color: #FFF7EF;
     border: none;
     border-radius: 8px;
@@ -45,8 +45,20 @@
     font-family: 'Spoqa Han Sans Neo';
     align-content: center;
     font-weight: 700;
-    width: 120px;
-    height: 50px;
+    width: 100px;
+    height: 40px;
+}
+.submitButton2{
+    background-color: #ffa574;
+    color: #FFF7EF;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-family: 'Spoqa Han Sans Neo';
+    align-content: center;
+    font-weight: 700;
+    width: 200px;
+    height: 40px;
 }
 hr{
     width: 650;

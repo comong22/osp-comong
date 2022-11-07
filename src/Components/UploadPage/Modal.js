@@ -16,7 +16,7 @@ function ModalBasic({ setModal }) {
                 <p class="t1">맛집을 등록하시겠습니까?</p>
                 <p class="t2">업로드 후에는 수정이 불가능합니다.</p>
                 </div>
-                <button class="submitButton" style={{marginLeft:"190px",marginTop:"17px"}} onClick={closeModal}>
+                <button class="submitButton2" style={{marginLeft:"150px",marginTop:"17px"}} onClick={closeModal}>
                     맛집 등록하기
                 </button>
 
