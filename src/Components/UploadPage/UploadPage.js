@@ -6,6 +6,12 @@ import ModalBasic from './Modal.js';
 
 
 
+function mouseOver(e) {
+    e.currentTarget.style.backgroundColor = "#FFBA94";
+}
+function mouseOut(e) {
+    e.currentTarget.style.backgroundColor = "#ffa574";
+} 
 
 
 function AddBox(props){
@@ -72,7 +78,7 @@ function UploadPage(){
                         </div>
                     </div>
                     <div style={{display:"flex", justifyContent:"left",marginTop:"30px",marginLeft:"310px"}}>
-                    <button onClick={showModal} className='submitButton' >등록하기</button>
+                    <button onClick={showModal}  onMouseOver={(e) =>mouseOver(e)} onMouseOut={(e) =>mouseOut(e)} className='submitButton' >등록하기</button>
                     {modal && <ModalBasic setModal={setModal} />}
                     
                     </div>
