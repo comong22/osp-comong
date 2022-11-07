@@ -36,18 +36,12 @@ function UploadPage(){
             setModal(true);
         };
     return(
-
         <div className='uploadBG'>
-            <br></br><br></br>
-            <br></br><br></br>
-            <br></br><br></br>
-            <br></br><br></br>
-            <div style={{display:'flex'}}>
-                <div style={{width: '40%', float: 'left'}}>
+                <div className='item'>
                     <AddBox size="400px"></AddBox>
-                    <div className='title' style={{textAlign:"center"}}>대표사진</div>
+                    <div className='title' style={{marginLeft: "80px",marginTop:"20px"}}>대표사진</div>
                 </div>
-               <div style={{width: '60%', float: 'right'}}>
+               <div className='item' >
                     <div>
                         <InputBox  title="식당이름" margin="30px" size="25"></InputBox>
                         <InputBox title="카테고리" value="일식" margin="40px"></InputBox>
@@ -65,28 +59,32 @@ function UploadPage(){
                         <InputBox title="영업시간" value="09:00~21:00" size='18' margin="40px"></InputBox>
                         <InputBox title="사이트" value="인스타그램, 대표사이트" size='53'></InputBox>
                     </div>
-                    <hr width="650" style={{position:'absolute',top:'375px',right:'198px',zIndex:"1",backgroundColor:"#FFBA94"}}></hr>
-                    <div  className='title' style={{marginTop:"30px",position:'relative',marginLeft:'220px', backgroundColor:"#FFF7EF",width:"250px", border:"100px",zIndex:"2"}} > 대표메뉴 등록하기</div>
-                    <br></br>
-                    <div style={{display:"flex", justifyContent:"left",margin:"0px 90px"}}>
-                        <AddBox size="150px"></AddBox>
-                        <div style={{float: "right",marginTop:"30px",marginLeft:"60px"}} >
+
+                    <div className='HR'>
+                        <div ><hr className='hr1'></hr></div>
+                        <div  className='title' > 대표메뉴 등록하기</div>
+                        <div ><hr className='hr2'></hr></div>
+                    </div>
+
+                    <div className='addMenu'style={{ justifyContent: "center" }}>
+                        <div className='it1'>
+                            <AddBox size="150px"></AddBox>
+                        </div>
+                        <div>
+                            <div style={{margin:"35px"}}></div>
                             <InputBox title="메뉴명"></InputBox>
-                            <br></br>
-                            <br></br>
+                        </div>
+                        <div>
                             <InputBox title="가격" size="15" ></InputBox>
                         </div>
+                        <div className='it4'>
+                            <button onClick={showModal}  onMouseOver={(e) =>mouseOver(e)} onMouseOut={(e) =>mouseOut(e)} className='submitButton' >등록하기</button>
+                            {modal && <ModalBasic setModal={setModal} />}
+                        </div>
                     </div>
-                    <div style={{display:"flex", justifyContent:"left",marginTop:"30px",marginLeft:"310px"}}>
-                    <button onClick={showModal}  onMouseOver={(e) =>mouseOver(e)} onMouseOut={(e) =>mouseOut(e)} className='submitButton' >등록하기</button>
-                    {modal && <ModalBasic setModal={setModal} />}
-                    
-                    </div>
-                    
                 </div>
             </div>
             
-        </div>
     )
 }
 
