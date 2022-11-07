@@ -62,6 +62,41 @@ export const Title = styled.div`
   left: 6.5%;
 `;
 
+export const MainContainer = styled.div`
+  display: grid;
+
+  margin: 0 5% 5% 5%;
+`;
+
+export const MainRow = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "col1 col2 col3";
+
+  margin-bottom: 4%;
+`;
+
+export const Column1 = styled.div`
+  display: flex;
+  position: relative;
+  grid-area: col1;
+  justify-content: center;
+`;
+
+export const Column2 = styled.div`
+  display: flex;
+  position: relative;
+  grid-area: col2;
+  justify-content: center;
+`;
+
+export const Column3 = styled.div`
+  display: flex;
+  position: relative;
+  grid-area: col3;
+  justify-content: center;
+`;
+
 export const IMGWrap = styled.div`
   display: flex;
   justify-content: center;
@@ -98,6 +133,7 @@ export const InfoCol = styled.div`
   grid-template-rows: repeat(3, 1fr);
   grid-template-areas: "row1" "row2" "row3";
 `;
+
 export const Row1 = styled.div`
   align-self: center;
 
@@ -140,11 +176,13 @@ export const RestCategory = styled.div`
 
   color: #000000;
 `;
+
 export const MapPinIMG = styled.img`
   float: left;
   max-width: 22px;
   margin-right: 10px;
 `;
+
 export const ClockIMG = styled.img`
   float: left;
   max-width: 22px;
@@ -161,40 +199,6 @@ export const InfoText = styled.div`
   /* or 27px */
 
   color: #000000;
-`;
-export const MainContainer = styled.div`
-  display: grid;
-
-  margin: 0 5% 5% 5%;
-`;
-
-export const MainRow = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-areas: "col1 col2 col3";
-
-  margin-bottom: 4%;
-`;
-
-export const Column1 = styled.div`
-  display: flex;
-  position: relative;
-  grid-area: col1;
-  justify-content: center;
-`;
-
-export const Column2 = styled.div`
-  display: flex;
-  position: relative;
-  grid-area: col2;
-  justify-content: center;
-`;
-
-export const Column3 = styled.div`
-  display: flex;
-  position: relative;
-  grid-area: col3;
-  justify-content: center;
 `;
 
 export const Footer = styled.div`

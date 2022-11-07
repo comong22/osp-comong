@@ -85,7 +85,7 @@ function MainPage() {
                   onMouseOver={() => {
                     isMouseOver(0);
                   }}
-                  onClick={()=>{
+                  onClick={() => {
                     navigate(`/detail/${MainData[0].id}`);
                   }}
                 />
@@ -95,7 +95,7 @@ function MainPage() {
                 onMouseOut={() => {
                   outMouseOver(0);
                 }}
-                onClick={()=>{
+                onClick={() => {
                   navigate(`/detail/${MainData[0].id}`);
                 }}
               >
@@ -124,7 +124,7 @@ function MainPage() {
                   onMouseOver={() => {
                     isMouseOver(1);
                   }}
-                  onClick={()=>{
+                  onClick={() => {
                     navigate(`/detail/${MainData[1].id}`);
                   }}
                 />
@@ -134,7 +134,7 @@ function MainPage() {
                 onMouseOut={() => {
                   outMouseOver(1);
                 }}
-                onClick={()=>{
+                onClick={() => {
                   navigate(`/detail/${MainData[1].id}`);
                 }}
               >
@@ -163,7 +163,7 @@ function MainPage() {
                   onMouseOver={() => {
                     isMouseOver(2);
                   }}
-                  onClick={()=>{
+                  onClick={() => {
                     navigate(`/detail/${MainData[2].id}`);
                   }}
                 />
@@ -173,7 +173,7 @@ function MainPage() {
                 onMouseOut={() => {
                   outMouseOver(2);
                 }}
-                onClick={()=>{
+                onClick={() => {
                   navigate(`/detail/${MainData[2].id}`);
                 }}
               >
@@ -204,7 +204,7 @@ function MainPage() {
                   onMouseOver={() => {
                     isMouseOver(3);
                   }}
-                  onClick={()=>{
+                  onClick={() => {
                     navigate(`/detail/${MainData[3].id}`);
                   }}
                 />
@@ -214,7 +214,7 @@ function MainPage() {
                 onMouseOut={() => {
                   outMouseOver(3);
                 }}
-                onClick={()=>{
+                onClick={() => {
                   navigate(`/detail/${MainData[3].id}`);
                 }}
               >
@@ -243,7 +243,7 @@ function MainPage() {
                   onMouseOver={() => {
                     isMouseOver(4);
                   }}
-                  onClick={()=>{
+                  onClick={() => {
                     navigate(`/detail/${MainData[4].id}`);
                   }}
                 />
@@ -253,7 +253,7 @@ function MainPage() {
                 onMouseOut={() => {
                   outMouseOver(4);
                 }}
-                onClick={()=>{
+                onClick={() => {
                   navigate(`/detail/${MainData[4].id}`);
                 }}
               >
@@ -282,7 +282,7 @@ function MainPage() {
                   onMouseOver={() => {
                     isMouseOver(5);
                   }}
-                  onClick={()=>{
+                  onClick={() => {
                     navigate(`/detail/${MainData[5].id}`);
                   }}
                 />
@@ -292,7 +292,7 @@ function MainPage() {
                 onMouseOut={() => {
                   outMouseOver(5);
                 }}
-                onClick={()=>{
+                onClick={() => {
                   navigate(`/detail/${MainData[5].id}`);
                 }}
               >
@@ -323,7 +323,7 @@ function MainPage() {
                   onMouseOver={() => {
                     isMouseOver(6);
                   }}
-                  onClick={()=>{
+                  onClick={() => {
                     navigate(`/detail/${MainData[6].id}`);
                   }}
                 />
@@ -333,7 +333,7 @@ function MainPage() {
                 onMouseOut={() => {
                   outMouseOver(6);
                 }}
-                onClick={()=>{
+                onClick={() => {
                   navigate(`/detail/${MainData[6].id}`);
                 }}
               >
@@ -362,7 +362,7 @@ function MainPage() {
                   onMouseOver={() => {
                     isMouseOver(7);
                   }}
-                  onClick={()=>{
+                  onClick={() => {
                     navigate(`/detail/${MainData[7].id}`);
                   }}
                 />
@@ -372,7 +372,7 @@ function MainPage() {
                 onMouseOut={() => {
                   outMouseOver(7);
                 }}
-                onClick={()=>{
+                onClick={() => {
                   navigate(`/detail/${MainData[7].id}`);
                 }}
               >
@@ -401,7 +401,7 @@ function MainPage() {
                   onMouseOver={() => {
                     isMouseOver(8);
                   }}
-                  onClick={()=>{
+                  onClick={() => {
                     navigate(`/detail/${MainData[8].id}`);
                   }}
                 />
@@ -411,7 +411,7 @@ function MainPage() {
                 onMouseOut={() => {
                   outMouseOver(8);
                 }}
-                onClick={()=>{
+                onClick={() => {
                   navigate(`/detail/${MainData[8].id}`);
                 }}
               >
