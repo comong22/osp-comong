@@ -5,17 +5,21 @@ import {
     RvRow4,
     RvRow7,
     RvRow2,
+    RvRow3,
     FeatherIMG,
     RvRow5,
+    RvRow6,
     RvRow8,
+    RvRow9,
     RvRow12,
  } from './DetailStyle';
 import './ReviewPage.css';
 import styled from "styled-components";
-import { useParams } from "react-router-dom";
+import { createPath, useParams } from "react-router-dom";
 import feather from "../../images/review/Feather.svg";
 import { useState} from "react";
 import Pagination from 'react-js-pagination';
+import { main_data } from "../MainPage/data";
 
 
 const BottomContainer = styled.div`
@@ -58,7 +62,14 @@ function Review(){
                     </RvRow1>
                     <RvRow2>
                         <FeatherIMG src={feather} alt="feather" />
+                        <div className="NickName">NickName</div>
+                        <div className="star">평점 #</div>
                     </RvRow2>
+                    <RvRow3>
+                        <div className="ReviewC">
+                            content1
+                        </div>
+                    </RvRow3>
                     <RvRow4>
                         <div className="reviewimg">
                             <img src={bestmenuimg[id].src} />
@@ -66,7 +77,14 @@ function Review(){
                     </RvRow4>
                     <RvRow5>
                         <FeatherIMG src={feather} alt="feather" />
+                        <div className="NickName">NickName</div>
+                        <div className="star">평점 #</div>
                     </RvRow5>
+                    <RvRow6>
+                        <div className="ReviewC">
+                            Content2
+                        </div>
+                    </RvRow6>
                     <RvRow7>
                         <div className="reviewimg">
                             <img src={bestmenuimg[id].src} />
@@ -74,12 +92,19 @@ function Review(){
                     </RvRow7>
                     <RvRow8>
                         <FeatherIMG src={feather} alt="feather" />
+                        <div className="NickName">NickName</div>
+                        <div className="star">평점 #</div>
                     </RvRow8>
+                    <RvRow9>
+                        <div className="ReviewC">
+                            Content3
+                        </div>
+                    </RvRow9>
                     <RvRow12>
                         <Pagination 
                             activePage={page}
                             itemsCountPerPage={3}
-                            totalItemsCount={20}
+                            totalItemsCount={30}
                             pageRangeDisplayed={5}
                             prevPageText="‹"
                             nextPageText="›"

@@ -34,7 +34,8 @@ export const Container1 = styled.div`
 
 export const BottomBox = styled.div`
   max-width: 1500px;
-  height : 700px;
+  height : 650px;
+  margin-top: 5%;
   margin-left: 5%;
   margin-right: 5%;
   background: #ffffff;
