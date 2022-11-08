@@ -27,7 +27,7 @@ function DetailPage(){
         <PageContainer>
             <GlobalFonts/>
             <DetailTop MainData={MainData}/>
-            <DetailBottom/>
+            <DetailBottom MainData={MainData}/>
         </PageContainer>
     )
 }
