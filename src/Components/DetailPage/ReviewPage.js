@@ -20,6 +20,7 @@ import feather from "../../images/review/Feather.svg";
 import { useState} from "react";
 import Pagination from 'react-js-pagination';
 import { main_data } from "../MainPage/data";
+import { Reviewdata01,Reviewdata02,Reviewdata03,Reviewdata04,Reviewdata05,Reviewdata06,Reviewdata07,Reviewdata08,Reviewdata09} from "./Reviewdata";
 
 
 const BottomContainer = styled.div`
@@ -33,7 +34,7 @@ const BottomContainer = styled.div`
 
 
 function Review(){
-    const bestmenuimg = [
+    const img = [
         { id: 0, src: require("../../images/review/review0.jpg") },
         { id: 1, src: require("../../images/review/review1.jpg") },
         { id: 2, src: require("../../images/review/review2.jpg") },
@@ -57,54 +58,24 @@ function Review(){
                 <ReviewCol>
                     <RvRow1>
                         <div className="reviewimg">
-                            <img src={bestmenuimg[id].src} />
+                            <img src={img[id].src} />
                         </div>
                     </RvRow1>
                     <RvRow2>
                         <FeatherIMG src={feather} alt="feather" />
-                        <div className="NickName">NickName</div>
-                        <div className="star">평점 #</div>
+                        <div className="NickName">{Reviewdata01[id].nickName}</div>
+                        <div className="star">평점 #{Reviewdata01[id].star}</div>
                     </RvRow2>
                     <RvRow3>
                         <div className="ReviewC">
-                            content1
+                        {Reviewdata01[id].content}
                         </div>
                     </RvRow3>
-                    <RvRow4>
-                        <div className="reviewimg">
-                            <img src={bestmenuimg[id].src} />
-                        </div>
-                    </RvRow4>
-                    <RvRow5>
-                        <FeatherIMG src={feather} alt="feather" />
-                        <div className="NickName">NickName</div>
-                        <div className="star">평점 #</div>
-                    </RvRow5>
-                    <RvRow6>
-                        <div className="ReviewC">
-                            Content2
-                        </div>
-                    </RvRow6>
-                    <RvRow7>
-                        <div className="reviewimg">
-                            <img src={bestmenuimg[id].src} />
-                        </div>
-                    </RvRow7>
-                    <RvRow8>
-                        <FeatherIMG src={feather} alt="feather" />
-                        <div className="NickName">NickName</div>
-                        <div className="star">평점 #</div>
-                    </RvRow8>
-                    <RvRow9>
-                        <div className="ReviewC">
-                            Content3
-                        </div>
-                    </RvRow9>
                     <RvRow12>
                         <Pagination 
                             activePage={page}
                             itemsCountPerPage={3}
-                            totalItemsCount={30}
+                            totalItemsCount={4}
                             pageRangeDisplayed={5}
                             prevPageText="‹"
                             nextPageText="›"
@@ -119,4 +90,3 @@ function Review(){
 }
 
 export default Review;
-

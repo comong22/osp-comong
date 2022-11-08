@@ -21,7 +21,7 @@ function Pagination({ total, limit, page, setPage }) {
             </Button>
             {Array(numPages)
                 .fill()
-                .map((_, i) => {
+                .map((v, i) => {
                      if(i <=2){
                         return (
                             <Button
@@ -66,13 +66,10 @@ const Button = styled.button`
     margin: 0;
     color: #424242;
     font-size: 13px;
-
-
     &[disabled] {
     cursor: revert;
     transform: revert;
     }
-
     &[aria-current] {
     font-weight: bold;
     color : FFBA94;

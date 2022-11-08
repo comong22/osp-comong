@@ -63,7 +63,7 @@ const Stars = styled.div`
     color: white;
   }
 
-  .yellowStar {
+  .colorStar {
     color: #ffa574;
   }
 `;
@@ -128,7 +128,7 @@ function PostReview(){
                   key={idx}
                   size="30"
                   onClick={() => handleStarClick(el)}
-                  className={clicked[el] && 'yellowStar'}/>
+                  className={clicked[el] && 'colorStar'}/>
                   ); })}
                   </Stars>
                   </Wraps>  
