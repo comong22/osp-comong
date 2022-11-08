@@ -1,4 +1,4 @@
-export const Reviewdata01 = [  
+export const reviewdata01 = [  
     {//모미지
         id: 0,
         nickName: "MOMIJI",

@@ -20,7 +20,7 @@ import feather from "../../images/review/Feather.svg";
 import { useState} from "react";
 import Pagination from 'react-js-pagination';
 import { main_data } from "../MainPage/data";
-import { Reviewdata01,Reviewdata02,Reviewdata03,Reviewdata04,Reviewdata05,Reviewdata06,Reviewdata07,Reviewdata08,Reviewdata09} from "./Reviewdata";
+import { reviewdata01,Reviewdata02,Reviewdata03,Reviewdata04,Reviewdata05,Reviewdata06,Reviewdata07,Reviewdata08,Reviewdata09} from "./Reviewdata";
 
 
 const BottomContainer = styled.div`
@@ -47,46 +47,54 @@ function Review(){
       ];
       const { id } = useParams(); //params로 받아 -> id
 
-        const [page, setPage] = useState(1);
-        const handlePageChange = (page) => {
-          setPage(page);
-        };
+    let[Reviewdata01, setReviewdata01] = useState(reviewdata01);
+    const [items, setItems] = useState(3);
+    const [page, setPage] = useState(1);
+    const handlePageChange = (page) => {
+        setPage(page);
+    };
     return(
         <>
 
-            <Container1> 
-                <ReviewCol>
-                    <RvRow1>
-                        <div className="reviewimg">
-                            <img src={img[id].src} />
-                        </div>
-                    </RvRow1>
-                    <RvRow2>
-                        <FeatherIMG src={feather} alt="feather" />
-                        <div className="NickName">{Reviewdata01[id].nickName}</div>
-                        <div className="star">평점 #{Reviewdata01[id].star}</div>
-                    </RvRow2>
-                    <RvRow3>
-                        <div className="ReviewC">
-                        {Reviewdata01[id].content}
-                        </div>
-                    </RvRow3>
-                    <RvRow12>
-                        <Pagination 
-                            activePage={page}
-                            itemsCountPerPage={3}
-                            totalItemsCount={4}
-                            pageRangeDisplayed={5}
-                            prevPageText="‹"
-                            nextPageText="›"
-                            onChange={handlePageChange}
-                        />
-                    </RvRow12>
-                </ReviewCol>
+            <Container1>
+                {Reviewdata01
+                    .slice(items * (page - 1), items * (page - 1) + items)
+                    .map((v, i) => {
+                        return (
+                            <div key={i}>
+                                <ReviewCol>
+                                    <RvRow1>
+                                        <div className="reviewimg">
+                                            <img src={img[id].src} />
+                                        </div>
+                                    </RvRow1>
+                                    <RvRow2>
+                                        <FeatherIMG src={feather} alt="feather" />
+                                        <div className="NickName">{v.nickName}</div>
+                                        <div className="star">평점 #{v.star}</div>
+                                    </RvRow2>
+                                    <RvRow3>
+                                        <div className="ReviewC">
+                                            {v.content}
+                                        </div>
+                                    </RvRow3>
+                                </ReviewCol>
+                            </div>
+                        );
+                    })}
+                <Pagination
+                    activePage={page}
+                    itemsCountPerPage={3}
+                    totalItemsCount={4}
+                    pageRangeDisplayed={5}
+                    prevPageText="‹"
+                    nextPageText="›"
+                    onChange={handlePageChange}
+                />
             </Container1>
 
         </>
-    )
+    );
 }
 
 export default Review;
