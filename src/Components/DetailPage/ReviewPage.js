@@ -68,16 +68,19 @@ function Review(){
                                         <div className="reviewimg">
                                             <img src={img[id].src} />
                                         </div>
+                                        <div className="enter" />
                                     </RvRow1>
                                     <RvRow2>
                                         <FeatherIMG src={feather} alt="feather" />
                                         <div className="NickName">{v.nickName}</div>
                                         <div className="star">평점 #{v.star}</div>
+                                        <div className="enter" />
                                     </RvRow2>
                                     <RvRow3>
                                         <div className="ReviewC">
                                             {v.content}
                                         </div>
+                                        <div className="enter" />
                                     </RvRow3>
                                 </ReviewCol>
                             </div>
