@@ -27,14 +27,13 @@ export const Container = styled.div`
 
 export const Container1 = styled.div`
   display: grid;
-  width: 95%;
-  height: 3%;
-  margin: 5% 5% 4% 5%;
+  width: 100%;
+  margin: 5% 5% 5% 5%;
 `;
 
 export const BottomBox = styled.div`
   max-width: 1500px;
-  height : 650px;
+  height: 650px;
   margin-top: 5%;
   margin-left: 5%;
   margin-right: 5%;
@@ -42,7 +41,6 @@ export const BottomBox = styled.div`
   box-shadow: 0px 4px 22px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
 `;
-
 
 export const ContentArea = styled.div`
   margin: 10px 0 30px 0;
@@ -67,7 +65,7 @@ export const TabRow2 = styled.div`
 export const InfoCol = styled.div`
   display: grid;
   grid-template-rows: 23% 60% 60%;
-  grid-template-columns :repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-areas: "row1 row2" "row3 row4" "row5 row6";
 `;
 export const Row1 = styled.div`
@@ -81,13 +79,13 @@ export const Row2 = styled.div`
 `;
 
 export const Row3 = styled.div`
-  align-self : center;
+  align-self: center;
   grid-area: row3;
 `;
 
 export const Row4 = styled.div`
-  margin-top : 10%;
-  grid-area: row4;  
+  margin-top: 10%;
+  grid-area: row4;
 `;
 
 export const Row5 = styled.div`
@@ -99,7 +97,6 @@ export const Row6 = styled.div`
   grid-area: row6;
   align-self: center;
 `;
-
 
 export const DetailName = styled.div`
   float: left;
@@ -114,9 +111,8 @@ export const DetailName = styled.div`
   font-feature-settings: "pnum" on, "lnum" on;
 
   color: #424242;
-  padding-left : 18%;
-  padding-bottom : 3%;
-
+  padding-left: 18%;
+  padding-bottom: 3%;
 `;
 
 export const Category = styled.div`
@@ -126,7 +122,7 @@ export const Category = styled.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  padding-bottom : 3%;
+  padding-bottom: 3%;
   /* or 24px */
   color: #000000;
 `;
@@ -153,21 +149,21 @@ export const PhoneIMG = styled.img`
   float: left;
   ax-width: 13px;
   margin-right: 2%;
-  padding-left : 17%;
+  padding-left: 17%;
 `;
 
 export const MenuIMG = styled.img`
   float: left;
   ax-width: 17px;
   margin-right: 2%;
-  padding-left : 17%;
+  padding-left: 17%;
 `;
 
 export const StarIMG = styled.img`
   float: left;
   max-width: 22px;
   margin-right: 1%;
-  padding-left : 18%;
+  padding-left: 18%;
 `;
 
 export const Star = styled.div`
@@ -177,12 +173,11 @@ export const Star = styled.div`
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
-  padding-bottom : 5%;
+  padding-bottom: 5%;
   /* or 27px */
 
   color: #424242;
 `;
-
 
 export const Address = styled.div`
   max-width: 1000px;
@@ -191,20 +186,20 @@ export const Address = styled.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  padding-left : 25%;
+  padding-left: 25%;
   /* or 27px */
 
   color: #424242;
 `;
 
 export const Detailaddress = styled.div`
-  font-family: 'Spoqa Han Sans Neo';
+  font-family: "Spoqa Han Sans Neo";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   text-align: left;
-  padding-left : 25%;
-  padding-bottom : 5%;
+  padding-left: 25%;
+  padding-bottom: 5%;
   color: #424242;
 `;
 
@@ -215,8 +210,8 @@ export const Tel = styled.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  padding-left : 25%;
-  padding-bottom : 5%;
+  padding-left: 25%;
+  padding-bottom: 5%;
   /* or 27px */
 
   color: #424242;
@@ -229,8 +224,8 @@ export const Menu1 = styled.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  padding-left : 25%;
-  padding-top : 1%;
+  padding-left: 25%;
+  padding-top: 1%;
   /* or 27px */
 
   color: #424242;
@@ -243,7 +238,7 @@ export const Menu2 = styled.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  padding-left : 25%;
+  padding-left: 25%;
   /* or 27px */
 
   color: #424242;
@@ -256,7 +251,7 @@ export const Menu3 = styled.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  padding-left : 25%;
+  padding-left: 25%;
   /* or 27px */
 
   color: #424242;
@@ -282,8 +277,8 @@ export const Addhours = styled.div`
   font-size: 16px;
   line-height: 150%;
 
-  padding-left : 11%;
-  padding-bottom : 8%;
+  padding-left: 11%;
+  padding-bottom: 8%;
   /* or 27px */
 
   color: #424242;
@@ -303,9 +298,9 @@ export const Parking = styled.div`
 
 export const ReviewCol = styled.div`
   display: grid;
-  grid-template-rows: 31% 33% 31% 10%;
-  grid-template-columns : 16% 16% 30%;
-  grid-template-areas: "rvrow1 rvrow2 rvrow3 " "rvrow4 rvrow5 rvrow6" "rvrow7 rvrow8 rvrow9" "rvrow10 rvrow11 rvrow12";
+  grid-template-rows: 31% 33% 31%;
+  grid-template-columns: 16% 16% 30%;
+  grid-template-areas: "rvrow1 rvrow2 rvrow3 " "rvrow1 rvrow2 rvrow3" "rvrow1 rvrow2 rvrow3";
 `;
 
 export const RvRow1 = styled.div`
@@ -318,46 +313,9 @@ export const RvRow2 = styled.div`
   align-self: center;
 `;
 
-
 export const RvRow3 = styled.div`
   grid-area: rvrow3;
   align-self: center;
-`;
-
-export const RvRow4 = styled.div`
-  grid-area: rvrow4;
-  align-self: center;
-`;
-
-export const RvRow5 = styled.div`
-  grid-area: rvrow5;
-  align-self: center;
-`;
-
-export const RvRow6 = styled.div`
-  grid-area: rvrow6;
-  align-self: center;
-`;
-
-export const RvRow7 = styled.div`
-  grid-area: rvrow7;
-  align-self: center;
-`;
-
-export const RvRow8 = styled.div`
-  grid-area: rvrow8;
-  align-self: center;
-`;
-
-export const RvRow9 = styled.div`
-  grid-area: rvrow9;
-  align-self: center;
-`;
-
-export const RvRow12 = styled.div`
-  grid-area: rvrow12;
-  align-self: top;
-  margin-top: 4px;
 `;
 
 export const FeatherIMG = styled.img`
@@ -370,6 +328,3 @@ export const topBox = styled.div`
   height: 600px;
   margin: 10%;
 `;
-
-
-
