@@ -23,6 +23,56 @@ export const reviewdata0 = [
         nickName: "주연",
         star: 4,
         content: "짱 맛있다!"
+    },
+
+    {//유야케도쿄
+        id: 4,
+        nickName: "Rubik",
+        star: 5,
+        content: "두 명이서 전 메뉴 주문해도 가격 저렴! 생각보다 맛은.."
+    },
+    {
+        id: 5,
+        nickName: "돈까스짱",
+        star: 5,
+        content: "가성비 정말 괜찮은 곳이에요~"
+    },
+    {
+        id: 6,
+        nickName: "배고파",
+        star: 5,
+        content: "JMT"
+    },
+    {
+        id: 7,
+        nickName: "수진",
+        star: 4,
+        content: "짱 맛있다!"
+    }
+    ,
+    { //위즈오운
+        id: 8,
+        nickName: "kk",
+        star: 5,
+        content: "아침으로 먹기 딱 좋음 ㅇㅇ"
+    },
+    {
+        id: 9,
+        nickName: "먹짱",
+        star: 5,
+        content: "가성비 정말 괜찮은 곳이에요~"
+    },
+    {
+        id: 10,
+        nickName: "배고파",
+        star: 5,
+        content: "JMT"
+    },
+    {
+        id: 11,
+        nickName: "해원",
+        star: 4,
+        content: "짱 맛있다!"
     }
  
 ]
@@ -51,7 +101,8 @@ export const reviewdata1 = [
         nickName: "수진",
         star: 4,
         content: "짱 맛있다!"
-    }
+    },
+    
 ]
 
 export const reviewdata2 = [

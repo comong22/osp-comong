@@ -86,8 +86,8 @@ function Review(){
                 <Pagination
                     activePage={page}
                     itemsCountPerPage={3}
-                    totalItemsCount={4}
-                    pageRangeDisplayed={5}
+                    totalItemsCount={12}
+                    pageRangeDisplayed={4}
                     prevPageText="‹"
                     nextPageText="›"
                     onChange={handlePageChange}
