@@ -1,4 +1,5 @@
-export const reviewdata01 = [  
+export const reviewdata0 = [
+
     {//모미지
         id: 0,
         nickName: "MOMIJI",
@@ -23,9 +24,10 @@ export const reviewdata01 = [
         star: 4,
         content: "짱 맛있다!"
     }
+ 
 ]
 
-export const Reviewdata02 = [
+export const reviewdata1 = [
     {//유야케도쿄
         id: 0,
         nickName: "Rubik",
@@ -52,7 +54,7 @@ export const Reviewdata02 = [
     }
 ]
 
-export const Reviewdata03 = [
+export const reviewdata2 = [
     { //위즈오운
         id: 0,
         nickName: "kk",
@@ -78,7 +80,7 @@ export const Reviewdata03 = [
         content: "짱 맛있다!"
     }
 ]
-export const Reviewdata04 = [
+export const reviewdata3 = [
     {//스탠바이키친
         id: 0,
         nickName: "jj",
@@ -105,7 +107,7 @@ export const Reviewdata04 = [
     }
 ]
 
-export const Reviewdata05 = [
+export const reviewdata4 = [
     { //로드샌드위치
         nickName: "bb",
         star: 5,
@@ -130,7 +132,7 @@ export const Reviewdata05 = [
         content: "짱 맛있다!"
     }
 ]
-export const Reviewdata06 = [
+export const reviewdata5 = [
     {//딸기골
         id: 0,
         nickName: "딸기",
@@ -156,7 +158,7 @@ export const Reviewdata06 = [
         content: "짱 맛있다!"
     }
 ]
-export const Reviewdata07 = [
+export const reviewdata6 = [
     { //정육면체
         id: 0,
         nickName: "EWHA",
@@ -182,7 +184,7 @@ export const Reviewdata07 = [
         content: "짱 맛있다!"
     }
 ]
-export const Reviewdata08 = [
+export const reviewdata7 = [
     {//정통집
         id: 0,
         nickName: "uu",
@@ -208,7 +210,7 @@ export const Reviewdata08 = [
         content: "짱 맛있다!"
     }
 ]
-export const Reviewdata09 =[
+export const reviewdata8 =[
     { //돈부리모노
         id: 0,
         nickName: "돈부리",

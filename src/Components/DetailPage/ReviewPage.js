@@ -20,7 +20,7 @@ import feather from "../../images/review/Feather.svg";
 import { useState} from "react";
 import Pagination from 'react-js-pagination';
 import { main_data } from "../MainPage/data";
-import { reviewdata01,Reviewdata02,Reviewdata03,Reviewdata04,Reviewdata05,Reviewdata06,Reviewdata07,Reviewdata08,Reviewdata09} from "./Reviewdata";
+import { reviewdata0,reviewdata1,reviewdata2,reviewdata3,reviewdata4,reviewdata5,reviewdata6,reviewdata7,reviewdata8} from "./Reviewdata";
 
 
 const BottomContainer = styled.div`
@@ -44,20 +44,21 @@ function Review(){
         { id: 6, src: require("../../images/review/review6.jpg") },
         { id: 7, src: require("../../images/review/review7.jpg") },
         { id: 8, src: require("../../images/review/review8.jpg") },
-      ];
-      const { id } = useParams(); //params로 받아 -> id
+    ];
 
-    let[Reviewdata01, setReviewdata01] = useState(reviewdata01);
+    const { id } = useParams(); //params로 받아 -> id
+
+    let[Reviewdata, setReviewdata01] = useState(reviewdata0);
     const [items, setItems] = useState(3);
     const [page, setPage] = useState(1);
     const handlePageChange = (page) => {
         setPage(page);
     };
+    
     return(
         <>
-
             <Container1>
-                {Reviewdata01
+                {Reviewdata
                     .slice(items * (page - 1), items * (page - 1) + items)
                     .map((v, i) => {
                         return (
