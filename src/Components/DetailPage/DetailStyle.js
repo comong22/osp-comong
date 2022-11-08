@@ -27,8 +27,8 @@ export const Container = styled.div`
 
 export const Container1 = styled.div`
   display: grid;
-  width: 100%;
-  margin: 5% 5% 5% 5%;
+  width: 90%;
+  margin: 5%;
 `;
 
 export const BottomBox = styled.div`
