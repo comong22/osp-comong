@@ -1,7 +1,5 @@
-// import firebase from "firebase/app";
-// import "firebase/firestore";
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore/lite";
+import firebase from "firebase/app";
+import "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_apiKey,
@@ -13,10 +11,8 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_measurementId,
 };
 
-// firebaseConfig 정보로 firebase 시작
-const app = initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-// firebase의 firestore 인스턴스를 변수에 저장
-const db = getFirestore(app);
+const db = firebaseApp.firestore();
 
-export default {app, db};
+export { firebase, firebaseApp, db };
