@@ -7,6 +7,7 @@ import PostReview from "./Components/PostReviewPage/PostReview";
 import UploadPage from "./Components/UploadPage/UploadPage";
 import { main_data } from "./Components/MainPage/data";
 import { useState } from "react";
+import Sample from "./Components/FireBase/sample";
 
 function App() {
   let [MainData, setMainData] = useState(main_data); // data.js에 있는 데이터
@@ -23,6 +24,7 @@ function App() {
           path="/detail/:id"
           element={<DetailPage MainData={MainData} />}
         />
+        <Route path="/sample" element={<Sample/>} />
       </Routes>
     </>
   );

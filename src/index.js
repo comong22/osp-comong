@@ -4,9 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import firebase from "./firebase";
+import app from "./firebase";
 
-console.log(firebase);
+console.log(app); // firebase 연결 되었는지 확인
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
