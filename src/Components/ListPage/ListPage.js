@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { GlobalFonts } from "../../fonts/font";
 import Pagination from "react-js-pagination";
+import { useNavigate } from "react-router-dom";
 import "./ListPage.css";
 import {
   ListName,
@@ -35,6 +36,7 @@ import mappin from "../../images/main/mappin.svg";
 import { place01_data, place02_data, place03_data } from "./data";
 function ListPage() {
   let [tab, setTab] = useState(0); // 0 정문, 1 후문, 2 신촌
+
   return (
     <>
       <GlobalFonts />
@@ -121,6 +123,7 @@ function Place01() {
     { id: 7, src: require("../../images/list/p1_8.jpg") },
     { id: 8, src: require("../../images/list/p1_9.jpg") },
   ];
+  let navigate = useNavigate();
   return (
     <>
       <Container>
@@ -134,7 +137,10 @@ function Place01() {
                   <DataContainer>
                     <ListPageRow>
                       <Col1>
-                        <MainIMG src={Place01img[v.id].src} />
+                        <MainIMG src={Place01img[v.id].src} onClick={() => {
+                          navigate(`/detail/${v.id}`);
+                        }}
+                      />
                       </Col1>
                       <Col2>
                         <RestName>{v.name}</RestName>
@@ -182,6 +188,8 @@ function Place02() {
     { id: 7, src: require("../../images/list/p2_8.jpg") },
     { id: 8, src: require("../../images/list/p2_9.jpg") },
   ];
+
+  let navigate = useNavigate();
   return (
     <>
       <Container>
@@ -195,7 +203,9 @@ function Place02() {
                   <DataContainer>
                     <ListPageRow>
                       <Col1>
-                        <MainIMG src={Place02img[v.id].src} />
+                        <MainIMG src={Place02img[v.id].src} onClick={() => {
+                          navigate(`/detail/${v.id}`);
+                        }}/>
                       </Col1>
                       <Col2>
                         <RestName>{v.name}</RestName>
@@ -243,6 +253,8 @@ function Place03() {
     { id: 7, src: require("../../images/list/p3_8.jpg") },
     { id: 8, src: require("../../images/list/p3_9.jpg") },
   ];
+
+  let navigate = useNavigate();
   return (
     <>
       <Container>
@@ -256,7 +268,9 @@ function Place03() {
                   <DataContainer>
                     <ListPageRow>
                       <Col1>
-                        <MainIMG src={Place03img[v.id].src} />
+                        <MainIMG src={Place03img[v.id].src} onClick={() => {
+                          navigate(`/detail/${v.id}`);
+                        }}/>
                       </Col1>
                       <Col2>
                         <RestName>{v.name}</RestName>
