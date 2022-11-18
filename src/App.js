@@ -6,11 +6,26 @@ import NavBar from "./Components/NavBar/NavBar";
 import PostReview from "./Components/PostReviewPage/PostReview";
 import UploadPage from "./Components/UploadPage/UploadPage";
 import { main_data } from "./Components/MainPage/data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Sample from "./Components/FireBase/sample";
+import { db } from './firebase';
 
 function App() {
   let [MainData, setMainData] = useState(main_data); // data.js에 있는 데이터
+
+  useEffect(()=> {
+    const restaurant = db.collection("restaurant");
+
+    restaurant.get().then((docs) => {
+      docs.forEach((doc) => {
+        if(doc.exists){
+          console.log(doc.data());
+          console.log(doc.id);
+        }
+      });
+    });
+
+  });
 
   return (
     <>
@@ -26,6 +41,9 @@ function App() {
         />
         <Route path="/sample" element={<Sample/>} />
       </Routes>
+      <div className="App">
+      firebase 확인해보기!
+    </div>
     </>
   );
 }
