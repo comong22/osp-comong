@@ -90,15 +90,15 @@ function TabContent(props) {
 
 function Bestmenu(props) {
   const bestmenuimg = [
-    { id: 0, src: require("../../images/detail_bestmenu/detail0_bestmenu.jpg") },
-    { id: 1, src: require("../../images/detail_bestmenu/detail1_bestmenu.jpg") },
-    { id: 2, src: require("../../images/detail_bestmenu/detail2_bestmenu.jpg") },
-    { id: 3, src: require("../../images/detail_bestmenu/detail3_bestmenu.jpg") },
-    { id: 4, src: require("../../images/detail_bestmenu/detail4_bestmenu.jpg") },
-    { id: 5, src: require("../../images/detail_bestmenu/detail5_bestmenu.jpg") },
-    { id: 6, src: require("../../images/detail_bestmenu/detail6_bestmenu.jpg") },
-    { id: 7, src: require("../../images/detail_bestmenu/detail7_bestmenu.jpg") },
-    { id: 8, src: require("../../images/detail_bestmenu/detail8_bestmenu.jpg") },
+    { id: 0, src: require("../../images/listdetail_bm/p1_bm1.jpg") },
+    { id: 1, src: require("../../images/listdetail_bm/p1_bm2.jpg") },
+    { id: 2, src: require("../../images/listdetail_bm/p1_bm3.jpg") },
+    { id: 3, src: require("../../images/listdetail_bm/p1_bm4.jpg") },
+    { id: 4, src: require("../../images/listdetail_bm/p1_bm5.jpg") },
+    { id: 5, src: require("../../images/listdetail_bm/p1_bm6.jpg") },
+    { id: 6, src: require("../../images/listdetail_bm/p1_bm7.jpg") },
+    { id: 7, src: require("../../images/listdetail_bm/p1_bm8.jpg") },
+    { id: 8, src: require("../../images/listdetail_bm/p1_bm9.jpg") },
   ];
   const { id } = useParams(); //params로 받아 -> id
 
