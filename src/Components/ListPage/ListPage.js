@@ -134,13 +134,14 @@ function Place01() {
             .map((v, i) => {
               return (
                 <div key={i}>
-                  <DataContainer>
+                  <DataContainer
+                    onClick={() => {
+                      navigate(`/listdetail01/${v.id}`);
+                    }}
+                  >
                     <ListPageRow>
                       <Col1>
-                        <MainIMG src={Place01img[v.id].src} onClick={() => {
-                          navigate(`/listdetail01/${v.id}`);
-                        }}
-                      />
+                        <MainIMG src={Place01img[v.id].src} />
                       </Col1>
                       <Col2>
                         <RestName>{v.name}</RestName>
@@ -200,12 +201,14 @@ function Place02() {
             .map((v, i) => {
               return (
                 <div key={i}>
-                  <DataContainer>
+                  <DataContainer
+                    onClick={() => {
+                      navigate(`/detail/${v.id}`);
+                    }}
+                  >
                     <ListPageRow>
                       <Col1>
-                        <MainIMG src={Place02img[v.id].src} onClick={() => {
-                          navigate(`/detail/${v.id}`);
-                        }}/>
+                        <MainIMG src={Place02img[v.id].src} />
                       </Col1>
                       <Col2>
                         <RestName>{v.name}</RestName>
@@ -265,12 +268,14 @@ function Place03() {
             .map((v, i) => {
               return (
                 <div key={i}>
-                  <DataContainer>
+                  <DataContainer
+                    onClick={() => {
+                      navigate(`/detail/${v.id}`);
+                    }}
+                  >
                     <ListPageRow>
                       <Col1>
-                        <MainIMG src={Place03img[v.id].src} onClick={() => {
-                          navigate(`/detail/${v.id}`);
-                        }}/>
+                        <MainIMG src={Place03img[v.id].src} />
                       </Col1>
                       <Col2>
                         <RestName>{v.name}</RestName>
