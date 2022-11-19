@@ -41,7 +41,7 @@ function App() {
           element={<DetailPage MainData={MainData} />}
         />
         <Route path="/sample" element={<Sample/>} />
-        <Route path="/listdetail/:id" element={<ListDetailPage MainData={MainData} />}
+        <Route path="/listdetail01/:id" element={<ListDetailPage MainData={MainData} />}
         />
       </Routes>
     </>
