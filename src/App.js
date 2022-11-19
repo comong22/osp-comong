@@ -41,9 +41,6 @@ function App() {
         />
         <Route path="/sample" element={<Sample/>} />
       </Routes>
-      <div className="App">
-      firebase 확인해보기!
-    </div>
     </>
   );
 }
