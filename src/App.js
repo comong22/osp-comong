@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import DetailPage from "./Components/DetailPage/Pages";
+import ListDetailPage from "./Components/ListDetailPage/Pages";
 import ListPage from "./Components/ListPage/ListPage";
 import MainPage from "./Components/MainPage/MainPage";
 import NavBar from "./Components/NavBar/NavBar";
@@ -40,6 +41,8 @@ function App() {
           element={<DetailPage MainData={MainData} />}
         />
         <Route path="/sample" element={<Sample/>} />
+        <Route path="/listdetail/:id" element={<ListDetailPage MainData={MainData} />}
+        />
       </Routes>
     </>
   );

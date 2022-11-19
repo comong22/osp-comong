@@ -23,7 +23,7 @@ import {
     reviewdata6,
     reviewdata7,
     reviewdata8,
-  } from "./Reviewdata";
+  } from "./ReviewData";
   
   const BottomContainer = styled.div`
     background: #fff7ef;

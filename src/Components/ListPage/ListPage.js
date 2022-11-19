@@ -138,7 +138,7 @@ function Place01() {
                     <ListPageRow>
                       <Col1>
                         <MainIMG src={Place01img[v.id].src} onClick={() => {
-                          navigate(`/detail/${v.id}`);
+                          navigate(`/listdetail/${v.id}`);
                         }}
                       />
                       </Col1>
