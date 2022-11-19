@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import { db } from "../../firebase";
 import styled from "styled-components";
+import {dbService, storageService } from "../../firebase";
+import {storage} from "../../firebase";
+
+const UploadImg = styled.div`
+  margin-top : 90px;
+`;
 
 const BG = styled.div`
   position: relative;
@@ -64,6 +70,33 @@ function Sample() {
       });
   });
   const bucket = db.collection("restaurant");
+
+const [progress, setProgress] = useState(0);
+const formHandler = (e) => {
+  e.preventDefault();
+  const file = e.target[0].files[0];
+  uploadeFiles(file);
+};
+
+const uploadeFiles = (file) => {
+  const uploadTask = storage.ref(`files/${file.name}`).put(file);
+  uploadTask.on(
+    "state_changed", 
+    (snapshot) => {
+
+    }, 
+    (error) => console.log(error),
+    () => {
+      storage
+      .ref("files")
+      .child(file.name)
+      .getDownloadURL()
+      .then((url) => {
+        console.log(url);
+      });
+    }
+  );
+};
 
   let [name, setName] = useState("");
   let [addr, setAddr] = useState("");
@@ -146,6 +179,12 @@ function Sample() {
         >
           등록하기
         </Button>
+        <UploadImg>
+          <form onSubmit={formHandler}>
+            <input type="file" className="input" />
+            <button type="submit">Upload</button>
+          </form>
+        </UploadImg>
       </BG>
     </>
   );
