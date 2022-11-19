@@ -203,7 +203,7 @@ function Place02() {
                 <div key={i}>
                   <DataContainer
                     onClick={() => {
-                      navigate(`/detail/${v.id}`);
+                      navigate(`/listdetail02/${v.id}`);
                     }}
                   >
                     <ListPageRow>
@@ -270,7 +270,7 @@ function Place03() {
                 <div key={i}>
                   <DataContainer
                     onClick={() => {
-                      navigate(`/detail/${v.id}`);
+                      navigate(`/listdetail03/${v.id}`);
                     }}
                   >
                     <ListPageRow>

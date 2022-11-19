@@ -1,6 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import DetailPage from "./Components/DetailPage/Pages";
-import ListDetailPage from "./Components/ListDetailPage/Pages";
+import ListDetailPage1 from "./Components/ListDetailPage/Pages1";
+import ListDetailPage2 from "./Components/ListDetailPage/Pages2";
+import ListDetailPage3 from "./Components/ListDetailPage/Pages3";
 import ListPage from "./Components/ListPage/ListPage";
 import MainPage from "./Components/MainPage/MainPage";
 import NavBar from "./Components/NavBar/NavBar";
@@ -41,7 +43,11 @@ function App() {
           element={<DetailPage MainData={MainData} />}
         />
         <Route path="/sample" element={<Sample/>} />
-        <Route path="/listdetail01/:id" element={<ListDetailPage MainData={MainData} />}
+        <Route path="/listdetail01/:id" element={<ListDetailPage1 MainData={MainData} />}
+        />
+        <Route path="/listdetail02/:id" element={<ListDetailPage2 MainData={MainData} />}
+        />
+        <Route path="/listdetail03/:id" element={<ListDetailPage3 MainData={MainData} />}
         />
       </Routes>
     </>

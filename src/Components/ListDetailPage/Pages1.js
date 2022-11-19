@@ -4,8 +4,8 @@ import styled from "styled-components";
 
 import { GlobalFonts } from "../../fonts/font";
 import { main_data } from "../MainPage/data";
-import DetailBottom from "./ListDetailBottom";
-import DetailTop from "./ListDetailTop";
+import DetailBottom from "./ListDetailBottom1";
+import DetailTop from "./ListDetailTop1";
 
 const PageContainer = styled.div`
   scroll-snap-typimport React from "react";
