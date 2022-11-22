@@ -59,9 +59,9 @@ export const NavUpload = styled(LinkRouter)`
   color: #ffba94;
   font-size: 20px;
   font-style: normal;
-  font-family: "Spoqa Han Sans Neo Regular";
+  font-family: "Spoqa Han Sans Neo Bold";
   &:hover {
-    font-family: "Spoqa Han Sans Neo Bold";
+    color: #FF9D66;
   }
 `;
 
@@ -73,9 +73,9 @@ export const NavList = styled(LinkRouter)`
   color: #ffba94;
   font-size: 20px;
   font-style: normal;
-  font-family: "Spoqa Han Sans Neo Regular";
+  font-family: "Spoqa Han Sans Neo Bold";
   &:hover {
-    font-family: "Spoqa Han Sans Neo Bold";
+    color: #FF9D66;
   }
 `;
 
