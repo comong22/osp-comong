@@ -12,6 +12,7 @@ import { main_data } from "./Components/MainPage/data";
 import { useEffect, useState } from "react";
 import Sample from "./Components/FireBase/sample";
 import { db } from './firebase';
+import FirebaseDB from "./Components/FireBase/FirebaseDB";
 
 function App() {
   let [MainData, setMainData] = useState(main_data); // data.js에 있는 데이터
@@ -43,12 +44,7 @@ function App() {
           element={<DetailPage MainData={MainData} />}
         />
         <Route path="/sample" element={<Sample/>} />
-        <Route path="/listdetail01/:id" element={<ListDetailPage1 MainData={MainData} />}
-        />
-        <Route path="/listdetail02/:id" element={<ListDetailPage2 MainData={MainData} />}
-        />
-        <Route path="/listdetail03/:id" element={<ListDetailPage3 MainData={MainData} />}
-        />
+        <Route path="/db" element={<FirebaseDB/>}/>
       </Routes>
     </>
   );
