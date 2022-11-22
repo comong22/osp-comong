@@ -7,14 +7,14 @@ export const MainBG = styled.div`
 `;
 
 export const Banner = styled.div`
-  position: relative;
+  display: grid;
+  margin-top: 80px;
   background: #fff7ef;
   width: 100vw;
-  height: 35vh;
 `;
 
 export const BannerText1 = styled.div`
-  position: relative;
+  display: grid;
   font-family: "Spoqa Han Sans Neo Regular";
   font-style: normal;
   font-weight: 400;
@@ -24,12 +24,11 @@ export const BannerText1 = styled.div`
 
   color: #424242;
 
-  top: 50%;
-  z-index: 3;
+  margin: 4% 0 1% 0;
 `;
 
 export const BannerText2 = styled.div`
-  position: relative;
+  display: grid;
   font-family: "Spoqa Han Sans Neo Bold";
   font-style: normal;
   font-weight: 700;
@@ -41,8 +40,7 @@ export const BannerText2 = styled.div`
 
   color: #424242;
 
-  top: 50%;
-  z-index: 3;
+  margin-bottom: 4%;
 `;
 
 export const Title = styled.div`

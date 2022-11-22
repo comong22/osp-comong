@@ -1,14 +1,20 @@
-import * as firebase from "firebase/app";
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/storage";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBf0ZjhadxKNtFvTJfL-daI1Ofd72F-cr0",
-    authDomain: "osp-comong.firebaseapp.com",
-    projectId: "osp-comong",
-    storageBucket: "osp-comong.appspot.com",
-    messagingSenderId: "634449059761",
-    appId: "1:634449059761:web:8199305587c9d211a9e790",
-    measurementId: "G-ZRNHF8B8LG"
-
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
+  measurementId: process.env.REACT_APP_measurementId,
 };
 
-export default firebase.initializeApp(firebaseConfig); // index.js에서 사용을 위함
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+const db = firebaseApp.firestore();
+const storage = firebaseApp.storage();
+
+export { storage, firebase, firebaseApp, db };
