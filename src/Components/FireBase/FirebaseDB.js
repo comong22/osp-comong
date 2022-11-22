@@ -1,36 +1,41 @@
 import React, { useEffect, useState } from "react";
-import { db, storage, firebase } from "../../firebase";
+import { db } from "../../firebase";
 
 const FirebaseDB = () => {
-  const [rest, setRest] = useState([]);
+  const [data, setData] = useState([]);
+  const [loader, setLoader] = useState(true);
+  const ref = db.collection("restaurants");
 
-  const fetchRest = async () => {
-    const response = db.collection("restaurant");
-    const data = await response.get();
-    data.docs.forEach((item) => {
-      setRest([...rest, item.data()]);
+  function getData() {
+    ref.onSnapshot((querySnapshot) => {
+      const items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
+      });
+      setData(items);
+      setLoader(false);
     });
-  };
-
-  useEffect(() => {
-    fetchRest();
-  }, []);
-
+  }
+ useEffect(() => {
+  getData()
+ }, [])
   return (
     <div>
-      {rest &&
-        rest.map((rests) => {
-          return (
-            <>
-              <div>{rests.name}</div>
-              <div>{rests.addr}</div>
-              <div>{rests.tel}</div>
-              <div>{rests.parking}</div>
-              <div>{rests.category}</div>
-
-            </>
-          );
-        })}
+      <h1>firestore DB</h1>
+      { // firestore 컬렉션 : restaurants
+        // 문서명이 rest + i로 시작해야 되는듯!
+        loader === false && (data.map((rest) => (
+          <div key={rest.id}>
+            <div>식당 이름 : {rest.name}</div>
+            <div>카테고리 : {rest.category}</div>
+            <div>주소 : {rest.addr}</div>
+            <div>전화번호 : {rest.tel}</div>
+            <div>주차 여부 : {rest.parking}</div>
+            <br></br>
+          </div>
+          
+        )))
+      }
     </div>
   );
 };
