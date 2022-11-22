@@ -1,16 +1,35 @@
 import { Route, Routes } from "react-router-dom";
 import DetailPage from "./Components/DetailPage/Pages";
+import ListDetailPage1 from "./Components/ListDetailPage/Pages1";
+import ListDetailPage2 from "./Components/ListDetailPage/Pages2";
+import ListDetailPage3 from "./Components/ListDetailPage/Pages3";
 import ListPage from "./Components/ListPage/ListPage";
 import MainPage from "./Components/MainPage/MainPage";
 import NavBar from "./Components/NavBar/NavBar";
 import PostReview from "./Components/PostReviewPage/PostReview";
 import UploadPage from "./Components/UploadPage/UploadPage";
 import { main_data } from "./Components/MainPage/data";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Sample from "./Components/FireBase/sample";
+import { db } from './firebase';
+import FirebaseDB from "./Components/FireBase/FirebaseDB";
 
 function App() {
   let [MainData, setMainData] = useState(main_data); // data.js에 있는 데이터
+
+  useEffect(()=> {
+    const restaurant = db.collection("restaurant");
+
+    restaurant.get().then((docs) => {
+      docs.forEach((doc) => {
+        if(doc.exists){
+          console.log(doc.data());
+          console.log(doc.id);
+        }
+      });
+    });
+
+  });
 
   return (
     <>
@@ -25,6 +44,7 @@ function App() {
           element={<DetailPage MainData={MainData} />}
         />
         <Route path="/sample" element={<Sample/>} />
+        <Route path="/db" element={<FirebaseDB/>}/>
       </Routes>
     </>
   );
