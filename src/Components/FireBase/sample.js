@@ -156,11 +156,7 @@ function Sample() {
           onClick={() =>
             bucket
               .add({
-                name: { name },
-                addr: { addr },
-                category: { category },
-                parking: { parking },
-                tel: { tel },
+                name, category, parking, tel, addr
               })
               .then((docRef) => {
                 console.log(docRef.id);

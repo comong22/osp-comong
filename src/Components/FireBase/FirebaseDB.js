@@ -4,7 +4,7 @@ import { db } from "../../firebase";
 const FirebaseDB = () => {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
-  const ref = db.collection("restaurants");
+  const ref = db.collection("restaurants"); // "컬렉션명"
 
   function getData() {
     ref.onSnapshot((querySnapshot) => {
@@ -16,14 +16,14 @@ const FirebaseDB = () => {
       setLoader(false);
     });
   }
+
  useEffect(() => {
   getData()
  }, [])
   return (
     <div>
       <h1>firestore DB</h1>
-      { // firestore 컬렉션 : restaurants
-        // 문서명이 rest + i로 시작해야 되는듯!
+      { 
         loader === false && (data.map((rest) => (
           <div key={rest.id}>
             <div>식당 이름 : {rest.name}</div>
@@ -35,7 +35,7 @@ const FirebaseDB = () => {
           </div>
           
         )))
-      }
+}
     </div>
   );
 };
