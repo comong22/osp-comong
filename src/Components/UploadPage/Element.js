@@ -48,6 +48,8 @@ export const SelectBox = styled.div`
   }
 `;
 
+
+
 export const Label2 = styled.label`
   font-family: "SUIT Regular";
 
@@ -55,6 +57,7 @@ export const Label2 = styled.label`
   margin-left: 10px;
   text-align: center;
 `;
+
 
 export const SelectOptions = styled.ul`
   position: absolute;
