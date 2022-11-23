@@ -17,14 +17,15 @@ const FirebaseDB = () => {
     });
   }
 
- useEffect(() => {
-  getData()
- }, [])
+  useEffect(() => {
+    getData();
+    console.log(data); // data에는 각 문서들이 배열에 들어있음 -> console에서 확인 가능!
+  }, []);
   return (
     <div>
       <h1>firestore DB</h1>
-      { 
-        loader === false && (data.map((rest) => (
+      {loader === false &&
+        data.map((rest) => (
           <div key={rest.id}>
             <div>식당 이름 : {rest.name}</div>
             <div>카테고리 : {rest.category}</div>
@@ -33,9 +34,10 @@ const FirebaseDB = () => {
             <div>주차 여부 : {rest.parking}</div>
             <br></br>
           </div>
-          
-        )))
-}
+        ))}
+        {/* 하나씩 가져오기 */}
+        <div>{data[0].name}</div>
+        <div>{data[1].addr}</div>
     </div>
   );
 };
