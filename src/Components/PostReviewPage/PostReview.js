@@ -1,6 +1,6 @@
 import { GlobalFonts } from "../../fonts/font";
 import "./PostReview.css";
-import {useState, useEffect} from "react";
+import {useState, useEffect, useRef} from "react";
 import styled from "styled-components";
 import Modal from "./Modal";
 import { FaStar} from 'react-icons/fa';
@@ -70,7 +70,7 @@ const Stars = styled.div`
 
 const ARRAY = [0, 1, 2, 3, 4];
 
-function PostReview(){
+const PostReview = (props) => {
 
   const [text1,setText1] = useState('');
   const [text2,setText2] = useState('');
@@ -99,6 +99,22 @@ function PostReview(){
     let score = clicked.filter(Boolean).length;
   };
 
+  const [imageUrl, setImageUrl] = useState(null);
+  const ImgInput = useRef();
+  const [preview, setPreview] = useState();
+
+  useEffect(()=>{
+    if(imageUrl){
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreview(reader.result);
+      };
+      reader.readAsDataURL(imageUrl);
+    } else{
+      setPreview(null);
+    }
+    }, [imageUrl]);
+
     return(
         <>
         <GlobalFonts />
@@ -107,7 +123,18 @@ function PostReview(){
         
         <div className="column">
          <div className="Box">
-          <div className="File"><BsPlusSquare size={40}/></div>
+         {preview ? (<img src={preview} onClick={() => {setImageUrl(null);}}/>
+          ) : (
+            <BsPlusSquare size={40} onClick = {(event) => {event.preventDefault(); ImgInput.current.click();}} className="File"/>
+          )}
+          <input ref={ImgInput} type='file' accept="image/*" className="fileSize"
+          onChange={(event)=> { const file = ImgInput.current.files[0]; 
+          if (file) { 
+            setImageUrl(file)
+;          }
+          else{
+            setImageUrl(null);
+          }}} style={{ display: "none"}}/>
           </div>  
         </div>
 
