@@ -35,11 +35,12 @@ export const LogoImg = styled.img`
 
 export const NavUpload = styled(LinkRouter)`
   display: flex;
-  max-width: 200px;
+  width: 10%;
+  max-width: 130px;
   align-items: center;
-  margin: 0 2% 0 0px;
+  margin: 0 1% 0 0px;
   color: #ffba94;
-  font-size: 23px;
+  font-size: 21px;
   font-style: normal;
   font-family: "Spoqa Han Sans Neo Bold";
   &:hover {
@@ -49,10 +50,11 @@ export const NavUpload = styled(LinkRouter)`
 
 export const NavList = styled(LinkRouter)`
   display: flex;
-  max-width: 200px;
+  width: 10%;
+  max-width: 130px;
   align-items: center;
   color: #ffba94;
-  font-size: 23px;
+  font-size: 21px;
   font-style: normal;
   font-family: "Spoqa Han Sans Neo Bold";
   &:hover {
@@ -64,7 +66,7 @@ export const NavLogin = styled.div`
   display: flex;
   max-width: 50px;
   align-items: center;
-  margin-left: 68%;
+  margin-left: 60%;
 `;
 
 export const BlackOut = styled.div`
