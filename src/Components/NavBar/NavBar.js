@@ -1,33 +1,54 @@
+import { useState } from "react";
+
 import {
   LogoImg,
   Nav,
   NavBarContainer,
-  NavItem,
   NavList,
   NavLogin,
   NavLogo,
-  NavMenu,
-  NavText1,
-  NavText2,
   NavUpload,
+  BlackOut
 } from "./NavBarElement";
 import logo from "../../images/logo.png";
 import user from "../../images/user.svg";
+import LoginModal from "./LoginModal";
+import { GlobalFonts } from "../../fonts/font";
+
 function NavBar() {
+  // 모달
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModalHandler = (active) => {
+    setIsOpen(active);
+  };
   return (
-    <Nav>
-      <NavBarContainer>
-        <NavLogo to="/">
-          <LogoImg src={logo} alt="logo" />
-        </NavLogo>
-        <NavUpload to="/upload">맛집 등록</NavUpload>
-        <NavList to="/list">맛집 리스트</NavList>
-        <NavLogin to="/signin">
-          <img src={user} alt="login" />
-        </NavLogin>
-      </NavBarContainer>
-    </Nav>
+    <>
+      <Nav>
+        <NavBarContainer>
+          <NavLogo to="/">
+            <LogoImg src={logo} alt="logo" />
+          </NavLogo>
+          <NavUpload to="/upload"># 맛집 등록</NavUpload>
+          <NavList to="/list"># 맛집 리스트</NavList>
+          <NavLogin
+            onClick={() => {
+              openModalHandler(true);
+            }}
+          >
+            <img src={user} alt="login" />
+          </NavLogin>
+        </NavBarContainer>
+      </Nav>
+      {isOpen && <BodyBlackoutStyle openModalHandler={openModalHandler} />}
+      {isOpen && <LoginModal openModalHandler={openModalHandler} />}
+    </>
   );
 }
+export const BodyBlackoutStyle = ({ openModalHandler }) => {
+  return (
+    <BlackOut onClick={() => openModalHandler(false)}/>
+  );
+};
 
 export default NavBar;

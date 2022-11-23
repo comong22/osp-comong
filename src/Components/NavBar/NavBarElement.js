@@ -7,7 +7,6 @@ export const Nav = styled.nav`
   margin-top: -80px;
   display: flex;
   justify-content: center;
-  align-items: center;
 
   position: sticky;
   top: 0;
@@ -19,45 +18,28 @@ export const NavBarContainer = styled.div`
   height: 80px;
   z-index: 999;
   width: 100%;
-  padding: 0 24px;
+  padding: 0 0 0 24px;
   max-width: 1920px;
 `;
 
 export const NavLogo = styled(LinkRouter)`
   cursor: pointer;
-  display: grid;
+  display: flex;
   align-items: center;
-  margin-right: 40px;
+  margin-right: 3%;
 `;
 
-export const NavText1 = styled.div`
-  display: grid;
-  width: 90px;
-  color: #ffba94;
-  font-size: 20px;
-  font-style: normal;
-  font-family: "Spoqa Han Sans Neo Bold";
-`;
-export const NavText2 = styled.div`
-  display: grid;
-  width: 100px;
-  margin: 0 0 0 20px;
-  color: #ffba94;
-  font-size: 20px;
-  font-style: normal;
-  font-family: "Spoqa Han Sans Neo Bold";
-`;
 export const LogoImg = styled.img`
-  width: 150px;
+  width: 140px;
 `;
 
 export const NavUpload = styled(LinkRouter)`
-  display: grid;
-  max-width: 100px;
+  display: flex;
+  max-width: 200px;
   align-items: center;
-  margin: 0 0 0 30px;
+  margin: 0 2% 0 0px;
   color: #ffba94;
-  font-size: 20px;
+  font-size: 23px;
   font-style: normal;
   font-family: "Spoqa Han Sans Neo Bold";
   &:hover {
@@ -66,12 +48,11 @@ export const NavUpload = styled(LinkRouter)`
 `;
 
 export const NavList = styled(LinkRouter)`
-  display: grid;
-  max-width: 100px;
+  display: flex;
+  max-width: 200px;
   align-items: center;
-  margin: 0 0 0 30px;
   color: #ffba94;
-  font-size: 20px;
+  font-size: 23px;
   font-style: normal;
   font-family: "Spoqa Han Sans Neo Bold";
   &:hover {
@@ -79,9 +60,20 @@ export const NavList = styled(LinkRouter)`
   }
 `;
 
-export const NavLogin = styled(LinkRouter)`
+export const NavLogin = styled.div`
   display: flex;
   max-width: 50px;
   align-items: center;
-  margin-left: 64%;
+  margin-left: 68%;
 `;
+
+export const BlackOut = styled.div`
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1010;
+    background-color: rgba(0, 0, 0, 0.446);
+`
