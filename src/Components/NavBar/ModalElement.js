@@ -134,5 +134,10 @@ export const SignupText = styled.div`
   margin: 3% 0 0 3px;
   float: left;
   text-decoration-line: underline;
-  color: #ffba94;
+  color: #ffa574;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    color: #ffba94;
+    border: none;
+  }
 `;

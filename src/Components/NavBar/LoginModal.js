@@ -1,4 +1,3 @@
-import { Button } from "react-scroll";
 import { GlobalFonts } from "../../fonts/font";
 import {
   BtnWrap,
@@ -43,7 +42,10 @@ const LoginModal = ({ openModalHandler }) => {
         </BtnWrap>
         <TextWrap>
           <Minitext>회원이 아니신가요?</Minitext>
-          <SignupText>회원가입</SignupText>
+          <SignupText onClick={() => {
+              navigate("/signup");
+              openModalHandler(false)
+            }}>회원가입</SignupText>
         </TextWrap>
       </ModalContainer>
     </>
