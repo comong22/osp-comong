@@ -35,9 +35,9 @@ const FirebaseDB = () => {
             <br></br>
           </div>
         ))}
-        {/* 하나씩 가져오기 */}
-        <div>{data[0].name}</div>
-        <div>{data[1].addr}</div>
+        {/* 하나씩 가져오기 **밑에 주석 풀면 하나씩 가져온 거 보임!*/}
+        {/* <div>{data[0].name}</div>
+        <div>{data[1].addr}</div> */}
     </div>
   );
 };
