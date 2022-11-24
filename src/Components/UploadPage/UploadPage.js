@@ -12,7 +12,7 @@ import {
     SelectBox,
     SelectOptions,
     Label2,
-    Option,
+    Option
 } from "./Element";
 
 const ARRAY = [0, 1, 2, 3, 4];
@@ -131,68 +131,70 @@ function UploadPage() {
                             }
                         }} style={{ display: "none" }} />
                 </div>
-                <div className='title' style={{ marginLeft: "80px", marginTop: "20px" }}>대표사진</div>
+                <div className='title'>대표사진</div>
             </div>
             <div className='item'>
-            <div className='selectbox'>
-                <SelectBox onClick={() => setShowOptions((prev) => !prev)}>
-                    <Label2>{currentValue}</Label2>
-                    <SelectOptions show={showOptions}>
-                        <Option onClick={() => (setCurrentValue("이대 정문"), setPlace(0))}>
-                            <span className='selecttext'>이대 정문</span>
-                        </Option>
-                        <Option onClick={() => (setCurrentValue("이대 후문"), setPlace(1))}>
-                            <span className='selecttext'>이대 후문</span>
-                        </Option>
-                        <Option onClick={() => (setCurrentValue("신촌"), setPlace(2))}>
-                            <span className='selecttext'>신촌</span>
-                        </Option>
-                    </SelectOptions>
-                </SelectBox>
+                <div>
+                    <div style={{float:'left',  color: 'rgb(125, 125, 125)', fontWeight: 'bold',fontFamily: 'Spoqa Han Sans Neo',marginTop: '10px',marginLeft:'94px'}}>식당 위치</div>
+                    <SelectBox onClick={() => setShowOptions((prev) => !prev)}>
+                        <Label2>{currentValue}</Label2>
+                        <SelectOptions show={showOptions}>
+                            <Option onClick={() => (setCurrentValue("이대 정문"), setPlace(0))}>
+                                <span className='selecttext'>이대 정문</span>
+                            </Option>
+                            <Option onClick={() => (setCurrentValue("이대 후문"), setPlace(1))}>
+                                <span className='selecttext'>이대 후문</span>
+                            </Option>
+                            <Option onClick={() => (setCurrentValue("신촌"), setPlace(2))}>
+                                <span className='selecttext'>신촌</span>
+                            </Option>
+                        </SelectOptions>
+                    </SelectBox>
+                    <br/>
                 </div>
                 <div>
                     <span style={{ marginRight: "30px" }}>
                         <span className='text'>식당이름</span>
-                        <input name="name" className="inputText" type='text' size="25px" onChange={(e) => { setName(e.target.value) }}></input>
+                        <input name="name" className="inputText" style={{ textAlign: 'center' }} type='text' size="35" onChange={(e) => { setName(e.target.value) }}></input>
                     </span>
                     <span style={{ marginRight: "40px" }}>
                         <span className='text'>카테고리</span>
-                        <input className="inputText" type='text' name="cate" onChange={(e) => { setCate(e.target.value) }} placeholder="일식" ></input>
+                        <input className="inputText" style={{ textAlign: 'center' }} type='text' name="cate" onChange={(e) => { setCate(e.target.value) }} placeholder="일식" ></input>
                     </span>
                     <span>
                         <span className='text'>주차여부</span>
-                        <input className="inputText" type='text' size="6px" placeholder="Y" name="park" onChange={(e) => { setPark(e.target.value) }}></input>
+                        <input className="inputText" style={{ textAlign: 'center' }} type='text' size="6" placeholder="Y" name="park" onChange={(e) => { setPark(e.target.value) }}></input>
                     </span>
                 </div>
                 <div style={{ marginTop: '20px' }}>
                     <span>
                         <span className='text'>주소</span>
-                        <input className="inputText" type='text' name="addr" onChange={(e) => { setAddr(e.target.value) }} size="90px" placeholder="정확한 주소를 입력해주세요!" ></input>
+                        <input className="inputText" type='text' name="addr" onChange={(e) => { setAddr(e.target.value) }} size='100' placeholder="정확한 주소를 입력해주세요!" ></input>
                     </span>
                 </div>
                 <div style={{ marginTop: '20px' }}>
                     <span style={{ marginRight: "40px" }}>
                         <span className='text'>전화번호</span>
-                        <input className="inputText" type='text' size='35px' placeholder="010-1234-5678" name="tel" onChange={(e) => { setTel(e.target.value) }}></input>
+                        <input className="inputText" type='text' size='33' placeholder="010-1234-5678" style={{ textAlign: 'center' }} name="tel" onChange={(e) => { setTel(e.target.value) }}></input>
                     </span>
 
                     <span>
                         <span className='text'>가격대</span>
-                        <input className="inputText" type='text' size='15px' placeholder="최저가" name="price1" onChange={(e) => { setPrice1(e.target.value) }}></input>
+                        <input style={{ textAlign: 'center' }} className="inputText" type='text' size='15px' placeholder="최저가" name="price1" onChange={(e) => { setPrice1(e.target.value) }}></input>
                     </span>
                     <span>
                         <span className='text'>~</span>
-                        <input className="inputText" type='text' size='15px' placeholder="최고가" name="price2" onChange={(e) => { setPrice2(e.target.value) }}></input>
+                        <input style={{ textAlign: 'center' }} className="inputText" type='text' size='15px' placeholder="최고가" name="price2" onChange={(e) => { setPrice2(e.target.value) }}></input>
                     </span>
                 </div>
                 <div style={{ marginTop: '20px' }}>
                     <span style={{ marginRight: "40px" }}>
                         <span className='text'>영업시간</span>
-                        <input className="inputText" type='text' size='18px' placeholder="09:00~21:00"  name="time" onChange={(e) => { setTime(e.target.value) }}></input>
+                        <input className="inputText" type='text' size='30' placeholder="09:00~21:00" style={{ textAlign: 'center' }} name="time" onChange={(e) => { setTime(e.target.value) }}></input>
                     </span>                        
                     <span>
                         <span className='text'>사이트</span>
-                        <input className="inputText" type='text' size='53px' placeholder="인스타그램, 대표사이트" name="site" onChange={(e) => { setSite(e.target.value) }}></input>
+                        <input className="inputText" type='text' size='50' placeholder="인스타그램, 대표사이트" style={{ textAlign: 'center' }} name="site" onChange={(e) => { setSite(e.target.value) }}></input>
                     </span>
                 </div>
 
@@ -223,12 +225,13 @@ function UploadPage() {
                     </div>
                     <div>
                         <span>
+                            <div><br/><br/></div>
                             <span className='text'>메뉴명</span>
                                 <input className="inputText" type='text' name="bestmenuname" onChange={(e) => { setBestmenuname(e.target.value) }}></input>
                         </span>
                     </div>
                     <div>
-                        <span style={{ marginRight: '15px' }}>
+                        <span>
                             <span className='text'>가격</span>
                             <input className="inputText" type='text'   name="bestmenuprice" onChange={(e) => { setBestmenuprice(e.target.value) }}></input>
                         </span>

@@ -23,7 +23,8 @@ export const Button = styled.button`
 export const SelectBox = styled.div`
   display: inline-block;
   position: relative;
-  left: 50px;
+  float:left;
+  left: 0px;
   width: 110px;
   height: 35px;
   padding: 5px;
