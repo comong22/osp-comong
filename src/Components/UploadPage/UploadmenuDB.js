@@ -18,13 +18,14 @@ const UploadmenuDB = () => {
   }
 
  useEffect(() => {
-  getData()
+  getData();
+  console.log(data);
  }, [])
   return (
     <div>
       <h1>firestore DB</h1>
       { 
-        loader === false && (data.map((rest) => (
+        loader === false && data.map((rest) => (
           <div key={rest.id}>
             <div>식당 이름 : {rest.name}</div>
             <div>카테고리 : {rest.cate}</div>
@@ -35,11 +36,25 @@ const UploadmenuDB = () => {
             <div>최고 가격 : {rest.price2}</div>
             <div>영업 시간 : {rest.time}</div>
             <div>사이트 : {rest.site}</div>
+            <div>메뉴명 : {rest.bestmenuname}</div>
+            <div>가격 : {rest.bestmenuprice}</div>
             <br></br>
           </div>
           
-        )))
-}
+        ))}
+
+        <div>{data[0].name}</div>
+        <div>{data[1].cate}</div>
+        <div>{data[2].park}</div>
+        <div>{data[3].addr}</div>
+        <div>{data[4].tel}</div>
+        <div>{data[5].price1}</div>
+        <div>{data[6].price2}</div>
+        <div>{data[7].time}</div>
+        <div>{data[8].site}</div>
+        <div>{data[9].bestmenuname}</div>
+        <div>{data[10].bestmenuprice}</div>
+
     </div>
   );
 };

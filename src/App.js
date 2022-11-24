@@ -8,9 +8,8 @@ import PostReview from "./Components/PostReviewPage/PostReview";
 import UploadPage from "./Components/UploadPage/UploadPage";
 import { main_data } from "./Components/MainPage/data";
 import { useState } from "react";
-import Sample from "./Components/FireBase/sample";
 
-import FirebaseDB from "./Components/FireBase/FirebaseDB";
+import UploadmenuDB from "./Components/UploadPage/UploadmenuDB";
 import SignUp from "./Components/NavBar/Signup";
 import { GlobalFonts } from "./fonts/font";
 
@@ -30,9 +29,7 @@ function App() {
           element={<DetailPage MainData={MainData} />}
         />
         <Route path="/signup" element={<SignUp />} />
-        {/* sample, db는 나중에 지워야 함! */}
-        <Route path="/sample" element={<Sample />} />
-        <Route path="/db" element={<FirebaseDB />} />
+        <Route path="/db" element={<UploadmenuDB />} />
       </Routes>
     </>
   );
