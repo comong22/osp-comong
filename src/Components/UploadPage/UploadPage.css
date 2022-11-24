@@ -9,13 +9,44 @@
     justify-content: center;
     text-align: center;
 }
+.Box{
+    display: inline-flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    height: 450px;
+    background: #FFFFFF;
+    border-radius: 25px;
+  }
+.bottomBox{
+    display: inline-flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    background: #FFFFFF;
+    border-radius: 25px;
+    box-shadow: none;
+  }
 .box{
+    left: 80px;
     display: flex;
     background-color:white;
     border-radius: 15px;
     margin-left: 80px;
     align-items: center;
     justify-content: center;
+}
+.selectbox{
+    display: flex;
+    left: 80px;
+}
+.selecttext{
+    size: 20px;
+    font-family: 'Spoqa Han Sans Neo';
+
 }
 .title{
     margin-top: 10px;
@@ -25,8 +56,17 @@
 
 }
 .text{
+    display: inline;
     color: rgb(125, 125, 125);
     font-weight: bold;
+    width: 590px;
+    height: 250px;
+    font-family: 'Spoqa Han Sans Neo';
+    margin: 10px;
+}
+.selecttext{
+    display: inline;
+    color: rgb(125, 125, 125);
     width: 590px;
     height: 250px;
     font-family: 'Spoqa Han Sans Neo';

@@ -21,12 +21,15 @@ export const Button = styled.button`
 `;
 
 export const SelectBox = styled.div`
+  display: inline-block;
   position: relative;
-  width: 120px;
-  padding: 10px;
+  left: 50px;
+  width: 110px;
+  height: 35px;
+  padding: 5px;
   margin: 0 0 20px 20px;
   border-radius: 6px;
-  border: 1px solid rgba(0, 16, 61, 0.12);
+  
   box-sizing: border-box;
   z-index: 999;
   background-color: #ffffff;
@@ -36,8 +39,8 @@ export const SelectBox = styled.div`
   &::before {
     content: "⌵";
     position: absolute;
-    top: 4px;
-    right: 10px;
+    top: 1px;
+    right: 8px;
     color: #ffa574;
     font-size: 20px;
     font-weight: bold;
@@ -47,11 +50,14 @@ export const SelectBox = styled.div`
 
 
 export const Label2 = styled.label`
-  font-family: "SUIT Regular";
-
   font-size: 15px;
-  margin-left: 10px;
-  text-align: center;
+  margin-left: 5px;
+  color: rgb(125, 125, 125);
+  
+  width: 590px;
+  height: 200px;
+  font-family: 'Spoqa Han Sans Neo';
+  margin: 5px;
 `;
 
 

@@ -1,10 +1,11 @@
 import './UploadPage.css';
 import Add from '../../images/add.svg';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { db } from "../../firebase";
 import { dbService, storageService } from "../../firebase";
 import { storage } from "../../firebase";
 import ModalBasic from './Modal.js';
+import { BsPlusSquare } from "react-icons/bs";
 import {
     UploadImg,
     Button,
@@ -14,7 +15,10 @@ import {
     Option,
 } from "./Element";
 
+const ARRAY = [0, 1, 2, 3, 4];
+
 function UploadPage() {
+
     // console에 DB에서 불러온 데이터 출력
     useEffect(() => {
         const bucket = db.collection("restaurant");
@@ -53,6 +57,21 @@ function UploadPage() {
             }
         );
     };
+
+    const [imageUrl, setImageUrl] = useState(null);
+    const ImgInput = useRef();
+    const [preview, setPreview] = useState();
+    useEffect(() => {
+        if (imageUrl) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setPreview(reader.result);
+            };
+            reader.readAsDataURL(imageUrl);
+        } else {
+            setPreview(null);
+        }
+    }, [imageUrl]);
     // -----------------------------------------------------------
 
     // 맛집 등록 관련
@@ -116,14 +135,22 @@ function UploadPage() {
         <div className='uploadBG'>
 
             <div className='item'>
-                <AddBox size="400px">
-                    <UploadImg>
-                        <form onSubmit={formHandler}>
-                            <input type="file" className="input" />
-                            <button type="submit">Upload</button>
-                        </form>
-                    </UploadImg>
-                </AddBox>
+                <div className="Box">
+                    {preview ? (<img src={preview} onClick={() => { setImageUrl(null); }} />
+                    ) : (
+                        <BsPlusSquare size={40} onClick={(event) => { event.preventDefault(); ImgInput.current.click(); }} className="File" />
+                    )}
+                    <input ref={ImgInput} type='file' accept="image/*" className="fileSize"
+                        onChange={(event) => {
+                            const file = ImgInput.current.files[0];
+                            if (file) {
+                                setImageUrl(file)
+                            }
+                            else {
+                                setImageUrl(null);
+                            }
+                        }} style={{ display: "none" }} />
+                </div>
                 <div className='title' style={{ marginLeft: "80px", marginTop: "20px" }}>대표사진</div>
             </div>
             <div className='item' >
@@ -169,7 +196,22 @@ function UploadPage() {
 
                 <div className='addMenu' style={{ justifyContent: "center" }}>
                     <div className='it1'>
-                        <AddBox size="150px"></AddBox>
+                        <div className="bottomBox">
+                            {preview ? (<img src={preview} onClick={() => { setImageUrl(null); }} />
+                            ) : (
+                                <BsPlusSquare size={40} onClick={(event) => { event.preventDefault(); ImgInput.current.click(); }} className="File" />
+                            )}
+                            <input ref={ImgInput} type='file' accept="image/*" className="fileSize"
+                                onChange={(event) => {
+                                    const file = ImgInput.current.files[0];
+                                    if (file) {
+                                        setImageUrl(file)
+                                    }
+                                    else {
+                                        setImageUrl(null);
+                                    }
+                                }} style={{ display: "none" }} />
+                        </div>
                     </div>
                     <div>
                         <div style={{ margin: "35px" }}></div>
@@ -198,6 +240,5 @@ function UploadPage() {
 
     );
 }
-
 export default UploadPage;
 
