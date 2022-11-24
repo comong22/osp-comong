@@ -9,8 +9,8 @@ import {
     UploadImg,
     Button,
     SelectBox,
-    Label2,
     SelectOptions,
+    Label2,
     Option,
 } from "./Element";
 
@@ -108,8 +108,6 @@ function UploadPage() {
         )
     }
 
-
-    function UploadPage() {
         const [modal, setModal] = useState(false);
         const showModal = () => {
             setModal(true);
@@ -172,28 +170,29 @@ function UploadPage() {
                         </div>
                         <div>
                             <div style={{ margin: "35px" }}></div>
-                            <InputBox title="메뉴명" name="bestmenuname" onChange={(e) => { setBestmenuname(e.target.value) }}></InputBox>
+                            <InputBox title="메뉴명" name="bestmenuname" onChange={(e) => { setBestmenuname(e.target.value); }}></InputBox>
                         </div>
                         <div>
-                            <InputBox title="가격" name="bestmenuprice" onChange={(e) => { setBestmenuprice(e.target.value) }} size="15" ></InputBox>
+                            <InputBox title="가격" name="bestmenuprice" onChange={(e) => { setBestmenuprice(e.target.value); }} size="15" ></InputBox>
                         </div>
                         <div className='it4'>
-                            <Button onClick={() => 
+                            <Button onClick={ () => 
                                 bucket
                                  .add({ name, cate, park, addr, tel, price1, price2, time, site, bestmenuname, bestmenuprice 
                                  })
                                  .then((docRef) => { 
                                     console.log(docRef.id)
-                                  })}
-                                  onMouseOver={(e) => mouseOver(e)} onMouseOut={(e) => mouseOut(e)} className='submitButton' >등록하기</Button>
+                                  })
+                                }
+                                   >등록하기
+                                   </Button>
                             {modal && <ModalBasic setModal={setModal} />}
                         </div>
                     </div>
                 </div>
             </div>
 
-        )
-    }
+        );
 }
 
 export default UploadPage;

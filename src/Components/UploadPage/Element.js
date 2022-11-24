@@ -6,19 +6,15 @@ export const UploadImg = styled.div`
 
 export const Button = styled.button`
   background-color: #ffa574;
-  color: white;
-  font-family: "Spoqa Han Sans Neo";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  font-size: 14px;
-  padding: 10px 25px;
+  color: #FFF7EF;
   border: none;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-  margin: 30px 0 0 30px;
-  float: left;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-family: 'Spoqa Han Sans Neo';
+  align-content: center;
+  font-weight: 700;
+  width: 100px;
+  height: 40px;  
   &:hover {
     background-color: #fad4b2;
   }
@@ -62,7 +58,6 @@ export const Label2 = styled.label`
 export const SelectOptions = styled.ul`
   position: absolute;
   list-style: none;
-  top: 30px;
   left: 0;
   width: 100%;
   overflow: hidden;
