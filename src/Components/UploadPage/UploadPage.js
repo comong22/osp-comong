@@ -1,11 +1,12 @@
 import './UploadPage.css';
 import Add from '../../images/add.svg';
-import { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { db } from "../../firebase";
 import { dbService, storageService } from "../../firebase";
 import { storage } from "../../firebase";
 import ModalBasic from './Modal.js';
 import { BsPlusSquare } from "react-icons/bs";
+import firebaseApp from "../../firebase"
 import {
     UploadImg,
     Button,
@@ -14,10 +15,6 @@ import {
     Label2,
     Option
 } from "./Element";
-
-const ARRAY = [0, 1, 2, 3, 4];
-
-
 
 function UploadPage() {
 
@@ -34,31 +31,32 @@ function UploadPage() {
             });
     });
 
-    // 이미지 업로드 관련  -------------------------------------
+    // 이미지 업로드 관련  ------------------------------------
     const [progress, setProgress] = useState(0);
     const formHandler = (e) => {
-        e.preventDefault();
-        const file = e.target[0].files[0];
-        uploadeFiles(file);
+      e.preventDefault();
+      const file = e.target[0].files[0];
+      uploadeFiles(file);
     };
-
+  
     const uploadeFiles = (file) => {
-        const uploadTask = storage.ref(`files/${file.name}`).put(file);
-        uploadTask.on(
-            "state_changed",
-            (snapshot) => { },
-            (error) => console.log(error),
-            () => {
-                storage
-                    .ref("files")
-                    .child(file.name)
-                    .getDownloadURL()
-                    .then((url) => {
-                        console.log(url);
-                    });
-            }
-        );
+      const uploadTask = storage.ref(`files/${file.name}`).put(file);
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {},
+        (error) => console.log(error),
+        () => {
+          storage
+            .ref("files")
+            .child(file.name)
+            .getDownloadURL()
+            .then((url) => {
+              console.log(url);
+            });
+        }
+      );
     };
+ 
 
     const [imageUrl, setImageUrl] = useState(null);
     const ImgInput = useRef();
@@ -74,6 +72,21 @@ function UploadPage() {
             setPreview(null);
         }
     }, [imageUrl]);
+
+    const [imageUrl2, setImageUrl2] = useState(null);
+    const ImgInput2 = useRef();
+    const [preview2, setPreview2] = useState();
+    useEffect(() => {
+        if (imageUrl2) {
+            const reader2 = new FileReader();
+            reader2.onloadend = () => {
+                setPreview2(reader2.result)
+            };
+            reader2.readAsDataURL(imageUrl2);
+        } else {
+            setPreview2(null);
+        }
+    }, [imageUrl2]);    
     // -----------------------------------------------------------
 
     // 맛집 등록 관련
@@ -148,8 +161,8 @@ function UploadPage() {
                         <input className="inputText" style={{ textAlign: 'center' }} type='text' size="6" placeholder="Y" name="park" onChange={(e) => { setPark(e.target.value) }}></input>
                     </span>
                 </div>
-                <div style={{ marginTop: '20px'}}>
-                    <span style={{float:'left',  color: 'rgb(125, 125, 125)', fontWeight: 'bold',fontFamily: 'Spoqa Han Sans Neo',marginTop: '10px',marginLeft:'94px'}}>식당 위치</span>
+                <div style={{ marginTop: '20px' }}>
+                    <span style={{ float: 'left', color: 'rgb(125, 125, 125)', fontWeight: 'bold', fontFamily: 'Spoqa Han Sans Neo', marginTop: '10px', marginLeft: '94px' }}>식당 위치</span>
                     <SelectBox onClick={() => setShowOptions((prev) => !prev)}>
                         <Label2>{currentValue}</Label2>
                         <SelectOptions show={showOptions}>
@@ -164,7 +177,7 @@ function UploadPage() {
                             </Option>
                         </SelectOptions>
                     </SelectBox>
-                    <span style={{ marginTop: '10px'}} >
+                    <span style={{ marginTop: '10px' }} >
                         <span className='text'>주소</span>
                         <input className="inputText" type='text' name="addr" onChange={(e) => { setAddr(e.target.value) }} size='59' placeholder="정확한 주소를 입력해주세요!" ></input>
                     </span>
@@ -188,7 +201,7 @@ function UploadPage() {
                     <span style={{ marginRight: "40px" }}>
                         <span className='text'>영업시간</span>
                         <input className="inputText" type='text' size='30' placeholder="09:00~21:00" style={{ textAlign: 'center' }} name="time" onChange={(e) => { setTime(e.target.value) }}></input>
-                    </span>                        
+                    </span>
                     <span>
                         <span className='text'>사이트</span>
                         <input className="inputText" type='text' size='50' placeholder="인스타그램, 대표사이트" style={{ textAlign: 'center' }} name="site" onChange={(e) => { setSite(e.target.value) }}></input>
@@ -204,33 +217,33 @@ function UploadPage() {
                 <div className='addMenu' style={{ justifyContent: "center" }}>
                     <div className='it1'>
                         <div className="bottomBox">
-                            {preview ? (<img src={preview} onClick={() => { setImageUrl(null); }} />
+                            {preview2 ? (<img src={preview2} onClick={() => { setImageUrl2(null); }} />
                             ) : (
-                                <BsPlusSquare size={40} onClick={(event) => { event.preventDefault(); ImgInput.current.click(); }} className="File" />
+                                <BsPlusSquare size={5} onClick={(event) => { event.preventDefault(); ImgInput2.current.click(); }} className="File" />
                             )}
-                            <input ref={ImgInput} type='file' accept="image/*" className="fileSize"
+                            <input ref={ImgInput2} type='file' accept="image/*" className="fileSize"
                                 onChange={(event) => {
-                                    const file = ImgInput.current.files[0];
-                                    if (file) {
-                                        setImageUrl(file)
+                                    const file2 = ImgInput2.current.files[0];
+                                    if (file2) {
+                                        setImageUrl2(file2)
                                     }
                                     else {
-                                        setImageUrl(null);
+                                        setImageUrl2(null);
                                     }
                                 }} style={{ display: "none" }} />
                         </div>
                     </div>
                     <div>
                         <span>
-                            <div><br/><br/></div>
+                            <div><br /><br /></div>
                             <span className='text'>메뉴명</span>
-                                <input className="inputText" type='text' name="bestmenuname" onChange={(e) => { setBestmenuname(e.target.value) }}></input>
+                            <input className="inputText" type='text' name="bestmenuname" onChange={(e) => { setBestmenuname(e.target.value) }}></input>
                         </span>
                     </div>
                     <div>
                         <span>
                             <span className='text'>가격</span>
-                            <input className="inputText" type='text'   name="bestmenuprice" onChange={(e) => { setBestmenuprice(e.target.value) }}></input>
+                            <input className="inputText" type='text' name="bestmenuprice" onChange={(e) => { setBestmenuprice(e.target.value) }}></input>
                         </span>
                     </div>
                     <div className='it4'>
