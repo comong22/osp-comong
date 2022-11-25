@@ -166,7 +166,7 @@ function UploadPage() {
                     </SelectBox>
                     <span style={{ marginTop: '10px'}} >
                         <span className='text'>주소</span>
-                        <input className="inputText" type='text' name="addr" onChange={(e) => { setAddr(e.target.value) }} size='70' placeholder="정확한 주소를 입력해주세요!" ></input>
+                        <input className="inputText" type='text' name="addr" onChange={(e) => { setAddr(e.target.value) }} size='59' placeholder="정확한 주소를 입력해주세요!" ></input>
                     </span>
                 </div>
                 <div style={{ marginTop: '20px' }}>
