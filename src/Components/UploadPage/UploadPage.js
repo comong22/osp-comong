@@ -34,30 +34,30 @@ function UploadPage() {
     // 이미지 업로드 관련  ------------------------------------
     const [progress, setProgress] = useState(0);
     const formHandler = (e) => {
-      e.preventDefault();
-      const file = e.target[0].files[0];
-      uploadeFiles(file);
+        e.preventDefault();
+        const file = e.target[0].files[0];
+        uploadeFiles(file);
     };
-  
-    const uploadeFiles = (file) => {
-      const uploadTask = storage.ref(`files/${file.name}`).put(file);
-      uploadTask.on(
-        "state_changed",
-        (snapshot) => {},
-        (error) => console.log(error),
-        () => {
-          storage
-            .ref("files")
-            .child(file.name)
-            .getDownloadURL()
-            .then((url) => {
-              console.log(url);
-            });
-        }
-      );
-    };
- 
 
+    const uploadeFiles = (file) => {
+        const uploadTask = storage.ref(`files/${file.name}`).put(file);
+        uploadTask.on(
+            "state_changed",
+            (snapshot) => { },
+            (error) => console.log(error),
+            () => {
+                storage
+                    .ref("files")
+                    .child(file.name)
+                    .getDownloadURL()
+                    .then((url) => {
+                        console.log(url);
+                    });
+            }
+        );
+    };
+
+    //이미지 preview 함수
     const [imageUrl, setImageUrl] = useState(null);
     const ImgInput = useRef();
     const [preview, setPreview] = useState();
@@ -86,7 +86,7 @@ function UploadPage() {
         } else {
             setPreview2(null);
         }
-    }, [imageUrl2]);    
+    }, [imageUrl2]);
     // -----------------------------------------------------------
 
     // 맛집 등록 관련
@@ -127,22 +127,27 @@ function UploadPage() {
     };
     return (
         <div className='uploadBG'>
+
             <div className='item'>
                 <div className="Box">
-                    {preview ? (<img src={preview} onClick={() => { setImageUrl(null); }} />
-                    ) : (
-                        <BsPlusSquare size={40} onClick={(event) => { event.preventDefault(); ImgInput.current.click(); }} className="File" />
-                    )}
-                    <input ref={ImgInput} type='file' accept="image/*" className="fileSize"
-                        onChange={(event) => {
-                            const file = ImgInput.current.files[0];
-                            if (file) {
-                                setImageUrl(file)
-                            }
-                            else {
-                                setImageUrl(null);
-                            }
-                        }} style={{ display: "none" }} />
+                    <form onSubmit={formHandler}>
+                        {preview ? (<img src={preview} onClick={() => { setImageUrl(null); }} />
+                        ) : (
+                            <BsPlusSquare size={40} onClick={(event) => { event.preventDefault(); ImgInput.current.click(); }} className="File" />
+                        )}
+
+                        <input ref={ImgInput} type='file' accept="image/*" className="fileSize"
+                            onChange={(event) => {
+                                const file = ImgInput.current.files[0];
+                                if (file) {
+                                    setImageUrl(file)
+                                }
+                                else {
+                                    setImageUrl(null);
+                                }
+                            }} style={{ display: "none" }} />
+                    </form>
+
                 </div>
                 <div className='title'>대표사진</div>
             </div>
@@ -217,20 +222,22 @@ function UploadPage() {
                 <div className='addMenu' style={{ justifyContent: "center" }}>
                     <div className='it1'>
                         <div className="bottomBox">
-                            {preview2 ? (<img src={preview2} onClick={() => { setImageUrl2(null); }} />
-                            ) : (
-                                <BsPlusSquare size={5} onClick={(event) => { event.preventDefault(); ImgInput2.current.click(); }} className="File" />
-                            )}
-                            <input ref={ImgInput2} type='file' accept="image/*" className="fileSize"
-                                onChange={(event) => {
-                                    const file2 = ImgInput2.current.files[0];
-                                    if (file2) {
-                                        setImageUrl2(file2)
-                                    }
-                                    else {
-                                        setImageUrl2(null);
-                                    }
-                                }} style={{ display: "none" }} />
+                            <form onSubmit={formHandler}>
+                                {preview2 ? (<img src={preview2} onClick={() => { setImageUrl2(null); }} />
+                                ) : (
+                                    <BsPlusSquare size={5} onClick={(event) => { event.preventDefault(); ImgInput2.current.click(); }} className="File" />
+                                )}
+                                <input ref={ImgInput2} type='file' accept="image/*" className="fileSize"
+                                    onChange={(event) => {
+                                        const file2 = ImgInput2.current.files[0];
+                                        if (file2) {
+                                            setImageUrl2(file2)
+                                        }
+                                        else {
+                                            setImageUrl2(null);
+                                        }
+                                    }} style={{ display: "none" }} />
+                            </form>
                         </div>
                     </div>
                     <div>
@@ -247,19 +254,22 @@ function UploadPage() {
                         </span>
                     </div>
                     <div className='it4'>
-                        <Button onClick={() =>
+                        <Button onClick={() =>{
                             bucket
                                 .add({
-                                    name, cate, park, addr, tel, price1, price2, time, site, bestmenuname, bestmenuprice
+                                    name, cate, park, addr, tel, price1, price2, time, site, bestmenuname, bestmenuprice, progress
                                 })
                                 .then((docRef) => {
                                     console.log(docRef.id)
-                                })
+                                }); uploadeFiles(ImgInput.current.files[0], ImgInput2.current.files[0]);
+                            } 
+                            
                         }
                         >등록하기
                         </Button>
                         {modal && <ModalBasic setModal={setModal} />}
                     </div>
+
                 </div>
             </div>
         </div>
