@@ -28,7 +28,8 @@ export const SelectBox = styled.div`
   width: 110px;
   height: 35px;
   padding: 5px;
-  margin: 0 0 20px 20px;
+  margin-left:15px;
+
   border-radius: 6px;
   
   box-sizing: border-box;
