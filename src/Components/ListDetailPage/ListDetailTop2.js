@@ -7,6 +7,7 @@ import mappin from "../../images/main/mappin.svg";
 import star from "../../images/detail/star.svg";
 import phone from "../../images/detail/phone.svg";
 import menu from "../../images/detail/menu.svg";
+import link from "../../images/detail/fi_link.svg";
 import clock from "../../images/main/clock.svg";
 import finfo from "../../images/detail/fi_info.svg";
 import {
@@ -31,6 +32,7 @@ import {
   ClockIMG,
   Clock,
   Parking,
+  LinkIMG,
   ParkingIMG,
   Addhours,
 } from "./ListDetailStyle.js";
@@ -107,30 +109,32 @@ function ListDetailTop(props) {
                             <Category>| {rest2.cate}</Category>
                           </Row1>
                           <Row3>
+                            {/*
                             <StarIMG src={star} alt="star" />
                             <Star>{main_data[id].star}</Star>
+                            */}
                             <MapPinIMG src={mappin} alt="mappin" />
                             <Address>{rest2.addr}</Address>
-                            <Detailaddress>{main_data[id].detail_address}</Detailaddress>
+                            {/*
+                            <Detailaddress>{main_data[id].detail_address}</Detailaddress> */}
                             <PhoneIMG src={phone} alt="phone" />
                             <Tel>{rest2.tel}</Tel>
+                            
                             <MenuIMG src={menu} alt="menu" />
                             <Menu1>
-                              {main_data[id].menu_1} - {main_data[id].menu_1_price}
+                              {rest2.price1}원 ~ {rest2.price2}원
                             </Menu1>
-                            <Menu2>
-                              {main_data[id].menu_2} - {main_data[id].menu_2_price}
-                            </Menu2>
-                            <Menu3>
-                              {main_data[id].menu_3} - {main_data[id].menu_3_price}
-                            </Menu3>
                           </Row3>
                           <Row4>
                             <ClockIMG src={clock} alt="clock" />
                             <Clock>{rest2.time}</Clock>
+                            {/*
                             <Addhours>{main_data[id].add_hours}</Addhours>
+                        */}
                             <ParkingIMG src={finfo} alt="finfo" />
                             <Parking>{rest2.park}</Parking>
+                            <LinkIMG src={link} alt="link"/>
+                            <Link>{rest2.site}</Link>
                           </Row4>
                           <Row5>
                             <div>

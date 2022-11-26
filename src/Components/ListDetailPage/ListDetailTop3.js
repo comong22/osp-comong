@@ -6,6 +6,7 @@ import { main_data } from "../MainPage/data";
 import mappin from "../../images/main/mappin.svg";
 import star from "../../images/detail/star.svg";
 import phone from "../../images/detail/phone.svg";
+import link from "../../images/detail/fi_link.svg";
 import menu from "../../images/detail/menu.svg";
 import clock from "../../images/main/clock.svg";
 import finfo from "../../images/detail/fi_info.svg";
@@ -32,6 +33,7 @@ import {
   Clock,
   Parking,
   ParkingIMG,
+  LinkIMG,
   Addhours,
 } from "./ListDetailStyle.js";
 
@@ -101,51 +103,53 @@ function ListDetailTop(props) {
                   .slice( arr[id] - 1, arr[id])
                   .map((rest3) => (
                     <div>
-                        <InfoCol>
-                          <Row1>
-                            <DetailName>{rest3.name}</DetailName>
-                            <Category>| {rest3.cate}</Category>
-                          </Row1>
-                          <Row3>
-                            <StarIMG src={star} alt="star" />
-                            <Star>{main_data[id].star}</Star>
-                            <MapPinIMG src={mappin} alt="mappin" />
-                            <Address>{rest3.addr}</Address>
-                            <Detailaddress>{main_data[id].detail_address}</Detailaddress>
-                            <PhoneIMG src={phone} alt="phone" />
-                            <Tel>{rest3.tel}</Tel>
-                            <MenuIMG src={menu} alt="menu" />
-                            <Menu1>
-                              {main_data[id].menu_1} - {main_data[id].menu_1_price}
-                            </Menu1>
-                            <Menu2>
-                              {main_data[id].menu_2} - {main_data[id].menu_2_price}
-                            </Menu2>
-                            <Menu3>
-                              {main_data[id].menu_3} - {main_data[id].menu_3_price}
-                            </Menu3>
-                          </Row3>
-                          <Row4>
-                            <ClockIMG src={clock} alt="clock" />
-                            <Clock>{rest3.time}</Clock>
-                            <Addhours>{main_data[id].add_hours}</Addhours>
-                            <ParkingIMG src={finfo} alt="finfo" />
-                            <Parking>{rest3.park}</Parking>
-                          </Row4>
-                          <Row5>
-                            <div>
-                              <button
-                                className="Rbutton"
-                                onClick={() => {
-                                  navigate("/review");
-                                }}
-                              >
-                              리뷰 작성
-                              </button>
-                            </div>
-                          </Row5>
-                        </InfoCol>
-                    </div>
+                    <InfoCol>
+                      <Row1>
+                        <DetailName>{rest3.name}</DetailName>
+                        <Category>| {rest3.cate}</Category>
+                      </Row1>
+                      <Row3>
+                        {/*
+                        <StarIMG src={star} alt="star" />
+                        <Star>{main_data[id].star}</Star>
+                        */}
+                        <MapPinIMG src={mappin} alt="mappin" />
+                        <Address>{rest3.addr}</Address>
+                        {/*
+                        <Detailaddress>{main_data[id].detail_address}</Detailaddress> */}
+                        <PhoneIMG src={phone} alt="phone" />
+                        <Tel>{rest3.tel}</Tel>
+                        
+                        <MenuIMG src={menu} alt="menu" />
+                        <Menu1>
+                          {rest3.price1}원 ~ {rest3.price2}원
+                        </Menu1>
+                      </Row3>
+                      <Row4>
+                        <ClockIMG src={clock} alt="clock" />
+                        <Clock>{rest3.time}</Clock>
+                        {/*
+                        <Addhours>{main_data[id].add_hours}</Addhours>
+                    */}
+                        <ParkingIMG src={finfo} alt="finfo" />
+                        <Parking>{rest3.park}</Parking>
+                        <LinkIMG src={link} alt="link"/>
+                        <Link>{rest3.site}</Link>
+                      </Row4>
+                      <Row5>
+                        <div>
+                          <button
+                            className="Rbutton"
+                            onClick={() => {
+                              navigate("/review");
+                            }}
+                          >
+                          리뷰 작성
+                          </button>
+                        </div>
+                      </Row5>
+                    </InfoCol>
+                </div>
                 ))}
               </div>
             </div>

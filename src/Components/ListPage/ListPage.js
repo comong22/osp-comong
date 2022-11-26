@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { GlobalFonts } from "../../fonts/font";
 import Pagination from "react-js-pagination";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./ListPage.css";
 import {
   ListName,
@@ -154,7 +154,7 @@ function Place01() {
                 <div key={i}>
                   <DataContainer
                     onClick={() => {
-                      navigate(`/listdetail01/${i}`);
+                      navigate(`/listdetail01/${i+ (page-1)*3}`);
                     }}
                   >
                     <ListPageRow>
@@ -239,7 +239,7 @@ function Place02() {
                 <div key={i}>
                   <DataContainer
                     onClick={() => {
-                      navigate(`/listdetail02/${i}`);
+                      navigate(`/listdetail02/${i+ (page-1)*3}`);
                     }}
                   >
                     <ListPageRow>
@@ -279,6 +279,7 @@ function Place03() {
   const [items, setItems] = useState(3);
   const [page, setPage] = useState(1);
   const [loader, setLoader] = useState(true);
+  const { id } = useParams();
   const ref = db.collection("place03");
   const handlePageChange = (page) => {
     setPage(page);
@@ -324,7 +325,7 @@ function Place03() {
                 <div key={i}>
                   <DataContainer
                     onClick={() => {
-                      navigate(`/listdetail03/${i}`);
+                      navigate(`/listdetail03/${i+ (page-1)*3}`);
                     }}
                   >
                     <ListPageRow>

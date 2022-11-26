@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { main_data } from "../MainPage/data";
 import mappin from "../../images/main/mappin.svg";
 import star from "../../images/detail/star.svg";
+import link from "../../images/detail/fi_link.svg";
 import phone from "../../images/detail/phone.svg";
 import menu from "../../images/detail/menu.svg";
 import clock from "../../images/main/clock.svg";
@@ -25,6 +26,7 @@ import {
   PhoneIMG,
   Menu1,
   Menu2,
+  LinkIMG,
   Menu3,
   ClockIMG,
   Clock,
@@ -76,23 +78,14 @@ function DetailTop(props) {
                 <Category>| {main_data[id].category}</Category>
               </Row1>
               <Row3>
-                <StarIMG src={star} alt="star" />
-                <Star>{main_data[id].star}</Star>
                 <MapPinIMG src={mappin} alt="mappin" />
                 <Address>{main_data[id].address}</Address>
-                <Detailaddress>{main_data[id].detail_address}</Detailaddress>
                 <PhoneIMG src={phone} alt="phone" />
                 <Tel>{main_data[id].tel}</Tel>
                 <MenuIMG src={menu} alt="menu" />
                 <Menu1>
-                  {main_data[id].menu_1} - {main_data[id].menu_1_price}
+                  {main_data[id].price1} ~ {main_data[id].price2}
                 </Menu1>
-                <Menu2>
-                  {main_data[id].menu_2} - {main_data[id].menu_2_price}
-                </Menu2>
-                <Menu3>
-                  {main_data[id].menu_3} - {main_data[id].menu_3_price}
-                </Menu3>
               </Row3>
               <Row4>
                 <ClockIMG src={clock} alt="clock" />
@@ -100,6 +93,8 @@ function DetailTop(props) {
                 <Addhours>{main_data[id].add_hours}</Addhours>
                 <ParkingIMG src={finfo} alt="finfo" />
                 <Parking>{main_data[id].parking}</Parking>
+                <LinkIMG src={link} alt="link"/>
+                <Link>{main_data[id].site}</Link>
               </Row4>
               <Row5>
               <div>

@@ -111,7 +111,8 @@ export const DetailName = styled.div`
   font-feature-settings: "pnum" on, "lnum" on;
 
   color: #424242;
-  padding-left: 18%;
+  padding-left: 17%;
+  padding-top : 3%;
   padding-bottom: 3%;
 `;
 
@@ -123,6 +124,7 @@ export const Category = styled.div`
   font-size: 16px;
   line-height: 150%;
   padding-bottom: 3%;
+  padding-top : 3%;
   /* or 24px */
   color: #000000;
 `;
@@ -166,6 +168,12 @@ export const StarIMG = styled.img`
   padding-left: 18%;
 `;
 
+export const LinkIMG = styled.img`
+  float: left;
+  max-width: 22px;
+  margin-right: 4%;
+`;
+
 export const Star = styled.div`
   max-width: 1000px;
   font-family: "Spoqa Han Sans Neo Regular";
@@ -187,6 +195,7 @@ export const Address = styled.div`
   font-size: 16px;
   line-height: 150%;
   padding-left: 25%;
+  padding-bottom : 5%;
   /* or 27px */
 
   color: #424242;
@@ -264,6 +273,7 @@ export const Clock = styled.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
+  padding-bottom : 5%;
   /* or 27px */
 
   color: #424242;
@@ -285,6 +295,19 @@ export const Addhours = styled.div`
 `;
 
 export const Parking = styled.div`
+  max-width: 1000px;
+  font-family: "Spoqa Han Sans Neo Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+    padding-bottom : 5%;
+  /* or 27px */
+
+  color: #424242;
+`;
+
+export const Link = styled.div`
   max-width: 1000px;
   font-family: "Spoqa Han Sans Neo Regular";
   font-style: normal;
