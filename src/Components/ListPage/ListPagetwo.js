@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { GlobalFonts } from "../../fonts/font";
 import Pagination from "react-js-pagination";
 import { useNavigate } from "react-router-dom";
@@ -33,6 +33,7 @@ import {
 import heartt from "../../images/list/heartt.svg";
 import clock from "../../images/main/clock.svg";
 import mappin from "../../images/main/mappin.svg";
+import { place01_data, place02_data, place03_data } from "./data";
 import { db } from "../../firebase";
 function ListPage() {
   let [tab, setTab] = useState(0); // 0 정문, 1 후문, 2 신촌
@@ -106,9 +107,7 @@ function TabContent(props) {
 }
 
 function Place01() {
-  let [place01data, setPlace01Data] = useState([]);
-  const [loader, setLoader] = useState(true);
-  const ref = db.collection("place01"); // 정문 맛집 데이터
+  let [place01Data, setPlace01Data] = useState(place01_data); // 정문 맛집 데이터
   const [items, setItems] = useState(3);
   const [page, setPage] = useState(1);
   const handlePageChange = (page) => {
@@ -126,49 +125,33 @@ function Place01() {
     { id: 8, src: require("../../images/list/p1_9.jpg") },
   ];
   let navigate = useNavigate();
-
-  function getData() {
-    ref.onSnapshot((querySnapshot) => {
-      const items = [];
-      querySnapshot.forEach((doc) => {
-        items.push(doc.data());
-      });
-      setPlace01Data(items);
-      setLoader(false);
-    });
-  }
-  useEffect(() => {
-    getData();
-  }, []);
-
   return (
     <>
       <Container>
         <ListName>이대 정문 맛집</ListName>
         <ContentsWrap>
-          {loader === false &&
-            place01data
+          {place01Data
             .slice(items * (page - 1), items * (page - 1) + items)
             .map((v, i) => {
               return (
                 <div key={i}>
                   <DataContainer
                     onClick={() => {
-                      navigate(`/listdetail01/${i}`);
+                      navigate(`/listdetail01/${v.id}`);
                     }}
                   >
                     <ListPageRow>
                       <Col1>
-                        <MainIMG src={Place01img[i].src} />
+                        <MainIMG src={Place01img[v.id].src} />
                       </Col1>
                       <Col2>
                         <RestName>{v.name}</RestName>
                         <MapPinIMG src={mappin} />
-                        <InfoText>{v.addr}</InfoText>
+                        <InfoText>{v.address}</InfoText>
                         <ClockIMG src={clock} />
-                        <InfoText>{v.time}</InfoText>
+                        <InfoText>{v.business_hours}</InfoText>
                         <HeartIMG src={heartt} />
-                        <InfoText>대표 메뉴 - {v.bestmenuname}</InfoText>
+                        <InfoText>대표 메뉴 - {v.signature_menu}</InfoText>
                       </Col2>
                     </ListPageRow>
                   </DataContainer>
@@ -180,7 +163,7 @@ function Place01() {
         <Pagination
           activePage={page}
           itemsCountPerPage={items}
-          totalItemsCount={place01data.length - 1}
+          totalItemsCount={place01Data.length - 1}
           pageRangeDisplayed={3}
           onChange={handlePageChange}
         ></Pagination>
@@ -190,11 +173,9 @@ function Place01() {
 }
 
 function Place02() {
-  let [place02Data, setPlace02Data] = useState([]); // 정문 맛집 데이터
+  let [place02Data, setPlace02Data] = useState(place02_data); // 정문 맛집 데이터
   const [items, setItems] = useState(3);
   const [page, setPage] = useState(1);
-  const [loader, setLoader] = useState(true);
-  const ref = db.collection("place02");
   const handlePageChange = (page) => {
     setPage(page);
   };
@@ -210,50 +191,34 @@ function Place02() {
     { id: 8, src: require("../../images/list/p2_9.jpg") },
   ];
 
-  function getData() {
-    ref.onSnapshot((querySnapshot) => {
-      const items = [];
-      querySnapshot.forEach((doc) => {
-        items.push(doc.data());
-      });
-      setPlace02Data(items);
-      setLoader(false);
-    });
-  }
-
-  useEffect(() => {
-    getData();
-  }, []);
-
   let navigate = useNavigate();
   return (
     <>
       <Container>
         <ListName>이대 후문 맛집</ListName>
         <ContentsWrap>
-          {loader === false &&
-            place02Data
+          {place02Data
             .slice(items * (page - 1), items * (page - 1) + items)
             .map((v, i) => {
               return (
                 <div key={i}>
                   <DataContainer
                     onClick={() => {
-                      navigate(`/listdetail02/${i}`);
+                      navigate(`/listdetail02/${v.id}`);
                     }}
                   >
                     <ListPageRow>
                       <Col1>
-                        <MainIMG src={Place02img[i].src} />
+                        <MainIMG src={Place02img[v.id].src} />
                       </Col1>
                       <Col2>
                         <RestName>{v.name}</RestName>
                         <MapPinIMG src={mappin} />
-                        <InfoText>{v.addr}</InfoText>
+                        <InfoText>{v.address}</InfoText>
                         <ClockIMG src={clock} />
-                        <InfoText>{v.time}</InfoText>
+                        <InfoText>{v.business_hours}</InfoText>
                         <HeartIMG src={heartt} />
-                        <InfoText>대표 메뉴 - {v.bestmenuname}</InfoText>
+                        <InfoText>대표 메뉴 - {v.signature_menu}</InfoText>
                       </Col2>
                     </ListPageRow>
                   </DataContainer>
@@ -275,11 +240,9 @@ function Place02() {
 }
 
 function Place03() {
-  let [place03Data, setPlace03Data] = useState([]); // 정문 맛집 데이터
+  let [place03Data, setPlace03Data] = useState(place03_data); // 정문 맛집 데이터
   const [items, setItems] = useState(3);
   const [page, setPage] = useState(1);
-  const [loader, setLoader] = useState(true);
-  const ref = db.collection("place03");
   const handlePageChange = (page) => {
     setPage(page);
   };
@@ -295,50 +258,34 @@ function Place03() {
     { id: 8, src: require("../../images/list/p3_9.jpg") },
   ];
 
-  function getData() {
-    ref.onSnapshot((querySnapshot) => {
-      const items = [];
-      querySnapshot.forEach((doc) => {
-        items.push(doc.data());
-      });
-      setPlace03Data(items);
-      setLoader(false);
-    });
-  }
-
-  useEffect(() => {
-    getData();
-  }, []);
-
   let navigate = useNavigate();
   return (
     <>
       <Container>
         <ListName>신촌 맛집</ListName>
         <ContentsWrap>
-          {loader === false &&
-            place03Data
+          {place03Data
             .slice(items * (page - 1), items * (page - 1) + items)
             .map((v, i) => {
               return (
                 <div key={i}>
                   <DataContainer
                     onClick={() => {
-                      navigate(`/listdetail03/${i}`);
+                      navigate(`/listdetail03/${v.id}`);
                     }}
                   >
                     <ListPageRow>
                       <Col1>
-                        <MainIMG src={Place03img[i].src} />
+                        <MainIMG src={Place03img[v.id].src} />
                       </Col1>
                       <Col2>
                         <RestName>{v.name}</RestName>
                         <MapPinIMG src={mappin} />
-                        <InfoText>{v.addr}</InfoText>
+                        <InfoText>{v.address}</InfoText>
                         <ClockIMG src={clock} />
-                        <InfoText>{v.time}</InfoText>
+                        <InfoText>{v.business_hours}</InfoText>
                         <HeartIMG src={heartt} />
-                        <InfoText>대표 메뉴 - {v.bestmenuname}</InfoText>
+                        <InfoText>대표 메뉴 - {v.signature_menu}</InfoText>
                       </Col2>
                     </ListPageRow>
                   </DataContainer>

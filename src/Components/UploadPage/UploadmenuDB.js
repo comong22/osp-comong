@@ -43,6 +43,7 @@ const UploadmenuDB = () => {
           
         ))}
 
+{/*
         <div>{data[0].name}</div>
         <div>{data[1].cate}</div>
         <div>{data[2].park}</div>
@@ -54,7 +55,7 @@ const UploadmenuDB = () => {
         <div>{data[8].site}</div>
         <div>{data[9].bestmenuname}</div>
         <div>{data[10].bestmenuprice}</div>
-
+        */}
     </div>
   );
 };
