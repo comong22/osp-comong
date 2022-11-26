@@ -12,7 +12,6 @@ import { main_data } from "./Components/MainPage/data";
 import { useState } from "react";
 
 import UploadmenuDB from "./Components/UploadPage/UploadmenuDB";
-import SignUp from "./Components/NavBar/Signup";
 import { GlobalFonts } from "./fonts/font";
 
 function App() {
@@ -42,7 +41,6 @@ function App() {
           path="/listdetail03/:id"
           element={<ListDetailPage3 MainData={MainData} />}
         />
-        <Route path="/signup" element={<SignUp />} />
         <Route path="/db" element={<UploadmenuDB />} />
       </Routes>
     </>

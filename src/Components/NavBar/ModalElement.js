@@ -141,3 +141,102 @@ export const SignupText = styled.div`
     border: none;
   }
 `;
+
+export const SignUp = styled.div`
+  display: grid;
+  text-align: center;
+  margin: 4% 0 5px 0;
+  font-family: "Spoqa Han Sans Neo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 130%;
+  /* or 42px */
+
+  letter-spacing: 0.008em;
+
+  color: #333333;
+`;
+
+export const SignUpWrap = styled.div`
+  display: flex;
+  align-items: center;
+`;
+export const NickNameLabel = styled.label`
+  font-family: "Spoqa Han Sans Neo Regular";
+  font-weight: 10px;
+  float: left;
+  width: 45px;
+  margin: 2% 0px 0 24%;
+  color: #333333;
+`;
+
+export const EmailLabel = styled.label`
+  font-family: "Spoqa Han Sans Neo Regular";
+  font-weight: 10px;
+  float: left;
+  width: 100px;
+  margin: 2% 0px 0 24%;
+  color: #333333;
+`;
+
+export const PWLabel1 = styled.label`
+  font-family: "Spoqa Han Sans Neo Regular";
+  font-weight: 10px;
+  float: left;
+  width: 59px;
+  margin: 2% 0px 0 24%;
+  color: #333333;
+`;
+export const PWLabel2 = styled.label`
+  font-family: "Spoqa Han Sans Neo Regular";
+  font-weight: 10px;
+  float: left;
+  width: 92px;
+  margin: 2% 0px 0 24%;
+  color: #333333;
+`;
+
+export const NicknameInputBox = styled.input`
+  border: 2px solid #fff7ef;
+  border-radius: 10px;
+  float: left;
+  width: 20%;
+  max-width: 100px;
+  height: 35px;
+  resize: none;
+  display: block;
+  font-family: "Spoqa Han Sans Neo";
+  font-weight: 10px;
+  text-align: center;
+  margin: 2% 0 0 2%;
+`;
+
+export const EmailInputBox = styled.input`
+  border: 2px solid #fff7ef;
+  border-radius: 10px;
+  float: left;
+  width: 40%;
+  max-width: 200px;
+  height: 35px;
+  resize: none;
+  display: block;
+  font-family: "Spoqa Han Sans Neo";
+  font-weight: 10px;
+  text-align: center;
+  margin: 2% 0 0 2%;
+`;
+export const PWInputBox = styled.input`
+  border: 2px solid #fff7ef;
+  border-radius: 10px;
+  float: left;
+  width: 30%;
+  max-width: 200px;
+  height: 35px;
+  resize: none;
+  display: block;
+  font-family: "Spoqa Han Sans Neo";
+  font-weight: 10px;
+  text-align: center;
+  margin: 2% 0 0 2%;
+`;
