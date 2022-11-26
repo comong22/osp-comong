@@ -117,8 +117,8 @@ export const DetailName = styled.div`
   font-feature-settings: "pnum" on, "lnum" on;
 
   color: #424242;
-  padding-left: 18%;
-  padding-bottom: 3%;
+  padding-left: 17%;
+  padding-top : 1%;
 `;
 
 export const Category = styled.div`
@@ -128,15 +128,15 @@ export const Category = styled.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  padding-bottom: 3%;
   /* or 24px */
   color: #000000;
+  padding-top : 1%;
 `;
 export const MapPinIMG = styled.img`
   float: left;
   max-width: 22px;
   margin-right: 1%;
-  padding-left: 18%;
+  padding-left: 17%;
 `;
 
 export const ClockIMG = styled.img`
@@ -193,6 +193,7 @@ export const Address = styled.div`
   font-size: 16px;
   line-height: 150%;
   padding-left: 25%;
+  padding-bottom : 5%;
   /* or 27px */
 
   color: #424242;
@@ -281,6 +282,8 @@ export const Clock = styled.div`
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
+  padding-bottom : 6%;
+  margin-bottom : 10px;
   line-height: 150%;
   /* or 27px */
 
@@ -309,6 +312,7 @@ export const Parking = styled.div`
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
+  padding-bottom: 6%;
   /* or 27px */
 
   color: #424242;

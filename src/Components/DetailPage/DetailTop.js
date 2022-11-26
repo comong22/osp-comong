@@ -90,7 +90,8 @@ function DetailTop(props) {
               <Row4>
                 <ClockIMG src={clock} alt="clock" />
                 <Clock>{main_data[id].business_hours}</Clock>
-                <Addhours>{main_data[id].add_hours}</Addhours>
+                {/*
+                <Addhours>{main_data[id].add_hours}</Addhours>*/}
                 <ParkingIMG src={finfo} alt="finfo" />
                 <Parking>{main_data[id].parking}</Parking>
                 <LinkIMG src={link} alt="link"/>
