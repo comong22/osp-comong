@@ -5,6 +5,9 @@ import styled from "styled-components";
 import Modal from "./Modal";
 import { FaStar} from 'react-icons/fa';
 import { BsPlusSquare } from "react-icons/bs";
+import { db } from "../../firebase";
+import { dbService, storageService } from "../../firebase";
+import { storage } from "../../firebase";
  
 const PostRContainer = styled.div`
   background: #fff7ef;
@@ -72,15 +75,10 @@ const ARRAY = [0, 1, 2, 3, 4];
 
 const PostReview = (props) => {
 
-  const [text1,setText1] = useState('');
-  const [text2,setText2] = useState('');
-
+  //모달창
   const [isOpen, setIsOpen] = useState(false);
-
-  const onClickButton = () => {
-    setIsOpen(true);
-  };
-
+ 
+  //별점
   const [clicked, setClicked] = useState([false, false, false, false, false]);
 
   const handleStarClick = index => {
@@ -95,10 +93,14 @@ const PostReview = (props) => {
     sendReview();
   }, [clicked]); 
 
+  //별점 서버로 보내기
   const sendReview = () => {
-    let score = clicked.filter(Boolean).length;
+    let score = [star];
+    score = clicked.filter(Boolean).length;
+    setStar(score);
   };
-
+  
+  //사진 미리보기
   const [imageUrl, setImageUrl] = useState(null);
   const ImgInput = useRef();
   const [preview, setPreview] = useState();
@@ -115,6 +117,53 @@ const PostReview = (props) => {
     }
     }, [imageUrl]);
 
+    //사진 업로드
+    const [progress, setProgress] = useState(0);
+    const formHandler = (e) => {
+        e.preventDefault();
+        const file = e.target[0].files[0];
+        uploadeFiles(file);
+    };
+
+    const uploadeFiles = (file) => {
+        const uploadTask = storage.ref(`files/${file.name}`).put(file);
+        uploadTask.on(
+            "state_changed",
+            (snapshot) => { },
+            (error) => console.log(error),
+            () => {
+                storage
+                    .ref("files")
+                    .child(file.name)
+                    .getDownloadURL()
+                    .then((url) => {
+                        console.log(url);
+                    });
+            }
+        );
+    };
+    //-------------------------------------------
+  
+  //리뷰 등록 관련
+  const [text1,setText1] = useState('');
+  const [text2,setText2] = useState('');
+  const [content,setContent] = useState('');
+  const [star, setStar] = useState();
+  
+  const bucket = db.collection("review"); 
+
+  const onClickButton = () => {
+    setIsOpen(true);
+
+    bucket
+    .add({
+      text1, text2, content, star
+    })
+    .then((docRef) => {
+      console.log(docRef.id);
+    }); uploadeFiles(ImgInput.current.files[0]);
+  };
+
     return(
         <>
         <GlobalFonts />
@@ -128,7 +177,7 @@ const PostReview = (props) => {
             <BsPlusSquare size={40} onClick = {(event) => {event.preventDefault(); ImgInput.current.click();}} className="File"/>
           )}
           <input ref={ImgInput} type='file' accept="image/*" className="fileSize"
-          onChange={(event)=> { const file = ImgInput.current.files[0]; 
+          onChange={(event)=> { const file = ImgInput.current.files[0];  
           if (file) { 
             setImageUrl(file)
 ;          }
@@ -140,14 +189,14 @@ const PostReview = (props) => {
 
          <div className="info">
           <div className="line">
-            <div className="TextI">닉네임</div>
+            <label className="TextI">닉네임</label>
             <input className="Write1" type="text" placeholder="김이화" value={text1} onChange={(e) => {setText1(e.target.value);}}/>
-            <div className="TextI">메뉴이름</div>
+            <label className="TextI">메뉴이름</label>
             <input className="Write2" type="text" placeholder="정확한 메뉴명을 입력해주세요!" value={text2} onChange={(e) => {setText2(e.target.value);}}/>
           </div>
 
             <Wraps>
-            <div className="TextI">별점</div>
+            <label className="TextI">별점</label>
               <Stars>
                 {ARRAY.map((el, idx) => {
                   return (
@@ -159,14 +208,18 @@ const PostReview = (props) => {
                   ); })}
                   </Stars>
                   </Wraps>  
-                    <div className="TextI">리뷰 내용</div>
+
+                    <label className="TextI">리뷰 내용</label>
                     <textarea className="textArea"
                     placeholder="내용을 입력해주세요!"
+                    value={content}
+                    onChange = {(e) =>{setContent(e.target.value)}}
                     required
-                    maxLenth="100"/>
+                    maxLenth="100"
+                    />
                     
           <Wrap>
-            <ButtonR onClick={onClickButton}>등록하기</ButtonR>
+            <ButtonR type="submit" onClick={onClickButton} >등록하기</ButtonR>
           {isOpen && (<Modal open={isOpen} onClose = {() => {setIsOpen(false);}}/>)}
           </Wrap>
          </div>  
