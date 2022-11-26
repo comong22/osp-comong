@@ -1,7 +1,8 @@
 import { GlobalFonts } from "../../fonts/font";
 import styled from "styled-components";
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { db } from "../../firebase";
 import { useParams } from "react-router-dom";
 import { main_data } from "../MainPage/data";
 
@@ -102,16 +103,48 @@ function Bestmenu(props) {
   ];
   const { id } = useParams(); //params로 받아 -> id
 
+  const [data, setData] = useState([]);
+  const [loader, setLoader] = useState(true);
+  const ref = db.collection("place02"); // "컬렉션명"
+  var arr = [0];
+  for(let i = 0; i < data.length; i++){
+    arr[i] = i+1;
+  }
+
+  function getData() {
+    ref.onSnapshot((querySnapshot) => {
+      const items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
+      });
+      setData(items);
+      setLoader(false);
+    });
+  }
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <>
-      <div className="navbestfont">BEST</div>
-      <div className="bestmenuImg">
-        <img src={bestmenuimg[id].src} />
-      </div>
-      <div className="navbestmenufont">
-        {main_data[id].menu_1}
-        <br />
-        {main_data[id].menu_1_price}
+      <div>
+        {loader === false &&
+          data
+          .slice( arr[id] - 1, arr[id])
+          .map((rest2) => (
+            <div>
+              <div className="navbestfont">BEST</div>
+              <div className="bestmenuImg">
+                <img src={bestmenuimg[id].src} />
+              </div>
+              <div className="navbestmenufont">
+                {rest2.bestmenuname}
+                <br />
+                {rest2.bestmenuprice}
+              </div>
+            </div>
+          ))}
       </div>
     </>
   );

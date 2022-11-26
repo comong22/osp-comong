@@ -155,5 +155,4 @@ function ListDetailTop(props) {
   );
 }
 
-
 export default ListDetailTop;
