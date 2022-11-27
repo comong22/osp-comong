@@ -58,6 +58,14 @@ ul.pagination li a.active {
     line-height: 2;
 }
 
+.ReviewM{
+    font-weight: 300;
+    font-size: 0.90rem;
+    font-family: 'Spoqa Han Sans Neo';
+    width: 700px;
+    line-height: 2;
+}
+
 .enter{
     height: 10px;
 }

@@ -214,7 +214,6 @@ const PostReview = (props) => {
     }, [imageUrl]);
 
     //사진 업로드
-
     const uploadeFiles = (file) => {
         const uploadTask = storage.ref(`files/${file.name}`).put(file);
         uploadTask.on(
@@ -310,7 +309,7 @@ const PostReview = (props) => {
                     />
                     
           <Wrap>
-            <ButtonR type="submit" onClick={onClickBtn} >등록하기</ButtonR>
+            <ButtonR type="submit" onClick={onClickBtn}>등록하기</ButtonR>
           {isOpen && (<Modal open={isOpen} onClose = {() => {setIsOpen(false);}}/>)}
           </Wrap>
          </div>  
