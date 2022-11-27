@@ -181,7 +181,7 @@ function Place01() {
           activePage={page}
           itemsCountPerPage={items}
           totalItemsCount={place01data.length - 1}
-          pageRangeDisplayed={3}
+          pageRangeDisplayed={5}
           onChange={handlePageChange}
         ></Pagination>
       </Container>
@@ -266,7 +266,7 @@ function Place02() {
           activePage={page}
           itemsCountPerPage={items}
           totalItemsCount={place02Data.length - 1}
-          pageRangeDisplayed={3}
+          pageRangeDisplayed={5}
           onChange={handlePageChange}
         ></Pagination>
       </Container>
@@ -352,7 +352,7 @@ function Place03() {
           activePage={page}
           itemsCountPerPage={items}
           totalItemsCount={place03Data.length - 1}
-          pageRangeDisplayed={3}
+          pageRangeDisplayed={5}
           onChange={handlePageChange}
         ></Pagination>
       </Container>
