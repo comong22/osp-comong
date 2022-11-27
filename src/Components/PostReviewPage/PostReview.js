@@ -151,6 +151,11 @@ const PostReview = (props) => {
     const handleSubmit = () => {
         onClose?.();
         onClickButton();
+        setText1('');
+        setText2('');
+        setContent('');
+        setClicked([false, false, false, false, false]);
+        setImageUrl(null);
     };
 
     return(
