@@ -2,11 +2,10 @@ import { GlobalFonts } from "../../fonts/font";
 import "./PostReview.css";
 import {useState, useEffect, useRef} from "react";
 import styled from "styled-components";
-import Modal from "./Modal";
+import { FaTimes} from "react-icons/fa";
 import { FaStar} from 'react-icons/fa';
 import { BsPlusSquare } from "react-icons/bs";
 import { db } from "../../firebase";
-import { dbService, storageService } from "../../firebase";
 import { storage } from "../../firebase";
  
 const PostRContainer = styled.div`
@@ -71,12 +70,104 @@ const Stars = styled.div`
   }
 `;
 
+//모달창
+const OverLay = styled.div`
+position: fixed;
+width: 100%;
+height: 100%;
+top:0;
+bottom:0;
+left:0;
+right:0;
+background: rgba(0,0,0,0.2);
+z-index: 9999;
+`;
+
+const ModalWrap = styled.div`
+width: 500px;
+height: fit-content;
+border-radius:20px;
+background-color:#fff;
+position:absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+`;
+
+const CloseButton = styled.div`
+float:right;
+width: 30px;
+height:30px;
+margin: 20px;
+cursor: pointer;
+`;
+
+const Contents = styled.div`
+margin: 60px;
+
+h1{
+    font-family: 'Spoqa Han Sans Neo';
+    font-size: 20px;
+    font-weight: 600;
+}
+h4{
+    font-family: 'Spoqa Han Sans Neo';
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 60px;
+}
+`;
+
+const Button = styled.button`
+background-color: #ffa574;
+color: white;
+font-family: 'Spoqa Han Sans Neo';
+font-style: normal;
+font-weight: 700;  
+font-size: 20px;
+font-size: 14px;
+padding: 10px 40px;
+border: none;
+border-radius: 30px;
+color: white;
+cursor: pointer;
+&:hover{
+    background-color: #FAD4B2;
+}
+`;
+
 const ARRAY = [0, 1, 2, 3, 4];
 
 const PostReview = (props) => {
 
   //모달창
   const [isOpen, setIsOpen] = useState(false);
+
+  function Modal({onClose}){
+    const handleClose = () => {
+        onClose?.();
+    };
+
+    const handleSubmit = () => {
+        onClose?.();
+        onClickButton();
+    };
+
+    return(
+        <OverLay>
+            <ModalWrap>
+                <CloseButton onClick={handleClose}>
+                    <FaTimes size={30}/>
+                </CloseButton>
+                <Contents>
+                    <h1>리뷰를 등록하시겠습니까?</h1>
+                    <h4>업로드 후에는 수정이 불가합니다.</h4>
+                    <Button onClick={handleSubmit}>리뷰 등록하기</Button>
+                </Contents>
+            </ModalWrap>
+        </OverLay>
+    );
+}
  
   //별점
   const [clicked, setClicked] = useState([false, false, false, false, false]);
@@ -118,12 +209,6 @@ const PostReview = (props) => {
     }, [imageUrl]);
 
     //사진 업로드
-    const [progress, setProgress] = useState(0);
-    const formHandler = (e) => {
-        e.preventDefault();
-        const file = e.target[0].files[0];
-        uploadeFiles(file);
-    };
 
     const uploadeFiles = (file) => {
         const uploadTask = storage.ref(`files/${file.name}`).put(file);
@@ -142,8 +227,7 @@ const PostReview = (props) => {
             }
         );
     };
-    //-------------------------------------------
-  
+//-------------------------------------------
   //리뷰 등록 관련
   const [text1,setText1] = useState('');
   const [text2,setText2] = useState('');
@@ -152,9 +236,11 @@ const PostReview = (props) => {
   
   const bucket = db.collection("review"); 
 
-  const onClickButton = () => {
+  const onClickBtn = () => {
     setIsOpen(true);
+  };
 
+  const onClickButton = () => {
     bucket
     .add({
       text1, text2, content, star
@@ -190,9 +276,9 @@ const PostReview = (props) => {
          <div className="info">
           <div className="line">
             <label className="TextI">닉네임</label>
-            <input className="Write1" type="text" placeholder="김이화" value={text1} onChange={(e) => {setText1(e.target.value);}}/>
+            <input className="Write1" type="text" placeholder="김이화" value={text1} onChange={(e) => {setText1(e.target.value);}} required/>
             <label className="TextI">메뉴이름</label>
-            <input className="Write2" type="text" placeholder="정확한 메뉴명을 입력해주세요!" value={text2} onChange={(e) => {setText2(e.target.value);}}/>
+            <input className="Write2" type="text" placeholder="정확한 메뉴명을 입력해주세요!" value={text2} onChange={(e) => {setText2(e.target.value);}} required/>
           </div>
 
             <Wraps>
@@ -219,7 +305,7 @@ const PostReview = (props) => {
                     />
                     
           <Wrap>
-            <ButtonR type="submit" onClick={onClickButton} >등록하기</ButtonR>
+            <ButtonR type="submit" onClick={onClickBtn} >등록하기</ButtonR>
           {isOpen && (<Modal open={isOpen} onClose = {() => {setIsOpen(false);}}/>)}
           </Wrap>
          </div>  
