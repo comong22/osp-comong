@@ -48,7 +48,6 @@ const Review = (doc) => {
  }, [])
  
  //이미지
- var storageRef = storage.ref();
  
  
   return (
