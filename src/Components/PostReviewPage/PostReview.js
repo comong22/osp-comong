@@ -7,6 +7,7 @@ import { FaStar} from 'react-icons/fa';
 import { BsPlusSquare } from "react-icons/bs";
 import { db } from "../../firebase";
 import { storage } from "../../firebase";
+import { redirect } from "react-router-dom";
  
 const PostRContainer = styled.div`
   background: #fff7ef;
@@ -231,6 +232,7 @@ const PostReview = (props) => {
             }
         );
     };
+    
 //-------------------------------------------
   //리뷰 등록 관련
   const [text1,setText1] = useState('');
@@ -239,9 +241,29 @@ const PostReview = (props) => {
   const [star, setStar] = useState();
   
   const bucket = db.collection("review"); 
+  
+  
+var require1 = document.getElementById('text1');
+var require2 = document.getElementById('text2');
+
+var change1 = document.getElementById('Ttext1');
+var change2 = document.getElementById('Ttext2');
+var change3 = document.getElementById('Ttext3');
 
   const onClickBtn = () => {
+    if(require1.value !== '' && require2.value !== '' && star !== 0){
     setIsOpen(true);
+    }
+    if(require1.value === ''){
+        change1.style.color = '#ffa574';
+      }
+    if(require2.value === ''){
+        change2.style.color = '#ffa574';
+      }
+    if(star === 0){
+      change3.style.color = '#ffa574';
+      }
+    
   };
 
   const onClickButton = () => {
@@ -279,14 +301,14 @@ const PostReview = (props) => {
 
          <div className="info">
           <div className="line">
-            <label className="TextI">닉네임</label>
-            <input className="Write1" type="text" placeholder="김이화" value={text1} onChange={(e) => {setText1(e.target.value);}} required/>
-            <label className="TextI">메뉴이름</label>
-            <input className="Write2" type="text" placeholder="정확한 메뉴명을 입력해주세요!" value={text2} onChange={(e) => {setText2(e.target.value);}} required/>
+            <label className="TextI" id="Ttext1">닉네임</label>
+            <input className="Write1" type="text" placeholder="김이화" id="text1" value={text1} onChange={(e) => {setText1(e.target.value);}} />
+            <label className="TextI" id="Ttext2">메뉴이름</label>
+            <input className="Write2" type="text" placeholder="정확한 메뉴명을 입력해주세요!" id="text2" value={text2} onChange={(e) => {setText2(e.target.value);}} />
           </div>
 
             <Wraps>
-            <label className="TextI">별점</label>
+            <label className="TextI" id="Ttext3">별점</label>
               <Stars>
                 {ARRAY.map((el, idx) => {
                   return (
@@ -301,6 +323,7 @@ const PostReview = (props) => {
 
                     <label className="TextI">리뷰 내용</label>
                     <textarea className="textArea"
+                    id="content"
                     placeholder="내용을 입력해주세요!"
                     value={content}
                     onChange = {(e) =>{setContent(e.target.value)}}
