@@ -92,7 +92,7 @@ export const BtnWrap = styled.div`
   justify-content: center;
 `;
 
-export const Button1 = styled(Link)`
+export const Button1 = styled.button`
   background: #ffa574;
   border-radius: 50px;
   white-space: nowrap;
@@ -101,6 +101,7 @@ export const Button1 = styled(Link)`
   font-family: "Spoqa Han Sans Neo Bold";
   font-size: 18px;
   font-weight: 400;
+  border: none;
   line-height: 22px;
   cursor: pointer;
   display: flex;
