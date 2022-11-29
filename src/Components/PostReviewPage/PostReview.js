@@ -253,6 +253,9 @@ var change3 = document.getElementById('Ttext3');
   const onClickBtn = () => {
     if(require1.value !== '' && require2.value !== '' && star !== 0){
     setIsOpen(true);
+    change1.style.color = 'rgb(125, 125, 125)';
+    change2.style.color = 'rgb(125, 125, 125)';
+    change3.style.color = 'rgb(125, 125, 125)';
     }
     if(require1.value === ''){
         change1.style.color = '#ffa574';
@@ -263,7 +266,6 @@ var change3 = document.getElementById('Ttext3');
     if(star === 0){
       change3.style.color = '#ffa574';
       }
-    
   };
 
   const onClickButton = () => {
