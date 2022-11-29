@@ -88,10 +88,14 @@ function ListDetailTop(props) {
     <>
       <TopContainer>
         <div className="detailBG">
-          
-          <div className="eachDetailImg">
-            <img src={detailimg[id].src} />
-          </div>
+          {loader === false &&
+            data
+            .slice(arr[id]-1, arr[id])
+            .map((rest1) => (
+              <div className="eachDetailImg">
+                <img src={rest1.url} />
+              </div>
+            ))}
 
           <div className="topBox">
            <div className="all">
