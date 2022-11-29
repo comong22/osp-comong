@@ -61,6 +61,7 @@ const Review = (doc) => {
             <ReviewCol>
                   <RvRow1>
                     <div className="reviewimg">
+                    <img src={rest.url} />
                     </div>
                     <div className="enter" />
                   </RvRow1>
