@@ -94,7 +94,7 @@ function UploadPage() {
     const handleSubmit = () => {
       onClose?.();
       onClickButton();
-      setName("와와");
+      setName("");
       setCate("");
       setPark("");
       setAddr("");
@@ -144,16 +144,17 @@ function UploadPage() {
     uploadeFiles(file);
   };
 
-  const uploadeFiles = (file) => {
-    const uploadTask = storage.ref(`files/${file.name}`).put(file);
-    uploadTask.on(
+  const uploadeFiles = (file1,file2) => {
+    const uploadTask1 = storage.ref(`files/${file1.name}`).put(file1);
+    const uploadTask2 = storage.ref(`files/${file2.name}`).put(file2);
+    uploadTask1.on(
       "state_changed",
       (snapshot) => {},
       (error) => console.log(error),
       () => {
         storage
           .ref("files")
-          .child(file.name)
+          .child(file1.name)
           .getDownloadURL()
           .then((url) => {
             bucket
@@ -167,16 +168,38 @@ function UploadPage() {
                 price1,
                 price2,
                 time,
-                site,
-                bestmenuname,
-                bestmenuprice,
-                progress,
+                site
               })
               .then((docRef) => {
                 console.log(docRef.id);
               });
           });
       }
+      
+    );
+    uploadTask2.on(
+      "state_changed",
+      (snapshot) => {},
+      (error) => console.log(error),
+      () => {
+        storage
+          .ref("files")
+          .child(file2.name)
+          .getDownloadURL()
+          .then((url2) => {
+            bucket
+              .add({
+                url2,
+                bestmenuname,
+                bestmenuprice,
+                progress
+              })
+              .then((docRef) => {
+                console.log(docRef.id);
+              });
+          });
+      }
+      
     );
   };
 
@@ -369,8 +392,7 @@ function UploadPage() {
   };
   //---------------------------------------------
   const onClickButton = () => {
-    uploadeFiles(ImgInput.current.files[0]);
-    uploadeFiles(ImgInput2.current.files[0]);
+    uploadeFiles(ImgInput.current.files[0], ImgInput2.current.files[0]);
   };
 
   return (
