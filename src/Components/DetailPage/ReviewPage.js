@@ -60,8 +60,8 @@ const Review = (doc) => {
           <div key={rest.id}>
             <ReviewCol>
                   <RvRow1>
-                    <div className="reviewimg">
-                    <img src={rest.url} />
+                    <div>
+                    <img src={rest.url} className="reviewimg" id="img" />
                     </div>
                     <div className="enter" />
                   </RvRow1>

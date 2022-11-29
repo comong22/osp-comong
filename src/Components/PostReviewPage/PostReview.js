@@ -287,7 +287,7 @@ var change3 = document.getElementById('Ttext3');
           ) : (
             <BsPlusSquare size={40} onClick = {(event) => {event.preventDefault(); ImgInput.current.click();}} className="File"/>
           )}
-          <input ref={ImgInput} type='file' accept="image/*" className="fileSize"
+          <input ref={ImgInput} type='file' accept="image/*" className="Box" id="fileSize"
           onChange={(event)=> { const file = ImgInput.current.files[0];  
           if (file) { 
             setImageUrl(file)
