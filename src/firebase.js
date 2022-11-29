@@ -12,11 +12,13 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_measurementId,
 };
 
+
 // Initialize Firebase
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 
 const db = firebaseApp.firestore();
 const storage = firebaseApp.storage();
+const uploadBytes = firebaseApp.storage();
 
 const auth = firebase.auth;
-export { storage, firebase, firebaseApp, db, auth};
+export { storage, firebase, firebaseApp, db, auth, uploadBytes};

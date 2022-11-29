@@ -351,3 +351,9 @@ export const topBox = styled.div`
   margin: 10%;
 `;
 
+export const View = styled.div`
+`;
+
+export const Image = styled.div`
+`;
+

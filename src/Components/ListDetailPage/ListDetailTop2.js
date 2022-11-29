@@ -51,15 +51,15 @@ function ListDetailTop(props) {
   const { id } = useParams(); // 유저가 URL 파라미터에 입력한 거 가져올 때 사용하는 훅
   let navigate = useNavigate(); // 페이지 이동
   const detailimg = [
-    { id: 0, src: require("../../images/listdetail/p2_1.jpg") },
-    { id: 1, src: require("../../images/listdetail/p2_2.png") },
-    { id: 2, src: require("../../images/listdetail/p2_3.jpg") },
-    { id: 3, src: require("../../images/listdetail/p2_4.jpg") },
-    { id: 4, src: require("../../images/listdetail/p2_5.png") },
-    { id: 5, src: require("../../images/listdetail/p2_6.png") },
-    { id: 6, src: require("../../images/listdetail/p2_7.png") },
-    { id: 7, src: require("../../images/listdetail/p2_8.png") },
-    { id: 8, src: require("../../images/listdetail/p2_9.png") },
+    { id: 0, src: require("../../images/listdetail/p2_8.png") },
+    { id: 1, src: require("../../images/listdetail/p2_3.jpg") },
+    { id: 2, src: require("../../images/listdetail/p2_7.png") },
+    { id: 3, src: require("../../images/listdetail/p2_6.png") },
+    { id: 4, src: require("../../images/listdetail/p2_1.jpg") },
+    { id: 5, src: require("../../images/listdetail/p2_9.png") },
+    { id: 6, src: require("../../images/listdetail/p2_2.png") },
+    { id: 7, src: require("../../images/listdetail/p2_5.png") },
+    { id: 8, src: require("../../images/listdetail/p2_4.jpg") },
   ];
 
   const [data, setData] = useState([]);
