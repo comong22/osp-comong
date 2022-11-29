@@ -136,7 +136,7 @@ function Bestmenu(props) {
             <div>
               <div className="navbestfont">BEST</div>
               <div className="bestmenuImg">
-                <img src={bestmenuimg[id].src} />
+                <img src={rest2.url} />
               </div>
               <div className="navbestmenufont">
                 {rest2.bestmenuname}
