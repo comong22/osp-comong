@@ -144,9 +144,8 @@ function UploadPage() {
     uploadeFiles(file);
   };
 
-  const uploadeFiles = (file1,file2) => {
+  const uploadeFiles = (file1) => {
     const uploadTask1 = storage.ref(`files/${file1.name}`).put(file1);
-    const uploadTask2 = storage.ref(`files/${file2.name}`).put(file2);
     uploadTask1.on(
       "state_changed",
       (snapshot) => {},
@@ -177,30 +176,7 @@ function UploadPage() {
       }
       
     );
-    uploadTask2.on(
-      "state_changed",
-      (snapshot) => {},
-      (error) => console.log(error),
-      () => {
-        storage
-          .ref("files")
-          .child(file2.name)
-          .getDownloadURL()
-          .then((url2) => {
-            bucket
-              .add({
-                url2,
-                bestmenuname,
-                bestmenuprice,
-                progress
-              })
-              .then((docRef) => {
-                console.log(docRef.id);
-              });
-          });
-      }
-      
-    );
+
   };
 
   // 이미지 preview 함수
