@@ -369,7 +369,8 @@ function UploadPage() {
   };
   //---------------------------------------------
   const onClickButton = () => {
-    uploadeFiles(ImgInput.current.files[0], ImgInput2.current.files[0]);
+    uploadeFiles(ImgInput.current.files[0]);
+    uploadeFiles(ImgInput2.current.files[0]);
   };
 
   return (
