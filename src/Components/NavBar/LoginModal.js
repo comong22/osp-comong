@@ -1,4 +1,3 @@
-import { GlobalFonts } from "../../fonts/font";
 import {
   BtnWrap,
   Button1,
@@ -22,14 +21,26 @@ import {
   PWLabel1,
   PWLabel2,
 } from "./ModalElement";
-import { useNavigate } from "react-router-dom";
-import { auth } from "../../firebase";
-
 import x from "../../images/xBtn.svg";
+
+import { GlobalFonts } from "../../fonts/font";
+import { auth } from "../../firebase";
 import { useState } from "react";
-import { signUp, signIn } from "../../auth";
+import { useNavigate } from "react-router-dom";
+import firebase from "firebase";
+// 리덕스
+import { useSelector, useDispatch } from "react-redux";
+import { addUser } from "./store";
+
 const LoginModal = ({ openModalHandler }) => {
+  // redux state
+  let state = useSelector((state) => {
+    return state;
+  });
+  let dispatch = useDispatch();
+
   const [tab, setTab] = useState(1); // 0 : login , 1 : signup
+
   const [nickname, setNickname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -37,43 +48,39 @@ const LoginModal = ({ openModalHandler }) => {
   const [user, setUser] = useState({});
 
   auth().onAuthStateChanged((currentUser) => {
+    // dispatch(addUser(currentUser));
     setUser(currentUser);
   });
-  const login = async () => {
+
+  // 회원가입
+  const signUP = async () => {
     try {
-      const user = await auth().signInWithEmailAndPassword(email, password);
-      console.log(user);
+      auth().createUserWithEmailAndPassword(email, password);
+      // await firebase.database().ref("users").child(user).set({
+      //   nickname: nickname,
+      //   email: email,
+      // });
     } catch (error) {
-      // console.log(error.message);
+      console.log(error.message);
     }
   };
 
+  // 로그인
+  const login = async () => {
+    try {
+      const user = await auth().signInWithEmailAndPassword(email, password);
+      // console.log(user);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  // 로그아웃
   const logout = async () => {
     try {
       auth().signOut();
     } catch (error) {
-      // console.log(error.message);
-    }
-  };
-  const handleOnChange = (e) => {
-    // 변경 감지
-    const type = e.target.name;
-    if (type == "email") {
-      setEmail(e.target.value);
-    } else if (type == "password") {
-      setPassword(e.target.value);
-    }
-  };
-
-  const handleOnSubmit = async (e) => {
-    // 회원가입
-    e.preventDefault();
-    if (email !== "" && password !== "") {
-      try {
-        await signUp(email, password);
-      } catch (error) {
-        console.log(error);
-      }
+      console.log(error.message);
     }
   };
 
@@ -122,39 +129,43 @@ const LoginModal = ({ openModalHandler }) => {
         ) : (
           <div>
             <SignUp>회원가입</SignUp>
-            <form onSubmit={handleOnSubmit}>
-              <SignUpWrap>
-                <NickNameLabel>닉네임</NickNameLabel>
-                <NicknameInputBox placeholder="김코몽" name="nickname" />
-              </SignUpWrap>
-              <SignUpWrap>
-                <EmailLabel>이메일(아이디)</EmailLabel>
-                <EmailInputBox
-                  placeholder="comong1886@ewhain.net"
-                  name="email"
-                  type="email"
-                  value={email}
-                  onChange={handleOnChange}
-                />
-              </SignUpWrap>
-              <SignUpWrap>
-                <PWLabel1>비밀번호</PWLabel1>
-                <PWInputBox
-                  placeholder="비밀번호 입력하기"
-                  name="password"
-                  type="password"
-                  value={password}
-                  onChange={handleOnChange}
-                />
-              </SignUpWrap>
-              <SignUpWrap>
-                <PWLabel2>비밀번호 확인</PWLabel2>
-                <PWInputBox placeholder="비밀번호 확인" name="password" />
-              </SignUpWrap>
-              <BtnWrap>
-                <Button1 type="submit">회원가입</Button1>
-              </BtnWrap>
-            </form>
+            <SignUpWrap>
+              <NickNameLabel>닉네임</NickNameLabel>
+              <NicknameInputBox
+                placeholder="김코몽"
+                name="nickname"
+                type="nickname"
+                value={nickname}
+                onChange={(e) => setNickname(e.target.value)}
+              />
+            </SignUpWrap>
+            <SignUpWrap>
+              <EmailLabel>이메일(아이디)</EmailLabel>
+              <EmailInputBox
+                placeholder="comong1886@ewhain.net"
+                name="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </SignUpWrap>
+            <SignUpWrap>
+              <PWLabel1>비밀번호</PWLabel1>
+              <PWInputBox
+                placeholder="비밀번호 입력하기"
+                name="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </SignUpWrap>
+            <SignUpWrap>
+              <PWLabel2>비밀번호 확인</PWLabel2>
+              <PWInputBox placeholder="비밀번호 확인" name="password" />
+            </SignUpWrap>
+            <BtnWrap>
+              <Button1 onClick={signUP}>회원가입</Button1>
+            </BtnWrap>
           </div>
         )}
       </ModalContainer>

@@ -227,7 +227,10 @@ const PostReview = (props) => {
                     .child(file.name)
                     .getDownloadURL()
                     .then((url) => {
-                        console.log(url);
+                        bucket.add({url,text1, text2, content, star})
+                        .then((docRef) => {
+                          console.log(docRef.id);
+                        });
                     });
             }
         );
@@ -269,13 +272,7 @@ var change3 = document.getElementById('Ttext3');
   };
 
   const onClickButton = () => {
-    bucket
-    .add({
-      text1, text2, content, star
-    })
-    .then((docRef) => {
-      console.log(docRef.id);
-    }); uploadeFiles(ImgInput.current.files[0]);
+    uploadeFiles(ImgInput.current.files[0]);
   };
 
     return(
