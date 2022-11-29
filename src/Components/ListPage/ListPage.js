@@ -159,7 +159,7 @@ function Place01() {
                   >
                     <ListPageRow>
                       <Col1>
-                        <MainIMG src={Place01img[i+ (page-1)*3].src} />
+                        <MainIMG src={v.url} />
                       </Col1>
                       <Col2>
                         <RestName>{v.name}</RestName>
@@ -244,7 +244,7 @@ function Place02() {
                   >
                     <ListPageRow>
                       <Col1>
-                        <MainIMG src={Place02img[i+ (page-1)*3].src} />
+                        <MainIMG src={v.url} />
                       </Col1>
                       <Col2>
                         <RestName>{v.name}</RestName>
@@ -330,7 +330,7 @@ function Place03() {
                   >
                     <ListPageRow>
                       <Col1>
-                        <MainIMG src={Place03img[i+ (page-1)*3].src} />
+                        <MainIMG src={v.url} />
                       </Col1>
                       <Col2>
                         <RestName>{v.name}</RestName>
