@@ -1,12 +1,12 @@
 import './UploadPage.css';
-import Add from '../../images/add.svg';
+import styled from "styled-components";
 import React, { useEffect, useState, useRef } from 'react';
 import { db } from "../../firebase";
 import { dbService, storageService } from "../../firebase";
 import { storage } from "../../firebase";
-import ModalBasic from './Modal.js';
 import { BsPlusSquare } from "react-icons/bs";
 import firebaseApp from "../../firebase"
+import { FaTimes} from "react-icons/fa";
 import {
     UploadImg,
     Button,
@@ -15,6 +15,73 @@ import {
     Label2,
     Option
 } from "./Element";
+
+
+//모달창
+const OverLay = styled.div`
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background: rgba(0,0,0,0.2);
+    z-index: 9999;
+`;
+
+const ModalWrap = styled.div`
+    width: 500px;
+    height: fit-content;
+    border-radius:20px;
+    background-color:#fff;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+`;
+
+const CloseButton = styled.div`
+    float:right;
+    width: 30px;
+    height:30px;
+    margin: 20px;
+    cursor: pointer;
+`;
+
+const Contents = styled.div`
+margin: 60px;
+
+h1{
+    font-family: 'Spoqa Han Sans Neo';
+    font-size: 20px;
+    font-weight: 600;
+}
+h4{
+    font-family: 'Spoqa Han Sans Neo';
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 60px;
+}
+`;
+
+const MButton = styled.button`
+background-color: #ffa574;
+color: white;
+font-family: 'Spoqa Han Sans Neo';
+font-style: normal;
+font-weight: 700;  
+font-size: 20px;
+font-size: 14px;
+padding: 10px 40px;
+border: none;
+border-radius: 30px;
+color: white;
+cursor: pointer;
+&:hover{
+    background-color: #FAD4B2;
+}
+`;
 
 function UploadPage() {
 
@@ -119,12 +186,51 @@ function UploadPage() {
         DBselect = "place03"; // 신촌 DB
     const bucket = db.collection(DBselect); // 어느 DB에 저장할지 선택
     // -----------------------------------------------------------
+    //모달창
+  const [isOpen, setIsOpen] = useState(false);
 
-
-    const [modal, setModal] = useState(false);
-    const showModal = () => {
-        setModal(true);
+  function Modal({onClose}){
+    const handleClose = () => {
+        onClose?.();
     };
+
+    const handleSubmit = () => {
+        onClose?.();
+        onClickButton();
+    };
+
+    return(
+        <OverLay>
+            <ModalWrap>
+                <CloseButton onClick={handleClose}>
+                    <FaTimes size={30}/>
+                </CloseButton>
+                <Contents>
+                    <h1>맛집을 등록하시겠습니까?</h1>
+                    <h4>업로드 후에는 수정이 불가합니다.</h4>
+                    <MButton onClick={handleSubmit}>맛집 등록하기</MButton>
+                </Contents>
+            </ModalWrap>
+        </OverLay>
+    );
+    
+    }
+    const onClickBtn = () => {
+        setIsOpen(true);
+        
+      };
+    const onClickButton = () => {
+        
+            bucket
+                .add({
+                    name, cate, park, addr, tel, price1, price2, time, site, bestmenuname, bestmenuprice, progress
+                })
+                .then((docRef) => {
+                    console.log(docRef.id)
+                }); uploadeFiles(ImgInput.current.files[0], ImgInput2.current.files[0]);
+            
+    };
+
     return (
         <div className='uploadBG'>
 
@@ -254,20 +360,8 @@ function UploadPage() {
                         </span>
                     </div>
                     <div className='it4'>
-                        <Button onClick={() =>{
-                            bucket
-                                .add({
-                                    name, cate, park, addr, tel, price1, price2, time, site, bestmenuname, bestmenuprice, progress
-                                })
-                                .then((docRef) => {
-                                    console.log(docRef.id)
-                                }); uploadeFiles(ImgInput.current.files[0], ImgInput2.current.files[0]);
-                            } 
-                            
-                        }
-                        >등록하기
-                        </Button>
-                        {modal && <ModalBasic setModal={setModal} />}
+                    <Button type="submit" onClick={onClickBtn}>등록하기</Button>
+                    {isOpen && (<Modal open={isOpen} onClose = {() => {setIsOpen(false);}}/>)}
                     </div>
 
                 </div>
@@ -277,4 +371,3 @@ function UploadPage() {
     );
 }
 export default UploadPage;
-
