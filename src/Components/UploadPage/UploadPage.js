@@ -159,8 +159,11 @@ function UploadPage() {
                     .child(file.name)
                     .getDownloadURL()
                     .then((url) => {
-                        console.log(url);
+                        bucket.add({url, name, cate, park, addr, tel, price1, price2, time, site, bestmenuname, bestmenuprice, progress })
+                        .then((docRef) => {
+                            console.log(docRef.id);
                     });
+                });
             }
         );
     };
@@ -285,14 +288,7 @@ function UploadPage() {
       };
     //---------------------------------------------
     const onClickButton = () => {
-        
-            bucket
-                .add({
-                    name, cate, park, addr, tel, price1, price2, time, site, bestmenuname, bestmenuprice, progress
-                })
-                .then((docRef) => {
-                    console.log(docRef.id)
-                }); uploadeFiles(ImgInput.current.files[0], ImgInput2.current.files[0]);
+                uploadeFiles(ImgInput.current.files[0], ImgInput2.current.files[0]);
             
     };
 
