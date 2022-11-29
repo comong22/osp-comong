@@ -258,11 +258,17 @@ function UploadPage() {
     getData();
   }, [DBselect]);
 
+  const closeModal = () => {
+    setIsOpen(false);}
+
   function duplicateCheck() {
     for (var i = 0; i < data.length; i++) {
-      if (name == data[i].name) alert("이미 등록된 식당입니다.");
+      if (name == data[i].name){
+       alert("이미 등록된 식당입니다.");
+       closeModal();
+       }
+      }
     }
-  }
 
   // 입력 안된 항목 색 바꾸기--------------------------------------
   var require1 = document.getElementById("name");
