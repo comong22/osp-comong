@@ -33,7 +33,7 @@ import {
 import heartt from "../../images/list/heartt.svg";
 import clock from "../../images/main/clock.svg";
 import mappin from "../../images/main/mappin.svg";
-import { db } from "../../firebase";
+import { db, storage } from "../../firebase";
 function ListPage() {
   let [tab, setTab] = useState(0); // 0 정문, 1 후문, 2 신촌
 
