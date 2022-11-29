@@ -115,15 +115,15 @@ function Place01() {
     setPage(page);
   };
   const Place01img = [
-    { id: 0, src: require("../../images/list/yellowhouse.jpg") },
-    { id: 1, src: require("../../images/list/momigi.jpg") },
-    { id: 2, src: require("../../images/list/yuyake.jpg") },
-    { id: 3, src: require("../../images/list/p1_4.jpg") },
-    { id: 4, src: require("../../images/list/p1_5.jpg") },
-    { id: 5, src: require("../../images/list/p1_6.jpg") },
-    { id: 6, src: require("../../images/list/p1_7.jpg") },
-    { id: 7, src: require("../../images/list/p1_8.jpg") },
-    { id: 8, src: require("../../images/list/p1_9.jpg") },
+    { id: 0, src: require("../../images/list/p1_5.jpg") },
+    { id: 1, src: require("../../images/list/yellowhouse.jpg") },
+    { id: 2, src: require("../../images/list/p1_7.jpg") },
+    { id: 3, src: require("../../images/list/p1_9.jpg") },
+    { id: 4, src: require("../../images/list/p1_4.jpg") },
+    { id: 5, src: require("../../images/list/p1_8.jpg") },
+    { id: 6, src: require("../../images/list/p1_6.jpg") },
+    { id: 7, src: require("../../images/list/yuyake.jpg") },
+    { id: 8, src: require("../../images/list/momigi.jpg") },
   ];
   let navigate = useNavigate();
 
@@ -159,7 +159,7 @@ function Place01() {
                   >
                     <ListPageRow>
                       <Col1>
-                        <MainIMG src={Place01img[i].src} />
+                        <MainIMG src={Place01img[i+ (page-1)*3].src} />
                       </Col1>
                       <Col2>
                         <RestName>{v.name}</RestName>
@@ -199,15 +199,15 @@ function Place02() {
     setPage(page);
   };
   const Place02img = [
-    { id: 0, src: require("../../images/list/p2_1.jpg") },
-    { id: 1, src: require("../../images/list/p2_2.jpg") },
-    { id: 2, src: require("../../images/list/p2_3.jpg") },
-    { id: 3, src: require("../../images/list/p2_4.jpg") },
-    { id: 4, src: require("../../images/list/p2_5.jpg") },
-    { id: 5, src: require("../../images/list/p2_6.jpg") },
-    { id: 6, src: require("../../images/list/p2_7.jpg") },
-    { id: 7, src: require("../../images/list/p2_8.jpg") },
-    { id: 8, src: require("../../images/list/p2_9.jpg") },
+    { id: 0, src: require("../../images/list/p2_9.jpg") },
+    { id: 1, src: require("../../images/list/p2_3.jpg") },
+    { id: 2, src: require("../../images/list/p2_7.jpg") },
+    { id: 3, src: require("../../images/list/p2_6.jpg") },
+    { id: 4, src: require("../../images/list/p2_1.jpg") },
+    { id: 5, src: require("../../images/list/p2.jpg") },
+    { id: 6, src: require("../../images/list/p2_2.jpg") },
+    { id: 7, src: require("../../images/list/p2_5.jpg") },
+    { id: 8, src: require("../../images/list/p2_4.jpg") },
   ];
 
   function getData() {
@@ -244,7 +244,7 @@ function Place02() {
                   >
                     <ListPageRow>
                       <Col1>
-                        <MainIMG src={Place02img[i].src} />
+                        <MainIMG src={Place02img[i+ (page-1)*3].src} />
                       </Col1>
                       <Col2>
                         <RestName>{v.name}</RestName>
@@ -285,15 +285,15 @@ function Place03() {
     setPage(page);
   };
   const Place03img = [
-    { id: 0, src: require("../../images/list/p3_1.jpg") },
-    { id: 1, src: require("../../images/list/p3_2.jpg") },
+    { id: 0, src: require("../../images/list/p3_8.jpg") },
+    { id: 1, src: require("../../images/list/p3_4.jpg") },
     { id: 2, src: require("../../images/list/p3_3.jpg") },
-    { id: 3, src: require("../../images/list/p3_4.jpg") },
-    { id: 4, src: require("../../images/list/p3_5.jpg") },
-    { id: 5, src: require("../../images/list/p3_6.jpg") },
-    { id: 6, src: require("../../images/list/p3_7.jpg") },
-    { id: 7, src: require("../../images/list/p3_8.jpg") },
-    { id: 8, src: require("../../images/list/p3_9.jpg") },
+    { id: 3, src: require("../../images/list/p3_1.jpg") },
+    { id: 4, src: require("../../images/list/p3_2.jpg") },
+    { id: 5, src: require("../../images/list/p3_7.jpg") },
+    { id: 6, src: require("../../images/list/p3_9.jpg") },
+    { id: 7, src: require("../../images/list/p3_6.jpg") },
+    { id: 8, src: require("../../images/list/p3_5.jpg") },
   ];
 
   function getData() {
@@ -330,7 +330,7 @@ function Place03() {
                   >
                     <ListPageRow>
                       <Col1>
-                        <MainIMG src={Place03img[i].src} />
+                        <MainIMG src={Place03img[i+ (page-1)*3].src} />
                       </Col1>
                       <Col2>
                         <RestName>{v.name}</RestName>

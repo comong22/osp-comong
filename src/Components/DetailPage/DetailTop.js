@@ -1,4 +1,5 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { main_data } from "../MainPage/data";
 import mappin from "../../images/main/mappin.svg";
@@ -59,6 +60,7 @@ function DetailTop(props) {
     { id: 7, src: require("../../images/detail/detail8.jpg") },
     { id: 8, src: require("../../images/detail/detail9.jpg") },
   ];
+
 
   return (
     <>

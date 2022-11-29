@@ -91,15 +91,15 @@ function TabContent(props) {
 
 function Bestmenu(props) {
   const bestmenuimg = [
-    { id: 0, src: require("../../images/listdetail_bm/p2_bm1.jpg") },
-    { id: 1, src: require("../../images/listdetail_bm/p2_bm2.jpg") },
-    { id: 2, src: require("../../images/listdetail_bm/p2_bm3.jpg") },
-    { id: 3, src: require("../../images/listdetail_bm/p2_bm4.jpg") },
-    { id: 4, src: require("../../images/listdetail_bm/p2_bm5.jpg") },
-    { id: 5, src: require("../../images/listdetail_bm/p2_bm6.jpg") },
-    { id: 6, src: require("../../images/listdetail_bm/p2_bm7.jpg") },
-    { id: 7, src: require("../../images/listdetail_bm/p2_bm8.jpg") },
-    { id: 8, src: require("../../images/listdetail_bm/p2_bm9.jpg") },
+    { id: 0, src: require("../../images/listdetail_bm/p2_bm8.jpg") },
+    { id: 1, src: require("../../images/listdetail_bm/p2_bm3.jpg") },
+    { id: 2, src: require("../../images/listdetail_bm/p2_bm7.jpg") },
+    { id: 3, src: require("../../images/listdetail_bm/p2_bm6.jpg") },
+    { id: 4, src: require("../../images/listdetail_bm/p2_bm1.jpg") },
+    { id: 5, src: require("../../images/listdetail_bm/p2_bm9.jpg") },
+    { id: 6, src: require("../../images/listdetail_bm/p2_bm2.jpg") },
+    { id: 7, src: require("../../images/listdetail_bm/p2_bm5.jpg") },
+    { id: 8, src: require("../../images/listdetail_bm/p2_bm4.jpg") },
   ];
   const { id } = useParams(); //params로 받아 -> id
 
