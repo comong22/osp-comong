@@ -8,13 +8,10 @@ import {
 } from "./DetailStyle";
 import "./ReviewPage.css";
 import styled from "styled-components";
-import { createPath, useParams } from "react-router-dom";
 import feather from "../../images/review/Feather.svg";
 import { useState, useEffect } from "react";
 import Pagination from "react-js-pagination";
-import { main_data } from "../MainPage/data";
 import { db } from "../../firebase";
-import { storage } from "../../firebase";
 
 const Review = (doc) => {
   const [data, setData] = useState([]);
@@ -27,8 +24,8 @@ const Review = (doc) => {
     setPage(page);
   };
   var count = 0;
-  for(let i = 0; i < data.length; i++){
-    count = i+1;
+  for (let i = 0; i < data.length; i++) {
+    count = i + 1;
   }
 
   function getData() {
@@ -42,26 +39,25 @@ const Review = (doc) => {
     });
   }
 
- useEffect(() => {
-  getData();
-  console.log(data);
- }, [])
- 
- //이미지
- 
- 
+  useEffect(() => {
+    getData();
+    console.log(data);
+  }, []);
+
+  //이미지
+
   return (
     <div>
       <Container1>
-      { 
-        loader === false && data
-        .slice(items * (page - 1), items * (page - 1) + items)
-        .map((rest) => (
-          <div key={rest.id}>
-            <ReviewCol>
+        {loader === false &&
+          data
+            .slice(items * (page - 1), items * (page - 1) + items)
+            .map((rest) => (
+              <div key={rest.id}>
+                <ReviewCol>
                   <RvRow1>
                     <div>
-                    <img src={rest.url} className="reviewimg" id="img" />
+                      <img src={rest.url} className="reviewimg" id="img" />
                     </div>
                     <div className="enter" />
                   </RvRow1>
@@ -77,8 +73,8 @@ const Review = (doc) => {
                     <div className="enter" />
                   </RvRow3>
                 </ReviewCol>
-          </div>   
-        ))}
+              </div>
+            ))}
         <Pagination
           activePage={page}
           itemsCountPerPage={3}
@@ -88,7 +84,7 @@ const Review = (doc) => {
           nextPageText="›"
           onChange={handlePageChange}
         />
-        </Container1>
+      </Container1>
     </div>
   );
 };

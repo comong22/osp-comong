@@ -2,7 +2,6 @@ import "./UploadPage.css";
 import styled from "styled-components";
 import React, { useEffect, useState, useRef } from "react";
 import { db } from "../../firebase";
-import { dbService, storageService } from "../../firebase";
 import { storage } from "../../firebase";
 import { BsPlusSquare } from "react-icons/bs";
 import firebaseApp from "../../firebase";
@@ -149,7 +148,7 @@ function UploadPage() {
     const uploadTask = storage.ref(`files/${file.name}`).put(file);
     uploadTask.on(
       "state_changed",
-      (snapshot) => { },
+      (snapshot) => {},
       (error) => console.log(error),
       () => {
         storage
@@ -234,7 +233,6 @@ function UploadPage() {
   const [place, setPlace] = useState(0); // 0 : 정문, 1 : 후문, 2 : 신촌
   let DBselect;
 
-
   if (place == 0) DBselect = "place01"; // 이대 정문 DB
   else if (place == 1) DBselect = "place02"; // 이대 후문 DB
   else if (place == 2) DBselect = "place03"; // 신촌 DB
@@ -261,7 +259,7 @@ function UploadPage() {
 
   const closeModal = () => {
     setIsOpen(false);
-  }
+  };
 
   function duplicateCheck() {
     for (var i = 0; i < data.length; i++) {
@@ -277,7 +275,6 @@ function UploadPage() {
   const navigateToMain = () => {
     navigate("/");
   };
-
 
   // 입력 안된 항목 색 바꾸기--------------------------------------
   var require1 = document.getElementById("name");
@@ -704,7 +701,7 @@ function UploadPage() {
             <Button
               type="submit"
               onClick={() => {
-                return (onClickBtn(), duplicateCheck())
+                return onClickBtn(), duplicateCheck();
               }}
             >
               등록하기
@@ -713,7 +710,8 @@ function UploadPage() {
               <Modal
                 open={isOpen}
                 onClose={() => {
-                  setIsOpen(false); navigateToMain();
+                  setIsOpen(false);
+                  navigateToMain();
                 }}
               />
             )}

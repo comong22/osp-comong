@@ -1,102 +1,102 @@
-.postReviewBG{
-    background: #FFF7EF;
-    width: 100vw;
-    height: 100vh;
+.postReviewBG {
+  background: #fff7ef;
+  width: 100vw;
+  height: 100vh;
 }
 
-.Box{
-    display: inline-flex;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    width: 450px;
-    height: 450px;
-    background: #FFFFFF;
-    border-radius: 25px;
-  }
+.Box {
+  display: inline-flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  height: 450px;
+  background: #ffffff;
+  border-radius: 25px;
+}
 
-  .fileSize{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    justify-content: center;
-    align-items: center;
-  }
+.fileSize {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  justify-content: center;
+  align-items: center;
+}
 
-  .Boxs{
-    width: 200px;
-    height: 200px;
-    background: #FFFFFF;
-    border-radius: 10px;
-  }
+.Boxs {
+  width: 200px;
+  height: 200px;
+  background: #ffffff;
+  border-radius: 10px;
+}
 
-  .column{
-    flex-direction: column;
-    justify-items: center;
-    float: left;
-    margin: 150px;
-    width: 450px;
-    height: 503px;
-  }
-  
-  .info{
-    margin: 150px;
-    width: 1200px;
-  }
+.column {
+  flex-direction: column;
+  justify-items: center;
+  float: left;
+  margin: 150px;
+  width: 450px;
+  height: 503px;
+}
 
-  .line{
-    display: flex;
-    flex-direction:row;
-    justify-content: space-between;
-  }
+.info {
+  margin: 150px;
+  width: 1200px;
+}
 
-  .TextI{
-    color: rgb(125, 125, 125);
-    font-size: 15px;
-    font-weight: bold;
-    line-height: 40px;
-    font-family: 'Spoqa Han Sans Neo';
-    font-weight: 10px;
-  }
+.line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
-  textarea:focus{
-    outline: none;
-  }
+.TextI {
+  color: rgb(125, 125, 125);
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 40px;
+  font-family: 'Spoqa Han Sans Neo';
+  font-weight: 10px;
+}
 
-  .Write1{
-    border-radius: 8px;
-    border-color: transparent;
-    width: 100px;
-    height: 30px;
-    resize: none;
-    font-family: 'Spoqa Han Sans Neo';
-    font-weight: 10px;
-    text-align: center;
-  }
-  
-  .Write2{
-    border-radius: 8px;
-    border-color: transparent;
-    width: 300px;
-    height: 30px;
-    font-family: 'Spoqa Han Sans Neo';
-    font-weight: 10px;
-    text-align: center;
-  }
+textarea:focus {
+  outline: none;
+}
 
-  .textArea{
-    width: 590px;
-    height: 250px;
-    border: none;
-    border-radius: 8px;
-    resize: none;
-    font-family: 'Spoqa Han Sans Neo';
-    font-weight: 10px;
-  }
+.Write1 {
+  border-radius: 8px;
+  border-color: transparent;
+  width: 100px;
+  height: 30px;
+  resize: none;
+  font-family: 'Spoqa Han Sans Neo';
+  font-weight: 10px;
+  text-align: center;
+}
 
-  .File{
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    position: absolute;
-  }
+.Write2 {
+  border-radius: 8px;
+  border-color: transparent;
+  width: 300px;
+  height: 30px;
+  font-family: 'Spoqa Han Sans Neo';
+  font-weight: 10px;
+  text-align: center;
+}
+
+.textArea {
+  width: 590px;
+  height: 250px;
+  border: none;
+  border-radius: 8px;
+  resize: none;
+  font-family: 'Spoqa Han Sans Neo';
+  font-weight: 10px;
+}
+
+.File {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: absolute;
+}

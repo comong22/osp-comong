@@ -11,7 +11,6 @@ import UploadPage from "./Components/UploadPage/UploadPage";
 import { main_data } from "./Components/MainPage/data";
 import { useState } from "react";
 import GetImg from "./Components/GetImg/FirebaseImg";
-import UploadmenuDB from "./Components/UploadPage/UploadmenuDB";
 import { GlobalFonts } from "./fonts/font";
 
 function App() {
@@ -41,7 +40,6 @@ function App() {
           path="/listdetail03/:id"
           element={<ListDetailPage3 MainData={MainData} />}
         />
-        <Route path="/db" element={<UploadmenuDB />} />
         <Route path="/img" element={<GetImg />} />
       </Routes>
     </>

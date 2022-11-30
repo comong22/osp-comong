@@ -1,12 +1,12 @@
-.pagination { 
-    display: flex; 
-    justify-content: 
-    center; margin-top: 15px;
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
 }
 
-ul { 
-    list-style: none; 
-    padding: 0;
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 ul.pagination li {
@@ -16,56 +16,56 @@ ul.pagination li {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1rem; 
+  font-size: 1rem;
 }
 
-ul.pagination li:first-child{ 
-    border-radius: 5px 0 0 5px;
+ul.pagination li:first-child {
+  border-radius: 5px 0 0 5px;
 }
-ul.pagination li:last-child{ 
-    border-radius: 0 5px 5px 0; 
+ul.pagination li:last-child {
+  border-radius: 0 5px 5px 0;
 }
-ul.pagination li a { 
-    text-decoration: none; 
-    color: #767676; 
-    font-size: 1rem; 
+ul.pagination li a {
+  text-decoration: none;
+  color: #767676;
+  font-size: 1rem;
 }
-ul.pagination li.active a { 
-    color: #ffba94; 
+ul.pagination li.active a {
+  color: #ffba94;
 }
 
 ul.pagination li a:hover,
-ul.pagination li a.active { 
-    color: #ffba94; 
+ul.pagination li a.active {
+  color: #ffba94;
 }
 
-.NickName{
-    font-size: 1.05rem;
-    font-weight: 400;
-    font-family: 'Spoqa Han Sans Neo';
+.NickName {
+  font-size: 1.05rem;
+  font-weight: 400;
+  font-family: 'Spoqa Han Sans Neo';
 }
 
-.star{
-    font-size: 0.9rem;
-    font-family: 'Spoqa Han Sans Neo';
+.star {
+  font-size: 0.9rem;
+  font-family: 'Spoqa Han Sans Neo';
 }
 
-.ReviewC{
-    font-weight: 450;
-    font-size: 1.05rem;
-    font-family: 'Spoqa Han Sans Neo';
-    width: 700px;
-    line-height: 2;
+.ReviewC {
+  font-weight: 450;
+  font-size: 1.05rem;
+  font-family: 'Spoqa Han Sans Neo';
+  width: 700px;
+  line-height: 2;
 }
 
-.ReviewM{
-    font-weight: 300;
-    font-size: 0.90rem;
-    font-family: 'Spoqa Han Sans Neo';
-    width: 700px;
-    line-height: 2;
+.ReviewM {
+  font-weight: 300;
+  font-size: 0.9rem;
+  font-family: 'Spoqa Han Sans Neo';
+  width: 700px;
+  line-height: 2;
 }
 
-.enter{
-    height: 10px;
+.enter {
+  height: 10px;
 }

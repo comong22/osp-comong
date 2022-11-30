@@ -61,57 +61,55 @@ function DetailTop(props) {
     { id: 8, src: require("../../images/detail/detail9.jpg") },
   ];
 
-
   return (
     <>
       <TopContainer>
         <div className="detailBG">
-          
           <div className="eachDetailImg">
             <img src={detailimg[id].src} />
           </div>
 
           <div className="topBox">
-           <div className="all">
-            <div className="detailinfo">가게정보</div>
-            <InfoCol>
-              <Row1>
-                <DetailName>{main_data[id].name}</DetailName>
-                <Category>| {main_data[id].category}</Category>
-              </Row1>
-              <Row3>
-                <MapPinIMG src={mappin} alt="mappin" />
-                <Address>{main_data[id].address}</Address>
-                <PhoneIMG src={phone} alt="phone" />
-                <Tel>{main_data[id].tel}</Tel>
-                <MenuIMG src={menu} alt="menu" />
-                <Menu1>
-                  {main_data[id].price1} ~ {main_data[id].price2}
-                </Menu1>
-              </Row3>
-              <Row4>
-                <ClockIMG src={clock} alt="clock" />
-                <Clock>{main_data[id].business_hours}</Clock>
-                {/*
+            <div className="all">
+              <div className="detailinfo">가게정보</div>
+              <InfoCol>
+                <Row1>
+                  <DetailName>{main_data[id].name}</DetailName>
+                  <Category>| {main_data[id].category}</Category>
+                </Row1>
+                <Row3>
+                  <MapPinIMG src={mappin} alt="mappin" />
+                  <Address>{main_data[id].address}</Address>
+                  <PhoneIMG src={phone} alt="phone" />
+                  <Tel>{main_data[id].tel}</Tel>
+                  <MenuIMG src={menu} alt="menu" />
+                  <Menu1>
+                    {main_data[id].price1} ~ {main_data[id].price2}
+                  </Menu1>
+                </Row3>
+                <Row4>
+                  <ClockIMG src={clock} alt="clock" />
+                  <Clock>{main_data[id].business_hours}</Clock>
+                  {/*
                 <Addhours>{main_data[id].add_hours}</Addhours>*/}
-                <ParkingIMG src={finfo} alt="finfo" />
-                <Parking>{main_data[id].parking}</Parking>
-                <LinkIMG src={link} alt="link"/>
-                <Link>{main_data[id].site}</Link>
-              </Row4>
-              <Row5>
-              <div>
-                <button
-                  className="Rbutton"
-                  onClick={() => {
-                    navigate("/review");
-                  }}
-                >
-                  리뷰 작성
-                </button>
-              </div>
-              </Row5>
-            </InfoCol>
+                  <ParkingIMG src={finfo} alt="finfo" />
+                  <Parking>{main_data[id].parking}</Parking>
+                  <LinkIMG src={link} alt="link" />
+                  <Link>{main_data[id].site}</Link>
+                </Row4>
+                <Row5>
+                  <div>
+                    <button
+                      className="Rbutton"
+                      onClick={() => {
+                        navigate("/review");
+                      }}
+                    >
+                      리뷰 작성
+                    </button>
+                  </div>
+                </Row5>
+              </InfoCol>
             </div>
           </div>
         </div>

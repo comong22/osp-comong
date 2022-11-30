@@ -21,15 +21,15 @@ const PageContainer = styled.div`
   }
 `;
 
-function ListDetailPage(){
-    let [MainData, setMainData] = useState(main_data);
-    return(
-        <PageContainer>
-            <GlobalFonts/>
-            <DetailTop MainData={MainData}/>
-            <DetailBottom MainData={MainData}/>
-        </PageContainer>
-    )
+function ListDetailPage() {
+  let [MainData, setMainData] = useState(main_data);
+  return (
+    <PageContainer>
+      <GlobalFonts />
+      <DetailTop MainData={MainData} />
+      <DetailBottom MainData={MainData} />
+    </PageContainer>
+  );
 }
 
 export default ListDetailPage;
