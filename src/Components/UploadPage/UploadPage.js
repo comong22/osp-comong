@@ -7,6 +7,7 @@ import { storage } from "../../firebase";
 import { BsPlusSquare } from "react-icons/bs";
 import firebaseApp from "../../firebase";
 import { FaTimes } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import {
   UploadImg,
   Button,
@@ -148,7 +149,7 @@ function UploadPage() {
     const uploadTask = storage.ref(`files/${file.name}`).put(file);
     uploadTask.on(
       "state_changed",
-      (snapshot) => {},
+      (snapshot) => { },
       (error) => console.log(error),
       () => {
         storage
@@ -259,16 +260,24 @@ function UploadPage() {
   }, [DBselect]);
 
   const closeModal = () => {
-    setIsOpen(false);}
+    setIsOpen(false);
+  }
 
   function duplicateCheck() {
     for (var i = 0; i < data.length; i++) {
-      if (name == data[i].name){
-       alert("이미 등록된 식당입니다.");
-       closeModal();
-       }
+      if (name == data[i].name) {
+        alert("이미 등록된 식당입니다.");
+        closeModal();
       }
     }
+  }
+
+  // 맛집 등록 후 페이지 전환------------------------------------
+  const navigate = useNavigate();
+  const navigateToMain = () => {
+    navigate("/");
+  };
+
 
   // 입력 안된 항목 색 바꾸기--------------------------------------
   var require1 = document.getElementById("name");
@@ -695,7 +704,7 @@ function UploadPage() {
             <Button
               type="submit"
               onClick={() => {
-                return(onClickBtn(), duplicateCheck())
+                return (onClickBtn(), duplicateCheck())
               }}
             >
               등록하기
@@ -704,7 +713,7 @@ function UploadPage() {
               <Modal
                 open={isOpen}
                 onClose={() => {
-                  setIsOpen(false);
+                  setIsOpen(false); navigateToMain();
                 }}
               />
             )}
