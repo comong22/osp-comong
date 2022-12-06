@@ -92,7 +92,7 @@ function Bestmenu(props) {
 
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
-  const ref = db.collection("place01"); // "컬렉션명"
+  const ref = db.collection("place01Bottom"); // "컬렉션명"
   var arr = [0];
   for (let i = 0; i < data.length; i++) {
     arr[i] = i + 1;
@@ -121,7 +121,7 @@ function Bestmenu(props) {
             <div>
               <div className="navbestfont">BEST</div>
               <div className="bestmenuImg">
-                <img src={rest1.url} />
+                <img src={rest1.url2} />
               </div>
               <div className="navbestmenufont">
                 {rest1.bestmenuname}
