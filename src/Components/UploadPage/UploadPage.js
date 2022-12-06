@@ -144,9 +144,13 @@ function UploadPage() {
     uploadeFiles(file);
   };
 
-  const uploadeFiles = (file) => {
-    const uploadTask = storage.ref(`files/${file.name}`).put(file);
-    uploadTask.on(
+  const uploadeFiles = (file, file2) => {
+    const uploadTask1 = storage.ref(`files/${file.name}`).put(file);
+    const uploadTask2 = storage.ref(`files/${file.name}`).put(file2);
+
+    let detail = name + "/detail";
+
+    uploadTask1.on(
       "state_changed",
       (snapshot) => {},
       (error) => console.log(error),
@@ -156,8 +160,8 @@ function UploadPage() {
           .child(file.name)
           .getDownloadURL()
           .then((url) => {
-            bucket
-              .add({
+            bucket.doc(name)
+              .set({
                 url,
                 name,
                 cate,
@@ -168,9 +172,29 @@ function UploadPage() {
                 price2,
                 time,
                 site,
+              })
+              .then((docRef) => {
+                console.log(docRef.id);
+              });
+          });
+      }
+    );
+    uploadTask2.on(
+      "state_changed",
+      (snapshot) => {},
+      (error) => console.log(error),
+      () => {
+        storage
+          .ref("files")
+          .child(file2.name)
+          .getDownloadURL()
+          .then((url2) => {
+            bucket.doc(detail)
+              .set({
+                url2,
+                name,
                 bestmenuname,
                 bestmenuprice,
-                progress,
               })
               .then((docRef) => {
                 console.log(docRef.id);
@@ -375,8 +399,7 @@ function UploadPage() {
   };
   //---------------------------------------------
   const onClickButton = () => {
-    uploadeFiles(ImgInput.current.files[0]);
-    uploadeFiles(ImgInput2.current.files[0]);
+    uploadeFiles(ImgInput.current.files[0], ImgInput2.current.files[0]);
   };
 
   return (

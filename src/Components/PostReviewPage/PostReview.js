@@ -227,7 +227,7 @@ const PostReview = (props) => {
                     .child(file.name)
                     .getDownloadURL()
                     .then((url) => {
-                        bucket.add({url,text1, text2, content, star})
+                        bucket.doc("review").set({url,text1, text2, content, star})
                         .then((docRef) => {
                           console.log(docRef.id);
                         });
