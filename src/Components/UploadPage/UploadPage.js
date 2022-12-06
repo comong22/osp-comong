@@ -656,6 +656,7 @@ function UploadPage() {
                   />
                 ) : (
                   <BsPlusSquare
+                    style={{marginLeft:'-12px'}}
                     size={5}
                     onClick={(event) => {
                       event.preventDefault();
