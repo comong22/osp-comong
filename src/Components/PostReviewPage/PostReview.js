@@ -139,7 +139,15 @@ cursor: pointer;
 
 const ARRAY = [0, 1, 2, 3, 4];
 
-const PostReview = (props) => {
+const PostReview = (props, doc) => {
+
+const [data, setData] = useState([]);
+const [loader, setLoader] = useState(true);
+const id = doc.id;
+const [items, setItems] = useState(3);
+const ref1 = db.collection("place01");
+const ref2 = db.collection("place02");
+const ref3 = db.collection("place03");
 
   //모달창
   const [isOpen, setIsOpen] = useState(false);
@@ -154,6 +162,7 @@ const PostReview = (props) => {
         onClickButton();
         setText1('');
         setText2('');
+        setText3('');
         setContent('');
         setClicked([false, false, false, false, false]);
         setImageUrl(null);
@@ -214,37 +223,96 @@ const PostReview = (props) => {
     }
     }, [imageUrl]);
 
-    //사진 업로드
-    const uploadeFiles = (file) => {
-        const uploadTask = storage.ref(`files/${file.name}`).put(file);
-        uploadTask.on(
-            "state_changed",
-            (snapshot) => { },
-            (error) => console.log(error),
-            () => {
-                storage
-                    .ref("files")
-                    .child(file.name)
-                    .getDownloadURL()
-                    .then((url) => {
-                        bucket.doc("review").set({url,text1, text2, content, star})
-                        .then((docRef) => {
-                          console.log(docRef.id);
+          //사진 업로드
+          const uploadeFiles = (file) => {
+            const uploadTask = storage.ref(`files/${file.name}`).put(file);
+            uploadTask.on(
+                "state_changed",
+                (snapshot) => { },
+                (error) => console.log(error),
+                () => {
+                    storage
+                        .ref("files")
+                        .child(file.name)
+                        .getDownloadURL()
+                        .then((url) => {
+                            bucket.doc(data.name).collection(text1).add({url, text1, text2, text3, content, star})
+                            .then((docRef) => {
+                              console.log(docRef.id);
+                            });
                         });
-                    });
-            }
-        );
-    };
+                }
+            );
+        };
     
+    //리뷰 위치
+  //place01
+  function getData1() {
+    ref1.onSnapshot((querySnapshot) => {
+      const items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
+      });
+      setData(items);
+      setLoader(false);
+    });
+  }
+
+  //place02
+  function getData2() {
+    ref2.onSnapshot((querySnapshot) => {
+      const items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
+      });
+      setData(items);
+      setLoader(false);
+    });
+  }
+
+  //place03
+  function getData3() {
+    ref3.onSnapshot((querySnapshot) => {
+      const items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
+      });
+      setData(items);
+      setLoader(false);
+    });
+  }
+
+  useEffect(() => {
+    getData1();
+    getData2();
+    getData3();
+    console.log(data);
+  }, []);
+  
+
+  //비교
+  const [place, setPlace] = useState(''); 
+  let DBselect;
+
+  function Compare() {
+    for (var i = 0; i < data.length; i++) {
+      if (text3 == data[i].name) {
+        place = data[i].place;
+      }
+    }
+  }
+
+  if (place == 0) DBselect = "place01"; // 이대 정문 DB
+  else if (place == 1) DBselect = "place02"; // 이대 후문 DB
+  else if (place == 2) DBselect = "place03"; // 신촌 DB
+  const bucket = db.collection(DBselect); // 어느 DB에 저장할지 선택
 //-------------------------------------------
   //리뷰 등록 관련
   const [text1,setText1] = useState('');
   const [text2,setText2] = useState('');
+  const [text3,setText3] = useState('');
   const [content,setContent] = useState('');
   const [star, setStar] = useState();
-  
-  const bucket = db.collection("review"); 
-  
   
 var require1 = document.getElementById('text1');
 var require2 = document.getElementById('text2');
@@ -273,6 +341,7 @@ var change3 = document.getElementById('Ttext3');
 
   const onClickButton = () => {
     uploadeFiles(ImgInput.current.files[0]);
+    Compare();
   };
 
     return(
@@ -283,7 +352,7 @@ var change3 = document.getElementById('Ttext3');
         
         <div className="column">
          <div className="Box">
-         {preview ? (<img style={{transform: 'translate(50, 50)' ,width: '100%',height: '100%', objectFit: 'cover',width: '450px',height: '450px'}} src={preview} onClick={() => {setImageUrl(null);}}/>
+         {preview ? (<img src={preview} onClick={() => {setImageUrl(null);}}/>
           ) : (
             <BsPlusSquare size={40} onClick = {(event) => {event.preventDefault(); ImgInput.current.click();}} className="File"/>
           )}
@@ -302,10 +371,13 @@ var change3 = document.getElementById('Ttext3');
           <div className="line">
             <label className="TextI" id="Ttext1">닉네임</label>
             <input className="Write1" type="text" placeholder="김이화" id="text1" value={text1} onChange={(e) => {setText1(e.target.value);}} />
+            <label className="TextI" id="Ttext3">식당이름</label>
+            <input className="Write3" type="text" placeholder="정확한 식당명을 입력해주세요!" id="text3" value={text3} onChange={(e) => {setText3(e.target.value);}} />
+          </div>
+          <div className="line2">
             <label className="TextI" id="Ttext2">메뉴이름</label>
             <input className="Write2" type="text" placeholder="정확한 메뉴명을 입력해주세요!" id="text2" value={text2} onChange={(e) => {setText2(e.target.value);}} />
           </div>
-
             <Wraps>
             <label className="TextI" id="Ttext3">별점</label>
               <Stars>
