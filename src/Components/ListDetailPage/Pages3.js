@@ -1,9 +1,7 @@
 import React from "react";
-import { useState } from "react";
 import styled from "styled-components";
 
 import { GlobalFonts } from "../../fonts/font";
-import { main_data } from "../MainPage/data";
 import DetailBottom from "./ListDetailBottom3";
 import DetailTop from "./ListDetailTop3";
 
@@ -22,12 +20,11 @@ const PageContainer = styled.div`
 `;
 
 function ListDetailPage() {
-  let [MainData, setMainData] = useState(main_data);
   return (
     <PageContainer>
       <GlobalFonts />
-      <DetailTop MainData={MainData} />
-      <DetailBottom MainData={MainData} />
+      <DetailTop />
+      <DetailBottom />
     </PageContainer>
   );
 }
