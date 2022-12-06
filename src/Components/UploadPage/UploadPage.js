@@ -187,7 +187,7 @@ function UploadPage() {
           .child(file2.name)
           .getDownloadURL()
           .then((url2) => {
-            bucket.doc(name+bestmenuname)
+            bucket2.doc(name+bestmenuname)
               .set({
                 url2,
                 name,
@@ -254,11 +254,17 @@ function UploadPage() {
   const [showOptions, setShowOptions] = useState(false);
   const [place, setPlace] = useState(0); // 0 : 정문, 1 : 후문, 2 : 신촌
   let DBselect;
+  let DBselect2;
 
   if (place == 0) DBselect = "place01"; // 이대 정문 DB
   else if (place == 1) DBselect = "place02"; // 이대 후문 DB
   else if (place == 2) DBselect = "place03"; // 신촌 DB
   const bucket = db.collection(DBselect); // 어느 DB에 저장할지 선택
+
+  if (place == 0) DBselect2 = "place01Bottom"; // 이대 정문 DB
+  else if (place == 1) DBselect2 = "place02Bottom"; // 이대 후문 DB
+  else if (place == 2) DBselect2 = "place03BOttom"; // 신촌 DB
+  const bucket2 = db.collection(DBselect2); // 어느 DB에 저장할지 선택
   // -----------------------------------------------------------
 
   // 중복 식당 검사 ------
@@ -656,7 +662,6 @@ function UploadPage() {
                   />
                 ) : (
                   <BsPlusSquare
-                    style={{marginLeft:'-12px'}}
                     size={5}
                     onClick={(event) => {
                       event.preventDefault();
