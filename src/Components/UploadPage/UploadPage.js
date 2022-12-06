@@ -148,8 +148,6 @@ function UploadPage() {
     const uploadTask1 = storage.ref(`files/${file.name}`).put(file);
     const uploadTask2 = storage.ref(`files/${file.name}`).put(file2);
 
-    let detail = name + "detail";
-
     uploadTask1.on(
       "state_changed",
       (snapshot) => {},
@@ -189,7 +187,7 @@ function UploadPage() {
           .child(file2.name)
           .getDownloadURL()
           .then((url2) => {
-            bucket.doc(detail)
+            bucket.doc(name+bestmenuname)
               .set({
                 url2,
                 name,
