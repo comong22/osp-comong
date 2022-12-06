@@ -28,6 +28,7 @@ const Review = (doc) => {
     count = i + 1;
   }
 
+  //review
   function getData() {
     ref.onSnapshot((querySnapshot) => {
       const items = [];
@@ -68,7 +69,7 @@ const Review = (doc) => {
                     <div className="enter" />
                   </RvRow2>
                   <RvRow3>
-                    <div className="ReviewM">메뉴: {rest.text2}</div>
+                    <div className="ReviewM">식당: {rest.text3}  /  메뉴: {rest.text2}</div>
                     <div className="ReviewC">{rest.content}</div>
                     <div className="enter" />
                   </RvRow3>
