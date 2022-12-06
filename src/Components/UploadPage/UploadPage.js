@@ -148,7 +148,7 @@ function UploadPage() {
     const uploadTask1 = storage.ref(`files/${file.name}`).put(file);
     const uploadTask2 = storage.ref(`files/${file.name}`).put(file2);
 
-    let detail = name + "/detail";
+    let detail = name + "detail";
 
     uploadTask1.on(
       "state_changed",
@@ -408,7 +408,7 @@ function UploadPage() {
         <div className="Box">
           <form onSubmit={formHandler}>
             {preview ? (
-              <img
+              <img style={{transform: 'translate(50, 50)' ,width: '100%', height: '100%', objectFit: 'cover',width: '450px',height: '450px'}}
                 src={preview}
                 onClick={() => {
                   setImageUrl(null);
@@ -650,7 +650,7 @@ function UploadPage() {
             <div className="bottomBox">
               <form onSubmit={formHandler}>
                 {preview2 ? (
-                  <img
+                  <img style={{transform: 'translate(50, 50)' ,width: '100%',height: '100%', objectFit: 'cover',width: '150px',height: '150px'}}
                     src={preview2}
                     onClick={() => {
                       setImageUrl2(null);

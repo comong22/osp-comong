@@ -283,7 +283,7 @@ var change3 = document.getElementById('Ttext3');
         
         <div className="column">
          <div className="Box">
-         {preview ? (<img src={preview} onClick={() => {setImageUrl(null);}}/>
+         {preview ? (<img style={{transform: 'translate(50, 50)' ,width: '100%',height: '100%', objectFit: 'cover',width: '450px',height: '450px'}} src={preview} onClick={() => {setImageUrl(null);}}/>
           ) : (
             <BsPlusSquare size={40} onClick = {(event) => {event.preventDefault(); ImgInput.current.click();}} className="File"/>
           )}
