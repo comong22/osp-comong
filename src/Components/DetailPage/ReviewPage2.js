@@ -13,10 +13,10 @@ import {
   import Pagination from "react-js-pagination";
   import { db } from "../../firebase";
   
-  const Review = (doc) => {
+  const Review2 = (doc) => {
     const [data, setData] = useState([]);
     const [loader, setLoader] = useState(true);
-    const ref = db.collection("review"); // "컬렉션명"
+    const ref = db.collection("place02"); // "컬렉션명"
     const id = doc.id;
     const [items, setItems] = useState(3);
     const [page, setPage] = useState(1);
@@ -90,4 +90,4 @@ import {
     );
   };
   
-  export default Review;
+  export default Review2;

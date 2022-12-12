@@ -53,6 +53,7 @@
 .line2 {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   margin-top: 15px;
 }
 
@@ -88,7 +89,6 @@ textarea:focus {
   font-family: 'Spoqa Han Sans Neo';
   font-weight: 10px;
   text-align: center;
-  margin-left: 15px;
 }
 
 .Write3 {

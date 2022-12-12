@@ -6,7 +6,7 @@ import { db } from "../../firebase";
 import { useParams } from "react-router-dom";
 
 import "./ListDetailPage.css";
-import Review from "../DetailPage/ReviewPage";
+import Review3 from "../DetailPage/ReviewPage3";
 import {
   BestmenuTab,
   BottomBox,
@@ -79,7 +79,7 @@ function TabContent(props) {
             <Bestmenu />
           </div>,
           <div>
-            <Review />
+            <Review3 />
           </div>,
         ][props.tab]
       }
