@@ -2,11 +2,11 @@ import "./UploadPage.css";
 import styled from "styled-components";
 import React, { useEffect, useState, useRef } from "react";
 import { db } from "../../firebase";
-import { dbService, storageService } from "../../firebase";
 import { storage } from "../../firebase";
 import { BsPlusSquare } from "react-icons/bs";
 import firebaseApp from "../../firebase";
 import { FaTimes } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import {
   UploadImg,
   Button,
@@ -144,8 +144,10 @@ function UploadPage() {
     uploadeFiles(file);
   };
 
-  const uploadeFiles = (file1) => {
-    const uploadTask1 = storage.ref(`files/${file1.name}`).put(file1);
+  const uploadeFiles = (file, file2) => {
+    const uploadTask1 = storage.ref(`files/${file.name}`).put(file);
+    const uploadTask2 = storage.ref(`files/${file.name}`).put(file2);
+
     uploadTask1.on(
       "state_changed",
       (snapshot) => {},
@@ -153,11 +155,11 @@ function UploadPage() {
       () => {
         storage
           .ref("files")
-          .child(file1.name)
+          .child(file.name)
           .getDownloadURL()
           .then((url) => {
-            bucket
-              .add({
+            bucket.doc(name)
+              .set({
                 url,
                 name,
                 cate,
@@ -167,16 +169,38 @@ function UploadPage() {
                 price1,
                 price2,
                 time,
-                site
+                site,
+                bestmenuname,
               })
               .then((docRef) => {
                 console.log(docRef.id);
               });
           });
       }
-      
     );
-
+    uploadTask2.on(
+      "state_changed",
+      (snapshot) => {},
+      (error) => console.log(error),
+      () => {
+        storage
+          .ref("files")
+          .child(file2.name)
+          .getDownloadURL()
+          .then((url2) => {
+            bucket2.doc(name+bestmenuname)
+              .set({
+                url2,
+                name,
+                bestmenuname,
+                bestmenuprice,
+              })
+              .then((docRef) => {
+                console.log(docRef.id);
+              });
+          });
+      }
+    );
   };
 
   // 이미지 preview 함수
@@ -230,13 +254,20 @@ function UploadPage() {
   const [currentValue, setCurrentValue] = useState("이대 정문"); // SelectBox 선택된 값
   const [showOptions, setShowOptions] = useState(false);
   const [place, setPlace] = useState(0); // 0 : 정문, 1 : 후문, 2 : 신촌
-  let DBselect;
 
+  let DBselect;
 
   if (place == 0) DBselect = "place01"; // 이대 정문 DB
   else if (place == 1) DBselect = "place02"; // 이대 후문 DB
   else if (place == 2) DBselect = "place03"; // 신촌 DB
   const bucket = db.collection(DBselect); // 어느 DB에 저장할지 선택
+
+  let DBselect2;
+
+  if (place == 0) DBselect2 = "place01Bottom"; // 이대 정문 DB
+  else if (place == 1) DBselect2 = "place02Bottom"; // 이대 후문 DB
+  else if (place == 2) DBselect2 = "place03Bottom"; // 신촌 DB
+  const bucket2 = db.collection(DBselect2); // 어느 DB에 저장할지 선택
   // -----------------------------------------------------------
 
   // 중복 식당 검사 ------
@@ -258,16 +289,23 @@ function UploadPage() {
   }, [DBselect]);
 
   const closeModal = () => {
-    setIsOpen(false);}
+    setIsOpen(false);
+  };
 
   function duplicateCheck() {
     for (var i = 0; i < data.length; i++) {
-      if (name == data[i].name){
-       alert("이미 등록된 식당입니다.");
-       closeModal();
-       }
+      if (name == data[i].name) {
+        alert("이미 등록된 식당입니다.");
+        closeModal();
       }
     }
+  }
+
+  // 맛집 등록 후 페이지 전환------------------------------------
+  const navigate = useNavigate();
+  const navigateToMain = () => {
+    navigate("/");
+  };
 
   // 입력 안된 항목 색 바꾸기--------------------------------------
   var require1 = document.getElementById("name");
@@ -377,7 +415,7 @@ function UploadPage() {
         <div className="Box">
           <form onSubmit={formHandler}>
             {preview ? (
-              <img
+              <img style={{transform: 'translate(50, 50)' ,width: '100%', height: '100%', objectFit: 'cover',width: '450px',height: '450px'}}
                 src={preview}
                 onClick={() => {
                   setImageUrl(null);
@@ -619,7 +657,7 @@ function UploadPage() {
             <div className="bottomBox">
               <form onSubmit={formHandler}>
                 {preview2 ? (
-                  <img
+                  <img style={{transform: 'translate(50, 50)' ,width: '100%',height: '100%', objectFit: 'cover',width: '150px',height: '150px'}}
                     src={preview2}
                     onClick={() => {
                       setImageUrl2(null);
@@ -693,7 +731,7 @@ function UploadPage() {
             <Button
               type="submit"
               onClick={() => {
-                return(onClickBtn(), duplicateCheck())
+                return onClickBtn(), duplicateCheck();
               }}
             >
               등록하기
@@ -703,6 +741,7 @@ function UploadPage() {
                 open={isOpen}
                 onClose={() => {
                   setIsOpen(false);
+                  navigateToMain();
                 }}
               />
             )}

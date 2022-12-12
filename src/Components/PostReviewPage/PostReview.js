@@ -7,7 +7,6 @@ import { FaStar} from 'react-icons/fa';
 import { BsPlusSquare } from "react-icons/bs";
 import { db } from "../../firebase";
 import { storage } from "../../firebase";
-import { redirect } from "react-router-dom";
  
 const PostRContainer = styled.div`
   background: #fff7ef;
@@ -137,9 +136,88 @@ cursor: pointer;
 }
 `;
 
+const SelectBox = styled.div`
+  display: inline-block;
+  position: relative;
+  float: left;
+  left: 0px;
+  width: 115px;
+  height: 35px;
+  padding: 5px;
+  margin-left: 15px;
+
+  border-radius: 6px;
+
+  box-sizing: border-box;
+  z-index: 999;
+  background-color: #ffffff;
+  align-self: center;
+  cursor: pointer;
+
+  &::before {
+    content: "⌵";
+    position: absolute;
+    top: 1px;
+    right: 8px;
+    color: #ffa574;
+    font-size: 20px;
+    font-weight: bold;
+  }
+`;
+const Label2 = styled.label`
+  display: flex;
+  font-size: 15px;
+  padding: 0 15x 0 15px;
+  color: rgb(125, 125, 125);
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  font-family: "Spoqa Han Sans Neo Regular";
+  margin: 5px;
+`;
+
+const SelectOptions = styled.ul`
+  position: absolute;
+  list-style: none;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  max-height: ${(props) => (props.show ? "none" : "0")};
+  padding: 0;
+  border-radius: 6px;
+  border: ${(props) =>
+    props.show ? "1px solid rgba(0, 16, 61, 0.12)" : "none"};
+
+  background-color: #ffffff;
+`;
+
+const Option = styled.li`
+  font-family: "SUIT Regular";
+
+  font-size: 14px;
+  padding: 10px;
+  text-align: center;
+  transition: background-color 0.2s ease-in;
+  &:hover {
+    background-color: #fff7ef;
+  }
+`;
+
+
 const ARRAY = [0, 1, 2, 3, 4];
 
-const PostReview = (props) => {
+const PostReview = (props, doc) => {
+  const [text1,setText1] = useState('');
+  const [text2,setText2] = useState('');
+  const [text3,setText3] = useState('');
+  const [content,setContent] = useState('');
+  const [star, setStar] = useState();
+  const [data, setData] = useState([]);
+  const [loader, setLoader] = useState(true);
+  
+  const ref0 = db.collection("place01");
+  const ref1 = db.collection("place02");
+  const ref2 = db.collection("place03");
 
   //모달창
   const [isOpen, setIsOpen] = useState(false);
@@ -154,6 +232,7 @@ const PostReview = (props) => {
         onClickButton();
         setText1('');
         setText2('');
+        setText3('');
         setContent('');
         setClicked([false, false, false, false, false]);
         setImageUrl(null);
@@ -201,6 +280,7 @@ const PostReview = (props) => {
   const [imageUrl, setImageUrl] = useState(null);
   const ImgInput = useRef();
   const [preview, setPreview] = useState();
+  
 
   useEffect(()=>{
     if(imageUrl){
@@ -214,44 +294,51 @@ const PostReview = (props) => {
     }
     }, [imageUrl]);
 
-    //사진 업로드
-    const uploadeFiles = (file) => {
-        const uploadTask = storage.ref(`files/${file.name}`).put(file);
-        uploadTask.on(
-            "state_changed",
-            (snapshot) => { },
-            (error) => console.log(error),
-            () => {
-                storage
-                    .ref("files")
-                    .child(file.name)
-                    .getDownloadURL()
-                    .then((url) => {
-                        bucket.add({url,text1, text2, content, star})
-                        .then((docRef) => {
-                          console.log(docRef.id);
+          //사진 업로드
+          const uploadeFiles = (file) => {
+            const uploadTask = storage.ref(`files/${file.name}`).put(file);
+            uploadTask.on(
+                "state_changed",
+                (snapshot) => { },
+                (error) => console.log(error),
+                () => {
+                    storage
+                        .ref("files")
+                        .child(file.name)
+                        .getDownloadURL()
+                        .then((url) => {
+                            bucket.doc(text2).collection("review").add({url, text1, text2, text3, content, star, place})
+                            .then((docRef) => {
+                              console.log(docRef.id);
+                            });
                         });
-                    });
-            }
-        );
-    };
+                }
+            );
+        };
     
+  //리뷰 위치
+  
+  const [currentValue, setCurrentValue] = useState("이대 정문"); // SelectBox 선택된 값
+  const [showOptions, setShowOptions] = useState(false);
+  const [place, setPlace] = useState(0); 
+  let DBselect;
+
+  if (place == 0) DBselect = "place01"; // 이대 정문 DB
+  else if (place == 1) DBselect = "place02"; // 이대 후문 DB
+  else if (place == 2) DBselect = "place03"; // 신촌 DB
+
+  const bucket = db.collection(DBselect); // 어느 DB에 저장할지 선택
 //-------------------------------------------
   //리뷰 등록 관련
-  const [text1,setText1] = useState('');
-  const [text2,setText2] = useState('');
-  const [content,setContent] = useState('');
-  const [star, setStar] = useState();
-  
-  const bucket = db.collection("review"); 
-  
   
 var require1 = document.getElementById('text1');
 var require2 = document.getElementById('text2');
+var require3 = document.getElementById('text3');
 
 var change1 = document.getElementById('Ttext1');
 var change2 = document.getElementById('Ttext2');
 var change3 = document.getElementById('Ttext3');
+var change4 = document.getElementById('Ttext4');
 
   const onClickBtn = () => {
     if(require1.value !== '' && require2.value !== '' && star !== 0){
@@ -266,8 +353,11 @@ var change3 = document.getElementById('Ttext3');
     if(require2.value === ''){
         change2.style.color = '#ffa574';
       }
+    if(require3.value === ''){
+        change3.style.color = '#ffa574';
+      }
     if(star === 0){
-      change3.style.color = '#ffa574';
+      change4.style.color = '#ffa574';
       }
   };
 
@@ -302,12 +392,34 @@ var change3 = document.getElementById('Ttext3');
           <div className="line">
             <label className="TextI" id="Ttext1">닉네임</label>
             <input className="Write1" type="text" placeholder="김이화" id="text1" value={text1} onChange={(e) => {setText1(e.target.value);}} />
-            <label className="TextI" id="Ttext2">메뉴이름</label>
-            <input className="Write2" type="text" placeholder="정확한 메뉴명을 입력해주세요!" id="text2" value={text2} onChange={(e) => {setText2(e.target.value);}} />
+            <label className="TextI" id="Ttext2">식당이름</label>
+            <input className="Write3" type="text" placeholder="정확한 식당명을 입력해주세요!" id="text2" value={text2} onChange={(e) => {setText2(e.target.value);}} />
           </div>
-
+          <div className="line2">
+          <label className="TextI" id="Ttext1">식당 위치</label>
+          <SelectBox onClick={() => setShowOptions((prev) => !prev)}>
+            <Label2>{currentValue}</Label2>
+            <SelectOptions show={showOptions}>
+              <Option
+                onClick={() => (setCurrentValue("이대 정문"), setPlace(0))}
+              >
+                <span className="selecttext">이대 정문</span>
+              </Option>
+              <Option
+                onClick={() => (setCurrentValue("이대 후문"), setPlace(1))}
+              >
+                <span className="selecttext">이대 후문</span>
+              </Option>
+              <Option onClick={() => (setCurrentValue("신촌"), setPlace(2))}>
+                <span className="selecttext">신촌</span>
+              </Option>
+            </SelectOptions>
+          </SelectBox>
+            <label className="TextI" id="Ttext3">메뉴이름</label>
+            <input className="Write2" type="text" placeholder="정확한 메뉴명을 입력해주세요!" id="text3" value={text3} onChange={(e) => {setText3(e.target.value);}} />
+          </div>
             <Wraps>
-            <label className="TextI" id="Ttext3">별점</label>
+            <label className="TextI" id="Ttext4">별점</label>
               <Stars>
                 {ARRAY.map((el, idx) => {
                   return (

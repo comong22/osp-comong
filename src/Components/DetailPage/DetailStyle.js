@@ -118,7 +118,7 @@ export const DetailName = styled.div`
 
   color: #424242;
   padding-left: 17%;
-  padding-top : 1%;
+  padding-top: 1%;
 `;
 
 export const Category = styled.div`
@@ -130,7 +130,7 @@ export const Category = styled.div`
   line-height: 150%;
   /* or 24px */
   color: #000000;
-  padding-top : 1%;
+  padding-top: 1%;
 `;
 export const MapPinIMG = styled.img`
   float: left;
@@ -193,7 +193,7 @@ export const Address = styled.div`
   font-size: 16px;
   line-height: 150%;
   padding-left: 25%;
-  padding-bottom : 5%;
+  padding-bottom: 5%;
   /* or 27px */
 
   color: #424242;
@@ -282,8 +282,8 @@ export const Clock = styled.div`
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  padding-bottom : 6%;
-  margin-bottom : 10px;
+  padding-bottom: 6%;
+  margin-bottom: 10px;
   line-height: 150%;
   /* or 27px */
 

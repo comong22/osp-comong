@@ -4,10 +4,9 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { db } from "../../firebase";
 import { useParams } from "react-router-dom";
-import { main_data } from "../MainPage/data";
 
 import "./ListDetailPage.css";
-import Review from "../DetailPage/ReviewPage";
+import Review3 from "../DetailPage/ReviewPage3";
 import {
   BestmenuTab,
   BottomBox,
@@ -39,32 +38,31 @@ function ListDetailBottom() {
       <BottomContainer>
         <Container>
           <BottomBox>
-          <TabCol>
-            <TabRow1>
-              <BestmenuTab
-                tab={tab}
-                onClick={() => {
-                  setTab(0);
-                }}
-              >
-                대표 메뉴
-              </BestmenuTab>
-            </TabRow1>
-            <TabRow2>
-              <ReviewTab
-                tab={tab}
-                onClick={() => {
-                  setTab(1);
-                }}
-              >
-                리뷰
-              </ReviewTab>
-            </TabRow2>
-          </TabCol>
-          <ContentArea>
-            <TabContent tab={tab} />
-          </ContentArea>
-
+            <TabCol>
+              <TabRow1>
+                <BestmenuTab
+                  tab={tab}
+                  onClick={() => {
+                    setTab(0);
+                  }}
+                >
+                  대표 메뉴
+                </BestmenuTab>
+              </TabRow1>
+              <TabRow2>
+                <ReviewTab
+                  tab={tab}
+                  onClick={() => {
+                    setTab(1);
+                  }}
+                >
+                  리뷰
+                </ReviewTab>
+              </TabRow2>
+            </TabCol>
+            <ContentArea>
+              <TabContent tab={tab} />
+            </ContentArea>
           </BottomBox>
         </Container>
       </BottomContainer>
@@ -81,7 +79,7 @@ function TabContent(props) {
             <Bestmenu />
           </div>,
           <div>
-            <Review />
+            <Review3 />
           </div>,
         ][props.tab]
       }
@@ -90,25 +88,14 @@ function TabContent(props) {
 }
 
 function Bestmenu(props) {
-  const bestmenuimg = [
-    { id: 0, src: require("../../images/listdetail_bm/p3_bm8.jpg") },
-    { id: 1, src: require("../../images/listdetail_bm/p3_bm4.jpg") },
-    { id: 2, src: require("../../images/listdetail_bm/p3_bm3.jpg") },
-    { id: 3, src: require("../../images/listdetail_bm/p3_bm1.jpg") },
-    { id: 4, src: require("../../images/listdetail_bm/p3_bm2.jpg") },
-    { id: 5, src: require("../../images/listdetail_bm/p3_bm7.jpg") },
-    { id: 6, src: require("../../images/listdetail_bm/p3_bm9.jpg") },
-    { id: 7, src: require("../../images/listdetail_bm/p3_bm6.jpg") },
-    { id: 8, src: require("../../images/listdetail_bm/p3_bm5.jpg") },
-  ];
   const { id } = useParams(); //params로 받아 -> id
 
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
-  const ref = db.collection("place03"); // "컬렉션명"
+  const ref = db.collection("place03Bottom"); // "컬렉션명"
   var arr = [0];
-  for(let i = 0; i < data.length; i++){
-    arr[i] = i+1;
+  for (let i = 0; i < data.length; i++) {
+    arr[i] = i + 1;
   }
 
   function getData() {
@@ -130,13 +117,11 @@ function Bestmenu(props) {
     <>
       <div>
         {loader === false &&
-          data
-          .slice( arr[id] - 1, arr[id])
-          .map((rest3) => (
+          data.slice(arr[id] - 1, arr[id]).map((rest3) => (
             <div>
               <div className="navbestfont">BEST</div>
               <div className="bestmenuImg">
-                <img src={rest3.url} />
+                <img src={rest3.url2} />
               </div>
               <div className="navbestmenufont">
                 {rest3.bestmenuname}

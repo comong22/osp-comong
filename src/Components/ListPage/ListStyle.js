@@ -212,7 +212,3 @@ export const Border = styled.div`
   margin: 1% 0 1% 0;
   border-bottom: 1px solid #d9d9d9;
 `;
-
-
-
-

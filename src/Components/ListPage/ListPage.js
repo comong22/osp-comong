@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { GlobalFonts } from "../../fonts/font";
 import Pagination from "react-js-pagination";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./ListPage.css";
 import {
   ListName,
@@ -33,7 +33,7 @@ import {
 import heartt from "../../images/list/heartt.svg";
 import clock from "../../images/main/clock.svg";
 import mappin from "../../images/main/mappin.svg";
-import { db, storage } from "../../firebase";
+import { db } from "../../firebase";
 function ListPage() {
   let [tab, setTab] = useState(0); // 0 정문, 1 후문, 2 신촌
 
@@ -114,17 +114,7 @@ function Place01() {
   const handlePageChange = (page) => {
     setPage(page);
   };
-  const Place01img = [
-    { id: 0, src: require("../../images/list/p1_5.jpg") },
-    { id: 1, src: require("../../images/list/yellowhouse.jpg") },
-    { id: 2, src: require("../../images/list/p1_7.jpg") },
-    { id: 3, src: require("../../images/list/p1_9.jpg") },
-    { id: 4, src: require("../../images/list/p1_4.jpg") },
-    { id: 5, src: require("../../images/list/p1_8.jpg") },
-    { id: 6, src: require("../../images/list/p1_6.jpg") },
-    { id: 7, src: require("../../images/list/yuyake.jpg") },
-    { id: 8, src: require("../../images/list/momigi.jpg") },
-  ];
+
   let navigate = useNavigate();
 
   function getData() {
@@ -148,34 +138,34 @@ function Place01() {
         <ContentsWrap>
           {loader === false &&
             place01data
-            .slice(items * (page - 1), items * (page - 1) + items)
-            .map((v, i) => {
-              return (
-                <div key={i}>
-                  <DataContainer
-                    onClick={() => {
-                      navigate(`/listdetail01/${i+ (page-1)*3}`);
-                    }}
-                  >
-                    <ListPageRow>
-                      <Col1>
-                        <MainIMG src={v.url} />
-                      </Col1>
-                      <Col2>
-                        <RestName>{v.name}</RestName>
-                        <MapPinIMG src={mappin} />
-                        <InfoText>{v.addr}</InfoText>
-                        <ClockIMG src={clock} />
-                        <InfoText>{v.time}</InfoText>
-                        <HeartIMG src={heartt} />
-                        <InfoText>대표 메뉴 - {v.bestmenuname}</InfoText>
-                      </Col2>
-                    </ListPageRow>
-                  </DataContainer>
-                  <Border />
-                </div>
-              );
-            })}
+              .slice(items * (page - 1), items * (page - 1) + items)
+              .map((v, i) => {
+                return (
+                  <div key={i}>
+                    <DataContainer
+                      onClick={() => {
+                        navigate(`/listdetail01/${i + (page - 1) * 3}`);
+                      }}
+                    >
+                      <ListPageRow>
+                        <Col1>
+                          <MainIMG src={v.url} />
+                        </Col1>
+                        <Col2>
+                          <RestName>{v.name}</RestName>
+                          <MapPinIMG src={mappin} />
+                          <InfoText>{v.addr}</InfoText>
+                          <ClockIMG src={clock} />
+                          <InfoText>{v.time}</InfoText>
+                          <HeartIMG src={heartt} />
+                          <InfoText>대표 메뉴 - {v.bestmenuname}</InfoText>
+                        </Col2>
+                      </ListPageRow>
+                    </DataContainer>
+                    <Border />
+                  </div>
+                );
+              })}
         </ContentsWrap>
         <Pagination
           activePage={page}
@@ -198,17 +188,6 @@ function Place02() {
   const handlePageChange = (page) => {
     setPage(page);
   };
-  const Place02img = [
-    { id: 0, src: require("../../images/list/p2_9.jpg") },
-    { id: 1, src: require("../../images/list/p2_3.jpg") },
-    { id: 2, src: require("../../images/list/p2_7.jpg") },
-    { id: 3, src: require("../../images/list/p2_6.jpg") },
-    { id: 4, src: require("../../images/list/p2_1.jpg") },
-    { id: 5, src: require("../../images/list/p2.jpg") },
-    { id: 6, src: require("../../images/list/p2_2.jpg") },
-    { id: 7, src: require("../../images/list/p2_5.jpg") },
-    { id: 8, src: require("../../images/list/p2_4.jpg") },
-  ];
 
   function getData() {
     ref.onSnapshot((querySnapshot) => {
@@ -233,34 +212,34 @@ function Place02() {
         <ContentsWrap>
           {loader === false &&
             place02Data
-            .slice(items * (page - 1), items * (page - 1) + items)
-            .map((v, i) => {
-              return (
-                <div key={i}>
-                  <DataContainer
-                    onClick={() => {
-                      navigate(`/listdetail02/${i+ (page-1)*3}`);
-                    }}
-                  >
-                    <ListPageRow>
-                      <Col1>
-                        <MainIMG src={v.url} />
-                      </Col1>
-                      <Col2>
-                        <RestName>{v.name}</RestName>
-                        <MapPinIMG src={mappin} />
-                        <InfoText>{v.addr}</InfoText>
-                        <ClockIMG src={clock} />
-                        <InfoText>{v.time}</InfoText>
-                        <HeartIMG src={heartt} />
-                        <InfoText>대표 메뉴 - {v.bestmenuname}</InfoText>
-                      </Col2>
-                    </ListPageRow>
-                  </DataContainer>
-                  <Border />
-                </div>
-              );
-            })}
+              .slice(items * (page - 1), items * (page - 1) + items)
+              .map((v, i) => {
+                return (
+                  <div key={i}>
+                    <DataContainer
+                      onClick={() => {
+                        navigate(`/listdetail02/${i + (page - 1) * 3}`);
+                      }}
+                    >
+                      <ListPageRow>
+                        <Col1>
+                          <MainIMG src={v.url} />
+                        </Col1>
+                        <Col2>
+                          <RestName>{v.name}</RestName>
+                          <MapPinIMG src={mappin} />
+                          <InfoText>{v.addr}</InfoText>
+                          <ClockIMG src={clock} />
+                          <InfoText>{v.time}</InfoText>
+                          <HeartIMG src={heartt} />
+                          <InfoText>대표 메뉴 - {v.bestmenuname}</InfoText>
+                        </Col2>
+                      </ListPageRow>
+                    </DataContainer>
+                    <Border />
+                  </div>
+                );
+              })}
         </ContentsWrap>
         <Pagination
           activePage={page}
@@ -279,22 +258,11 @@ function Place03() {
   const [items, setItems] = useState(3);
   const [page, setPage] = useState(1);
   const [loader, setLoader] = useState(true);
-  const { id } = useParams();
+
   const ref = db.collection("place03");
   const handlePageChange = (page) => {
     setPage(page);
   };
-  const Place03img = [
-    { id: 0, src: require("../../images/list/p3_8.jpg") },
-    { id: 1, src: require("../../images/list/p3_4.jpg") },
-    { id: 2, src: require("../../images/list/p3_3.jpg") },
-    { id: 3, src: require("../../images/list/p3_1.jpg") },
-    { id: 4, src: require("../../images/list/p3_2.jpg") },
-    { id: 5, src: require("../../images/list/p3_7.jpg") },
-    { id: 6, src: require("../../images/list/p3_9.jpg") },
-    { id: 7, src: require("../../images/list/p3_6.jpg") },
-    { id: 8, src: require("../../images/list/p3_5.jpg") },
-  ];
 
   function getData() {
     ref.onSnapshot((querySnapshot) => {
@@ -319,34 +287,34 @@ function Place03() {
         <ContentsWrap>
           {loader === false &&
             place03Data
-            .slice(items * (page - 1), items * (page - 1) + items)
-            .map((v, i) => {
-              return (
-                <div key={i}>
-                  <DataContainer
-                    onClick={() => {
-                      navigate(`/listdetail03/${i+ (page-1)*3}`);
-                    }}
-                  >
-                    <ListPageRow>
-                      <Col1>
-                        <MainIMG src={v.url} />
-                      </Col1>
-                      <Col2>
-                        <RestName>{v.name}</RestName>
-                        <MapPinIMG src={mappin} />
-                        <InfoText>{v.addr}</InfoText>
-                        <ClockIMG src={clock} />
-                        <InfoText>{v.time}</InfoText>
-                        <HeartIMG src={heartt} />
-                        <InfoText>대표 메뉴 - {v.bestmenuname}</InfoText>
-                      </Col2>
-                    </ListPageRow>
-                  </DataContainer>
-                  <Border />
-                </div>
-              );
-            })}
+              .slice(items * (page - 1), items * (page - 1) + items)
+              .map((v, i) => {
+                return (
+                  <div key={i}>
+                    <DataContainer
+                      onClick={() => {
+                        navigate(`/listdetail03/${i + (page - 1) * 3}`);
+                      }}
+                    >
+                      <ListPageRow>
+                        <Col1>
+                          <MainIMG src={v.url} />
+                        </Col1>
+                        <Col2>
+                          <RestName>{v.name}</RestName>
+                          <MapPinIMG src={mappin} />
+                          <InfoText>{v.addr}</InfoText>
+                          <ClockIMG src={clock} />
+                          <InfoText>{v.time}</InfoText>
+                          <HeartIMG src={heartt} />
+                          <InfoText>대표 메뉴 - {v.bestmenuname}</InfoText>
+                        </Col2>
+                      </ListPageRow>
+                    </DataContainer>
+                    <Border />
+                  </div>
+                );
+              })}
         </ContentsWrap>
         <Pagination
           activePage={page}
