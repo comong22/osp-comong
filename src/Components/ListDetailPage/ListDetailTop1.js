@@ -80,7 +80,7 @@ function ListDetailTop(props) {
           {loader === false &&
             data.slice(arr[id] - 1, arr[id]).map((rest1) => (
               <div className="eachDetailImg">
-                <img src={rest1.url} />
+                <img src={rest1.url} style={{transform: 'translate(50, 50)' ,width: '100%',height: '100%', objectFit: 'cover',width: '470px',height: '560px'}}/>
               </div>
             ))}
 
