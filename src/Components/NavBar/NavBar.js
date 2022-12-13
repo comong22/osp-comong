@@ -1,4 +1,6 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
+import firebase from "firebase";
+import "firebase/auth";
 
 import {
   LogoImg,
@@ -22,6 +24,7 @@ function NavBar() {
   const openModalHandler = (active) => {
     setIsOpen(active);
   };
+
   return (
     <>
       <Nav>
