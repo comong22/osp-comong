@@ -18,8 +18,7 @@ const Review1 = (doc) => {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
   const { id } = useParams(); // 유저가 URL 파라미터에 입력한 거 가져올 때 사용하는 훅
-  const ref2 = db.collection("place01"); // "컬렉션명"
-  const ref = db.collectionGroup("review");// "컬렉션명"
+  const ref = db.collectionGroup("review")// "컬렉션명"
   const [items, setItems] = useState(3);
   const [page, setPage] = useState(1);
   const handlePageChange = (page) => {
@@ -28,6 +27,10 @@ const Review1 = (doc) => {
   var count = 0;
   for (let i = 0; i < data.length; i++) {
     count = i + 1;
+  }
+  var arr = [0];
+  for (let i = 0; i < data.length; i++) {
+    arr[i] = i + 1;
   }
 
    //review
@@ -48,38 +51,12 @@ const Review1 = (doc) => {
     console.log(data);
   }, []);
 
-  //doc
-  const [data2, setData2] = useState([]);
-  
-  var arr = [0];
-  for (let i = 0; i < data.length; i++) {
-    arr[i] = i + 1;
-  }
-
-  function getData2() {
-    ref2.onSnapshot((querySnapshot) => {
-      const items = [];
-      querySnapshot.forEach((doc) => {
-        items.push(doc.data());
-      });
-      setData2(items);
-      setLoader(false);
-    });
-  }
-
-  useEffect(() => {
-    getData2();
-    console.log(data2);
-  }, []);
-  
-
   //이미지
 
   return (
     <div>
       <Container1>
-        {loader === false && data2.slice(arr[id] - 1, arr[id]) &&
-          data.slice(items * (page - 1), items * (page - 1) + items).map((rest) => (
+        {loader === false && data.slice(items * (page - 1), items * (page - 1) + items && data.slice(arr[id] - 1, arr[id])).map((rest) => (
               <div key={rest.id}>
                 <ReviewCol>
                   <RvRow1>
