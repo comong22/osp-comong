@@ -18,7 +18,7 @@ const Review1 = (doc) => {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
   const { id } = useParams(); // 유저가 URL 파라미터에 입력한 거 가져올 때 사용하는 훅
-  const ref = db.collectionGroup("review")// "컬렉션명"
+  const ref = db.collectionGroup("review");// "컬렉션명"
   const [items, setItems] = useState(3);
   const [page, setPage] = useState(1);
   const handlePageChange = (page) => {
@@ -51,12 +51,13 @@ const Review1 = (doc) => {
     console.log(data);
   }, []);
 
+
   //이미지
 
   return (
     <div>
       <Container1>
-        {loader === false && data.slice(items * (page - 1), items * (page - 1) + items && data.slice(arr[id] - 1, arr[id])).map((rest) => (
+        {loader === false && data.slice(arr[id] - 1, arr[id]).map((rest) => (
               <div key={rest.id}>
                 <ReviewCol>
                   <RvRow1>

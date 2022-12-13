@@ -57,7 +57,7 @@ const Review2 = (doc) => {
   return (
     <div>
       <Container1>
-        {loader === false && data.slice(arr[id] - 1, arr[id]) && data.slice(items * (page - 1), items * (page - 1) + items).map((rest) => (
+        {loader === false && data.slice(arr[id] - 1, arr[id]).map((rest) => (
               <div key={rest.id}>
                 <ReviewCol>
                   <RvRow1>
@@ -83,7 +83,7 @@ const Review2 = (doc) => {
         <Pagination
           activePage={page}
           itemsCountPerPage={3}
-          totalItemsCount={count}
+          totalItemsCount={arr}
           pageRangeDisplayed={4}
           prevPageText="‹"
           nextPageText="›"
