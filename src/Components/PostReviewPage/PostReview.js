@@ -307,7 +307,7 @@ const PostReview = (props, doc) => {
                         .child(file.name)
                         .getDownloadURL()
                         .then((url) => {
-                            bucket.doc(text2).collection("review").add({url, text1, text2, text3, content, star, place})
+                            bucket.doc(text2).collection(Rvselect).add({url, text1, text2, text3, content, star, place})
                             .then((docRef) => {
                               console.log(docRef.id);
                             });
@@ -322,10 +322,20 @@ const PostReview = (props, doc) => {
   const [showOptions, setShowOptions] = useState(false);
   const [place, setPlace] = useState(0); 
   let DBselect;
+  let Rvselect;
 
-  if (place == 0) DBselect = "place01"; // 이대 정문 DB
-  else if (place == 1) DBselect = "place02"; // 이대 후문 DB
-  else if (place == 2) DBselect = "place03"; // 신촌 DB
+  if (place == 0){
+    DBselect = "place01"; 
+    Rvselect = "review01";
+  } // 이대 정문 DB
+  else if (place == 1){
+    DBselect = "place02"; 
+    Rvselect = "review02";
+  }// 이대 후문 DB
+  else if (place == 2){
+    DBselect = "place03";
+    Rvselect = "review03";
+  }  // 신촌 DB
 
   const bucket = db.collection(DBselect); // 어느 DB에 저장할지 선택
 //-------------------------------------------

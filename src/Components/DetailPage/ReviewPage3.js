@@ -18,7 +18,7 @@ const Review3 = (doc) => {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
   const { id } = useParams(); // 유저가 URL 파라미터에 입력한 거 가져올 때 사용하는 훅
-  const ref = db.collectionGroup("review");// "컬렉션명"
+  const ref = db.collectionGroup("review03");// "컬렉션명"
   const [items, setItems] = useState(3);
   const [page, setPage] = useState(1);
   const handlePageChange = (page) => {
