@@ -15,6 +15,7 @@ import { GlobalFonts } from "./fonts/font";
 
 function App() {
   let [MainData, setMainData] = useState(main_data); // data.js에 있는 데이터
+
   return (
     <>
       <GlobalFonts />

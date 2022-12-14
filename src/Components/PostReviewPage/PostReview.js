@@ -307,7 +307,7 @@ const PostReview = (props, doc) => {
                         .child(file.name)
                         .getDownloadURL()
                         .then((url) => {
-                            bucket.doc(text2).collection(Rvselect).add({url, text1, text2, text3, content, star, place})
+                            bucket.doc(text2).collection(text2).add({url, text1, text2, text3, content, star, place})
                             .then((docRef) => {
                               console.log(docRef.id);
                             });

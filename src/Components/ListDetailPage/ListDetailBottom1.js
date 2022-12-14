@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { db } from "../../firebase";
 import { useParams } from "react-router-dom";
 import "./ListDetailPage.css";
-import Review1 from "../DetailPage/ReviewPage1";
+import Review1 from "../ListDetailPage/ReviewPage1";
 import {
   BestmenuTab,
   BottomBox,

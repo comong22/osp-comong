@@ -6,7 +6,7 @@ import { db } from "../../firebase";
 import { useParams } from "react-router-dom";
 
 import "./ListDetailPage.css";
-import Review3 from "../DetailPage/ReviewPage3";
+import Review3 from "../ListDetailPage/ReviewPage3";
 import {
   BestmenuTab,
   BottomBox,
