@@ -24,21 +24,11 @@ import {
 import x from "../../images/xBtn.svg";
 
 import { GlobalFonts } from "../../fonts/font";
-import { auth } from "../../firebase";
+import { auth, db } from "../../firebase";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import firebase from "firebase";
-// 리덕스
-import { useSelector, useDispatch } from "react-redux";
-import { addUser } from "./store";
+
 
 const LoginModal = ({ openModalHandler }) => {
-  // redux state
-  let state = useSelector((state) => {
-    return state;
-  });
-  let dispatch = useDispatch();
-
   const [tab, setTab] = useState(1); // 0 : login , 1 : signup
 
   const [nickname, setNickname] = useState("");
@@ -52,14 +42,34 @@ const LoginModal = ({ openModalHandler }) => {
     setUser(currentUser);
   });
 
+  // user db 만들기 
+  const createUserDocument = async (user, additionalData) => {
+    if(!user) return;
+
+    const userRef = db.doc(`users/${user.uid}`);
+    const snapshot = await userRef.get();
+
+    if(!snapshot.exists){
+      const {email} = user;
+      const {nickname} = additionalData;
+      try{
+        userRef.set({
+          nickname,
+          email,
+          createAt: new Date()
+        })
+      }catch(error){
+        console.log('Error in creating user', error); 
+      }
+    }
+  }
+
   // 회원가입
   const signUP = async () => {
     try {
-      auth().createUserWithEmailAndPassword(email, password);
-      // await firebase.database().ref("users").child(user).set({
-      //   nickname: nickname,
-      //   email: email,
-      // });
+      const {user} = await auth().createUserWithEmailAndPassword(email, password);
+      console.log(user);
+      await createUserDocument(user, {nickname});
     } catch (error) {
       console.log(error.message);
     }
@@ -70,15 +80,6 @@ const LoginModal = ({ openModalHandler }) => {
     try {
       const user = await auth().signInWithEmailAndPassword(email, password);
       // console.log(user);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-
-  // 로그아웃
-  const logout = async () => {
-    try {
-      auth().signOut();
     } catch (error) {
       console.log(error.message);
     }
@@ -123,8 +124,8 @@ const LoginModal = ({ openModalHandler }) => {
               </SignupText>
             </TextWrap>
             {/* 아래 두 줄 임시 */}
-            <div>로그인 확인 : {user?.email}</div>
-            <SignupText onClick={logout}>로그아웃</SignupText>
+            {/* <div>로그인 확인 : {user?.email}</div>
+            <SignupText onClick={logout}>로그아웃</SignupText> */}
           </>
         ) : (
           <div>

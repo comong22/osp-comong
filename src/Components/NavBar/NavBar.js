@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import firebase from "firebase";
-import "firebase/auth";
-
+import { auth, db } from "../../firebase";
 import {
   LogoImg,
   Nav,
@@ -10,12 +8,13 @@ import {
   NavLogin,
   NavLogo,
   NavUpload,
-  BlackOut
+  BlackOut,
+  UserMSG,
+  Logout,
 } from "./NavBarElement";
 import logo from "../../images/logo.png";
 import user from "../../images/user.svg";
 import LoginModal from "./LoginModal";
-import { GlobalFonts } from "../../fonts/font";
 
 function NavBar() {
   // 모달
@@ -23,6 +22,15 @@ function NavBar() {
 
   const openModalHandler = (active) => {
     setIsOpen(active);
+  };
+
+  // 로그아웃
+  const logout = async () => {
+    try {
+      auth().signOut();
+    } catch (error) {
+      console.log(error.message);
+    }
   };
 
   return (
@@ -34,6 +42,13 @@ function NavBar() {
           </NavLogo>
           <NavUpload to="/upload"># 맛집 등록</NavUpload>
           <NavList to="/list"># 맛집 리스트</NavList>
+          {
+            // 여기에 로그인된 상태면 보이게 하고 로그인 된 상태 아니면 안 보이게!
+            <>
+              <UserMSG>김코몽 님</UserMSG>
+              <Logout onClick={logout}>로그아웃</Logout>
+            </>
+          }
           <NavLogin
             onClick={() => {
               openModalHandler(true);
@@ -49,9 +64,7 @@ function NavBar() {
   );
 }
 export const BodyBlackoutStyle = ({ openModalHandler }) => {
-  return (
-    <BlackOut onClick={() => openModalHandler(false)}/>
-  );
+  return <BlackOut onClick={() => openModalHandler(false)} />;
 };
 
 export default NavBar;

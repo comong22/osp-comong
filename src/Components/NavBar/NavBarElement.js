@@ -44,7 +44,7 @@ export const NavUpload = styled(LinkRouter)`
   font-style: normal;
   font-family: "Spoqa Han Sans Neo Bold";
   &:hover {
-    color: #FF9D66;
+    color: #ff9d66;
   }
 `;
 
@@ -58,7 +58,35 @@ export const NavList = styled(LinkRouter)`
   font-style: normal;
   font-family: "Spoqa Han Sans Neo Bold";
   &:hover {
-    color: #FF9D66;
+    color: #ff9d66;
+  }
+`;
+
+export const UserMSG = styled.div`
+  display: flex;
+  max-width: 130px;
+  align-items: center;
+  margin: 0 7px 0 55%;
+  color: #727272;
+  font-size: 14px;
+  font-style: normal;
+  font-family: "Spoqa Han Sans Neo Bold";
+`;
+
+export const Logout = styled.div`
+  display: flex;
+  max-width: 130px;
+  align-items: center;
+  margin-right: 30px;  
+  font-family: "Spoqa Han Sans Neo Bold";
+  font-size: 14px;
+  float: left;
+  text-decoration-line: underline;
+  color: #ffa574;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    color: #ffba94;
+    border: none;
   }
 `;
 
@@ -66,16 +94,17 @@ export const NavLogin = styled.div`
   display: flex;
   max-width: 50px;
   align-items: center;
-  margin-left: 60%;
 `;
 
 export const BlackOut = styled.div`
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1010;
-    background-color: rgba(0, 0, 0, 0.446);
-`
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1010;
+  background-color: rgba(0, 0, 0, 0.446);
+`;
+
+
