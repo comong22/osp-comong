@@ -1,9 +1,6 @@
 # [2022-2] 이화여자대학교 오픈 SW 플랫폼 13조 커몽
 이대 맛집 궁금하다면? 커몽으로 COME ON! 
 
-
-[![Notion Badge](https://img.shields.io/badge/-Notion-92a8d1?logo=notion&logoColor=white&link=https://yeonnsu.notion.site/KBSC-3c256032d1b340c89fcd9081ba2388a4)](https://osp22.notion.site/b250e72c8dd747c99fa19ac56573e341)
-
 ## 👩🏻‍💻 팀원 소개 
 <table cellspacing="0" cellpadding="0" width="100%">
   <tr width="100%">
@@ -92,3 +89,10 @@
 <div align="center">
 <img width="629" alt="comong design" src="https://user-images.githubusercontent.com/94354545/200033842-fb555364-829b-4e39-81dc-8fcef0e1171c.png">
 </div>
+
+
+## 📝 Tech Blog
+
+[![Notion Badge](https://img.shields.io/badge/-Notion-92a8d1?logo=notion&logoColor=white&link=https://haewonny.notion.site/COMONG-Blog-b35da2cbafa24d658550bc8fc9e4372b
+)](https://haewonny.notion.site/COMONG-Blog-b35da2cbafa24d658550bc8fc9e4372b
+)
