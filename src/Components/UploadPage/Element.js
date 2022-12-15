@@ -26,10 +26,10 @@ export const SelectBox = styled.div`
   float: left;
   left: 0px;
   width: 115px;
-  height: 35px;
-  padding: 5px;
+  height: 30px;
+  padding: 2.7px;
   margin-left: 15px;
-
+  align-self: center;
   border-radius: 6px;
 
   box-sizing: border-box;
@@ -41,7 +41,7 @@ export const SelectBox = styled.div`
   &::before {
     content: "⌵";
     position: absolute;
-    top: 1px;
+    top: -1px;
     right: 8px;
     color: #ffa574;
     font-size: 20px;

@@ -4,7 +4,6 @@ import React, { useEffect, useState, useRef } from "react";
 import { db } from "../../firebase";
 import { storage } from "../../firebase";
 import { BsPlusSquare } from "react-icons/bs";
-import firebaseApp from "../../firebase";
 import { FaTimes } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import {
@@ -190,6 +189,7 @@ function UploadPage() {
           .then((url2) => {
             bucket2.doc(name+bestmenuname)
               .set({
+
                 url2,
                 name,
                 bestmenuname,
@@ -510,7 +510,7 @@ function UploadPage() {
               color: "rgb(125, 125, 125)",
               fontWeight: "bold",
               fontFamily: "Spoqa Han Sans Neo",
-              marginTop: "10px",
+              marginTop: "6px",
               marginLeft: "94px",
             }}
           >
