@@ -140,7 +140,8 @@ function UploadPage() {
   const formHandler = (e) => {
     e.preventDefault();
     const file = e.target[0].files[0];
-    uploadeFiles(file);
+    const file2 = e.target[0].files[1];
+    uploadeFiles(file, file2);
   };
 
   const uploadeFiles = (file, file2) => {
@@ -189,7 +190,6 @@ function UploadPage() {
           .then((url2) => {
             bucket2.doc(name+bestmenuname)
               .set({
-
                 url2,
                 name,
                 bestmenuname,
