@@ -206,7 +206,7 @@ const Option = styled.li`
 
 const ARRAY = [0, 1, 2, 3, 4];
 
-const PostReview = (props, doc) => {
+const PostReview = (props) => {
   const [text1,setText1] = useState('');
   const [text2,setText2] = useState('');
   const [text3,setText3] = useState('');
@@ -215,10 +215,6 @@ const PostReview = (props, doc) => {
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
   
-  const ref0 = db.collection("place01");
-  const ref1 = db.collection("place02");
-  const ref2 = db.collection("place03");
-
   //모달창
   const [isOpen, setIsOpen] = useState(false);
 
@@ -271,7 +267,7 @@ const PostReview = (props, doc) => {
 
   //별점 서버로 보내기
   const sendReview = () => {
-    let score = [star];
+    let score = star;
     score = clicked.filter(Boolean).length;
     setStar(score);
   };
@@ -307,7 +303,7 @@ const PostReview = (props, doc) => {
                         .child(file.name)
                         .getDownloadURL()
                         .then((url) => {
-                            bucket.doc(text2).collection(text2).add({url, text1, text2, text3, content, star, place})
+                            bucket.doc(text2).collection(Rvselect).add({url, text1, text2, text3, content, star, place})
                             .then((docRef) => {
                               console.log(docRef.id);
                             });
@@ -344,18 +340,22 @@ const PostReview = (props, doc) => {
 var require1 = document.getElementById('text1');
 var require2 = document.getElementById('text2');
 var require3 = document.getElementById('text3');
+var require4 = document.getElementById('filesize');
 
 var change1 = document.getElementById('Ttext1');
 var change2 = document.getElementById('Ttext2');
 var change3 = document.getElementById('Ttext3');
 var change4 = document.getElementById('Ttext4');
+var change5 = document.getElementById('File');
 
   const onClickBtn = () => {
-    if(require1.value !== '' && require2.value !== '' && star !== 0){
+    if(require1.value !== '' && require2.value !== '' && require3.value !== '' && star !== 0 && require4.value !== null){
     setIsOpen(true);
     change1.style.color = 'rgb(125, 125, 125)';
     change2.style.color = 'rgb(125, 125, 125)';
     change3.style.color = 'rgb(125, 125, 125)';
+    change4.style.color = 'rgb(125, 125, 125)';
+    change5.style.color = 'rgb(125, 125, 125)';
     }
     if(require1.value === ''){
         change1.style.color = '#ffa574';
@@ -367,8 +367,11 @@ var change4 = document.getElementById('Ttext4');
         change3.style.color = '#ffa574';
       }
     if(star === 0){
-      change4.style.color = '#ffa574';
+        change4.style.color = '#ffa574';
       }
+    if(require4 === null){
+        change5.style.color = '#ffa574';
+      }    
   };
 
   const onClickButton = () => {
@@ -385,7 +388,7 @@ var change4 = document.getElementById('Ttext4');
          <div className="Box">
          {preview ? (<img src={preview} onClick={() => {setImageUrl(null);}}/>
           ) : (
-            <BsPlusSquare size={40} onClick = {(event) => {event.preventDefault(); ImgInput.current.click();}} className="File"/>
+            <BsPlusSquare size={40} onClick = {(event) => {event.preventDefault(); ImgInput.current.click();}} className="File" id="File"/>
           )}
           <input ref={ImgInput} type='file' accept="image/*" className="Box" id="fileSize"
           onChange={(event)=> { const file = ImgInput.current.files[0];  
@@ -406,7 +409,7 @@ var change4 = document.getElementById('Ttext4');
             <input className="Write3" type="text" placeholder="정확한 식당명을 입력해주세요!" id="text2" value={text2} onChange={(e) => {setText2(e.target.value);}} />
           </div>
           <div className="line2">
-          <label className="TextI" id="Ttext1">식당 위치</label>
+          <label className="TextI" id="Ttext1">식당위치</label>
           <SelectBox onClick={() => setShowOptions((prev) => !prev)}>
             <Label2>{currentValue}</Label2>
             <SelectOptions show={showOptions}>

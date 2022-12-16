@@ -21,7 +21,7 @@ import {
     const [data, setData] = useState([]);
     const [loader, setLoader] = useState(true);
     const { id } = useParams(); // 유저가 URL 파라미터에 입력한 거 가져올 때 사용하는 훅
-    const ref = db.collectionGroup("노란집");// "컬렉션명" 일단 임의로
+    const ref = db.collectionGroup("review01");// "컬렉션명" 일단 임의로
     const [items, setItems] = useState(3);
     const [page, setPage] = useState(1);
     const handlePageChange = (page) => {
@@ -34,7 +34,7 @@ import {
     }
     var arr = [0];
     for (let i = 0; i < data.length; i++) {
-      arr[i] = i + 3;
+      arr[i] = i + 1;
     }
     
      //review
@@ -62,7 +62,7 @@ import {
       <div>
         <Container1>
           {loader === false && data.slice(items * (page - 1), items * (page - 1) + items).map((rest) => (
-                <div key={rest.id}>
+                <div key={rest.name}>
                   <ReviewCol>
                     <RvRow1>
                       <div>
