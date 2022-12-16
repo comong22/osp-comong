@@ -6,7 +6,7 @@ export const ModalContainer = styled.div`
   background-color: white;
   width: 40vw;
   max-width: 600px;
-  height: 50vh;
+  height: 60vh;
   filter: drop-shadow(0px 7px 22px rgba(20, 20, 43, 0.1));
   border-radius: 35px;
   align-content: start;

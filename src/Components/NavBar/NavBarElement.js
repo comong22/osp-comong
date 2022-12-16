@@ -66,7 +66,7 @@ export const UserMSG = styled.div`
   display: flex;
   max-width: 130px;
   align-items: center;
-  margin: 0 7px 0 55%;
+  margin: 0 7px 0 50%;
   color: #727272;
   font-size: 14px;
   font-style: normal;
