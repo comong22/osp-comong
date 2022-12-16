@@ -87,7 +87,7 @@ export const BtnWrap = styled.div`
   height: 40px;
   display: flex;
 
-  margin-top: 5%;
+  margin-top: 6%;
   align-items: center;
   justify-content: center;
 `;
@@ -240,4 +240,12 @@ export const PWInputBox = styled.input`
   font-weight: 10px;
   text-align: center;
   margin: 2% 0 0 2%;
+`;
+
+export const PWcheck = styled.div`
+  font-family: "Spoqa Han Sans Neo Regular";
+  font-size: 13px;
+  margin: 5px 0px 0 43%;
+  float: left;
+  color: red;
 `;

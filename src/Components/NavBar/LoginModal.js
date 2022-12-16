@@ -20,6 +20,7 @@ import {
   PWInputBox,
   PWLabel1,
   PWLabel2,
+  PWcheck,
 } from "./ModalElement";
 import x from "../../images/xBtn.svg";
 
@@ -27,14 +28,13 @@ import { GlobalFonts } from "../../fonts/font";
 import { auth, db } from "../../firebase";
 import { useState } from "react";
 
-
 const LoginModal = ({ openModalHandler }) => {
   const [tab, setTab] = useState(1); // 0 : login , 1 : signup
 
   const [nickname, setNickname] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
+  const [password1, setPassword1] = useState("");
+  const [password2, setPassword2] = useState("");
   const [user, setUser] = useState({});
 
   auth().onAuthStateChanged((currentUser) => {
@@ -42,34 +42,37 @@ const LoginModal = ({ openModalHandler }) => {
     setUser(currentUser);
   });
 
-  // user db 만들기 
+  // user db 만들기
   const createUserDocument = async (user, additionalData) => {
-    if(!user) return;
+    if (!user) return;
 
     const userRef = db.doc(`users/${user.uid}`);
     const snapshot = await userRef.get();
 
-    if(!snapshot.exists){
-      const {email} = user;
-      const {nickname} = additionalData;
-      try{
+    if (!snapshot.exists) {
+      const { email } = user;
+      const { nickname } = additionalData;
+      try {
         userRef.set({
           nickname,
           email,
-          createAt: new Date()
-        })
-      }catch(error){
-        console.log('Error in creating user', error); 
+          createAt: new Date(),
+        });
+      } catch (error) {
+        console.log("Error in creating user", error);
       }
     }
-  }
+  };
 
   // 회원가입
   const signUP = async () => {
     try {
-      const {user} = await auth().createUserWithEmailAndPassword(email, password);
+      const { user } = await auth().createUserWithEmailAndPassword(
+        email,
+        password1
+      );
       console.log(user);
-      await createUserDocument(user, {nickname});
+      await createUserDocument(user, { nickname });
     } catch (error) {
       console.log(error.message);
     }
@@ -78,12 +81,18 @@ const LoginModal = ({ openModalHandler }) => {
   // 로그인
   const login = async () => {
     try {
-      const user = await auth().signInWithEmailAndPassword(email, password);
+      const user = await auth().signInWithEmailAndPassword(email, password1);
       // console.log(user);
     } catch (error) {
       console.log(error.message);
     }
   };
+
+  // 비밀번호 확인
+  function passwordCheck() {
+    if (password1 != password2 && password1.length > 1 && password2.length > 1)
+      return true;
+  }
 
   return (
     <>
@@ -106,7 +115,7 @@ const LoginModal = ({ openModalHandler }) => {
               placeholder="comong1234"
               name="password"
               type="password"
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => setPassword1(e.target.value)}
             />
             <BtnWrap>
               <Button1 type="button" onClick={login}>
@@ -123,9 +132,6 @@ const LoginModal = ({ openModalHandler }) => {
                 회원가입
               </SignupText>
             </TextWrap>
-            {/* 아래 두 줄 임시 */}
-            {/* <div>로그인 확인 : {user?.email}</div>
-            <SignupText onClick={logout}>로그아웃</SignupText> */}
           </>
         ) : (
           <div>
@@ -156,14 +162,28 @@ const LoginModal = ({ openModalHandler }) => {
                 placeholder="비밀번호 입력하기"
                 name="password"
                 type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={password1}
+                onChange={(e) => setPassword1(e.target.value)}
               />
             </SignUpWrap>
             <SignUpWrap>
               <PWLabel2>비밀번호 확인</PWLabel2>
-              <PWInputBox placeholder="비밀번호 확인" name="password" />
+              <PWInputBox
+                placeholder="비밀번호 입력하기"
+                name="password"
+                type="password"
+                value={password2}
+                onChange={(e) => {
+                  setPassword2(e.target.value);
+                  passwordCheck();
+                }}
+              />
             </SignUpWrap>
+            {passwordCheck() ? (
+              <PWcheck>비밀번호가 일치하지 않습니다.</PWcheck>
+            ) : (
+              <></>
+            )}
             <BtnWrap>
               <Button1 onClick={signUP}>회원가입</Button1>
             </BtnWrap>
