@@ -146,7 +146,7 @@ export const SignupText = styled.div`
 export const SignUp = styled.div`
   display: grid;
   text-align: center;
-  margin: 4% 0 5px 0;
+  margin: 4% 0 4% 0;
   font-family: "Spoqa Han Sans Neo";
   font-style: normal;
   font-weight: 700;
