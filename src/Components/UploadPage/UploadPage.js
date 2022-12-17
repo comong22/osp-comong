@@ -7,7 +7,6 @@ import { BsPlusSquare } from "react-icons/bs";
 import { FaTimes } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import {
-  UploadImg,
   Button,
   SelectBox,
   SelectOptions,
@@ -122,21 +121,7 @@ function UploadPage() {
     );
   }
 
-  // console에 DB에서 불러온 데이터 출력
-  useEffect(() => {
-    const bucket = db.collection("restaurant");
-    bucket
-      .doc("TlukAhFbDxaQoMth0ZMe")
-      .get()
-      .then((doc) => {
-        if (doc.exists) {
-          console.log(doc.data());
-        }
-      });
-  });
-
   // 이미지 업로드 관련  ------------------------------------
-  const [progress, setProgress] = useState(0);
   const formHandler = (e) => {
     e.preventDefault();
     const file = e.target[0].files[0];
@@ -146,7 +131,7 @@ function UploadPage() {
 
   const uploadeFiles = (file, file2) => {
     const uploadTask1 = storage.ref(`files/${file.name}`).put(file);
-    const uploadTask2 = storage.ref(`files/${file.name}`).put(file2);
+    const uploadTask2 = storage.ref(`files/${file2.name}`).put(file2);
 
     uploadTask1.on(
       "state_changed",
@@ -158,7 +143,8 @@ function UploadPage() {
           .child(file.name)
           .getDownloadURL()
           .then((url) => {
-            bucket.doc(name)
+            bucket
+              .doc(name)
               .set({
                 url,
                 name,
@@ -188,7 +174,8 @@ function UploadPage() {
           .child(file2.name)
           .getDownloadURL()
           .then((url2) => {
-            bucket2.doc(name+bestmenuname)
+            bucket2
+              .doc(name + bestmenuname)
               .set({
                 url2,
                 name,
@@ -415,7 +402,15 @@ function UploadPage() {
         <div className="Box">
           <form onSubmit={formHandler}>
             {preview ? (
-              <img style={{transform: 'translate(50, 50)' ,width: '100%', height: '100%', objectFit: 'cover',width: '450px',height: '450px'}}
+              <img
+                style={{
+                  transform: "translate(50, 50)",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  width: "450px",
+                  height: "450px",
+                }}
                 src={preview}
                 onClick={() => {
                   setImageUrl(null);
@@ -657,7 +652,15 @@ function UploadPage() {
             <div className="bottomBox">
               <form onSubmit={formHandler}>
                 {preview2 ? (
-                  <img style={{transform: 'translate(50, 50)' ,width: '100%',height: '100%', objectFit: 'cover',width: '150px',height: '150px'}}
+                  <img
+                    style={{
+                      transform: "translate(50, 50)",
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      width: "150px",
+                      height: "150px",
+                    }}
                     src={preview2}
                     onClick={() => {
                       setImageUrl2(null);
