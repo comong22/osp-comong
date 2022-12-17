@@ -48,12 +48,14 @@ export const NavUpload = styled(LinkRouter)`
   }
 `;
 
+
 export const NavList = styled(LinkRouter)`
   display: flex;
   width: 10%;
   max-width: 130px;
   align-items: center;
   color: #ffba94;
+  margin: ${({ isLoggedIn }) => (isLoggedIn === true ? "0" : "0 60% 0 0")};
   font-size: 21px;
   font-style: normal;
   font-family: "Spoqa Han Sans Neo Bold";

@@ -35,13 +35,7 @@ const LoginModal = ({ openModalHandler }) => {
   const [email, setEmail] = useState("");
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
-  const [user, setUser] = useState({});
-
-  auth().onAuthStateChanged((currentUser) => {
-    // dispatch(addUser(currentUser));
-    setUser(currentUser);
-  });
-
+  
   // user db 만들기
   const createUserDocument = async (user, additionalData) => {
     if (!user) return;

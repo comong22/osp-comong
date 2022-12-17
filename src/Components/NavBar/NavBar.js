@@ -13,7 +13,7 @@ import {
   Logout,
 } from "./NavBarElement";
 import logo from "../../images/logo.png";
-import user from "../../images/user.svg";
+import userimg from "../../images/user.svg";
 import LoginModal from "./LoginModal";
 
 function NavBar() {
@@ -33,6 +33,35 @@ function NavBar() {
     }
   };
 
+  // login한 경우 체크
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState({});
+  const [user, setUser] = useState({});
+  function getData() {
+    const bucket = db.collection("users");
+    bucket
+      .doc(user.uid)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          console.log(doc.data().nickname);
+          setUsername(doc.data().nickname);
+        }
+      });
+  }
+
+  useEffect(() => {
+    auth().onAuthStateChanged((currentUser) => {
+      if (currentUser) {
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
+      setUser(currentUser);
+    });
+    getData();
+  }, [isLoggedIn]);
+
   return (
     <>
       <Nav>
@@ -41,20 +70,23 @@ function NavBar() {
             <LogoImg src={logo} alt="logo" />
           </NavLogo>
           <NavUpload to="/upload"># 맛집 등록</NavUpload>
-          <NavList to="/list"># 맛집 리스트</NavList>
-          {
-            // 여기에 로그인된 상태면 보이게 하고 로그인 된 상태 아니면 안 보이게!
+          <NavList to="/list" isLoggedIn={isLoggedIn}>
+            # 맛집 리스트
+          </NavList>
+          {isLoggedIn ? (
             <>
-              <UserMSG>김코몽 님</UserMSG>
+              <UserMSG>{username + "님"}</UserMSG>
               <Logout onClick={logout}>로그아웃</Logout>
             </>
-          }
+          ) : (
+            <></>
+          )}
           <NavLogin
             onClick={() => {
               openModalHandler(true);
             }}
           >
-            <img src={user} alt="login" />
+            <img src={userimg} alt="login" />
           </NavLogin>
         </NavBarContainer>
       </Nav>
