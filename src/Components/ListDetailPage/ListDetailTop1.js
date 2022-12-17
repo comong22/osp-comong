@@ -97,14 +97,8 @@ function ListDetailTop(props) {
                           <Category>| {rest1.cate}</Category>
                         </Row1>
                         <Row3>
-                          {/*
-                            <StarIMG src={star} alt="star" />
-                            <Star>{main_data[id].star}</Star>
-                            */}
                           <MapPinIMG src={mappin} alt="mappin" />
                           <Address>{rest1.addr}</Address>
-                          {/*
-                            <Detailaddress>{main_data[id].detail_address}</Detailaddress> */}
                           <PhoneIMG src={phone} alt="phone" />
                           <Tel>{rest1.tel}</Tel>
 
@@ -116,9 +110,6 @@ function ListDetailTop(props) {
                         <Row4>
                           <ClockIMG src={clock} alt="clock" />
                           <Clock>{rest1.time}</Clock>
-                          {/*
-                            <Addhours>{main_data[id].add_hours}</Addhours>
-                        */}
                           <ParkingIMG src={finfo} alt="finfo" />
                           <Parking>{rest1.park}</Parking>
                           <LinkIMG src={link} alt="link" />

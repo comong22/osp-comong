@@ -4,15 +4,10 @@ import React, { useEffect, useState, useRef } from "react";
 import { db } from "../../firebase";
 import { storage } from "../../firebase";
 import { BsPlusSquare } from "react-icons/bs";
-import { FaTimes } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import {
-  Button,
-  SelectBox,
-  SelectOptions,
-  Label2,
-  Option,
-} from "./Element";
+import x from "../../images/xBtn.svg";
+
+import { Button, SelectBox, SelectOptions, Label2, Option } from "./Element";
 
 // 모달창
 const OverLay = styled.div`
@@ -38,14 +33,11 @@ const ModalWrap = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-const CloseButton = styled.div`
-  float: right;
-  width: 30px;
-  height: 30px;
-  margin: 20px;
-  cursor: pointer;
+const XBtn = styled.img`
+  max-width: 25px;
+  display: grid;
+  margin: 20px 0 0 90%;
 `;
-
 const Contents = styled.div`
   margin: 60px;
 
@@ -85,10 +77,6 @@ function UploadPage() {
   const [isOpen, setIsOpen] = useState(false);
 
   function Modal({ onClose }) {
-    const handleClose = () => {
-      onClose?.();
-    };
-
     const handleSubmit = () => {
       onClose?.();
       onClickButton();
@@ -108,11 +96,14 @@ function UploadPage() {
     return (
       <OverLay>
         <ModalWrap>
-          <CloseButton onClick={handleClose}>
-            <FaTimes size={30} />
-          </CloseButton>
+          <XBtn
+            src={x}
+            onClick={() => {
+              setIsOpen(false);
+            }}
+          />
           <Contents>
-            <h1>맛집을 등록하시겠습니까?</h1>
+            <h2>맛집을 등록하시겠습니까?</h2>
             <h4>업로드 후에는 수정이 불가합니다.</h4>
             <MButton onClick={handleSubmit}>맛집 등록하기</MButton>
           </Contents>
@@ -641,7 +632,7 @@ function UploadPage() {
           <div>
             <hr className="hr1"></hr>
           </div>
-          <div className="title"> 대표메뉴 등록하기</div>
+          <div className="title1"> 대표메뉴 등록하기</div>
           <div>
             <hr className="hr2"></hr>
           </div>

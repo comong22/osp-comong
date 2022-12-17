@@ -15,7 +15,7 @@ export const PageContainer = styled.div`
 export const PageRow = styled.div`
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  margin: 2% 2% 0 2%;
+  margin: 1.5% 2% 0 2%;
   grid-template-areas: "col1 col2 col2 col2 col2 col2 col2 col2 col2";
 `;
 
@@ -38,6 +38,7 @@ export const ListRow = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-items: center;
+  margin-top: 5%;
   grid-template-areas: "row1 row1" "row2 row2" "row3 row3";
 `;
 
@@ -123,7 +124,7 @@ export const Container = styled.div`
 
 export const ContentsWrap = styled.div`
   display: grid;
-  margin: 2% 2% 0 2%;
+  margin: 0% 2% 0 2%;
 `;
 export const DataContainer = styled.div`
   display: grid;
@@ -145,11 +146,10 @@ export const Col2 = styled.div`
 `;
 
 export const ListName = styled.div`
-  margin: 2% 0 0 5%;
+  margin: 2% 0 1% 5%;
   font-family: "Spoqa Han Sans Neo Bold";
   font-style: normal;
-  font-size: 40px;
-  line-height: 170%;
+  font-size: 38px;
   color: #ffba94;
   font-weight: 700;
 `;
@@ -162,7 +162,7 @@ export const MainIMG = styled.img`
 `;
 
 export const RestName = styled.div`
-  margin: 2% 10px 3% 0;
+  margin: 3% 10px 2% 0;
   font-family: "Spoqa Han Sans Neo Bold";
   font-style: normal;
   font-weight: 700;
@@ -178,7 +178,7 @@ export const RestName = styled.div`
 export const MapPinIMG = styled.img`
   float: left;
   max-width: 22px;
-  margin: 0 10px 30px 0;
+  margin: 0 10px 20px 0;
 `;
 
 export const InfoText = styled.div`
@@ -186,18 +186,17 @@ export const InfoText = styled.div`
   float: left;
   font-family: "Spoqa Han Sans Neo Regular";
   margin-right: 20px;
+  margin-top: 3px;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 150%;
-  /* or 27px */
   color: #000000;
 `;
 
 export const ClockIMG = styled.img`
   float: left;
   max-width: 22px;
-  margin: 0 10px 30px 15px;
+  margin: 0 10px 20px 15px;
 `;
 
 export const HeartIMG = styled.img`
@@ -208,7 +207,8 @@ export const HeartIMG = styled.img`
 `;
 
 export const Border = styled.div`
-  max-width: 1000;
-  margin: 1% 0 1% 0;
+  max-width: 1200px;
+  text-align: center;
+  margin: 5px 0 5px 0;
   border-bottom: 1px solid #d9d9d9;
 `;

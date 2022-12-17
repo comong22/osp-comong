@@ -64,6 +64,13 @@
   display: grid;
   align-items: center;
 }
+.title1 {
+  font-weight: bold;
+  font-size: x-large;
+  color: #ffba94;
+  display: grid;
+  align-items: center;
+}
 .text {
   display: inline;
   color: rgb(125, 125, 125);
@@ -111,7 +118,7 @@ hr {
   background-color: #ffba94;
   border: none;
   white-space: nowrap;
-  margin-top: 20px;
+  margin-top: 27px;
 }
 .hr1 {
   float: right;

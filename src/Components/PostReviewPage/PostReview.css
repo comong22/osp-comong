@@ -106,6 +106,7 @@ textarea:focus {
   height: 250px;
   border: none;
   border-radius: 8px;
+  padding: 5px;
   resize: none;
   font-family: 'Spoqa Han Sans Neo';
   font-weight: 10px;

@@ -126,7 +126,7 @@ function Bestmenu(props) {
               <div className="navbestmenufont">
                 {rest3.bestmenuname}
                 <br />
-                {rest3.bestmenuprice}
+                {rest3.bestmenuprice + "원"}
               </div>
             </div>
           ))}

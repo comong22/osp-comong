@@ -201,8 +201,8 @@ export const InfoText = styled.div`
 
 export const Footer = styled.div`
   background: #fff7ef;
+  padding: 20px;
   width: 100vw;
-  height: 100px;
 `;
 
 export const FooterText = styled.div`
