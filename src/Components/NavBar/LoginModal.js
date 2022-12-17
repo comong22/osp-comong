@@ -69,6 +69,7 @@ const LoginModal = ({ openModalHandler }) => {
       await createUserDocument(user, { nickname });
     } catch (error) {
       console.log(error.message);
+      alert("이미 등록된 이메일입니다!")
     }
   };
 
