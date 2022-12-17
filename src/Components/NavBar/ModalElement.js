@@ -249,3 +249,48 @@ export const PWcheck = styled.div`
   float: left;
   color: red;
 `;
+
+export const ModalContent1 = styled.div`
+  display: grid;
+  text-align: center;
+  font-family: "Spoqa Han Sans Neo Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 130%;
+  /* or 42px */
+  margin: 35px 0 20px 0;
+  letter-spacing: 0.008em;
+
+  color: #333333;
+`;
+
+export const ModalContent2 = styled.div`
+  font-family: "Spoqa Han Sans Neo Bold";
+  font-size: 20px;
+  text-align: center;
+  float: left;
+  margin: 25px 0 0 0;
+  color: #ffa574;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    color: #ffba94;
+    border: none;
+  }
+`;
+
+export const Logout = styled.div`
+  max-width: 130px;
+  text-align: center;
+  float: left;
+  font-family: "Spoqa Han Sans Neo Bold";
+  font-size: 14px;
+  text-decoration-line: underline;
+  color: #727272;
+  margin: 60px 0 0 38%;
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    color: #000000;
+    border: none;
+  }
+`;

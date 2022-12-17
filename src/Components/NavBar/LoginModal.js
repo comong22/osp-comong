@@ -21,12 +21,16 @@ import {
   PWLabel1,
   PWLabel2,
   PWcheck,
+  ModalContent1,
+  ModalContent2,
+  Logout,
 } from "./ModalElement";
 import x from "../../images/xBtn.svg";
 
 import { GlobalFonts } from "../../fonts/font";
 import { auth, db } from "../../firebase";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginModal = ({ openModalHandler }) => {
   const [tab, setTab] = useState(1); // 0 : login , 1 : signup
@@ -35,7 +39,7 @@ const LoginModal = ({ openModalHandler }) => {
   const [email, setEmail] = useState("");
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
-  
+
   // user db 만들기
   const createUserDocument = async (user, additionalData) => {
     if (!user) return;
@@ -69,7 +73,7 @@ const LoginModal = ({ openModalHandler }) => {
       await createUserDocument(user, { nickname });
     } catch (error) {
       console.log(error.message);
-      alert("이미 등록된 이메일입니다!")
+      alert("이미 등록된 이메일입니다!");
     }
   };
 
@@ -77,7 +81,15 @@ const LoginModal = ({ openModalHandler }) => {
   const login = async () => {
     try {
       const user = await auth().signInWithEmailAndPassword(email, password1);
-      // console.log(user);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  // 로그아웃
+  const logout = async () => {
+    try {
+      auth().signOut();
     } catch (error) {
       console.log(error.message);
     }
@@ -89,12 +101,64 @@ const LoginModal = ({ openModalHandler }) => {
       return true;
   }
 
+  // login 했을 때 닉네임 가져오기
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState({});
+  const [user, setUser] = useState({});
+  function getData() {
+    const bucket = db.collection("users");
+    bucket
+      .doc(user.uid)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          setUsername(doc.data().nickname);
+        }
+      });
+  }
+  useEffect(() => {
+    auth().onAuthStateChanged((currentUser) => {
+      if (currentUser) {
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
+      setUser(currentUser);
+    });
+    getData();
+  }, [isLoggedIn]);
+
+  let navigate = useNavigate();
+
   return (
     <>
       <GlobalFonts />
       <ModalContainer>
         <XBtn src={x} onClick={() => openModalHandler(false)} />
-        {tab ? (
+        {isLoggedIn ? (
+          <>
+            <LoginContent1>이대 맛집은 커몽으로</LoginContent1>
+            <LoginContent2>COME-ON</LoginContent2>
+            <ModalContent1>{"안녕하세요 " + username + " 님!"}</ModalContent1>
+            <ModalContent2
+              onClick={() => {
+                navigate("/list");
+                openModalHandler(false);
+              }}
+            >
+              맛집 리스트 확인 {">"}
+            </ModalContent2>
+            <ModalContent2
+              onClick={() => {
+                navigate("/upload");
+                openModalHandler(false);
+              }}
+            >
+              맛집 등록하기 {">"}
+            </ModalContent2>
+            <Logout onClick={logout}>로그아웃</Logout>
+          </>
+        ) : tab ? (
           <>
             <LoginContent1>이대 맛집은 커몽으로</LoginContent1>
             <LoginContent2>COME-ON!</LoginContent2>

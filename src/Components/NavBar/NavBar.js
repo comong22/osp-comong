@@ -37,7 +37,7 @@ function NavBar() {
     }
   };
 
-  // login한 경우 체크
+  // login 했을 때 닉네임 가져오기
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState({});
   const [user, setUser] = useState({});
@@ -48,7 +48,6 @@ function NavBar() {
       .get()
       .then((doc) => {
         if (doc.exists) {
-          console.log(doc.data().nickname);
           setUsername(doc.data().nickname);
         }
       });
@@ -80,7 +79,7 @@ function NavBar() {
           </NavList>
           {isLoggedIn ? (
             <>
-              <UserMSG>{username + "님"}</UserMSG>
+              <UserMSG>{username + " 님"}</UserMSG>
               <Logout onClick={logout}>로그아웃</Logout>
             </>
           ) : (
