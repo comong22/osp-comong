@@ -24,6 +24,10 @@ function NavBar() {
     setIsOpen(active);
   };
 
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   // 로그아웃
   const logout = async () => {
     try {
@@ -54,6 +58,7 @@ function NavBar() {
     auth().onAuthStateChanged((currentUser) => {
       if (currentUser) {
         setIsLoggedIn(true);
+        closeModal();
       } else {
         setIsLoggedIn(false);
       }
