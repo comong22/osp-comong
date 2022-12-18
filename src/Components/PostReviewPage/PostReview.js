@@ -287,7 +287,7 @@ const PostReview = (props) => {
 
   //사진 업로드
   const uploadeFiles = (file) => {
-    const uploadTask = storage.ref(`files/${file.name}`).put(file);
+    const uploadTask = storage.ref(`reviews/${file.name}`).put(file);
     uploadTask.on(
       "state_changed",
       (snapshot) => {},
