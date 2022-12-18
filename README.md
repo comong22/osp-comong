@@ -92,14 +92,85 @@
 
 </table>
 
-## 🎨 Design
+## 🎨 디자인
 <div align="center">
 <img width="629" alt="comong design" src="https://user-images.githubusercontent.com/94354545/200033842-fb555364-829b-4e39-81dc-8fcef0e1171c.png">
 </div>
 
+## 📚 디렉토리 구조
+<details>
+<summary>펼쳐 보기</summary>
+<div markdown="1">
+      📦 src<br>
+      ┣ 📂 Components<br>
+      ┃ ┣ 📂 DetailPage <br>
+      ┃ ┃ ┣ 📄 DetailBottom.js<br>
+      ┃ ┃ ┣ 📄 DetailPage.css<br>
+      ┃ ┃ ┣ 📄 DetailStyle.js<br>
+      ┃ ┃ ┣ 📄 DetailTop.js<br>
+      ┃ ┃ ┣ 📄 Pages.js<br>
+      ┃ ┃ ┣ 📄 ReviewPage.css<br>
+      ┃ ┃ ┗ 📄 ReviewPage.js<br>
+      ┃ ┣ 📂 ListDetailPage<br>
+      ┃ ┃ ┣ 📄 ListDetailBottom1.js<br>
+      ┃ ┃ ┣ 📄 ListDetailBottom2.js<br>
+      ┃ ┃ ┣ 📄 ListDetailBottom3.js<br>
+      ┃ ┃ ┣ 📄 ListDetailPage.css<br>
+      ┃ ┃ ┣ 📄 ListDetailStyle.js<br>
+      ┃ ┃ ┣ 📄 ListDetailTop1.js<br>
+      ┃ ┃ ┣ 📄 ListDetailTop2.js<br>
+      ┃ ┃ ┣ 📄 ListDetailTop3.js<br>
+      ┃ ┃ ┣ 📄 Pages1.js<br>
+      ┃ ┃ ┣ 📄 Pages2.js<br>
+      ┃ ┃ ┣ 📄 Pages3.js<br>
+      ┃ ┃ ┣ 📄 ReviewPage.css<br>
+      ┃ ┃ ┣ 📄 ReviewPage1.js<br>
+      ┃ ┃ ┣ 📄 ReviewPage2.js<br>
+      ┃ ┃ ┗ 📄 ReviewPage3.js<br>
+      ┃ ┣ 📂 ListPage<br>
+      ┃ ┃ ┣ 📄 ListPage.css<br>
+      ┃ ┃ ┣ 📄 ListPage.js<br>
+      ┃ ┃ ┗ 📄 ListStyle.js<br>
+      ┃ ┣ 📂 MainPage<br>
+      ┃ ┃ ┣ 📄 MainPage.js<br>
+      ┃ ┃ ┣ 📄 MainStyle.js<br>
+      ┃ ┃ ┗ 📄 data.js<br>
+      ┃ ┣ 📂 NavBar<br>
+      ┃ ┃ ┣ 📄 LoginModal.js<br>
+      ┃ ┃ ┣ 📄 ModalElement.js<br>
+      ┃ ┃ ┣ 📄 NavBar.js<br>
+      ┃ ┃ ┗ 📄 NavBarElement.js<br>
+      ┃ ┣ 📂 PostReviewPage<br>
+      ┃ ┃ ┣ 📄 Modal.js<br>
+      ┃ ┃ ┣ 📄 PostReview.css<br>
+      ┃ ┃ ┗ 📄 PostReview.js<br>
+      ┃ ┗ 📂 UploadPage<br>
+      ┃ ┃ ┣ 📄Element.js<br>
+      ┃ ┃ ┣ 📄UploadPage.css<br>
+      ┃ ┃ ┗ 📄UploadPage.js<br>
+      ┣ 📂 fonts<br>
+      ┃ ┣ 📄 SpoqaHanSansNeo-Bold.woff<br>
+      ┃ ┣ 📄 SpoqaHanSansNeo-Regular.woff<br>
+      ┃ ┗ 📄 font.js<br>
+      ┣ 📂 images<br>
+      ┃ ┣ 📂 detail<br>
+      ┃ ┣ 📂 detail_bestmenu<br>
+      ┃ ┣ 📂 list<br>
+      ┃ ┣ 📂 main<br>
+      ┃ ┗ 📂 review<br>
+      ┃<br>
+      ┣ 📄 .DS_Store<br>
+      ┣ 📄 App.js<br>
+      ┣ 📄 App.test.js<br>
+      ┣ 📄 firebase.js<br>
+      ┣ 📄 index.css<br>
+      ┣ 📄 index.js<br>
+      ┣ 📄 reportWebVitals.js<br>
+      ┗ 📄 setupTests.js<br>
+</div>
+</details>
 
-## 📝 Tech Blog
-
+## 📝 기술 블로그
 [![Notion Badge](https://img.shields.io/badge/-Notion-92a8d1?logo=notion&logoColor=white&link=https://haewonny.notion.site/COMONG-Blog-b35da2cbafa24d658550bc8fc9e4372b
 )](https://haewonny.notion.site/COMONG-Blog-b35da2cbafa24d658550bc8fc9e4372b
 )
