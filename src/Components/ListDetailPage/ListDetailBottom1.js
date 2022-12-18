@@ -86,7 +86,7 @@ function TabContent(props) {
   );
 }
 
-function Bestmenu(props) {
+function Bestmenu() {
 
   const { id } = useParams(); //params로 받아 -> id
 
