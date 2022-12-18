@@ -15,8 +15,6 @@ import {
   import { useParams} from "react-router-dom";
   
   const Review3 = (doc) => {
-    const [data, setData] = useState([]);
-    const [loader, setLoader] = useState(true);
     const { id } = useParams(); // 유저가 URL 파라미터에 입력한 거 가져올 때 사용하는 훅
     const ref = db.collectionGroup("review03");// "컬렉션명"
     const [items, setItems] = useState(3);
@@ -24,33 +22,46 @@ import {
     const handlePageChange = (page) => {
       setPage(page);
     };
-    var count = 0;
-    for (let i = 0; i < data.length; i++) {
-      count = i + 1;
-    }  
-    var arr = [0];
-    for (let i = 0; i < data.length; i++) {
-      arr[i] = i + 1;
-    }
-  
-     //review
-     function getData() {
-      ref
-      .onSnapshot((querySnapshot) => {
-        const items = [];
-        querySnapshot.forEach((doc) => {
-          items.push(doc.data());
-        });
-        setData(items);
-        setLoader(false);
+    const [docId, setDocId] = useState([]);
+const [loader, setLoader] = useState(true);
+
+
+const bucket = db.collection("place03"); // "컬렉션명"
+function getData() {
+  bucket.onSnapshot((querySnapshot) => {
+    const ids = [];
+    querySnapshot.forEach((doc) => {
+      ids.push(doc.id);
+    });
+    setDocId(ids);
+    setLoader(false);
+  });
+}
+
+
+// 문서 id에 맞는 리뷰데이터 가져오기
+const [data, setData] = useState([]);
+
+function getData1() {
+  const bucket2 = db.collection("place03");
+  bucket2
+    .doc(docId[id])
+    .collection("review03")
+    .onSnapshot((querySnapshot) => {
+      const item = [];
+      querySnapshot.forEach((doc) => {
+        item.push(doc.data());
       });
-    }
-  
-    useEffect(() => {
-      getData();
-      console.log(data);
-    }, []);
-  
+      setData(item);
+      setLoader(false);
+    });
+}
+
+  useEffect(() => {
+    getData();
+    getData1();
+  }, [data]);
+
     //이미지
   
     return (
@@ -82,7 +93,7 @@ import {
           <Pagination
             activePage={page}
             itemsCountPerPage={3}
-            totalItemsCount={count}
+            totalItemsCount={data.length}
             pageRangeDisplayed={4}
             prevPageText="‹"
             nextPageText="›"
