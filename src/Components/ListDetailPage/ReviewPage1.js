@@ -14,6 +14,8 @@ import Pagination from "react-js-pagination";
 import { db } from "../../firebase";
 import { useParams } from "react-router-dom";
 import { React } from "react";
+import "../ListPage/ListPage.css";
+
 
 const Review1 = () => {
   const { id } = useParams(); // 유저가 URL 파라미터에 입력한 거 가져올 때 사용하는 훅
@@ -70,25 +72,25 @@ const Review1 = () => {
         {loader === false &&
           data
           .slice(items * (page - 1), items * (page - 1) + items)
-          .map((rest) => {
+          .map((v, i) => {
             return (
-              <div key={rest}>
+              <div key={i}>
                 <ReviewCol>
                   <RvRow1>
                     <div>
-                      <img src={rest.url} className="reviewimg" id="img" />
+                      <img src={v.url} className="reviewimg" id="img" />
                     </div>
                     <div className="enter" />
                   </RvRow1>
                   <RvRow2>
                     <FeatherIMG src={feather} alt="feather" />
-                    <div className="NickName">{rest.text1}</div>
-                    <div className="star">평점 #{rest.star}</div>
+                    <div className="NickName">{v.text1}</div>
+                    <div className="star">평점 #{v.star}</div>
                     <div className="enter" />
                   </RvRow2>
                   <RvRow3>
-                    <div className="ReviewM">메뉴: {rest.text3}</div>
-                    <div className="ReviewC">{rest.content}</div>
+                    <div className="ReviewM">메뉴: {v.text3}</div>
+                    <div className="ReviewC">{v.content}</div>
                     <div className="enter" />
                   </RvRow3>
                 </ReviewCol>
@@ -99,12 +101,10 @@ const Review1 = () => {
         <Pagination
           activePage={page}
           itemsCountPerPage={3}
-          totalItemsCount={data.length - 1}
-          pageRangeDisplayed={4}
-          prevPageText="‹"
-          nextPageText="›"
+          totalItemsCount={data.length}
+          pageRangeDisplayed={5}
           onChange={handlePageChange}
-        />
+        ></Pagination>
       </Container1>
     </div>
   );
